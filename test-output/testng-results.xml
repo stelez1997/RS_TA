@@ -1,0 +1,1736 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<<<<<<< HEAD
+<testng-results ignored="0" total="32" passed="15" failed="11" skipped="6">
+=======
+<testng-results ignored="0" total="4" passed="4" failed="0" skipped="0">
+>>>>>>> branch 'Yessy' of https://github.com/salc1997/TIMP_R1.git
+  <reporter-output>
+  </reporter-output>
+<<<<<<< HEAD
+  <suite started-at="2021-12-02T21:18:00Z" name="Suite" finished-at="2021-12-03T00:30:51Z" duration-ms="11571091">
+=======
+  <suite started-at="2021-12-02T22:31:24Z" name="Suite" finished-at="2021-12-02T22:55:26Z" duration-ms="1441723">
+>>>>>>> branch 'Yessy' of https://github.com/salc1997/TIMP_R1.git
+    <groups>
+    </groups>
+<<<<<<< HEAD
+    <test started-at="2021-12-02T21:18:00Z" name="AdicionarColunas" finished-at="2021-12-02T21:25:07Z" duration-ms="426837">
+      <class name="com.timp.test.BRB.AdicionarColunas">
+        <test-method is-config="true" signature="beforeClass()[pri:0, instance:com.timp.test.BRB.AdicionarColunas@1838ccb8]" started-at="2021-12-02T21:18:00Z" name="beforeClass" finished-at="2021-12-02T21:20:09Z" duration-ms="128860" status="PASS">
+=======
+    <test started-at="2021-12-02T22:31:24Z" name="Regra De Campos" finished-at="2021-12-02T22:55:26Z" duration-ms="1441723">
+      <class name="com.timp.test.TAA.AtribuiçõesdeRegras.RegraDeCampos.RegraDeCamposCriar">
+        <test-method is-config="true" signature="beforeClass()[pri:0, instance:com.timp.test.TAA.AtribuiçõesdeRegras.RegraDeCampos.RegraDeCamposCriar@12d2ce03]" started-at="2021-12-02T22:31:24Z" name="beforeClass" finished-at="2021-12-02T22:32:48Z" duration-ms="83604" status="PASS">
+>>>>>>> branch 'Yessy' of https://github.com/salc1997/TIMP_R1.git
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeClass -->
+<<<<<<< HEAD
+        <test-method signature="adicionarColunas()[pri:0, instance:com.timp.test.BRB.AdicionarColunas@1838ccb8]" started-at="2021-12-02T21:20:09Z" name="adicionarColunas" finished-at="2021-12-02T21:25:07Z" duration-ms="297940" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- adicionarColunas -->
+        <test-method is-config="true" signature="afterClass()[pri:0, instance:com.timp.test.BRB.AdicionarColunas@1838ccb8]" started-at="2021-12-02T21:25:07Z" name="afterClass" finished-at="2021-12-02T21:25:07Z" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterClass -->
+      </class> <!-- com.timp.test.BRB.AdicionarColunas -->
+    </test> <!-- AdicionarColunas -->
+    <test started-at="2021-12-02T21:25:07Z" name="PublicoEPrivado" finished-at="2021-12-02T21:31:46Z" duration-ms="399290">
+      <class name="com.timp.test.BRB.PublicoEPrivado">
+        <test-method is-config="true" signature="beforeClass()[pri:0, instance:com.timp.test.BRB.PublicoEPrivado@2e48362c]" started-at="2021-12-02T21:25:07Z" name="beforeClass" finished-at="2021-12-02T21:26:28Z" duration-ms="80559" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeClass -->
+        <test-method signature="publicoYPRivado()[pri:0, instance:com.timp.test.BRB.PublicoEPrivado@2e48362c]" started-at="2021-12-02T21:26:28Z" name="publicoYPRivado" finished-at="2021-12-02T21:31:42Z" duration-ms="314392" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- publicoYPRivado -->
+        <test-method is-config="true" signature="afterClass()[pri:0, instance:com.timp.test.BRB.PublicoEPrivado@2e48362c]" started-at="2021-12-02T21:31:42Z" name="afterClass" finished-at="2021-12-02T21:31:46Z" duration-ms="4331" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterClass -->
+      </class> <!-- com.timp.test.BRB.PublicoEPrivado -->
+    </test> <!-- PublicoEPrivado -->
+    <test started-at="2021-12-02T21:31:46Z" name="ExcluirColuna" finished-at="2021-12-02T21:46:05Z" duration-ms="858269">
+      <class name="com.timp.test.BRB.ExcluirColuna">
+        <test-method is-config="true" signature="beforeClass()[pri:0, instance:com.timp.test.BRB.ExcluirColuna@1984b1f]" started-at="2021-12-02T21:31:46Z" name="beforeClass" finished-at="2021-12-02T21:35:02Z" duration-ms="195814" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeClass -->
+        <test-method signature="excluirColunaDragNDrop()[pri:0, instance:com.timp.test.BRB.ExcluirColuna@1984b1f]" started-at="2021-12-02T21:35:02Z" name="excluirColunaDragNDrop" finished-at="2021-12-02T21:46:04Z" duration-ms="661915" status="FAIL">
+          <exception class="org.openqa.selenium.TimeoutException">
+            <message>
+              <![CDATA[Expected condition failed: waiting for element to be clickable: By.xpath: //*[@id="accordion"]/ul/li/div/div (tried for 360 second(s) with 500 milliseconds interval)]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: //*[@id="accordion"]/ul/li/div/div (tried for 360 second(s) with 500 milliseconds interval)
+at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
+at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
+at com.sap.timp.base.TestBaseSteven.waitExpectXpath(TestBaseSteven.java:250)
+at com.sap.timp.pageObjectModel.BRB.ExcluirColunaPO.DragNDrop(ExcluirColunaPO.java:99)
+at com.timp.test.BRB.ExcluirColuna.excluirColunaDragNDrop(ExcluirColuna.java:69)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
+at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
+at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+at org.testng.TestRunner.privateRun(TestRunner.java:648)
+at org.testng.TestRunner.run(TestRunner.java:505)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+at org.testng.TestNG.runSuites(TestNG.java:1049)
+at org.testng.TestNG.run(TestNG.java:1017)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//*[@id="accordion"]/ul/li/div/div"}
+  (Session info: chrome=83.0.4103.106)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-C57COV6', ip: '192.168.0.108', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '15.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 83.0.4103.106, chrome: {chromedriverVersion: 83.0.4103.39 (ccbf011cb2d2b..., userDataDir: C:\Users\AGILES~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:56262}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: 312d6ba06777ddf91a01f74403df4cf8
+*** Element info: {Using=xpath, value=//*[@id="accordion"]/ul/li/div/div}
+at jdk.internal.reflect.GeneratedConstructorAccessor20.newInstance(Unknown Source)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:205)
+at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:201)
+at org.openqa.selenium.support.ui.ExpectedConditions$22.apply(ExpectedConditions.java:641)
+at org.openqa.selenium.support.ui.ExpectedConditions$22.apply(ExpectedConditions.java:638)
+at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
+... 28 more
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.TimeoutException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- excluirColunaDragNDrop -->
+        <test-method is-config="true" signature="afterClass()[pri:0, instance:com.timp.test.BRB.ExcluirColuna@1984b1f]" started-at="2021-12-02T21:46:04Z" name="afterClass" finished-at="2021-12-02T21:46:05Z" duration-ms="525" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterClass -->
+      </class> <!-- com.timp.test.BRB.ExcluirColuna -->
+    </test> <!-- ExcluirColuna -->
+    <test started-at="2021-12-02T21:46:05Z" name="EditarRelatorio" finished-at="2021-12-02T21:56:15Z" duration-ms="610880">
+      <class name="com.timp.test.BRB.EditarRelatorio">
+        <test-method is-config="true" signature="beforeClass()[pri:0, instance:com.timp.test.BRB.EditarRelatorio@327bcebd]" started-at="2021-12-02T21:46:05Z" name="beforeClass" finished-at="2021-12-02T21:47:52Z" duration-ms="107622" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeClass -->
+        <test-method signature="editar()[pri:0, instance:com.timp.test.BRB.EditarRelatorio@327bcebd]" started-at="2021-12-02T21:47:52Z" name="editar" finished-at="2021-12-02T21:56:11Z" duration-ms="498910" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- editar -->
+        <test-method is-config="true" signature="afterClass()[pri:0, instance:com.timp.test.BRB.EditarRelatorio@327bcebd]" started-at="2021-12-02T21:56:11Z" name="afterClass" finished-at="2021-12-02T21:56:15Z" duration-ms="4319" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterClass -->
+      </class> <!-- com.timp.test.BRB.EditarRelatorio -->
+    </test> <!-- EditarRelatorio -->
+    <test started-at="2021-12-02T21:56:15Z" name="ReordenarColuna" finished-at="2021-12-02T22:02:00Z" duration-ms="344840">
+      <class name="com.timp.test.BRB.ReordenarColuna">
+        <test-method is-config="true" signature="beforeClass()[pri:0, instance:com.timp.test.BRB.ReordenarColuna@3e6104fc]" started-at="2021-12-02T21:56:15Z" name="beforeClass" finished-at="2021-12-02T21:58:30Z" duration-ms="134446" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeClass -->
+        <test-method signature="reordenar()[pri:0, instance:com.timp.test.BRB.ReordenarColuna@3e6104fc]" started-at="2021-12-02T21:58:30Z" name="reordenar" finished-at="2021-12-02T22:01:56Z" duration-ms="206076" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- reordenar -->
+        <test-method is-config="true" signature="afterClass()[pri:0, instance:com.timp.test.BRB.ReordenarColuna@3e6104fc]" started-at="2021-12-02T22:01:56Z" name="afterClass" finished-at="2021-12-02T22:02:00Z" duration-ms="4310" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterClass -->
+      </class> <!-- com.timp.test.BRB.ReordenarColuna -->
+    </test> <!-- ReordenarColuna -->
+    <test started-at="2021-12-02T22:02:00Z" name="FiltrosRelatorio" finished-at="2021-12-02T22:12:43Z" duration-ms="643152">
+      <class name="com.timp.test.BRB.FiltrosRelatorio">
+        <test-method is-config="true" signature="beforeClass()[pri:0, instance:com.timp.test.BRB.FiltrosRelatorio@338c99c8]" started-at="2021-12-02T22:02:00Z" name="beforeClass" finished-at="2021-12-02T22:03:46Z" duration-ms="105169" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeClass -->
+        <test-method signature="AfiltrosEditor()[pri:0, instance:com.timp.test.BRB.FiltrosRelatorio@338c99c8]" started-at="2021-12-02T22:03:46Z" name="AfiltrosEditor" finished-at="2021-12-02T22:12:43Z" duration-ms="537325" status="FAIL">
+          <exception class="org.openqa.selenium.TimeoutException">
+            <message>
+              <![CDATA[Expected condition failed: waiting for element to be clickable: By.xpath: //*[@id="accordion"]/ul/li (tried for 360 second(s) with 500 milliseconds interval)]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: //*[@id="accordion"]/ul/li (tried for 360 second(s) with 500 milliseconds interval)
+at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
+at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
+at com.sap.timp.base.TestBaseSteven.waitExpectXpath(TestBaseSteven.java:250)
+at com.sap.timp.pageObjectModel.BRB.FiltrosPO.AsignarFiltros(FiltrosPO.java:332)
+at com.timp.test.BRB.FiltrosRelatorio.AfiltrosEditor(FiltrosRelatorio.java:72)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
+at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
+at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+at org.testng.TestRunner.privateRun(TestRunner.java:648)
+at org.testng.TestRunner.run(TestRunner.java:505)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+at org.testng.TestNG.runSuites(TestNG.java:1049)
+at org.testng.TestNG.run(TestNG.java:1017)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//*[@id="accordion"]/ul/li"}
+  (Session info: chrome=83.0.4103.106)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-C57COV6', ip: '192.168.0.108', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '15.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 83.0.4103.106, chrome: {chromedriverVersion: 83.0.4103.39 (ccbf011cb2d2b..., userDataDir: C:\Users\AGILES~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:57300}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: f9984c8c08cf0e761f5b76f51c46f32d
+*** Element info: {Using=xpath, value=//*[@id="accordion"]/ul/li}
+at jdk.internal.reflect.GeneratedConstructorAccessor20.newInstance(Unknown Source)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:205)
+at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:201)
+at org.openqa.selenium.support.ui.ExpectedConditions$22.apply(ExpectedConditions.java:641)
+at org.openqa.selenium.support.ui.ExpectedConditions$22.apply(ExpectedConditions.java:638)
+at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
+... 28 more
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.TimeoutException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- AfiltrosEditor -->
+        <test-method signature="BfiltrosBiblioteca()[pri:0, instance:com.timp.test.BRB.FiltrosRelatorio@338c99c8]" started-at="2021-12-02T22:12:43Z" name="BfiltrosBiblioteca" finished-at="2021-12-02T22:12:43Z" depends-on-methods="com.timp.test.BRB.FiltrosRelatorio.AfiltrosEditor" duration-ms="1" status="SKIP">
+          <exception class="java.lang.Throwable">
+            <message>
+              <![CDATA[Method FiltrosRelatorio.BfiltrosBiblioteca()[pri:0, instance:com.timp.test.BRB.FiltrosRelatorio@338c99c8] depends on not successfully finished methods]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Throwable: Method FiltrosRelatorio.BfiltrosBiblioteca()[pri:0, instance:com.timp.test.BRB.FiltrosRelatorio@338c99c8] depends on not successfully finished methods
+at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:888)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+at org.testng.TestRunner.privateRun(TestRunner.java:648)
+at org.testng.TestRunner.run(TestRunner.java:505)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+at org.testng.TestNG.runSuites(TestNG.java:1049)
+at org.testng.TestNG.run(TestNG.java:1017)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Throwable -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- BfiltrosBiblioteca -->
+        <test-method signature="CasignarValores()[pri:0, instance:com.timp.test.BRB.FiltrosRelatorio@338c99c8]" started-at="2021-12-02T22:12:43Z" name="CasignarValores" finished-at="2021-12-02T22:12:43Z" depends-on-methods="com.timp.test.BRB.FiltrosRelatorio.BfiltrosBiblioteca" duration-ms="0" status="SKIP">
+          <exception class="java.lang.Throwable">
+            <message>
+              <![CDATA[Method FiltrosRelatorio.CasignarValores()[pri:0, instance:com.timp.test.BRB.FiltrosRelatorio@338c99c8] depends on not successfully finished methods]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Throwable: Method FiltrosRelatorio.CasignarValores()[pri:0, instance:com.timp.test.BRB.FiltrosRelatorio@338c99c8] depends on not successfully finished methods
+at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:888)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+at org.testng.TestRunner.privateRun(TestRunner.java:648)
+at org.testng.TestRunner.run(TestRunner.java:505)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+at org.testng.TestNG.runSuites(TestNG.java:1049)
+at org.testng.TestNG.run(TestNG.java:1017)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Throwable -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- CasignarValores -->
+        <test-method is-config="true" signature="afterClass()[pri:0, instance:com.timp.test.BRB.FiltrosRelatorio@338c99c8]" started-at="2021-12-02T22:12:43Z" name="afterClass" finished-at="2021-12-02T22:12:43Z" duration-ms="641" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterClass -->
+      </class> <!-- com.timp.test.BRB.FiltrosRelatorio -->
+    </test> <!-- FiltrosRelatorio -->
+    <test started-at="2021-12-02T22:12:44Z" name="CriarComCopia" finished-at="2021-12-02T22:20:14Z" duration-ms="450812">
+      <class name="com.timp.test.BRB.CriarComCopia">
+        <test-method is-config="true" signature="beforeClass()[pri:0, instance:com.timp.test.BRB.CriarComCopia@5c44c582]" started-at="2021-12-02T22:12:44Z" name="beforeClass" finished-at="2021-12-02T22:14:15Z" duration-ms="91357" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeClass -->
+        <test-method signature="criarCopia()[pri:0, instance:com.timp.test.BRB.CriarComCopia@5c44c582]" started-at="2021-12-02T22:14:15Z" name="criarCopia" finished-at="2021-12-02T22:20:14Z" duration-ms="359451" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- criarCopia -->
+        <test-method is-config="true" signature="afterClass()[pri:0, instance:com.timp.test.BRB.CriarComCopia@5c44c582]" started-at="2021-12-02T22:20:14Z" name="afterClass" finished-at="2021-12-02T22:20:14Z" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterClass -->
+      </class> <!-- com.timp.test.BRB.CriarComCopia -->
+    </test> <!-- CriarComCopia -->
+    <test started-at="2021-12-02T22:20:14Z" name="AtivarCorrecao" finished-at="2021-12-02T22:26:40Z" duration-ms="385896">
+      <class name="com.timp.test.BRB.AtivarCorrecao">
+        <test-method is-config="true" signature="beforeClass()[pri:0, instance:com.timp.test.BRB.AtivarCorrecao@d41f816]" started-at="2021-12-02T22:20:14Z" name="beforeClass" finished-at="2021-12-02T22:21:52Z" duration-ms="97883" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeClass -->
+        <test-method signature="ativarCorreccion()[pri:0, instance:com.timp.test.BRB.AtivarCorrecao@d41f816]" started-at="2021-12-02T22:21:52Z" name="ativarCorreccion" finished-at="2021-12-02T22:26:36Z" duration-ms="283678" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ativarCorreccion -->
+        <test-method is-config="true" signature="afterClass()[pri:0, instance:com.timp.test.BRB.AtivarCorrecao@d41f816]" started-at="2021-12-02T22:26:36Z" name="afterClass" finished-at="2021-12-02T22:26:40Z" duration-ms="4327" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterClass -->
+      </class> <!-- com.timp.test.BRB.AtivarCorrecao -->
+    </test> <!-- AtivarCorrecao -->
+    <test started-at="2021-12-02T22:26:40Z" name="AtivarComentario" finished-at="2021-12-02T22:31:03Z" duration-ms="262538">
+      <class name="com.timp.test.BRB.AtivarComentario">
+        <test-method is-config="true" signature="beforeClass()[pri:0, instance:com.timp.test.BRB.AtivarComentario@8576fa0]" started-at="2021-12-02T22:26:40Z" name="beforeClass" finished-at="2021-12-02T22:28:01Z" duration-ms="80404" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeClass -->
+        <test-method signature="ativarComentarios()[pri:0, instance:com.timp.test.BRB.AtivarComentario@8576fa0]" started-at="2021-12-02T22:28:01Z" name="ativarComentarios" finished-at="2021-12-02T22:30:59Z" duration-ms="177949" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ativarComentarios -->
+        <test-method is-config="true" signature="afterClass()[pri:0, instance:com.timp.test.BRB.AtivarComentario@8576fa0]" started-at="2021-12-02T22:30:59Z" name="afterClass" finished-at="2021-12-02T22:31:03Z" duration-ms="4181" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterClass -->
+      </class> <!-- com.timp.test.BRB.AtivarComentario -->
+    </test> <!-- AtivarComentario -->
+    <test started-at="2021-12-02T22:31:03Z" name="RenomearColuna" finished-at="2021-12-02T22:34:39Z" duration-ms="216292">
+      <class name="com.timp.test.BRB.RenomearColuna">
+        <test-method is-config="true" signature="beforeClass()[pri:0, instance:com.timp.test.BRB.RenomearColuna@4716be8b]" started-at="2021-12-02T22:31:03Z" name="beforeClass" finished-at="2021-12-02T22:32:37Z" duration-ms="94089" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeClass -->
+        <test-method signature="renomearColuna()[pri:0, instance:com.timp.test.BRB.RenomearColuna@4716be8b]" started-at="2021-12-02T22:32:37Z" name="renomearColuna" finished-at="2021-12-02T22:34:35Z" duration-ms="117975" status="FAIL">
+          <exception class="org.openqa.selenium.NoSuchElementException">
+            <message>
+              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//li[@id="draggable-28"]/div/div/div/div/div/div/div[2]/input"}
+  (Session info: chrome=83.0.4103.106)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-C57COV6', ip: '192.168.0.108', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '15.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 83.0.4103.106, chrome: {chromedriverVersion: 83.0.4103.39 (ccbf011cb2d2b..., userDataDir: C:\Users\AGILES~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:58720}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: ece25758f5517add784d1bb0591a37a7
+*** Element info: {Using=xpath, value=//li[@id="draggable-28"]/div/div/div/div/div/div/div[2]/input}]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//li[@id="draggable-28"]/div/div/div/div/div/div/div[2]/input"}
+  (Session info: chrome=83.0.4103.106)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-C57COV6', ip: '192.168.0.108', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '15.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 83.0.4103.106, chrome: {chromedriverVersion: 83.0.4103.39 (ccbf011cb2d2b..., userDataDir: C:\Users\AGILES~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:58720}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: ece25758f5517add784d1bb0591a37a7
+*** Element info: {Using=xpath, value=//li[@id="draggable-28"]/div/div/div/div/div/div/div[2]/input}
+at jdk.internal.reflect.GeneratedConstructorAccessor20.newInstance(Unknown Source)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+at com.sun.proxy.$Proxy12.clear(Unknown Source)
+at com.sap.timp.pageObjectModel.BRB.RenomearColunaPO.renomear(RenomearColunaPO.java:84)
+at com.timp.test.BRB.RenomearColuna.renomearColuna(RenomearColuna.java:54)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
+at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
+at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+at org.testng.TestRunner.privateRun(TestRunner.java:648)
+at org.testng.TestRunner.run(TestRunner.java:505)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+at org.testng.TestNG.runSuites(TestNG.java:1049)
+at org.testng.TestNG.run(TestNG.java:1017)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
+=======
+        <test-method signature="criar()[pri:0, instance:com.timp.test.TAA.AtribuiçõesdeRegras.RegraDeCampos.RegraDeCamposCriar@12d2ce03]" started-at="2021-12-02T22:32:48Z" name="criar" finished-at="2021-12-02T22:36:41Z" duration-ms="233032" status="PASS">
+>>>>>>> branch 'Yessy' of https://github.com/salc1997/TIMP_R1.git
+          <reporter-output>
+          </reporter-output>
+<<<<<<< HEAD
+        </test-method> <!-- renomearColuna -->
+        <test-method is-config="true" signature="afterClass()[pri:0, instance:com.timp.test.BRB.RenomearColuna@4716be8b]" started-at="2021-12-02T22:34:35Z" name="afterClass" finished-at="2021-12-02T22:34:39Z" duration-ms="4223" status="PASS">
+=======
+        </test-method> <!-- criar -->
+        <test-method is-config="true" signature="afterClass()[pri:0, instance:com.timp.test.TAA.AtribuiçõesdeRegras.RegraDeCampos.RegraDeCamposCriar@12d2ce03]" started-at="2021-12-02T22:36:41Z" name="afterClass" finished-at="2021-12-02T22:36:45Z" duration-ms="4470" status="PASS">
+>>>>>>> branch 'Yessy' of https://github.com/salc1997/TIMP_R1.git
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterClass -->
+<<<<<<< HEAD
+      </class> <!-- com.timp.test.BRB.RenomearColuna -->
+    </test> <!-- RenomearColuna -->
+    <test started-at="2021-12-02T22:34:39Z" name="Formula" finished-at="2021-12-02T22:42:28Z" duration-ms="468964">
+      <class name="com.timp.test.BRB.Formula">
+        <test-method is-config="true" signature="beforeClass()[pri:0, instance:com.timp.test.BRB.Formula@416c58f5]" started-at="2021-12-02T22:34:39Z" name="beforeClass" finished-at="2021-12-02T22:37:28Z" duration-ms="168393" status="PASS">
+=======
+      </class> <!-- com.timp.test.TAA.AtribuiçõesdeRegras.RegraDeCampos.RegraDeCamposCriar -->
+      <class name="com.timp.test.TAA.AtribuiçõesdeRegras.RegraDeCampos.RegraDeCamposVer">
+        <test-method is-config="true" signature="beforeClass()[pri:0, instance:com.timp.test.TAA.AtribuiçõesdeRegras.RegraDeCampos.RegraDeCamposVer@413f69cc]" started-at="2021-12-02T22:43:37Z" name="beforeClass" finished-at="2021-12-02T22:45:19Z" duration-ms="101363" status="PASS">
+>>>>>>> branch 'Yessy' of https://github.com/salc1997/TIMP_R1.git
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeClass -->
+<<<<<<< HEAD
+        <test-method signature="formulaColuna()[pri:0, instance:com.timp.test.BRB.Formula@416c58f5]" started-at="2021-12-02T22:37:28Z" name="formulaColuna" finished-at="2021-12-02T22:40:17Z" duration-ms="169198" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- formulaColuna -->
+        <test-method signature="formulaBoton()[pri:0, instance:com.timp.test.BRB.Formula@416c58f5]" started-at="2021-12-02T22:40:17Z" name="formulaBoton" finished-at="2021-12-02T22:42:11Z" depends-on-methods="com.timp.test.BRB.Formula.formulaColuna" duration-ms="113795" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- formulaBoton -->
+        <test-method signature="aplicar()[pri:0, instance:com.timp.test.BRB.Formula@416c58f5]" started-at="2021-12-02T22:42:11Z" name="aplicar" finished-at="2021-12-02T22:42:28Z" depends-on-methods="com.timp.test.BRB.Formula.formulaBoton" duration-ms="17573" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- aplicar -->
+        <test-method is-config="true" signature="afterClass()[pri:0, instance:com.timp.test.BRB.Formula@416c58f5]" started-at="2021-12-02T22:42:28Z" name="afterClass" finished-at="2021-12-02T22:42:28Z" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterClass -->
+      </class> <!-- com.timp.test.BRB.Formula -->
+    </test> <!-- Formula -->
+    <test started-at="2021-12-02T22:42:28Z" name="AgrupadoPeloCampo" finished-at="2021-12-02T22:48:19Z" duration-ms="351263">
+      <class name="com.timp.test.BRB.AgrupadoPeloCampo">
+        <test-method is-config="true" signature="beforeClass()[pri:0, instance:com.timp.test.BRB.AgrupadoPeloCampo@512baff6]" started-at="2021-12-02T22:42:28Z" name="beforeClass" finished-at="2021-12-02T22:43:42Z" duration-ms="73675" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeClass -->
+        <test-method signature="agrupadoPeloCampo()[pri:0, instance:com.timp.test.BRB.AgrupadoPeloCampo@512baff6]" started-at="2021-12-02T22:43:42Z" name="agrupadoPeloCampo" finished-at="2021-12-02T22:48:19Z" duration-ms="277585" status="FAIL">
+          <exception class="org.openqa.selenium.NoSuchElementException">
+            <message>
+              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//div[@data-group ="1"]"}
+  (Session info: chrome=83.0.4103.106)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-C57COV6', ip: '192.168.0.108', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '15.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 83.0.4103.106, chrome: {chromedriverVersion: 83.0.4103.39 (ccbf011cb2d2b..., userDataDir: C:\Users\AGILES~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:59045}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: c330536f73cd290af11a52ed5dcf4cd1
+*** Element info: {Using=xpath, value=//div[@data-group ="1"]}]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//div[@data-group ="1"]"}
+  (Session info: chrome=83.0.4103.106)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-C57COV6', ip: '192.168.0.108', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '15.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 83.0.4103.106, chrome: {chromedriverVersion: 83.0.4103.39 (ccbf011cb2d2b..., userDataDir: C:\Users\AGILES~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:59045}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: c330536f73cd290af11a52ed5dcf4cd1
+*** Element info: {Using=xpath, value=//div[@data-group ="1"]}
+at jdk.internal.reflect.GeneratedConstructorAccessor20.newInstance(Unknown Source)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+at com.sun.proxy.$Proxy12.getAttribute(Unknown Source)
+at com.sap.timp.pageObjectModel.BRB.AgrupadoPeloCampoPO.sucesso(AgrupadoPeloCampoPO.java:140)
+at com.timp.test.BRB.AgrupadoPeloCampo.agrupadoPeloCampo(AgrupadoPeloCampo.java:49)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
+at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
+at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+at org.testng.TestRunner.privateRun(TestRunner.java:648)
+at org.testng.TestRunner.run(TestRunner.java:505)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+at org.testng.TestNG.runSuites(TestNG.java:1049)
+at org.testng.TestNG.run(TestNG.java:1017)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
+=======
+        <test-method signature="ver()[pri:0, instance:com.timp.test.TAA.AtribuiçõesdeRegras.RegraDeCampos.RegraDeCamposVer@413f69cc]" started-at="2021-12-02T22:45:19Z" name="ver" finished-at="2021-12-02T22:50:41Z" duration-ms="321871" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ver -->
+        <test-method is-config="true" signature="afterClass()[pri:0, instance:com.timp.test.TAA.AtribuiçõesdeRegras.RegraDeCampos.RegraDeCamposVer@413f69cc]" started-at="2021-12-02T22:50:41Z" name="afterClass" finished-at="2021-12-02T22:50:41Z" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterClass -->
+      </class> <!-- com.timp.test.TAA.AtribuiçõesdeRegras.RegraDeCampos.RegraDeCamposVer -->
+      <class name="com.timp.test.TAA.AtribuiçõesdeRegras.RegraDeCampos.RegraDeCamposEditar">
+        <test-method is-config="true" signature="beforeClass()[pri:0, instance:com.timp.test.TAA.AtribuiçõesdeRegras.RegraDeCampos.RegraDeCamposEditar@7e5c856f]" started-at="2021-12-02T22:36:45Z" name="beforeClass" finished-at="2021-12-02T22:38:43Z" duration-ms="118379" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeClass -->
+        <test-method signature="editar()[pri:0, instance:com.timp.test.TAA.AtribuiçõesdeRegras.RegraDeCampos.RegraDeCamposEditar@7e5c856f]" started-at="2021-12-02T22:38:43Z" name="editar" finished-at="2021-12-02T22:43:33Z" duration-ms="289341" status="PASS">
+>>>>>>> branch 'Yessy' of https://github.com/salc1997/TIMP_R1.git
+          <reporter-output>
+          </reporter-output>
+<<<<<<< HEAD
+        </test-method> <!-- agrupadoPeloCampo -->
+        <test-method is-config="true" signature="afterClass()[pri:0, instance:com.timp.test.BRB.AgrupadoPeloCampo@512baff6]" started-at="2021-12-02T22:48:19Z" name="afterClass" finished-at="2021-12-02T22:48:19Z" duration-ms="0" status="PASS">
+=======
+        </test-method> <!-- editar -->
+        <test-method is-config="true" signature="afterClass()[pri:0, instance:com.timp.test.TAA.AtribuiçõesdeRegras.RegraDeCampos.RegraDeCamposEditar@7e5c856f]" started-at="2021-12-02T22:43:33Z" name="afterClass" finished-at="2021-12-02T22:43:37Z" duration-ms="4503" status="PASS">
+>>>>>>> branch 'Yessy' of https://github.com/salc1997/TIMP_R1.git
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterClass -->
+<<<<<<< HEAD
+      </class> <!-- com.timp.test.BRB.AgrupadoPeloCampo -->
+    </test> <!-- AgrupadoPeloCampo -->
+    <test started-at="2021-12-02T22:48:19Z" name="CampoOutput" finished-at="2021-12-02T22:53:29Z" duration-ms="309997">
+      <class name="com.timp.test.BRB.CampoOutput">
+        <test-method is-config="true" signature="beforeClass()[pri:0, instance:com.timp.test.BRB.CampoOutput@363a52f]" started-at="2021-12-02T22:48:19Z" name="beforeClass" finished-at="2021-12-02T22:50:04Z" duration-ms="104742" status="PASS">
+=======
+      </class> <!-- com.timp.test.TAA.AtribuiçõesdeRegras.RegraDeCampos.RegraDeCamposEditar -->
+      <class name="com.timp.test.TAA.AtribuiçõesdeRegras.RegraDeCampos.RegraDeCamposExcluir">
+        <test-method is-config="true" signature="beforeClass()[pri:0, instance:com.timp.test.TAA.AtribuiçõesdeRegras.RegraDeCampos.RegraDeCamposExcluir@1f53a5dc]" started-at="2021-12-02T22:50:41Z" name="beforeClass" finished-at="2021-12-02T22:52:40Z" duration-ms="119106" status="PASS">
+>>>>>>> branch 'Yessy' of https://github.com/salc1997/TIMP_R1.git
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeClass -->
+<<<<<<< HEAD
+        <test-method signature="campoOutput()[pri:0, instance:com.timp.test.BRB.CampoOutput@363a52f]" started-at="2021-12-02T22:50:04Z" name="campoOutput" finished-at="2021-12-02T22:53:25Z" duration-ms="200938" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- campoOutput -->
+        <test-method is-config="true" signature="afterClass()[pri:0, instance:com.timp.test.BRB.CampoOutput@363a52f]" started-at="2021-12-02T22:53:25Z" name="afterClass" finished-at="2021-12-02T22:53:29Z" duration-ms="4313" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterClass -->
+      </class> <!-- com.timp.test.BRB.CampoOutput -->
+    </test> <!-- CampoOutput -->
+    <test started-at="2021-12-02T22:53:29Z" name="FormatacaoEVariante" finished-at="2021-12-02T22:58:35Z" duration-ms="305571">
+      <class name="com.timp.test.BRB.FormatacaoEVariante">
+        <test-method is-config="true" signature="beforeClass()[pri:0, instance:com.timp.test.BRB.FormatacaoEVariante@6ccdb29f]" started-at="2021-12-02T22:53:29Z" name="beforeClass" finished-at="2021-12-02T22:58:35Z" duration-ms="305548" status="FAIL">
+          <exception class="org.openqa.selenium.TimeoutException">
+            <message>
+              <![CDATA[timeout: Timed out receiving message from renderer: 299.777
+  (Session info: chrome=83.0.4103.106)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-C57COV6', ip: '192.168.0.108', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '15.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 83.0.4103.106, chrome: {chromedriverVersion: 83.0.4103.39 (ccbf011cb2d2b..., userDataDir: C:\Users\AGILES~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:59782}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: 6e80fa79334b8e5e1539b7925a015dbf]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.TimeoutException: timeout: Timed out receiving message from renderer: 299.777
+  (Session info: chrome=83.0.4103.106)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-C57COV6', ip: '192.168.0.108', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '15.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 83.0.4103.106, chrome: {chromedriverVersion: 83.0.4103.39 (ccbf011cb2d2b..., userDataDir: C:\Users\AGILES~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:59782}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: 6e80fa79334b8e5e1539b7925a015dbf
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:64)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:277)
+at com.sap.timp.base.TestBaseSteven.initialization(TestBaseSteven.java:108)
+at com.timp.test.BRB.FormatacaoEVariante.beforeClass(FormatacaoEVariante.java:26)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:59)
+at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:458)
+at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:222)
+at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:142)
+at org.testng.internal.TestMethodWorker.invokeBeforeClassMethods(TestMethodWorker.java:168)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:105)
+at org.testng.TestRunner.privateRun(TestRunner.java:648)
+at org.testng.TestRunner.run(TestRunner.java:505)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+at org.testng.TestNG.runSuites(TestNG.java:1049)
+at org.testng.TestNG.run(TestNG.java:1017)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.TimeoutException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeClass -->
+        <test-method signature="formatacaoEVariante()[pri:0, instance:com.timp.test.BRB.FormatacaoEVariante@6ccdb29f]" started-at="2021-12-02T22:58:35Z" name="formatacaoEVariante" finished-at="2021-12-02T22:58:35Z" duration-ms="0" status="SKIP">
+          <exception class="org.openqa.selenium.TimeoutException">
+            <message>
+              <![CDATA[timeout: Timed out receiving message from renderer: 299.777
+  (Session info: chrome=83.0.4103.106)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-C57COV6', ip: '192.168.0.108', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '15.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 83.0.4103.106, chrome: {chromedriverVersion: 83.0.4103.39 (ccbf011cb2d2b..., userDataDir: C:\Users\AGILES~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:59782}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: 6e80fa79334b8e5e1539b7925a015dbf]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.TimeoutException: timeout: Timed out receiving message from renderer: 299.777
+  (Session info: chrome=83.0.4103.106)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-C57COV6', ip: '192.168.0.108', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '15.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 83.0.4103.106, chrome: {chromedriverVersion: 83.0.4103.39 (ccbf011cb2d2b..., userDataDir: C:\Users\AGILES~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:59782}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: 6e80fa79334b8e5e1539b7925a015dbf
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:64)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:277)
+at com.sap.timp.base.TestBaseSteven.initialization(TestBaseSteven.java:108)
+at com.timp.test.BRB.FormatacaoEVariante.beforeClass(FormatacaoEVariante.java:26)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:59)
+at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:458)
+at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:222)
+at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:142)
+at org.testng.internal.TestMethodWorker.invokeBeforeClassMethods(TestMethodWorker.java:168)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:105)
+at org.testng.TestRunner.privateRun(TestRunner.java:648)
+at org.testng.TestRunner.run(TestRunner.java:505)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+at org.testng.TestNG.runSuites(TestNG.java:1049)
+at org.testng.TestNG.run(TestNG.java:1017)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.TimeoutException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- formatacaoEVariante -->
+        <test-method signature="excluirVariante()[pri:0, instance:com.timp.test.BRB.FormatacaoEVariante@6ccdb29f]" started-at="2021-12-02T22:58:35Z" name="excluirVariante" finished-at="2021-12-02T22:58:35Z" depends-on-methods="com.timp.test.BRB.FormatacaoEVariante.formatacaoEVariante" duration-ms="0" status="SKIP">
+          <exception class="java.lang.Throwable">
+            <message>
+              <![CDATA[Method FormatacaoEVariante.excluirVariante()[pri:0, instance:com.timp.test.BRB.FormatacaoEVariante@6ccdb29f] depends on not successfully finished methods]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Throwable: Method FormatacaoEVariante.excluirVariante()[pri:0, instance:com.timp.test.BRB.FormatacaoEVariante@6ccdb29f] depends on not successfully finished methods
+at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:888)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+at org.testng.TestRunner.privateRun(TestRunner.java:648)
+at org.testng.TestRunner.run(TestRunner.java:505)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+at org.testng.TestNG.runSuites(TestNG.java:1049)
+at org.testng.TestNG.run(TestNG.java:1017)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Throwable -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- excluirVariante -->
+        <test-method is-config="true" signature="afterClass()[pri:0, instance:com.timp.test.BRB.FormatacaoEVariante@6ccdb29f]" started-at="2021-12-02T22:58:35Z" name="afterClass" finished-at="2021-12-02T22:58:35Z" duration-ms="0" status="SKIP">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterClass -->
+      </class> <!-- com.timp.test.BRB.FormatacaoEVariante -->
+    </test> <!-- FormatacaoEVariante -->
+    <test started-at="2021-12-02T22:58:35Z" name="FiltroColunas" finished-at="2021-12-02T23:04:48Z" duration-ms="373190">
+      <class name="com.timp.test.BRB.FiltroColunas">
+        <test-method is-config="true" signature="beforeClass()[pri:0, instance:com.timp.test.BRB.FiltroColunas@5d066c7d]" started-at="2021-12-02T22:58:35Z" name="beforeClass" finished-at="2021-12-02T23:00:31Z" duration-ms="115731" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeClass -->
+        <test-method signature="filtroConFerramenta1()[pri:0, instance:com.timp.test.BRB.FiltroColunas@5d066c7d]" started-at="2021-12-02T23:00:31Z" name="filtroConFerramenta1" finished-at="2021-12-02T23:04:38Z" duration-ms="247695" status="FAIL">
+          <exception class="org.openqa.selenium.NoSuchElementException">
+            <message>
+              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//div[@class="column-filter visible"]/input"}
+  (Session info: chrome=83.0.4103.106)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-C57COV6', ip: '192.168.0.108', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '15.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 83.0.4103.106, chrome: {chromedriverVersion: 83.0.4103.39 (ccbf011cb2d2b..., userDataDir: C:\Users\AGILES~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:59819}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: f1f2fc07efd406a5aba4d5d9d606b2fe
+*** Element info: {Using=xpath, value=//div[@class="column-filter visible"]/input}]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//div[@class="column-filter visible"]/input"}
+  (Session info: chrome=83.0.4103.106)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-C57COV6', ip: '192.168.0.108', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '15.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 83.0.4103.106, chrome: {chromedriverVersion: 83.0.4103.39 (ccbf011cb2d2b..., userDataDir: C:\Users\AGILES~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:59819}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: f1f2fc07efd406a5aba4d5d9d606b2fe
+*** Element info: {Using=xpath, value=//div[@class="column-filter visible"]/input}
+at jdk.internal.reflect.GeneratedConstructorAccessor20.newInstance(Unknown Source)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+at com.sun.proxy.$Proxy12.getAttribute(Unknown Source)
+at com.sap.timp.pageObjectModel.BRB.FiltroColunasPO.filtroFerramenta(FiltroColunasPO.java:107)
+at com.timp.test.BRB.FiltroColunas.filtroConFerramenta1(FiltroColunas.java:49)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
+at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
+at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+at org.testng.TestRunner.privateRun(TestRunner.java:648)
+at org.testng.TestRunner.run(TestRunner.java:505)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+at org.testng.TestNG.runSuites(TestNG.java:1049)
+at org.testng.TestNG.run(TestNG.java:1017)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
+=======
+        <test-method signature="excluir()[pri:0, instance:com.timp.test.TAA.AtribuiçõesdeRegras.RegraDeCampos.RegraDeCamposExcluir@1f53a5dc]" started-at="2021-12-02T22:52:40Z" name="excluir" finished-at="2021-12-02T22:55:21Z" duration-ms="161588" status="PASS">
+>>>>>>> branch 'Yessy' of https://github.com/salc1997/TIMP_R1.git
+          <reporter-output>
+          </reporter-output>
+<<<<<<< HEAD
+        </test-method> <!-- filtroConFerramenta1 -->
+        <test-method signature="filtroConFerramenta2()[pri:0, instance:com.timp.test.BRB.FiltroColunas@5d066c7d]" started-at="2021-12-02T23:04:38Z" name="filtroConFerramenta2" finished-at="2021-12-02T23:04:44Z" duration-ms="5440" status="FAIL">
+          <exception class="org.openqa.selenium.NoSuchElementException">
+            <message>
+              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//div[@data-shcolumn="115" and @class ="option option-filters"]/div[@class="column-filter visible"]/label/span"}
+  (Session info: chrome=83.0.4103.106)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-C57COV6', ip: '192.168.0.108', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '15.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 83.0.4103.106, chrome: {chromedriverVersion: 83.0.4103.39 (ccbf011cb2d2b..., userDataDir: C:\Users\AGILES~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:59819}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: f1f2fc07efd406a5aba4d5d9d606b2fe
+*** Element info: {Using=xpath, value=//div[@data-shcolumn="115" and @class ="option option-filters"]/div[@class="column-filter visible"]/label/span}]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//div[@data-shcolumn="115" and @class ="option option-filters"]/div[@class="column-filter visible"]/label/span"}
+  (Session info: chrome=83.0.4103.106)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-C57COV6', ip: '192.168.0.108', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '15.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 83.0.4103.106, chrome: {chromedriverVersion: 83.0.4103.39 (ccbf011cb2d2b..., userDataDir: C:\Users\AGILES~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:59819}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: f1f2fc07efd406a5aba4d5d9d606b2fe
+*** Element info: {Using=xpath, value=//div[@data-shcolumn="115" and @class ="option option-filters"]/div[@class="column-filter visible"]/label/span}
+at jdk.internal.reflect.GeneratedConstructorAccessor20.newInstance(Unknown Source)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+at com.sun.proxy.$Proxy12.click(Unknown Source)
+at com.sap.timp.pageObjectModel.BRB.FiltroColunasPO.filtroFerramenta2(FiltroColunasPO.java:167)
+at com.timp.test.BRB.FiltroColunas.filtroConFerramenta2(FiltroColunas.java:67)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
+at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
+at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+at org.testng.TestRunner.privateRun(TestRunner.java:648)
+at org.testng.TestRunner.run(TestRunner.java:505)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+at org.testng.TestNG.runSuites(TestNG.java:1049)
+at org.testng.TestNG.run(TestNG.java:1017)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- filtroConFerramenta2 -->
+        <test-method is-config="true" signature="afterClass()[pri:0, instance:com.timp.test.BRB.FiltroColunas@5d066c7d]" started-at="2021-12-02T23:04:44Z" name="afterClass" finished-at="2021-12-02T23:04:48Z" duration-ms="4318" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterClass -->
+      </class> <!-- com.timp.test.BRB.FiltroColunas -->
+    </test> <!-- FiltroColunas -->
+    <test started-at="2021-12-02T23:04:48Z" name="GruposAvancados" finished-at="2021-12-02T23:09:14Z" duration-ms="265956">
+      <class name="com.timp.test.BRB.GruposAvancados">
+        <test-method is-config="true" signature="beforeClass()[pri:0, instance:com.timp.test.BRB.GruposAvancados@66c92293]" started-at="2021-12-02T23:04:48Z" name="beforeClass" finished-at="2021-12-02T23:05:41Z" duration-ms="53094" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeClass -->
+        <test-method signature="gruposAvanzados()[pri:0, instance:com.timp.test.BRB.GruposAvancados@66c92293]" started-at="2021-12-02T23:05:41Z" name="gruposAvanzados" finished-at="2021-12-02T23:09:14Z" duration-ms="212578" status="FAIL">
+          <exception class="org.openqa.selenium.NoSuchElementException">
+            <message>
+              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"/html/body/div[3]/div/div[3]/button[1]"}
+  (Session info: chrome=83.0.4103.106)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-C57COV6', ip: '192.168.0.108', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '15.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 83.0.4103.106, chrome: {chromedriverVersion: 83.0.4103.39 (ccbf011cb2d2b..., userDataDir: C:\Users\AGILES~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:59865}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: d79804d9ed8d87f22acd7424eb202951
+*** Element info: {Using=xpath, value=/html/body/div[3]/div/div[3]/button[1]}]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"/html/body/div[3]/div/div[3]/button[1]"}
+  (Session info: chrome=83.0.4103.106)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-C57COV6', ip: '192.168.0.108', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '15.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 83.0.4103.106, chrome: {chromedriverVersion: 83.0.4103.39 (ccbf011cb2d2b..., userDataDir: C:\Users\AGILES~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:59865}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: d79804d9ed8d87f22acd7424eb202951
+*** Element info: {Using=xpath, value=/html/body/div[3]/div/div[3]/button[1]}
+at jdk.internal.reflect.GeneratedConstructorAccessor20.newInstance(Unknown Source)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+at com.sun.proxy.$Proxy12.click(Unknown Source)
+at com.sap.timp.pageObjectModel.BRB.GruposAvanzadosPO.gruposAvanzadosAplicar(GruposAvanzadosPO.java:152)
+at com.timp.test.BRB.GruposAvancados.gruposAvanzados(GruposAvancados.java:46)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
+at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
+at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+at org.testng.TestRunner.privateRun(TestRunner.java:648)
+at org.testng.TestRunner.run(TestRunner.java:505)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+at org.testng.TestNG.runSuites(TestNG.java:1049)
+at org.testng.TestNG.run(TestNG.java:1017)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- gruposAvanzados -->
+        <test-method signature="eliminarGrupos()[pri:0, instance:com.timp.test.BRB.GruposAvancados@66c92293]" started-at="2021-12-02T23:09:14Z" name="eliminarGrupos" finished-at="2021-12-02T23:09:14Z" depends-on-methods="com.timp.test.BRB.GruposAvancados.gruposAvanzados" duration-ms="0" status="SKIP">
+          <exception class="java.lang.Throwable">
+            <message>
+              <![CDATA[Method GruposAvancados.eliminarGrupos()[pri:0, instance:com.timp.test.BRB.GruposAvancados@66c92293] depends on not successfully finished methods]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Throwable: Method GruposAvancados.eliminarGrupos()[pri:0, instance:com.timp.test.BRB.GruposAvancados@66c92293] depends on not successfully finished methods
+at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:888)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+at org.testng.TestRunner.privateRun(TestRunner.java:648)
+at org.testng.TestRunner.run(TestRunner.java:505)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+at org.testng.TestNG.runSuites(TestNG.java:1049)
+at org.testng.TestNG.run(TestNG.java:1017)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Throwable -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- eliminarGrupos -->
+        <test-method is-config="true" signature="afterClass()[pri:0, instance:com.timp.test.BRB.GruposAvancados@66c92293]" started-at="2021-12-02T23:09:14Z" name="afterClass" finished-at="2021-12-02T23:09:14Z" duration-ms="278" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterClass -->
+      </class> <!-- com.timp.test.BRB.GruposAvancados -->
+    </test> <!-- GruposAvancados -->
+    <test started-at="2021-12-02T23:09:14Z" name="CrescenteEDecrescente" finished-at="2021-12-02T23:16:05Z" duration-ms="410628">
+      <class name="com.timp.test.BRB.CrescenteEDecrescente">
+        <test-method is-config="true" signature="beforeClass()[pri:0, instance:com.timp.test.BRB.CrescenteEDecrescente@6ce86ce1]" started-at="2021-12-02T23:09:14Z" name="beforeClass" finished-at="2021-12-02T23:11:21Z" duration-ms="126869" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeClass -->
+        <test-method signature="crescenteEDecrescente()[pri:0, instance:com.timp.test.BRB.CrescenteEDecrescente@6ce86ce1]" started-at="2021-12-02T23:11:21Z" name="crescenteEDecrescente" finished-at="2021-12-02T23:16:05Z" duration-ms="283755" status="FAIL">
+          <exception class="org.openqa.selenium.NoSuchElementException">
+            <message>
+              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//div[@class="column-filter visible"][1]/input"}
+  (Session info: chrome=83.0.4103.106)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-C57COV6', ip: '192.168.0.108', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '15.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 83.0.4103.106, chrome: {chromedriverVersion: 83.0.4103.39 (ccbf011cb2d2b..., userDataDir: C:\Users\AGILES~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:60146}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: d2328c79edae79d94a47d9d1b0f6dc26
+*** Element info: {Using=xpath, value=//div[@class="column-filter visible"][1]/input}]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//div[@class="column-filter visible"][1]/input"}
+  (Session info: chrome=83.0.4103.106)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-C57COV6', ip: '192.168.0.108', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '15.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 83.0.4103.106, chrome: {chromedriverVersion: 83.0.4103.39 (ccbf011cb2d2b..., userDataDir: C:\Users\AGILES~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:60146}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: d2328c79edae79d94a47d9d1b0f6dc26
+*** Element info: {Using=xpath, value=//div[@class="column-filter visible"][1]/input}
+at jdk.internal.reflect.GeneratedConstructorAccessor20.newInstance(Unknown Source)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+at com.sap.timp.pageObjectModel.BRB.CrescenteEDecrescentePO.crescente(CrescenteEDecrescentePO.java:85)
+at com.timp.test.BRB.CrescenteEDecrescente.crescenteEDecrescente(CrescenteEDecrescente.java:46)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
+at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
+at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+at org.testng.TestRunner.privateRun(TestRunner.java:648)
+at org.testng.TestRunner.run(TestRunner.java:505)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+at org.testng.TestNG.runSuites(TestNG.java:1049)
+at org.testng.TestNG.run(TestNG.java:1017)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- crescenteEDecrescente -->
+        <test-method is-config="true" signature="afterClass()[pri:0, instance:com.timp.test.BRB.CrescenteEDecrescente@6ce86ce1]" started-at="2021-12-02T23:16:05Z" name="afterClass" finished-at="2021-12-02T23:16:05Z" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterClass -->
+      </class> <!-- com.timp.test.BRB.CrescenteEDecrescente -->
+    </test> <!-- CrescenteEDecrescente -->
+    <test started-at="2021-12-02T23:16:05Z" name="ComentarioListaSuspensa" finished-at="2021-12-02T23:24:35Z" duration-ms="510407">
+      <class name="com.timp.test.BRB.ComentarioListaSuspensa">
+        <test-method is-config="true" signature="beforeClass()[pri:0, instance:com.timp.test.BRB.ComentarioListaSuspensa@598bd2ba]" started-at="2021-12-02T23:16:05Z" name="beforeClass" finished-at="2021-12-02T23:17:34Z" duration-ms="88670" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeClass -->
+        <test-method signature="listaSuspensa()[pri:0, instance:com.timp.test.BRB.ComentarioListaSuspensa@598bd2ba]" started-at="2021-12-02T23:17:34Z" name="listaSuspensa" finished-at="2021-12-02T23:24:35Z" duration-ms="421732" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- listaSuspensa -->
+        <test-method is-config="true" signature="afterClass()[pri:0, instance:com.timp.test.BRB.ComentarioListaSuspensa@598bd2ba]" started-at="2021-12-02T23:24:35Z" name="afterClass" finished-at="2021-12-02T23:24:35Z" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterClass -->
+      </class> <!-- com.timp.test.BRB.ComentarioListaSuspensa -->
+    </test> <!-- ComentarioListaSuspensa -->
+    <test started-at="2021-12-02T23:24:35Z" name="ComentarioLibre" finished-at="2021-12-02T23:29:41Z" duration-ms="305708">
+      <class name="com.timp.test.BRB.ComentarioLibre">
+        <test-method is-config="true" signature="beforeClass()[pri:0, instance:com.timp.test.BRB.ComentarioLibre@e57b96d]" started-at="2021-12-02T23:24:35Z" name="beforeClass" finished-at="2021-12-02T23:29:41Z" duration-ms="305680" status="FAIL">
+          <exception class="org.openqa.selenium.TimeoutException">
+            <message>
+              <![CDATA[timeout: Timed out receiving message from renderer: 299.776
+  (Session info: chrome=83.0.4103.106)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-C57COV6', ip: '192.168.0.108', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '15.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 83.0.4103.106, chrome: {chromedriverVersion: 83.0.4103.39 (ccbf011cb2d2b..., userDataDir: C:\Users\AGILES~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:61147}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: 19cbbdbc7a763aa650569db89a620b8a]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.TimeoutException: timeout: Timed out receiving message from renderer: 299.776
+  (Session info: chrome=83.0.4103.106)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-C57COV6', ip: '192.168.0.108', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '15.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 83.0.4103.106, chrome: {chromedriverVersion: 83.0.4103.39 (ccbf011cb2d2b..., userDataDir: C:\Users\AGILES~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:61147}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: 19cbbdbc7a763aa650569db89a620b8a
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:64)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:277)
+at com.sap.timp.base.TestBaseSteven.initialization(TestBaseSteven.java:108)
+at com.timp.test.BRB.ComentarioLibre.beforeClass(ComentarioLibre.java:25)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:59)
+at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:458)
+at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:222)
+at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:142)
+at org.testng.internal.TestMethodWorker.invokeBeforeClassMethods(TestMethodWorker.java:168)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:105)
+at org.testng.TestRunner.privateRun(TestRunner.java:648)
+at org.testng.TestRunner.run(TestRunner.java:505)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+at org.testng.TestNG.runSuites(TestNG.java:1049)
+at org.testng.TestNG.run(TestNG.java:1017)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.TimeoutException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeClass -->
+        <test-method signature="comentarioLibre()[pri:0, instance:com.timp.test.BRB.ComentarioLibre@e57b96d]" started-at="2021-12-02T23:29:41Z" name="comentarioLibre" finished-at="2021-12-02T23:29:41Z" duration-ms="0" status="SKIP">
+          <exception class="org.openqa.selenium.TimeoutException">
+            <message>
+              <![CDATA[timeout: Timed out receiving message from renderer: 299.776
+  (Session info: chrome=83.0.4103.106)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-C57COV6', ip: '192.168.0.108', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '15.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 83.0.4103.106, chrome: {chromedriverVersion: 83.0.4103.39 (ccbf011cb2d2b..., userDataDir: C:\Users\AGILES~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:61147}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: 19cbbdbc7a763aa650569db89a620b8a]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.TimeoutException: timeout: Timed out receiving message from renderer: 299.776
+  (Session info: chrome=83.0.4103.106)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-C57COV6', ip: '192.168.0.108', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '15.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 83.0.4103.106, chrome: {chromedriverVersion: 83.0.4103.39 (ccbf011cb2d2b..., userDataDir: C:\Users\AGILES~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:61147}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: 19cbbdbc7a763aa650569db89a620b8a
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:64)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:277)
+at com.sap.timp.base.TestBaseSteven.initialization(TestBaseSteven.java:108)
+at com.timp.test.BRB.ComentarioLibre.beforeClass(ComentarioLibre.java:25)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:59)
+at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:458)
+at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:222)
+at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:142)
+at org.testng.internal.TestMethodWorker.invokeBeforeClassMethods(TestMethodWorker.java:168)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:105)
+at org.testng.TestRunner.privateRun(TestRunner.java:648)
+at org.testng.TestRunner.run(TestRunner.java:505)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+at org.testng.TestNG.runSuites(TestNG.java:1049)
+at org.testng.TestNG.run(TestNG.java:1017)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.TimeoutException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- comentarioLibre -->
+        <test-method is-config="true" signature="afterClass()[pri:0, instance:com.timp.test.BRB.ComentarioLibre@e57b96d]" started-at="2021-12-02T23:29:41Z" name="afterClass" finished-at="2021-12-02T23:29:41Z" duration-ms="0" status="SKIP">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterClass -->
+      </class> <!-- com.timp.test.BRB.ComentarioLibre -->
+    </test> <!-- ComentarioLibre -->
+    <test started-at="2021-12-02T23:29:41Z" name="Visualizar" finished-at="2021-12-02T23:35:27Z" duration-ms="346019">
+      <class name="com.timp.test.BRB.Visualizar">
+        <test-method is-config="true" signature="beforeClass()[pri:0, instance:com.timp.test.BRB.Visualizar@545b995e]" started-at="2021-12-02T23:29:41Z" name="beforeClass" finished-at="2021-12-02T23:31:55Z" duration-ms="134126" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeClass -->
+        <test-method signature="visualizar()[pri:0, instance:com.timp.test.BRB.Visualizar@545b995e]" started-at="2021-12-02T23:31:55Z" name="visualizar" finished-at="2021-12-02T23:35:27Z" duration-ms="211889" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- visualizar -->
+        <test-method is-config="true" signature="afterClass()[pri:0, instance:com.timp.test.BRB.Visualizar@545b995e]" started-at="2021-12-02T23:35:27Z" name="afterClass" finished-at="2021-12-02T23:35:27Z" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterClass -->
+      </class> <!-- com.timp.test.BRB.Visualizar -->
+    </test> <!-- Visualizar -->
+    <test started-at="2021-12-02T23:35:27Z" name="ExcluirRelatorio" finished-at="2021-12-02T23:41:17Z" duration-ms="350271">
+      <class name="com.timp.test.BRB.ExcluirRelatorio">
+        <test-method is-config="true" signature="beforeClass()[pri:0, instance:com.timp.test.BRB.ExcluirRelatorio@58be6e8]" started-at="2021-12-02T23:35:27Z" name="beforeClass" finished-at="2021-12-02T23:36:56Z" duration-ms="88691" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeClass -->
+        <test-method signature="eliminar()[pri:0, instance:com.timp.test.BRB.ExcluirRelatorio@58be6e8]" started-at="2021-12-02T23:36:56Z" name="eliminar" finished-at="2021-12-02T23:40:17Z" duration-ms="201304" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- eliminar -->
+        <test-method signature="eliminarLixeira()[pri:0, instance:com.timp.test.BRB.ExcluirRelatorio@58be6e8]" started-at="2021-12-02T23:40:17Z" name="eliminarLixeira" finished-at="2021-12-02T23:41:13Z" depends-on-methods="com.timp.test.BRB.ExcluirRelatorio.eliminar" duration-ms="55947" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- eliminarLixeira -->
+        <test-method is-config="true" signature="afterClass()[pri:0, instance:com.timp.test.BRB.ExcluirRelatorio@58be6e8]" started-at="2021-12-02T23:41:13Z" name="afterClass" finished-at="2021-12-02T23:41:17Z" duration-ms="4325" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterClass -->
+      </class> <!-- com.timp.test.BRB.ExcluirRelatorio -->
+    </test> <!-- ExcluirRelatorio -->
+    <test started-at="2021-12-02T23:41:17Z" name="Output Automatico" finished-at="2021-12-02T23:59:30Z" duration-ms="1092195">
+      <class name="com.timp.test.BRB.OutputAutomático">
+        <test-method is-config="true" signature="beforeClass()[pri:0, instance:com.timp.test.BRB.OutputAutomático@42b02722]" started-at="2021-12-02T23:41:17Z" name="beforeClass" finished-at="2021-12-02T23:43:30Z" duration-ms="132504" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeClass -->
+        <test-method signature="outputAutomatico()[pri:0, instance:com.timp.test.BRB.OutputAutomático@42b02722]" started-at="2021-12-02T23:43:30Z" name="outputAutomatico" finished-at="2021-12-02T23:59:29Z" duration-ms="959420" status="FAIL">
+          <exception class="org.openqa.selenium.WebDriverException">
+            <message>
+              <![CDATA[chrome not reachable
+  (Session info: chrome=83.0.4103.106)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-C57COV6', ip: '192.168.0.108', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '15.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 83.0.4103.106, chrome: {chromedriverVersion: 83.0.4103.39 (ccbf011cb2d2b..., userDataDir: C:\Users\AGILES~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:61510}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: d3bde572d8f0854cb3b9c6f7598b77de
+*** Element info: {Using=xpath, value=//button[text()="Não"]}]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.WebDriverException: chrome not reachable
+  (Session info: chrome=83.0.4103.106)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-C57COV6', ip: '192.168.0.108', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '15.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 83.0.4103.106, chrome: {chromedriverVersion: 83.0.4103.39 (ccbf011cb2d2b..., userDataDir: C:\Users\AGILES~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:61510}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: d3bde572d8f0854cb3b9c6f7598b77de
+*** Element info: {Using=xpath, value=//button[text()="Não"]}
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:64)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+at com.sun.proxy.$Proxy12.isDisplayed(Unknown Source)
+at org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:314)
+at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:43)
+at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:300)
+at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:297)
+at org.openqa.selenium.support.ui.ExpectedConditions$23.apply(ExpectedConditions.java:670)
+at org.openqa.selenium.support.ui.ExpectedConditions$23.apply(ExpectedConditions.java:666)
+at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
+at com.sap.timp.base.TestBaseSteven.waitExpectElement(TestBaseSteven.java:282)
+at com.sap.timp.pageObjectModel.BRB.OutputAutomáticoPO.outputAutomatico(OutputAutomáticoPO.java:221)
+at com.timp.test.BRB.OutputAutomático.outputAutomatico(OutputAutomático.java:41)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
+at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
+at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+at org.testng.TestRunner.privateRun(TestRunner.java:648)
+at org.testng.TestRunner.run(TestRunner.java:505)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+at org.testng.TestNG.runSuites(TestNG.java:1049)
+at org.testng.TestNG.run(TestNG.java:1017)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.WebDriverException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- outputAutomatico -->
+        <test-method is-config="true" signature="afterClass()[pri:0, instance:com.timp.test.BRB.OutputAutomático@42b02722]" started-at="2021-12-02T23:59:29Z" name="afterClass" finished-at="2021-12-02T23:59:30Z" duration-ms="259" status="FAIL">
+          <exception class="org.openqa.selenium.WebDriverException">
+            <message>
+              <![CDATA[chrome not reachable
+  (Session info: chrome=83.0.4103.106)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-C57COV6', ip: '192.168.0.108', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '15.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 83.0.4103.106, chrome: {chromedriverVersion: 83.0.4103.39 (ccbf011cb2d2b..., userDataDir: C:\Users\AGILES~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:61510}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: d3bde572d8f0854cb3b9c6f7598b77de]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.WebDriverException: chrome not reachable
+  (Session info: chrome=83.0.4103.106)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-C57COV6', ip: '192.168.0.108', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '15.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 83.0.4103.106, chrome: {chromedriverVersion: 83.0.4103.39 (ccbf011cb2d2b..., userDataDir: C:\Users\AGILES~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:61510}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: d3bde572d8f0854cb3b9c6f7598b77de
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:64)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:609)
+at org.openqa.selenium.remote.RemoteWebDriver.close(RemoteWebDriver.java:442)
+at com.timp.test.BRB.OutputAutomático.afterClass(OutputAutomático.java:33)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:59)
+at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:458)
+at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:222)
+at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:142)
+at org.testng.internal.TestMethodWorker.invokeAfterClassMethods(TestMethodWorker.java:214)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+at org.testng.TestRunner.privateRun(TestRunner.java:648)
+at org.testng.TestRunner.run(TestRunner.java:505)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+at org.testng.TestNG.runSuites(TestNG.java:1049)
+at org.testng.TestNG.run(TestNG.java:1017)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.WebDriverException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterClass -->
+      </class> <!-- com.timp.test.BRB.OutputAutomático -->
+    </test> <!-- Output Automatico -->
+    <test started-at="2021-12-02T23:59:30Z" name="Output Referencia" finished-at="2021-12-03T00:03:12Z" duration-ms="222229">
+      <class name="com.timp.test.BRB.OutputdeReferência">
+        <test-method is-config="true" signature="beforeClass()[pri:0, instance:com.timp.test.BRB.OutputdeReferência@2b76ff4e]" started-at="2021-12-02T23:59:30Z" name="beforeClass" finished-at="2021-12-03T00:00:32Z" duration-ms="62524" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeClass -->
+        <test-method signature="outputReferencia()[pri:0, instance:com.timp.test.BRB.OutputdeReferência@2b76ff4e]" started-at="2021-12-03T00:00:32Z" name="outputReferencia" finished-at="2021-12-03T00:03:08Z" duration-ms="155523" status="FAIL">
+          <exception class="org.openqa.selenium.NoSuchElementException">
+            <message>
+              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//div[@id="reference-field"]/div/div[2]"}
+  (Session info: chrome=83.0.4103.106)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-C57COV6', ip: '192.168.0.108', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '15.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 83.0.4103.106, chrome: {chromedriverVersion: 83.0.4103.39 (ccbf011cb2d2b..., userDataDir: C:\Users\AGILES~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:62213}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: 788588fe8328b562b4435b77dbb5c215
+*** Element info: {Using=xpath, value=//div[@id="reference-field"]/div/div[2]}]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//div[@id="reference-field"]/div/div[2]"}
+  (Session info: chrome=83.0.4103.106)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-C57COV6', ip: '192.168.0.108', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '15.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 83.0.4103.106, chrome: {chromedriverVersion: 83.0.4103.39 (ccbf011cb2d2b..., userDataDir: C:\Users\AGILES~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:62213}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: 788588fe8328b562b4435b77dbb5c215
+*** Element info: {Using=xpath, value=//div[@id="reference-field"]/div/div[2]}
+at jdk.internal.reflect.GeneratedConstructorAccessor20.newInstance(Unknown Source)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+at com.sap.timp.pageObjectModel.BRB.OutputdeReferênciaPO.outputReferencia(OutputdeReferênciaPO.java:191)
+at com.timp.test.BRB.OutputdeReferência.outputReferencia(OutputdeReferência.java:44)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
+at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
+at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+at org.testng.TestRunner.privateRun(TestRunner.java:648)
+at org.testng.TestRunner.run(TestRunner.java:505)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+at org.testng.TestNG.runSuites(TestNG.java:1049)
+at org.testng.TestNG.run(TestNG.java:1017)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- outputReferencia -->
+        <test-method is-config="true" signature="afterClass()[pri:0, instance:com.timp.test.BRB.OutputdeReferência@2b76ff4e]" started-at="2021-12-03T00:03:08Z" name="afterClass" finished-at="2021-12-03T00:03:12Z" duration-ms="4177" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterClass -->
+      </class> <!-- com.timp.test.BRB.OutputdeReferência -->
+    </test> <!-- Output Referencia -->
+    <test started-at="2021-12-03T00:03:12Z" name="Atribucao De Regra (Regra)" finished-at="2021-12-03T00:30:51Z" duration-ms="1659235">
+      <class name="com.timp.test.BRB.AtribuiçãodeRegra">
+        <test-method is-config="true" signature="beforeClass()[pri:0, instance:com.timp.test.BRB.AtribuiçãodeRegra@7749bf93]" started-at="2021-12-03T00:03:12Z" name="beforeClass" finished-at="2021-12-03T00:04:41Z" duration-ms="88710" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeClass -->
+        <test-method signature="editar()[pri:0, instance:com.timp.test.BRB.AtribuiçãodeRegra@7749bf93]" started-at="2021-12-03T00:04:41Z" name="editar" finished-at="2021-12-03T00:30:51Z" duration-ms="1570235" status="FAIL">
+          <exception class="org.openqa.selenium.WebDriverException">
+            <message>
+              <![CDATA[chrome not reachable
+  (Session info: chrome=83.0.4103.106)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-C57COV6', ip: '192.168.0.108', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '15.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 83.0.4103.106, chrome: {chromedriverVersion: 83.0.4103.39 (ccbf011cb2d2b..., userDataDir: C:\Users\AGILES~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:62653}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: 47c7a917f1333a88bc6a2e49847b99c5
+*** Element info: {Using=xpath, value=//button[text()="Não"]}]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.WebDriverException: chrome not reachable
+  (Session info: chrome=83.0.4103.106)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-C57COV6', ip: '192.168.0.108', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '15.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 83.0.4103.106, chrome: {chromedriverVersion: 83.0.4103.39 (ccbf011cb2d2b..., userDataDir: C:\Users\AGILES~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:62653}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: 47c7a917f1333a88bc6a2e49847b99c5
+*** Element info: {Using=xpath, value=//button[text()="Não"]}
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:64)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+at com.sun.proxy.$Proxy12.isDisplayed(Unknown Source)
+at org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:314)
+at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:43)
+at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:300)
+at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:297)
+at org.openqa.selenium.support.ui.ExpectedConditions$23.apply(ExpectedConditions.java:670)
+at org.openqa.selenium.support.ui.ExpectedConditions$23.apply(ExpectedConditions.java:666)
+at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
+at com.sap.timp.base.TestBaseSteven.waitExpectElement(TestBaseSteven.java:282)
+at com.sap.timp.pageObjectModel.BRB.AtribuiçãodeRegraPO.editar(AtribuiçãodeRegraPO.java:208)
+at com.timp.test.BRB.AtribuiçãodeRegra.editar(AtribuiçãodeRegra.java:42)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
+at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
+at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+at org.testng.TestRunner.privateRun(TestRunner.java:648)
+at org.testng.TestRunner.run(TestRunner.java:505)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+at org.testng.TestNG.runSuites(TestNG.java:1049)
+at org.testng.TestNG.run(TestNG.java:1017)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.WebDriverException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- editar -->
+        <test-method is-config="true" signature="afterClass()[pri:0, instance:com.timp.test.BRB.AtribuiçãodeRegra@7749bf93]" started-at="2021-12-03T00:30:51Z" name="afterClass" finished-at="2021-12-03T00:30:51Z" duration-ms="278" status="FAIL">
+          <exception class="org.openqa.selenium.WebDriverException">
+            <message>
+              <![CDATA[chrome not reachable
+  (Session info: chrome=83.0.4103.106)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-C57COV6', ip: '192.168.0.108', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '15.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 83.0.4103.106, chrome: {chromedriverVersion: 83.0.4103.39 (ccbf011cb2d2b..., userDataDir: C:\Users\AGILES~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:62653}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: 47c7a917f1333a88bc6a2e49847b99c5]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.WebDriverException: chrome not reachable
+  (Session info: chrome=83.0.4103.106)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-C57COV6', ip: '192.168.0.108', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '15.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 83.0.4103.106, chrome: {chromedriverVersion: 83.0.4103.39 (ccbf011cb2d2b..., userDataDir: C:\Users\AGILES~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:62653}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: 47c7a917f1333a88bc6a2e49847b99c5
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:64)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:609)
+at org.openqa.selenium.remote.RemoteWebDriver.close(RemoteWebDriver.java:442)
+at com.timp.test.BRB.AtribuiçãodeRegra.afterClass(AtribuiçãodeRegra.java:33)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:59)
+at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:458)
+at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:222)
+at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:142)
+at org.testng.internal.TestMethodWorker.invokeAfterClassMethods(TestMethodWorker.java:214)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+at org.testng.TestRunner.privateRun(TestRunner.java:648)
+at org.testng.TestRunner.run(TestRunner.java:505)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+at org.testng.TestNG.runSuites(TestNG.java:1049)
+at org.testng.TestNG.run(TestNG.java:1017)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.WebDriverException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterClass -->
+      </class> <!-- com.timp.test.BRB.AtribuiçãodeRegra -->
+    </test> <!-- Atribucao De Regra (Regra) -->
+=======
+        </test-method> <!-- excluir -->
+        <test-method is-config="true" signature="afterClass()[pri:0, instance:com.timp.test.TAA.AtribuiçõesdeRegras.RegraDeCampos.RegraDeCamposExcluir@1f53a5dc]" started-at="2021-12-02T22:55:21Z" name="afterClass" finished-at="2021-12-02T22:55:26Z" duration-ms="4431" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterClass -->
+      </class> <!-- com.timp.test.TAA.AtribuiçõesdeRegras.RegraDeCampos.RegraDeCamposExcluir -->
+    </test> <!-- Regra De Campos -->
+>>>>>>> branch 'Yessy' of https://github.com/salc1997/TIMP_R1.git
+  </suite> <!-- Suite -->
+</testng-results>
