@@ -1,4 +1,4 @@
-package com.rs.test.pageObjectModel.countryCodes;
+package com.rs.test.pageObjectModel.configuration.countryCodes;
 
 import static org.testng.Assert.assertFalse;
 import static org.testng.Assert.assertTrue;
@@ -151,6 +151,7 @@ public class CountryCodesPO extends TestBaseSteven {
 
 		int rowsA = rows("//tr[contains(@id,\"CodesTableRow\")]");
 
+		System.out.println("--------------------Creation Verification--------------------");
 		boolean created = false;
 
 		if (rowsA > rowsB) {
@@ -193,6 +194,8 @@ public class CountryCodesPO extends TestBaseSteven {
 
 		int rows = rows("//tr[contains(@id,\"CodesTableRow\")]");
 		boolean creationRecord = false;
+		
+		System.out.println("-----------------------------Creation Record Verification------------------------------");
 
 		String codeA = getText("//tr[contains(@id,\"CodesTableRow\")][" + rows + "]/td[1]/div");
 		String countryA = getText("//tr[contains(@id,\"CodesTableRow\")][" + rows + "]/td[2]/div");
@@ -246,7 +249,9 @@ public class CountryCodesPO extends TestBaseSteven {
 
 		String codeA = getText("//tr[contains(@id,\"CodesTableRow\")][" + rows + "]/td[1]/div");
 		String CountryA = getText("//tr[contains(@id,\"CodesTableRow\")][" + rows + "]/td[2]/div");
-
+		
+		System.out.println("-----------------------------Edition Verification------------------------------");
+		
 		System.out.println("The code is: " + codeA);
 		System.out.println("The country is: " + CountryA);
 
@@ -287,7 +292,10 @@ public class CountryCodesPO extends TestBaseSteven {
 
 		String codeA = getText("//tr[contains(@id,\"CodesTableRow\")][" + rows + "]/td[1]/div");
 		String CountryA = getText("//tr[contains(@id,\"CodesTableRow\")][" + rows + "]/td[2]/div");
-
+		
+		
+		System.out.println("---------------------------Deletion Verification--------------------------");
+		
 		System.out.println("The code is: " + codeA);
 		System.out.println("The country is: " + CountryA);
 
@@ -340,6 +348,8 @@ public class CountryCodesPO extends TestBaseSteven {
 		int rowsModalA = rows("//tr[contains(@id,\"undefinedTableRow\")]");
 
 		boolean created = false;
+		
+		System.out.println("------------------------------Prefix Creation Verification---------------------------");
 
 		if (rowsModalA > rowsModalB) {
 			created = true;
@@ -418,6 +428,8 @@ public class CountryCodesPO extends TestBaseSteven {
 		
 		String editionText = getText("//tr[contains(@id,\"undefinedTableRow\")]["+rowsModal+"]/td[1]/div");
 		
+		System.out.println("--------------------------Prefix Edition Verification-----------------------");
+		
 		System.out.println("The record after edition is: "+editionText);
 		
 		boolean edited = false;
@@ -447,6 +459,8 @@ public class CountryCodesPO extends TestBaseSteven {
 		click(btnModal);
 
 		waitExpectedElement(txtPrefix);
+		
+		
 
 		int rowsModal = rows("//tr[contains(@id,\"undefinedTableRow\")]");
 		
@@ -479,6 +493,7 @@ public class CountryCodesPO extends TestBaseSteven {
 		
 		boolean deleted = greaterThanInt(rowsModal, rowsModalA);
 	
+		System.out.println("--------------------------Prefix Deletion Verification-----------------------");
 		
 		System.out.println("The Prefix was deleted successfully: "+deleted);
 		

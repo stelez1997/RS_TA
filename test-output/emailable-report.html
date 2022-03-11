@@ -9,16 +9,16 @@
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
 <tr><th colspan="8">Default suite</th></tr>
-<tr><td><a href="#t0">Default test</a></td><td class="num">5</td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">125,613</td><td></td><td></td></tr>
+<tr><td><a href="#t0">Default test</a></td><td class="num">7</td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">145,968</td><td></td><td></td></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Default suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Default test &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">com.rs.test.countryCodes.CountryCodes</td><td><a href="#m0">editModalPrefix</a></td><td rowspan="1">1646258799751</td><td rowspan="1">22989</td></tr><tr><th colspan="4">Default test &#8212; passed</th></tr><tr class="passedeven"><td rowspan="5">com.rs.test.countryCodes.CountryCodes</td><td><a href="#m1">create</a></td><td rowspan="1">1646258744468</td><td rowspan="1">17994</td></tr><tr class="passedeven"><td><a href="#m2">createModalPrefix</a></td><td rowspan="1">1646258780110</td><td rowspan="1">19640</td></tr><tr class="passedeven"><td><a href="#m3">delete</a></td><td rowspan="1">1646258842196</td><td rowspan="1">13129</td></tr><tr class="passedeven"><td><a href="#m4">deleteModalPrefix</a></td><td rowspan="1">1646258822743</td><td rowspan="1">19450</td></tr><tr class="passedeven"><td><a href="#m5">edit</a></td><td rowspan="1">1646258762467</td><td rowspan="1">17641</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Default suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Default test &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">com.rs.test.configuration.messageAggregators.MessageAggregators</td><td><a href="#m0">editMessageAggregator</a></td><td rowspan="1">1646964418902</td><td rowspan="1">22687</td></tr><tr><th colspan="4">Default test &#8212; passed</th></tr><tr class="passedeven"><td rowspan="7">com.rs.test.configuration.messageAggregators.MessageAggregators</td><td><a href="#m1">createMessageAggregator</a></td><td rowspan="1">1646964395854</td><td rowspan="1">23043</td></tr><tr class="passedeven"><td><a href="#m2">createPeerBlock</a></td><td rowspan="1">1646964487231</td><td rowspan="1">19531</td></tr><tr class="passedeven"><td><a href="#m3">createRoutePoints</a></td><td rowspan="1">1646964441592</td><td rowspan="1">23154</td></tr><tr class="passedeven"><td><a href="#m4">deleteMessageAggregator</a></td><td rowspan="1">1646964518943</td><td rowspan="1">10727</td></tr><tr class="passedeven"><td><a href="#m5">deleteRoutePoints</a></td><td rowspan="1">1646964478064</td><td rowspan="1">9165</td></tr><tr class="passedeven"><td><a href="#m6">editPeerBlock</a></td><td rowspan="1">1646964506764</td><td rowspan="1">12177</td></tr><tr class="passedeven"><td><a href="#m7">editRoutePoints</a></td><td rowspan="1">1646964464748</td><td rowspan="1">13315</td></tr></tbody>
 </table>
-<h2>Default test</h2><h3 id="m0">com.rs.test.countryCodes.CountryCodes#editModalPrefix</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: The record wasn&apos;t edited sucessfully expected [true] but found [false]
+<h2>Default test</h2><h3 id="m0">com.rs.test.configuration.messageAggregators.MessageAggregators#editMessageAggregator</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: The record wasn&apos;t edited sucessfully expected [true] but found [false]
 	at org.testng.Assert.fail(Assert.java:99)
 	at org.testng.Assert.failNotEquals(Assert.java:1037)
 	at org.testng.Assert.assertTrue(Assert.java:45)
-	at com.rs.test.pageObjectModel.countryCodes.CountryCodesPO.editPrefix(CountryCodesPO.java:431)
-	at com.rs.test.countryCodes.CountryCodes.editModalPrefix(CountryCodes.java:57)
+	at com.rs.test.pageObjectModel.configuration.messageAggregators.MessageAggregatorsPO.editMessageAggregator(MessageAggregatorsPO.java:375)
+	at com.rs.test.configuration.messageAggregators.MessageAggregators.editMessageAggregator(MessageAggregators.java:40)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -48,10 +48,12 @@
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 </div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m1">com.rs.test.countryCodes.CountryCodes#create</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m2">com.rs.test.countryCodes.CountryCodes#createModalPrefix</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m3">com.rs.test.countryCodes.CountryCodes#delete</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m4">com.rs.test.countryCodes.CountryCodes#deleteModalPrefix</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m5">com.rs.test.countryCodes.CountryCodes#edit</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m1">com.rs.test.configuration.messageAggregators.MessageAggregators#createMessageAggregator</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m2">com.rs.test.configuration.messageAggregators.MessageAggregators#createPeerBlock</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m3">com.rs.test.configuration.messageAggregators.MessageAggregators#createRoutePoints</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m4">com.rs.test.configuration.messageAggregators.MessageAggregators#deleteMessageAggregator</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m5">com.rs.test.configuration.messageAggregators.MessageAggregators#deleteRoutePoints</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m6">com.rs.test.configuration.messageAggregators.MessageAggregators#editPeerBlock</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m7">com.rs.test.configuration.messageAggregators.MessageAggregators#editRoutePoints</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>

@@ -221,8 +221,6 @@ public class LoginVerificationPO extends TestBaseSteven{
 		
 		int btnLogMenuVerification = rows("//button[@class=\"logMenuLinkButton\"]");
 		
-		System.out.println("Rows: "+btnLogMenuVerification);
-		
 		boolean displayed = false;
 		
 		if (btnLogMenuVerification ==1) {

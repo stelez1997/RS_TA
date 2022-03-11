@@ -15,6 +15,7 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import java.util.prefs.Preferences;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -130,6 +131,21 @@ public class TestBaseSteven {
 		
 	}
 	
+	public void sendKeys(String xpath, Keys keys) {
+		
+		driver.findElement(By.xpath(xpath)).sendKeys(keys);
+		sleep(1000);
+		
+	}
+	
+	public void sendKeys(WebElement element, Keys keys) {
+		
+		element.sendKeys(keys);
+		sleep(1000);
+		
+	}
+	
+	
 	
 	public void clear(String xpath) {
 		
@@ -139,6 +155,7 @@ public class TestBaseSteven {
 	
 	
 	public void refresh() {
+				
 		driver.navigate().refresh();
 	}
 	

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite" preserve-order="true">
+	
+	
+	<test name="Login">
+		<classes>
+			<!-- Acessar BRB -->
+			<class name="com.rs.test.login.Login"></class>
+		</classes>
+	</test>
+	<test name="Country Codes">
+		<classes>
+			<!-- Acessar BRB -->
+			<class name="com.rs.test.configuration.messageGateway.MessageGateway"></class>
+		</classes>
+	</test>
+	<test name="Message Gateway">
+		<classes>
+			<!-- Paginação -->
+			<class name="com.rs.test.configuration.countryCodes.CountryCodes"></class>
+		</classes>
+	</test>
+	<test name="Action Templates">
+		<classes>
+			<!-- Acessar BRB -->
+			<class name="com.rs.test.configuration.actionTemplates.ActionTemplates"></class>
+		</classes>
+	</test>
+	
+	
+
+</suite> <!-- Suite -->

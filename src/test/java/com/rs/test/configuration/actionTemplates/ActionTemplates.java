@@ -1,46 +1,47 @@
-package com.rs.test.countryCodes;
+package com.rs.test.configuration.actionTemplates;
 
 import org.testng.annotations.Test;
 
 import com.rs.test.base.TestBaseSteven;
-import com.rs.test.pageObjectModel.countryCodes.CountryCodesPO;
+import com.rs.test.pageObjectModel.configuration.actionTemplates.ActionTemplatesPO;
+import com.rs.test.pageObjectModel.configuration.countryCodes.CountryCodesPO;
 import com.rs.test.pageObjectModel.login.LoginVerificationPO;
 
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.AfterTest;
 
-public class CountryCodes extends TestBaseSteven{
+public class ActionTemplates extends TestBaseSteven{
 
 	LoginVerificationPO loginVerificationPO;
-	CountryCodesPO countryCodesPO;
+	ActionTemplatesPO actionTemplatesPO;
 
   @BeforeTest
   public void beforeTest() {
 	   
 	  driver = initialization();
 	  loginVerificationPO = new LoginVerificationPO();
-	  countryCodesPO = new CountryCodesPO();
+	  actionTemplatesPO = new ActionTemplatesPO();
 	  loginVerificationPO.login();
 	  
   }
   
   @Test()
-  public void create() {
+  public void createActionTemplate() {
 	 
-	  countryCodesPO.createCoundtryCode();
+	  actionTemplatesPO.createActionTemplate();
 	 
-  }
-  
-  
-  @Test(dependsOnMethods = "create", priority = 0)
-  public void edit() {
-	  
-	  countryCodesPO.edit();
-	  
   }
   
  
-  @Test(dependsOnMethods = "create",priority = 1)
+  @Test(dependsOnMethods = "createActionTemplate", priority = 0)
+  public void editContryCode() {
+	  
+	  actionTemplatesPO.editActionTemplate();
+	  
+  }
+  
+ /*
+  @Test(dependsOnMethods = "createCountryCode",priority = 1)
 
   public void createModalPrefix() {
 	 
@@ -65,11 +66,12 @@ public class CountryCodes extends TestBaseSteven{
 	 
 	  countryCodesPO.deletePrefix();	 
   }
+  */
   
-  @Test(dependsOnMethods = "create", priority = 4)
-  public void delete() {
+  @Test(dependsOnMethods = "createActionTemplate", priority = 4)
+  public void deleteCountryCode() {
 	  
-	  countryCodesPO.delete();
+	  actionTemplatesPO.deleteActionTemplate();
 	  
   }
   

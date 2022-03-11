@@ -1,29 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="6" passed="5" failed="1" skipped="0">
+<testng-results ignored="0" total="8" passed="7" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-03-02T16:05:30 CST" name="Default suite" finished-at="2022-03-02T16:07:35 CST" duration-ms="125613">
+  <suite started-at="2022-03-10T20:06:24 CST" name="Default suite" finished-at="2022-03-10T20:08:50 CST" duration-ms="145968">
     <groups>
     </groups>
-    <test started-at="2022-03-02T16:05:30 CST" name="Default test" finished-at="2022-03-02T16:07:35 CST" duration-ms="125613">
-      <class name="com.rs.test.countryCodes.CountryCodes">
-        <test-method is-config="true" signature="beforeTest()[pri:0, instance:com.rs.test.countryCodes.CountryCodes@3cebbb30]" started-at="2022-03-02T16:05:30 CST" name="beforeTest" finished-at="2022-03-02T16:05:44 CST" duration-ms="14376" status="PASS">
+    <test started-at="2022-03-10T20:06:24 CST" name="Default test" finished-at="2022-03-10T20:08:50 CST" duration-ms="145968">
+      <class name="com.rs.test.configuration.messageAggregators.MessageAggregators">
+        <test-method is-config="true" signature="beforeTest()[pri:0, instance:com.rs.test.configuration.messageAggregators.MessageAggregators@659499f1]" started-at="2022-03-10T20:06:24 CST" name="beforeTest" finished-at="2022-03-10T20:06:35 CST" duration-ms="11784" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method signature="create()[pri:0, instance:com.rs.test.countryCodes.CountryCodes@3cebbb30]" started-at="2022-03-02T16:05:44 CST" name="create" finished-at="2022-03-02T16:06:02 CST" duration-ms="17994" status="PASS">
+        <test-method signature="createMessageAggregator()[pri:0, instance:com.rs.test.configuration.messageAggregators.MessageAggregators@659499f1]" started-at="2022-03-10T20:06:35 CST" name="createMessageAggregator" finished-at="2022-03-10T20:06:58 CST" duration-ms="23043" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- create -->
-        <test-method signature="edit()[pri:0, instance:com.rs.test.countryCodes.CountryCodes@3cebbb30]" started-at="2022-03-02T16:06:02 CST" name="edit" finished-at="2022-03-02T16:06:20 CST" depends-on-methods="com.rs.test.countryCodes.CountryCodes.create" duration-ms="17641" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- edit -->
-        <test-method signature="createModalPrefix()[pri:1, instance:com.rs.test.countryCodes.CountryCodes@3cebbb30]" started-at="2022-03-02T16:06:20 CST" name="createModalPrefix" finished-at="2022-03-02T16:06:39 CST" depends-on-methods="com.rs.test.countryCodes.CountryCodes.create" duration-ms="19640" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- createModalPrefix -->
-        <test-method signature="editModalPrefix()[pri:2, instance:com.rs.test.countryCodes.CountryCodes@3cebbb30]" started-at="2022-03-02T16:06:39 CST" name="editModalPrefix" finished-at="2022-03-02T16:07:02 CST" depends-on-methods="com.rs.test.countryCodes.CountryCodes.createModalPrefix" duration-ms="22989" status="FAIL">
+        </test-method> <!-- createMessageAggregator -->
+        <test-method signature="editMessageAggregator()[pri:1, instance:com.rs.test.configuration.messageAggregators.MessageAggregators@659499f1]" started-at="2022-03-10T20:06:58 CST" name="editMessageAggregator" finished-at="2022-03-10T20:07:21 CST" depends-on-methods="com.rs.test.configuration.messageAggregators.MessageAggregators.createMessageAggregator" duration-ms="22687" status="FAIL">
           <exception class="java.lang.AssertionError">
             <message>
               <![CDATA[The record wasn't edited sucessfully expected [true] but found [false]]]>
@@ -33,8 +25,8 @@
 at org.testng.Assert.fail(Assert.java:99)
 at org.testng.Assert.failNotEquals(Assert.java:1037)
 at org.testng.Assert.assertTrue(Assert.java:45)
-at com.rs.test.pageObjectModel.countryCodes.CountryCodesPO.editPrefix(CountryCodesPO.java:431)
-at com.rs.test.countryCodes.CountryCodes.editModalPrefix(CountryCodes.java:57)
+at com.rs.test.pageObjectModel.configuration.messageAggregators.MessageAggregatorsPO.editMessageAggregator(MessageAggregatorsPO.java:375)
+at com.rs.test.configuration.messageAggregators.MessageAggregators.editMessageAggregator(MessageAggregators.java:40)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -68,20 +60,36 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- editModalPrefix -->
-        <test-method signature="deleteModalPrefix()[pri:3, instance:com.rs.test.countryCodes.CountryCodes@3cebbb30]" started-at="2022-03-02T16:07:02 CST" name="deleteModalPrefix" finished-at="2022-03-02T16:07:22 CST" depends-on-methods="com.rs.test.countryCodes.CountryCodes.createModalPrefix" duration-ms="19450" status="PASS">
+        </test-method> <!-- editMessageAggregator -->
+        <test-method signature="createRoutePoints()[pri:2, instance:com.rs.test.configuration.messageAggregators.MessageAggregators@659499f1]" started-at="2022-03-10T20:07:21 CST" name="createRoutePoints" finished-at="2022-03-10T20:07:44 CST" depends-on-methods="com.rs.test.configuration.messageAggregators.MessageAggregators.createMessageAggregator" duration-ms="23154" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- deleteModalPrefix -->
-        <test-method signature="delete()[pri:4, instance:com.rs.test.countryCodes.CountryCodes@3cebbb30]" started-at="2022-03-02T16:07:22 CST" name="delete" finished-at="2022-03-02T16:07:35 CST" depends-on-methods="com.rs.test.countryCodes.CountryCodes.create" duration-ms="13129" status="PASS">
+        </test-method> <!-- createRoutePoints -->
+        <test-method signature="editRoutePoints()[pri:1, instance:com.rs.test.configuration.messageAggregators.MessageAggregators@659499f1]" started-at="2022-03-10T20:07:44 CST" name="editRoutePoints" finished-at="2022-03-10T20:07:58 CST" depends-on-methods="com.rs.test.configuration.messageAggregators.MessageAggregators.createRoutePoints" duration-ms="13315" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- delete -->
-        <test-method is-config="true" signature="afterTest()[pri:0, instance:com.rs.test.countryCodes.CountryCodes@3cebbb30]" started-at="2022-03-02T16:07:35 CST" name="afterTest" finished-at="2022-03-02T16:07:35 CST" duration-ms="340" status="PASS">
+        </test-method> <!-- editRoutePoints -->
+        <test-method signature="deleteRoutePoints()[pri:2, instance:com.rs.test.configuration.messageAggregators.MessageAggregators@659499f1]" started-at="2022-03-10T20:07:58 CST" name="deleteRoutePoints" finished-at="2022-03-10T20:08:07 CST" depends-on-methods="com.rs.test.configuration.messageAggregators.MessageAggregators.createRoutePoints" duration-ms="9165" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- deleteRoutePoints -->
+        <test-method signature="createPeerBlock()[pri:3, instance:com.rs.test.configuration.messageAggregators.MessageAggregators@659499f1]" started-at="2022-03-10T20:08:07 CST" name="createPeerBlock" finished-at="2022-03-10T20:08:26 CST" depends-on-methods="com.rs.test.configuration.messageAggregators.MessageAggregators.createMessageAggregator" duration-ms="19531" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createPeerBlock -->
+        <test-method signature="editPeerBlock()[pri:1, instance:com.rs.test.configuration.messageAggregators.MessageAggregators@659499f1]" started-at="2022-03-10T20:08:26 CST" name="editPeerBlock" finished-at="2022-03-10T20:08:38 CST" depends-on-methods="com.rs.test.configuration.messageAggregators.MessageAggregators.createPeerBlock" duration-ms="12177" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- editPeerBlock -->
+        <test-method signature="deleteMessageAggregator()[pri:4, instance:com.rs.test.configuration.messageAggregators.MessageAggregators@659499f1]" started-at="2022-03-10T20:08:38 CST" name="deleteMessageAggregator" finished-at="2022-03-10T20:08:49 CST" depends-on-methods="com.rs.test.configuration.messageAggregators.MessageAggregators.createMessageAggregator" duration-ms="10727" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- deleteMessageAggregator -->
+        <test-method is-config="true" signature="afterTest()[pri:0, instance:com.rs.test.configuration.messageAggregators.MessageAggregators@659499f1]" started-at="2022-03-10T20:08:49 CST" name="afterTest" finished-at="2022-03-10T20:08:50 CST" duration-ms="331" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterTest -->
-      </class> <!-- com.rs.test.countryCodes.CountryCodes -->
+      </class> <!-- com.rs.test.configuration.messageAggregators.MessageAggregators -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

@@ -3,15 +3,14 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.rs.test.countryCodes.CountryCodes">
+      <class name="com.rs.test.configuration.messageAggregators.MessageAggregators">
         <methods>
-          <include name="afterTest"/>
           <include name="beforeTest"/>
-          <include name="create"/>
-          <include name="createModalPrefix"/>
-          <include name="editModalPrefix"/>
+          <include name="afterTest"/>
+          <include name="createMessageAggregator"/>
+          <include name="editMessageAggregator"/>
         </methods>
-      </class> <!-- com.rs.test.countryCodes.CountryCodes -->
+      </class> <!-- com.rs.test.configuration.messageAggregators.MessageAggregators -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
