@@ -3,13 +3,18 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.rs.test.configuration.countryCodes.CountryCodes">
+      <class name="com.rs.test.configuration.messageAggregators.MessageAggregators">
         <methods>
-          <include name="afterTest"/>
+          <include name="createPeerBlock"/>
           <include name="beforeTest"/>
-          <include name="editContryCode"/>
+          <include name="afterTest"/>
+          <include name="createMessageAggregator"/>
+          <include name="editMessageAggregator"/>
+          <include name="editRoutePoints"/>
+          <include name="editPeerBlock"/>
+          <include name="createRoutePoints"/>
         </methods>
-      </class> <!-- com.rs.test.configuration.countryCodes.CountryCodes -->
+      </class> <!-- com.rs.test.configuration.messageAggregators.MessageAggregators -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
