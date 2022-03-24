@@ -357,16 +357,15 @@ public class MessageAggregatorsPO extends TestBaseSteven {
 
 		String messageGatewayA = getText("//tr[contains(@id,\"AggregatorsTableRow\")][" + rows + "]/td[1]/div");
 		String descriptionA = getText("//tr[contains(@id,\"AggregatorsTableRow\")][" + rows + "]/td[2]/div");
-		String oADCLookupA = getText("//tr[contains(@id,\"AggregatorsTableRow\")][" + rows + "]/td[3]/div");
+
 
 		System.out.println("--------------------------Edition Verification-----------------------");
 
 		System.out.println("The message gateway is: " + messageGatewayA);
 		System.out.println("The description is: " + descriptionA);
-		System.out.println("The OADC Lookup is: " + oADCLookupA);
 
-		if (descriptionA.equals(descriptionE) && messageGatewayA.equals(messageGatewayE)
-				&& oADCLookupA.equals(cboText)) {
+
+		if (descriptionA.equals(descriptionE) && messageGatewayA.equals(messageGatewayE)) {
 			edited = true;
 		}
 
