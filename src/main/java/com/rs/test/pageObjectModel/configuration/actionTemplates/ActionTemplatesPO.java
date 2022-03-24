@@ -252,17 +252,16 @@ public class ActionTemplatesPO extends TestBaseSteven {
 		String templateE = "TestTemplate1";
 		String descriptionE = "Test Template1";
 
-		WebElement txtEditCode = findElement("//tr[contains(@id,\"TemplateTableRow\")][" + rows + "]/td[1]/input");
-		WebElement txtEditCountry = findElement("//tr[contains(@id,\"TemplateTableRow\")][" + rows + "]/td[2]/input");
+		WebElement txtEditTemplateName = findElement("//tr[contains(@id,\"TemplateTableRow\")][" + rows + "]/td[1]/input");
+		WebElement txtEditDescription = findElement("//tr[contains(@id,\"TemplateTableRow\")][" + rows + "]/td[2]/input");
 		WebElement btnEdit = findElement("//tr[contains(@id,\"TemplateTableRow\")][" + rows + "]/td[6]/div/button[1]");
 
 		click(btnEdit);
-
-		clear(txtEditCode);
-		clear(txtEditCountry);
-
-		sendKeys(txtEditCode, templateE);
-		sendKeys(txtEditCountry, descriptionE);
+		
+		clear(txtEditTemplateName);
+		sendKeys(txtEditTemplateName, templateE);
+		clear(txtEditDescription);
+		sendKeys(txtEditDescription, descriptionE);
 
 		click(btnEdit);
 
@@ -335,6 +334,8 @@ public class ActionTemplatesPO extends TestBaseSteven {
 		assertTrue(deleted, deletionRecord);
 
 	}
+	
+	//-------------------------------------Pending------------------------------
 /*
 	public void addPrefix() {
 		

@@ -189,7 +189,7 @@ public class CountryCodesPO extends TestBaseSteven {
 			refresh();
 			waitExpectedElement("//button[@id=\"prefixesModalBtn0\"]");
 		}
-
+		
 		clickOnGoToLast();
 
 		int rows = rows("//tr[contains(@id,\"CodesTableRow\")]");
@@ -230,10 +230,13 @@ public class CountryCodesPO extends TestBaseSteven {
 		click(btnEdit);
 
 		clear(txtEditCode);
+		txtEditCode.sendKeys(codeE);
+		
 		clear(txtEditCountry);
-
-		sendKeys(txtEditCode, codeE);
-		sendKeys(txtEditCountry, countryE);
+		txtEditCountry.sendKeys(countryE);
+		
+		//sendKeys(txtEditCode, codeE);
+		//sendKeys(txtEditCountry, countryE);
 
 		click(btnEdit);
 

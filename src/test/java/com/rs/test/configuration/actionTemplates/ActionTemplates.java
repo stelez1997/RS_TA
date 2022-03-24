@@ -34,7 +34,7 @@ public class ActionTemplates extends TestBaseSteven{
   
  
   @Test(dependsOnMethods = "createActionTemplate", priority = 0)
-  public void editContryCode() {
+  public void editActionTemplate() {
 	  
 	  actionTemplatesPO.editActionTemplate();
 	  
@@ -69,7 +69,7 @@ public class ActionTemplates extends TestBaseSteven{
   */
   
   @Test(dependsOnMethods = "createActionTemplate", priority = 4)
-  public void deleteCountryCode() {
+  public void deleteActionTemplate() {
 	  
 	  actionTemplatesPO.deleteActionTemplate();
 	  

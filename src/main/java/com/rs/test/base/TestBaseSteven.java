@@ -66,36 +66,11 @@ public class TestBaseSteven {
 
 		return driver;
 	}
-
-	public void fecharMensagens(String rows, String xpath) {
-		int rowsR = driver.findElements(By.xpath(xpath)).size();
-		
-		
-		if (rowsR > 0) {
-			WebElement fechar = driver.findElement(By.xpath(xpath));
-			fechar.click();
-		}
-		sleep(2000);
-		
-		rowsR = driver.findElements(By.xpath(xpath)).size();
-		
-		while (rowsR > 0) {
-			
-			WebElement fechar = driver.findElement(By.xpath(xpath));
-			fechar.click();
-			
-			rowsR = driver.findElements(By.xpath(xpath)).size();
-			sleep(2000);
-		}
-		
-		
-	}
-	
 	
 	public void click(WebElement element) {
 		
 		element.click();
-		sleep(1000);
+		sleep(500);
 	}
 	
 	public WebElement findElement(String xpath) {
@@ -108,40 +83,41 @@ public class TestBaseSteven {
 	public void click(String xpath) {
 		
 		driver.findElement(By.xpath(xpath)).click();
-		sleep(1000);
+		sleep(500);
 	}
 	
 	public void clear(WebElement element) {
 		
 		element.clear();
 		sleep(1000);
+
 	}
 	
 	public void sendKeys(WebElement element, String text) {
 		
 		element.sendKeys(text);
-		sleep(1000);
+		sleep(500);
 		
 	}
 	
 	public void sendKeys(String xpath, String text) {
 		
 		driver.findElement(By.xpath(xpath)).sendKeys(text);
-		sleep(1000);
+		sleep(500);
 		
 	}
 	
 	public void sendKeys(String xpath, Keys keys) {
 		
 		driver.findElement(By.xpath(xpath)).sendKeys(keys);
-		sleep(1000);
+		sleep(500);
 		
 	}
 	
 	public void sendKeys(WebElement element, Keys keys) {
 		
 		element.sendKeys(keys);
-		sleep(1000);
+		sleep(500);
 		
 	}
 	
@@ -150,7 +126,7 @@ public class TestBaseSteven {
 	public void clear(String xpath) {
 		
 		driver.findElement(By.xpath(xpath)).clear();
-		sleep(1000);
+		sleep(500);
 	}
 	
 	
@@ -184,7 +160,7 @@ public class TestBaseSteven {
 
 		wait.until(ExpectedConditions.elementToBeClickable(element));
 		
-		sleep(2000);
+		sleep(1000);
 
 	}
 
@@ -193,7 +169,7 @@ public class TestBaseSteven {
 
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath(xpath)));
 		
-		sleep(2000);
+		sleep(1000);
 
 	}
 	
@@ -208,7 +184,7 @@ public class TestBaseSteven {
 	public void actionsMoveToElementElement(WebElement element) {
 		Actions actions = new Actions(driver);
 		actions.moveToElement(element).perform();
-		sleep(2000);
+		sleep(1000);
 	}
 
 	public void invisibilityOfElement(String xpath) {
@@ -560,6 +536,20 @@ public class TestBaseSteven {
 		
 	}
 	
+	public boolean greaterThanInt(String mayor,String menor) {
+		
+		boolean isGreaterThan= false;
+		int mayorI = Integer.parseInt(mayor);
+		int menorI = Integer.parseInt(menor);
+
+		
+		if(mayorI > menorI) {
+			isGreaterThan = true;
+		}
+		return isGreaterThan;
+		
+	}
+	
 	
 	public void close() {
 		
@@ -576,6 +566,7 @@ public class TestBaseSteven {
 	public String creationRecord ="The creation record is not being displayed";
 	public String editionRecord ="The record wasn't edited sucessfully";
 	public String deletionRecord ="The record wasn't deleted sucessfully";
+	public String testRecord ="The testing record is being displayed";
 	
 	
 	

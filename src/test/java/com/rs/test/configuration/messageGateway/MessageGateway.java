@@ -26,14 +26,14 @@ public class MessageGateway extends TestBaseSteven{
   }
   
   @Test()
-  public void create() {
+  public void createMessageGateway() {
 	 
 	  messageGatewayPO.createMessageGateway();
 	 
   }
   
   
-  @Test(dependsOnMethods = "create", priority = 0)
+  @Test(dependsOnMethods = "createMessageGateway", priority = 0)
   public void edit() {
 	  
 	  messageGatewayPO.editMessageGateway();
@@ -41,7 +41,7 @@ public class MessageGateway extends TestBaseSteven{
   }
  
   
-  @Test(dependsOnMethods = "create", priority = 1)
+  @Test(dependsOnMethods = "createMessageGateway", priority = 1)
   public void delete() {
 	  
 	  messageGatewayPO.deleteMessageGateway();

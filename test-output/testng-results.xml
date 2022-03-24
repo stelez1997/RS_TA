@@ -1,21 +1,127 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="8" passed="7" failed="1" skipped="0">
+<testng-results ignored="0" total="30" passed="25" failed="5" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-03-10T20:06:24 CST" name="Default suite" finished-at="2022-03-10T20:08:50 CST" duration-ms="145968">
+  <suite started-at="2022-03-23T15:32:09 CST" name="Suite" finished-at="2022-03-23T15:38:37 CST" duration-ms="387600">
     <groups>
     </groups>
-    <test started-at="2022-03-10T20:06:24 CST" name="Default test" finished-at="2022-03-10T20:08:50 CST" duration-ms="145968">
-      <class name="com.rs.test.configuration.messageAggregators.MessageAggregators">
-        <test-method is-config="true" signature="beforeTest()[pri:0, instance:com.rs.test.configuration.messageAggregators.MessageAggregators@659499f1]" started-at="2022-03-10T20:06:24 CST" name="beforeTest" finished-at="2022-03-10T20:06:35 CST" duration-ms="11784" status="PASS">
+    <test started-at="2022-03-23T15:32:09 CST" name="Login" finished-at="2022-03-23T15:32:31 CST" duration-ms="21694">
+      <class name="com.rs.test.login.Login">
+        <test-method is-config="true" signature="beforeTest()[pri:0, instance:com.rs.test.login.Login@36916eb0]" started-at="2022-03-23T15:32:09 CST" name="beforeTest" finished-at="2022-03-23T15:32:15 CST" duration-ms="5800" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method signature="createMessageAggregator()[pri:0, instance:com.rs.test.configuration.messageAggregators.MessageAggregators@659499f1]" started-at="2022-03-10T20:06:35 CST" name="createMessageAggregator" finished-at="2022-03-10T20:06:58 CST" duration-ms="23043" status="PASS">
+        <test-method signature="loginTest()[pri:0, instance:com.rs.test.login.Login@36916eb0]" started-at="2022-03-23T15:32:15 CST" name="loginTest" finished-at="2022-03-23T15:32:31 CST" duration-ms="15531" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginTest -->
+        <test-method is-config="true" signature="afterTest()[pri:0, instance:com.rs.test.login.Login@36916eb0]" started-at="2022-03-23T15:32:31 CST" name="afterTest" finished-at="2022-03-23T15:32:31 CST" duration-ms="334" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterTest -->
+      </class> <!-- com.rs.test.login.Login -->
+    </test> <!-- Login -->
+    <test started-at="2022-03-23T15:32:31 CST" name="Carrier Service" finished-at="2022-03-23T15:33:29 CST" duration-ms="58170">
+      <class name="com.rs.test.configuration.carrierService.CarrierService">
+        <test-method is-config="true" signature="beforeTest()[pri:0, instance:com.rs.test.configuration.carrierService.CarrierService@65c7a252]" started-at="2022-03-23T15:32:31 CST" name="beforeTest" finished-at="2022-03-23T15:32:40 CST" duration-ms="8791" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeTest -->
+        <test-method signature="createCarrierService()[pri:0, instance:com.rs.test.configuration.carrierService.CarrierService@65c7a252]" started-at="2022-03-23T15:32:40 CST" name="createCarrierService" finished-at="2022-03-23T15:33:02 CST" duration-ms="21542" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createCarrierService -->
+        <test-method signature="editCarrierService()[pri:0, instance:com.rs.test.configuration.carrierService.CarrierService@65c7a252]" started-at="2022-03-23T15:33:02 CST" name="editCarrierService" finished-at="2022-03-23T15:33:23 CST" depends-on-methods="com.rs.test.configuration.carrierService.CarrierService.createCarrierService" duration-ms="21209" status="FAIL">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[The record wasn't edited sucessfully expected [true] but found [false]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: The record wasn't edited sucessfully expected [true] but found [false]
+at org.testng.Assert.fail(Assert.java:99)
+at org.testng.Assert.failNotEquals(Assert.java:1037)
+at org.testng.Assert.assertTrue(Assert.java:45)
+at com.rs.test.pageObjectModel.configuration.carrierService.CarrierServicePO.editCarrierService(CarrierServicePO.java:451)
+at com.rs.test.configuration.carrierService.CarrierService.editCarrierService(CarrierService.java:40)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- editCarrierService -->
+        <test-method signature="deleteCarrierService()[pri:1, instance:com.rs.test.configuration.carrierService.CarrierService@65c7a252]" started-at="2022-03-23T15:33:23 CST" name="deleteCarrierService" finished-at="2022-03-23T15:33:29 CST" depends-on-methods="com.rs.test.configuration.carrierService.CarrierService.createCarrierService" duration-ms="6296" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- deleteCarrierService -->
+        <test-method is-config="true" signature="afterTest()[pri:0, instance:com.rs.test.configuration.carrierService.CarrierService@65c7a252]" started-at="2022-03-23T15:33:29 CST" name="afterTest" finished-at="2022-03-23T15:33:29 CST" duration-ms="323" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterTest -->
+      </class> <!-- com.rs.test.configuration.carrierService.CarrierService -->
+    </test> <!-- Carrier Service -->
+    <test started-at="2022-03-23T15:33:29 CST" name="Message Gateway" finished-at="2022-03-23T15:34:04 CST" duration-ms="34449">
+      <class name="com.rs.test.configuration.messageGateway.MessageGateway">
+        <test-method is-config="true" signature="beforeTest()[pri:0, instance:com.rs.test.configuration.messageGateway.MessageGateway@20140db9]" started-at="2022-03-23T15:33:29 CST" name="beforeTest" finished-at="2022-03-23T15:33:38 CST" duration-ms="8626" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeTest -->
+        <test-method signature="createMessageGateway()[pri:0, instance:com.rs.test.configuration.messageGateway.MessageGateway@20140db9]" started-at="2022-03-23T15:33:38 CST" name="createMessageGateway" finished-at="2022-03-23T15:33:47 CST" duration-ms="9264" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createMessageGateway -->
+        <test-method signature="edit()[pri:0, instance:com.rs.test.configuration.messageGateway.MessageGateway@20140db9]" started-at="2022-03-23T15:33:47 CST" name="edit" finished-at="2022-03-23T15:33:58 CST" depends-on-methods="com.rs.test.configuration.messageGateway.MessageGateway.createMessageGateway" duration-ms="10652" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- edit -->
+        <test-method signature="delete()[pri:1, instance:com.rs.test.configuration.messageGateway.MessageGateway@20140db9]" started-at="2022-03-23T15:33:58 CST" name="delete" finished-at="2022-03-23T15:34:04 CST" depends-on-methods="com.rs.test.configuration.messageGateway.MessageGateway.createMessageGateway" duration-ms="5588" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- delete -->
+        <test-method is-config="true" signature="afterTest()[pri:0, instance:com.rs.test.configuration.messageGateway.MessageGateway@20140db9]" started-at="2022-03-23T15:34:04 CST" name="afterTest" finished-at="2022-03-23T15:34:04 CST" duration-ms="315" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterTest -->
+      </class> <!-- com.rs.test.configuration.messageGateway.MessageGateway -->
+    </test> <!-- Message Gateway -->
+    <test started-at="2022-03-23T15:34:04 CST" name="Message Aggregators" finished-at="2022-03-23T15:35:30 CST" duration-ms="85827">
+      <class name="com.rs.test.configuration.messageAggregators.MessageAggregators">
+        <test-method is-config="true" signature="beforeTest()[pri:0, instance:com.rs.test.configuration.messageAggregators.MessageAggregators@298a5e20]" started-at="2022-03-23T15:34:04 CST" name="beforeTest" finished-at="2022-03-23T15:34:13 CST" duration-ms="8683" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeTest -->
+        <test-method signature="createMessageAggregator()[pri:0, instance:com.rs.test.configuration.messageAggregators.MessageAggregators@298a5e20]" started-at="2022-03-23T15:34:13 CST" name="createMessageAggregator" finished-at="2022-03-23T15:34:26 CST" duration-ms="13181" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- createMessageAggregator -->
-        <test-method signature="editMessageAggregator()[pri:1, instance:com.rs.test.configuration.messageAggregators.MessageAggregators@659499f1]" started-at="2022-03-10T20:06:58 CST" name="editMessageAggregator" finished-at="2022-03-10T20:07:21 CST" depends-on-methods="com.rs.test.configuration.messageAggregators.MessageAggregators.createMessageAggregator" duration-ms="22687" status="FAIL">
+        <test-method signature="editMessageAggregator()[pri:1, instance:com.rs.test.configuration.messageAggregators.MessageAggregators@298a5e20]" started-at="2022-03-23T15:34:26 CST" name="editMessageAggregator" finished-at="2022-03-23T15:34:39 CST" depends-on-methods="com.rs.test.configuration.messageAggregators.MessageAggregators.createMessageAggregator" duration-ms="13226" status="FAIL">
           <exception class="java.lang.AssertionError">
             <message>
               <![CDATA[The record wasn't edited sucessfully expected [true] but found [false]]]>
@@ -61,35 +167,269 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- editMessageAggregator -->
-        <test-method signature="createRoutePoints()[pri:2, instance:com.rs.test.configuration.messageAggregators.MessageAggregators@659499f1]" started-at="2022-03-10T20:07:21 CST" name="createRoutePoints" finished-at="2022-03-10T20:07:44 CST" depends-on-methods="com.rs.test.configuration.messageAggregators.MessageAggregators.createMessageAggregator" duration-ms="23154" status="PASS">
+        <test-method signature="createRoutePoints()[pri:2, instance:com.rs.test.configuration.messageAggregators.MessageAggregators@298a5e20]" started-at="2022-03-23T15:34:39 CST" name="createRoutePoints" finished-at="2022-03-23T15:34:52 CST" depends-on-methods="com.rs.test.configuration.messageAggregators.MessageAggregators.createMessageAggregator" duration-ms="12686" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- createRoutePoints -->
-        <test-method signature="editRoutePoints()[pri:1, instance:com.rs.test.configuration.messageAggregators.MessageAggregators@659499f1]" started-at="2022-03-10T20:07:44 CST" name="editRoutePoints" finished-at="2022-03-10T20:07:58 CST" depends-on-methods="com.rs.test.configuration.messageAggregators.MessageAggregators.createRoutePoints" duration-ms="13315" status="PASS">
+        <test-method signature="editRoutePoints()[pri:1, instance:com.rs.test.configuration.messageAggregators.MessageAggregators@298a5e20]" started-at="2022-03-23T15:34:52 CST" name="editRoutePoints" finished-at="2022-03-23T15:35:01 CST" depends-on-methods="com.rs.test.configuration.messageAggregators.MessageAggregators.createRoutePoints" duration-ms="8852" status="FAIL">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[The record wasn't edited sucessfully expected [true] but found [false]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: The record wasn't edited sucessfully expected [true] but found [false]
+at org.testng.Assert.fail(Assert.java:99)
+at org.testng.Assert.failNotEquals(Assert.java:1037)
+at org.testng.Assert.assertTrue(Assert.java:45)
+at com.rs.test.pageObjectModel.configuration.messageAggregators.MessageAggregatorsPO.editRTPoints(MessageAggregatorsPO.java:536)
+at com.rs.test.configuration.messageAggregators.MessageAggregators.editRoutePoints(MessageAggregators.java:56)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- editRoutePoints -->
-        <test-method signature="deleteRoutePoints()[pri:2, instance:com.rs.test.configuration.messageAggregators.MessageAggregators@659499f1]" started-at="2022-03-10T20:07:58 CST" name="deleteRoutePoints" finished-at="2022-03-10T20:08:07 CST" depends-on-methods="com.rs.test.configuration.messageAggregators.MessageAggregators.createRoutePoints" duration-ms="9165" status="PASS">
+        <test-method signature="deleteRoutePoints()[pri:2, instance:com.rs.test.configuration.messageAggregators.MessageAggregators@298a5e20]" started-at="2022-03-23T15:35:01 CST" name="deleteRoutePoints" finished-at="2022-03-23T15:35:05 CST" depends-on-methods="com.rs.test.configuration.messageAggregators.MessageAggregators.createRoutePoints" duration-ms="4892" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- deleteRoutePoints -->
-        <test-method signature="createPeerBlock()[pri:3, instance:com.rs.test.configuration.messageAggregators.MessageAggregators@659499f1]" started-at="2022-03-10T20:08:07 CST" name="createPeerBlock" finished-at="2022-03-10T20:08:26 CST" depends-on-methods="com.rs.test.configuration.messageAggregators.MessageAggregators.createMessageAggregator" duration-ms="19531" status="PASS">
+        <test-method signature="createPeerBlock()[pri:3, instance:com.rs.test.configuration.messageAggregators.MessageAggregators@298a5e20]" started-at="2022-03-23T15:35:05 CST" name="createPeerBlock" finished-at="2022-03-23T15:35:16 CST" depends-on-methods="com.rs.test.configuration.messageAggregators.MessageAggregators.createMessageAggregator" duration-ms="10895" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- createPeerBlock -->
-        <test-method signature="editPeerBlock()[pri:1, instance:com.rs.test.configuration.messageAggregators.MessageAggregators@659499f1]" started-at="2022-03-10T20:08:26 CST" name="editPeerBlock" finished-at="2022-03-10T20:08:38 CST" depends-on-methods="com.rs.test.configuration.messageAggregators.MessageAggregators.createPeerBlock" duration-ms="12177" status="PASS">
+        <test-method signature="editPeerBlock()[pri:1, instance:com.rs.test.configuration.messageAggregators.MessageAggregators@298a5e20]" started-at="2022-03-23T15:35:16 CST" name="editPeerBlock" finished-at="2022-03-23T15:35:23 CST" depends-on-methods="com.rs.test.configuration.messageAggregators.MessageAggregators.createPeerBlock" duration-ms="6875" status="FAIL">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[The record wasn't edited sucessfully expected [true] but found [false]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: The record wasn't edited sucessfully expected [true] but found [false]
+at org.testng.Assert.fail(Assert.java:99)
+at org.testng.Assert.failNotEquals(Assert.java:1037)
+at org.testng.Assert.assertTrue(Assert.java:45)
+at com.rs.test.pageObjectModel.configuration.messageAggregators.MessageAggregatorsPO.editPeerBlock(MessageAggregatorsPO.java:680)
+at com.rs.test.configuration.messageAggregators.MessageAggregators.editPeerBlock(MessageAggregators.java:84)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- editPeerBlock -->
-        <test-method signature="deleteMessageAggregator()[pri:4, instance:com.rs.test.configuration.messageAggregators.MessageAggregators@659499f1]" started-at="2022-03-10T20:08:38 CST" name="deleteMessageAggregator" finished-at="2022-03-10T20:08:49 CST" depends-on-methods="com.rs.test.configuration.messageAggregators.MessageAggregators.createMessageAggregator" duration-ms="10727" status="PASS">
+        <test-method signature="deleteMessageAggregator()[pri:4, instance:com.rs.test.configuration.messageAggregators.MessageAggregators@298a5e20]" started-at="2022-03-23T15:35:23 CST" name="deleteMessageAggregator" finished-at="2022-03-23T15:35:29 CST" depends-on-methods="com.rs.test.configuration.messageAggregators.MessageAggregators.createMessageAggregator" duration-ms="6214" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- deleteMessageAggregator -->
-        <test-method is-config="true" signature="afterTest()[pri:0, instance:com.rs.test.configuration.messageAggregators.MessageAggregators@659499f1]" started-at="2022-03-10T20:08:49 CST" name="afterTest" finished-at="2022-03-10T20:08:50 CST" duration-ms="331" status="PASS">
+        <test-method is-config="true" signature="afterTest()[pri:0, instance:com.rs.test.configuration.messageAggregators.MessageAggregators@298a5e20]" started-at="2022-03-23T15:35:29 CST" name="afterTest" finished-at="2022-03-23T15:35:30 CST" duration-ms="314" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterTest -->
       </class> <!-- com.rs.test.configuration.messageAggregators.MessageAggregators -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+    </test> <!-- Message Aggregators -->
+    <test started-at="2022-03-23T15:35:30 CST" name="Country Codes" finished-at="2022-03-23T15:36:40 CST" duration-ms="70316">
+      <class name="com.rs.test.configuration.countryCodes.CountryCodes">
+        <test-method is-config="true" signature="beforeTest()[pri:0, instance:com.rs.test.configuration.countryCodes.CountryCodes@11392934]" started-at="2022-03-23T15:35:30 CST" name="beforeTest" finished-at="2022-03-23T15:35:38 CST" duration-ms="8485" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeTest -->
+        <test-method signature="createCountryCode()[pri:0, instance:com.rs.test.configuration.countryCodes.CountryCodes@11392934]" started-at="2022-03-23T15:35:38 CST" name="createCountryCode" finished-at="2022-03-23T15:35:48 CST" duration-ms="9793" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createCountryCode -->
+        <test-method signature="editContryCode()[pri:0, instance:com.rs.test.configuration.countryCodes.CountryCodes@11392934]" started-at="2022-03-23T15:35:48 CST" name="editContryCode" finished-at="2022-03-23T15:35:58 CST" depends-on-methods="com.rs.test.configuration.countryCodes.CountryCodes.createCountryCode" duration-ms="10003" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- editContryCode -->
+        <test-method signature="createModalPrefix()[pri:1, instance:com.rs.test.configuration.countryCodes.CountryCodes@11392934]" started-at="2022-03-23T15:35:58 CST" name="createModalPrefix" finished-at="2022-03-23T15:36:09 CST" depends-on-methods="com.rs.test.configuration.countryCodes.CountryCodes.createCountryCode" duration-ms="10496" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createModalPrefix -->
+        <test-method signature="editModalPrefix()[pri:2, instance:com.rs.test.configuration.countryCodes.CountryCodes@11392934]" started-at="2022-03-23T15:36:09 CST" name="editModalPrefix" finished-at="2022-03-23T15:36:22 CST" depends-on-methods="com.rs.test.configuration.countryCodes.CountryCodes.createModalPrefix" duration-ms="13239" status="FAIL">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[The record wasn't edited sucessfully expected [true] but found [false]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: The record wasn't edited sucessfully expected [true] but found [false]
+at org.testng.Assert.fail(Assert.java:99)
+at org.testng.Assert.failNotEquals(Assert.java:1037)
+at org.testng.Assert.assertTrue(Assert.java:45)
+at com.rs.test.pageObjectModel.configuration.countryCodes.CountryCodesPO.editPrefix(CountryCodesPO.java:446)
+at com.rs.test.configuration.countryCodes.CountryCodes.editModalPrefix(CountryCodes.java:57)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- editModalPrefix -->
+        <test-method signature="deleteModalPrefix()[pri:3, instance:com.rs.test.configuration.countryCodes.CountryCodes@11392934]" started-at="2022-03-23T15:36:22 CST" name="deleteModalPrefix" finished-at="2022-03-23T15:36:32 CST" depends-on-methods="com.rs.test.configuration.countryCodes.CountryCodes.createModalPrefix" duration-ms="10595" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- deleteModalPrefix -->
+        <test-method signature="deleteCountryCode()[pri:4, instance:com.rs.test.configuration.countryCodes.CountryCodes@11392934]" started-at="2022-03-23T15:36:32 CST" name="deleteCountryCode" finished-at="2022-03-23T15:36:40 CST" depends-on-methods="com.rs.test.configuration.countryCodes.CountryCodes.createCountryCode" duration-ms="7376" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- deleteCountryCode -->
+        <test-method is-config="true" signature="afterTest()[pri:0, instance:com.rs.test.configuration.countryCodes.CountryCodes@11392934]" started-at="2022-03-23T15:36:40 CST" name="afterTest" finished-at="2022-03-23T15:36:40 CST" duration-ms="320" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterTest -->
+      </class> <!-- com.rs.test.configuration.countryCodes.CountryCodes -->
+    </test> <!-- Country Codes -->
+    <test started-at="2022-03-23T15:36:40 CST" name="Action Templates" finished-at="2022-03-23T15:37:17 CST" duration-ms="36949">
+      <class name="com.rs.test.configuration.actionTemplates.ActionTemplates">
+        <test-method is-config="true" signature="beforeTest()[pri:0, instance:com.rs.test.configuration.actionTemplates.ActionTemplates@7d0b7e3c]" started-at="2022-03-23T15:36:40 CST" name="beforeTest" finished-at="2022-03-23T15:36:49 CST" duration-ms="8652" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeTest -->
+        <test-method signature="createActionTemplate()[pri:0, instance:com.rs.test.configuration.actionTemplates.ActionTemplates@7d0b7e3c]" started-at="2022-03-23T15:36:49 CST" name="createActionTemplate" finished-at="2022-03-23T15:36:59 CST" duration-ms="10349" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createActionTemplate -->
+        <test-method signature="editActionTemplate()[pri:0, instance:com.rs.test.configuration.actionTemplates.ActionTemplates@7d0b7e3c]" started-at="2022-03-23T15:36:59 CST" name="editActionTemplate" finished-at="2022-03-23T15:37:10 CST" depends-on-methods="com.rs.test.configuration.actionTemplates.ActionTemplates.createActionTemplate" duration-ms="11331" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- editActionTemplate -->
+        <test-method signature="deleteActionTemplate()[pri:4, instance:com.rs.test.configuration.actionTemplates.ActionTemplates@7d0b7e3c]" started-at="2022-03-23T15:37:10 CST" name="deleteActionTemplate" finished-at="2022-03-23T15:37:17 CST" depends-on-methods="com.rs.test.configuration.actionTemplates.ActionTemplates.createActionTemplate" duration-ms="6293" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- deleteActionTemplate -->
+        <test-method is-config="true" signature="afterTest()[pri:0, instance:com.rs.test.configuration.actionTemplates.ActionTemplates@7d0b7e3c]" started-at="2022-03-23T15:37:17 CST" name="afterTest" finished-at="2022-03-23T15:37:17 CST" duration-ms="320" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterTest -->
+      </class> <!-- com.rs.test.configuration.actionTemplates.ActionTemplates -->
+    </test> <!-- Action Templates -->
+    <test started-at="2022-03-23T15:37:17 CST" name="Character Encoding" finished-at="2022-03-23T15:37:59 CST" duration-ms="41467">
+      <class name="com.rs.test.configuration.characterEncoding.CharacterEncoding">
+        <test-method is-config="true" signature="beforeTest()[pri:0, instance:com.rs.test.configuration.characterEncoding.CharacterEncoding@7674f035]" started-at="2022-03-23T15:37:17 CST" name="beforeTest" finished-at="2022-03-23T15:37:26 CST" duration-ms="8506" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeTest -->
+        <test-method signature="createActionTemplate()[pri:0, instance:com.rs.test.configuration.characterEncoding.CharacterEncoding@7674f035]" started-at="2022-03-23T15:37:26 CST" name="createActionTemplate" finished-at="2022-03-23T15:37:38 CST" duration-ms="12644" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createActionTemplate -->
+        <test-method signature="editActionTemplate()[pri:1, instance:com.rs.test.configuration.characterEncoding.CharacterEncoding@7674f035]" started-at="2022-03-23T15:37:38 CST" name="editActionTemplate" finished-at="2022-03-23T15:37:52 CST" depends-on-methods="com.rs.test.configuration.characterEncoding.CharacterEncoding.createActionTemplate" duration-ms="13991" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- editActionTemplate -->
+        <test-method signature="deleteActionTemplate()[pri:2, instance:com.rs.test.configuration.characterEncoding.CharacterEncoding@7674f035]" started-at="2022-03-23T15:37:52 CST" name="deleteActionTemplate" finished-at="2022-03-23T15:37:58 CST" depends-on-methods="com.rs.test.configuration.characterEncoding.CharacterEncoding.createActionTemplate" duration-ms="5996" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- deleteActionTemplate -->
+        <test-method is-config="true" signature="afterTest()[pri:0, instance:com.rs.test.configuration.characterEncoding.CharacterEncoding@7674f035]" started-at="2022-03-23T15:37:58 CST" name="afterTest" finished-at="2022-03-23T15:37:59 CST" duration-ms="328" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterTest -->
+      </class> <!-- com.rs.test.configuration.characterEncoding.CharacterEncoding -->
+    </test> <!-- Character Encoding -->
+    <test started-at="2022-03-23T15:37:59 CST" name="Cluster Classification" finished-at="2022-03-23T15:38:37 CST" duration-ms="38471">
+      <class name="com.rs.test.clusterConfiguration.clusterClassification.ClusterClassification">
+        <test-method is-config="true" signature="beforeTest()[pri:0, instance:com.rs.test.clusterConfiguration.clusterClassification.ClusterClassification@543295b0]" started-at="2022-03-23T15:37:59 CST" name="beforeTest" finished-at="2022-03-23T15:38:07 CST" duration-ms="8609" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeTest -->
+        <test-method signature="createClusterClassification()[pri:0, instance:com.rs.test.clusterConfiguration.clusterClassification.ClusterClassification@543295b0]" started-at="2022-03-23T15:38:07 CST" name="createClusterClassification" finished-at="2022-03-23T15:38:18 CST" duration-ms="11181" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createClusterClassification -->
+        <test-method signature="editClusterClassification()[pri:0, instance:com.rs.test.clusterConfiguration.clusterClassification.ClusterClassification@543295b0]" started-at="2022-03-23T15:38:18 CST" name="editClusterClassification" finished-at="2022-03-23T15:38:31 CST" depends-on-methods="com.rs.test.clusterConfiguration.clusterClassification.ClusterClassification.createClusterClassification" duration-ms="12297" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- editClusterClassification -->
+        <test-method signature="deleteClusterClassification()[pri:1, instance:com.rs.test.clusterConfiguration.clusterClassification.ClusterClassification@543295b0]" started-at="2022-03-23T15:38:31 CST" name="deleteClusterClassification" finished-at="2022-03-23T15:38:37 CST" depends-on-methods="com.rs.test.clusterConfiguration.clusterClassification.ClusterClassification.createClusterClassification" duration-ms="6051" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- deleteClusterClassification -->
+        <test-method is-config="true" signature="afterTest()[pri:0, instance:com.rs.test.clusterConfiguration.clusterClassification.ClusterClassification@543295b0]" started-at="2022-03-23T15:38:37 CST" name="afterTest" finished-at="2022-03-23T15:38:37 CST" duration-ms="330" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterTest -->
+      </class> <!-- com.rs.test.clusterConfiguration.clusterClassification.ClusterClassification -->
+    </test> <!-- Cluster Classification -->
+  </suite> <!-- Suite -->
 </testng-results>

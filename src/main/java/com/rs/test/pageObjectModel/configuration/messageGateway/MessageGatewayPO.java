@@ -206,9 +206,9 @@ public class MessageGatewayPO extends TestBaseSteven {
 		click(btnEdit);
 
 		clear(txtEditMessageGateWay);
-		clear(txtEditDescription);
-
 		sendKeys(txtEditMessageGateWay, messageGatewayE);
+		
+		clear(txtEditDescription);
 		sendKeys(txtEditDescription, descriptionE);
 
 		click(btnEdit);

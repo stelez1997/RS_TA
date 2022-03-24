@@ -98,7 +98,7 @@ public class MessageAggregatorsPO extends TestBaseSteven {
 
 	LoginVerificationPO loginVerificationPO;
 
-	String messageAggregator = "ZTest";
+	String messageAggregator = "ZTest01";
 	String description = "Test 01";
 	String cboText = "";
 
@@ -333,9 +333,9 @@ public class MessageAggregatorsPO extends TestBaseSteven {
 		click(btnEdit);
 
 		clear(txtEditMessageGateWay);
-		clear(txtEditDescription);
-
 		sendKeys(txtEditMessageGateWay, messageGatewayE);
+		
+		clear(txtEditDescription);
 		sendKeys(txtEditDescription, descriptionE);
 
 		click(cboEditOADCLookup);

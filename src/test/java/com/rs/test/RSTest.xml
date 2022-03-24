@@ -3,31 +3,70 @@
 <suite name="Suite" preserve-order="true">
 	
 	
+
+	<!----><!----><!-- Login --><!----><!----><!---->
 	<test name="Login">
 		<classes>
-			<!-- Acessar BRB -->
+
 			<class name="com.rs.test.login.Login"></class>
 		</classes>
 	</test>
-	<test name="Country Codes">
+	
+	
+	
+	<!----><!----><!-- Configuration --><!----><!----><!---->
+	
+	<test name="Carrier Service">
 		<classes>
-			<!-- Acessar BRB -->
-			<class name="com.rs.test.configuration.messageGateway.MessageGateway"></class>
+			<class
+				name="com.rs.test.configuration.carrierService.CarrierService"></class>
 		</classes>
 	</test>
 	<test name="Message Gateway">
 		<classes>
-			<!-- Paginação -->
-			<class name="com.rs.test.configuration.countryCodes.CountryCodes"></class>
+			<class
+				name="com.rs.test.configuration.messageGateway.MessageGateway"></class>
+		</classes>
+	</test>
+	<test name="Message Aggregators">
+		<classes>
+	
+			<class
+				name="com.rs.test.configuration.messageAggregators.MessageAggregators"></class>
+		</classes>
+	</test>
+	<test name="Country Codes">
+		<classes>
+	
+			<class
+				name="com.rs.test.configuration.countryCodes.CountryCodes"></class>
 		</classes>
 	</test>
 	<test name="Action Templates">
 		<classes>
-			<!-- Acessar BRB -->
-			<class name="com.rs.test.configuration.actionTemplates.ActionTemplates"></class>
+
+			<class
+				name="com.rs.test.configuration.actionTemplates.ActionTemplates"></class>
 		</classes>
 	</test>
-	
+
+	<test name="Character Encoding">
+		<classes>
+
+			<class
+				name="com.rs.test.configuration.characterEncoding.CharacterEncoding"></class>
+		</classes>
+	</test>
+
+	<!----><!----><!-- Cluster Configuration --><!----><!----><!---->
+
+	<test name="Cluster Classification">
+		<classes>
+			
+			<class
+				name="com.rs.test.clusterConfiguration.clusterClassification.ClusterClassification"></class>
+		</classes>
+	</test>
 	
 
 </suite> <!-- Suite -->
