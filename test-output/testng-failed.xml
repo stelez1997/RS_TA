@@ -3,18 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.rs.test.configuration.messageAggregators.MessageAggregators">
+      <class name="com.rs.test.spam.carrierTemplate.CarrierTemplate">
         <methods>
-          <include name="createPeerBlock"/>
-          <include name="beforeTest"/>
           <include name="afterTest"/>
-          <include name="createMessageAggregator"/>
-          <include name="editMessageAggregator"/>
-          <include name="editRoutePoints"/>
-          <include name="editPeerBlock"/>
-          <include name="createRoutePoints"/>
+          <include name="beforeTest"/>
+          <include name="filtersActionTemplate"/>
         </methods>
-      </class> <!-- com.rs.test.configuration.messageAggregators.MessageAggregators -->
+      </class> <!-- com.rs.test.spam.carrierTemplate.CarrierTemplate -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

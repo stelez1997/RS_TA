@@ -25,28 +25,50 @@ public class CharacterEncoding extends TestBaseSteven{
 	  loginVerificationPO.login();
 	  
   }
+  
  
-  @Test()
-  public void createActionTemplate() {
+  @Test(priority = 1)
+  public void createCharacterEncoding() {
 	 
 	  characterEncondingPO.createCharacterEncoding();
 	 
   }
 
-  @Test(dependsOnMethods = "createActionTemplate", priority = 1)
-  public void editActionTemplate() {
+  @Test(dependsOnMethods = "createCharacterEncoding", priority = 1)
+  public void editCharacterEncoding() {
 	 
 	  characterEncondingPO.editCharacterEncoding();
 	 
   }
   
-  @Test(dependsOnMethods = "createActionTemplate", priority = 2)
-  public void deleteActionTemplate() {
+  @Test(dependsOnMethods = "createCharacterEncoding", priority = 2)
+  public void deleteCharacterEncoding() {
 	 
-	  characterEncondingPO.deleteActionTemplate();
+	  characterEncondingPO.deleteCharacterEncoding();
 	 
   }
-
+ 
+  @Test(priority = 2)
+  public void createCustomEncodeCodePoint() {
+	 
+	  characterEncondingPO.createCustomEncodeCodePoint();
+	 
+  }
+  
+  
+  @Test(priority = 1, dependsOnMethods = "createCustomEncodeCodePoint")
+  public void editCustomEncodeCodePoint() {
+	 
+	  characterEncondingPO.editCustomEncodeCodePoint();
+	 
+  }
+  
+  @Test(priority = 2, dependsOnMethods = "createCustomEncodeCodePoint")
+  public void deleteCustomEncodeCodePoint() {
+	 
+	  characterEncondingPO.deleteCustomEncodeCodePoint();
+	 
+  }
   
   @AfterTest
   public void afterTest() {

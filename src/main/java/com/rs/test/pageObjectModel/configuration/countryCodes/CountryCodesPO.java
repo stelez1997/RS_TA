@@ -182,14 +182,6 @@ public class CountryCodesPO extends TestBaseSteven {
 
 	public void verification() {
 		
-		int rowsModal = rows("//div[contains(@style,\"none\") and @class=\"tablePageModalBack\"]");
-		
-		if (rowsModal ==0) {
-			
-			refresh();
-			waitExpectedElement("//button[@id=\"prefixesModalBtn0\"]");
-		}
-		
 		clickOnGoToLast();
 
 		int rows = rows("//tr[contains(@id,\"CodesTableRow\")]");
@@ -270,8 +262,16 @@ public class CountryCodesPO extends TestBaseSteven {
 	}
 
 	public void delete() {
-
-		loginVerificationPO = new LoginVerificationPO();
+		
+		int modal = rows("//input[@name=\"prefix\"]");
+		
+		if (modal == 1) {
+			
+			WebElement btnClose = findElement("//button[@class=\"tablePageModalCloseButton\"]");
+			
+			click(btnClose);
+			
+		}
 
 		verification();
 
@@ -379,19 +379,6 @@ public class CountryCodesPO extends TestBaseSteven {
 	}
 
 	public void editPrefix() {
-	
-
-		loginVerificationPO = new LoginVerificationPO();
-
-		verification();
-
-		int rows = rows("//tr[contains(@id,\"CodesTableRow\")]");
-
-		WebElement btnModal = findElement("//tr[contains(@id,\"CodesTableRow\")][" + rows + "]/td[5]/div/button");
-
-		click(btnModal);
-
-		waitExpectedElement(txtPrefix);
 
 		int rowsModal = rows("//tr[contains(@id,\"undefinedTableRow\")]");
 		
@@ -400,7 +387,8 @@ public class CountryCodesPO extends TestBaseSteven {
 
 		click(btnEdit);
 
-		String prefixEdit = "1234";
+		int prefixEdit = random();
+		System.out.println("Prefix Number is: "+prefixEdit);
 
 		WebElement txtEditPrefix = findElement("//tr[contains(@id,\"undefinedTableRow\")][" + rowsModal + "]/td[1]/input");
 
@@ -423,7 +411,10 @@ public class CountryCodesPO extends TestBaseSteven {
 		waitExpectedElement("//button[@id=\"prefixesModalBtn0\"]");
 		
 		
-		btnModal = findElement("//tr[contains(@id,\"CodesTableRow\")][" + rows + "]/td[5]/div/button");
+		int rows = rows("//tr[contains(@id,\"CodesTableRow\")]");
+
+		
+		WebElement btnModal = findElement("//tr[contains(@id,\"CodesTableRow\")][" + rows + "]/td[5]/div/button");
 
 		click(btnModal);
 
@@ -437,7 +428,7 @@ public class CountryCodesPO extends TestBaseSteven {
 		
 		boolean edited = false;
 		
-		if (editionText.equals(prefixEdit)) {
+		if (editionText.equals(String.valueOf(prefixEdit))) {
 			edited = true;
 		}
 		
@@ -449,29 +440,8 @@ public class CountryCodesPO extends TestBaseSteven {
 	}
 
 	public void deletePrefix() {
-	
-
-		loginVerificationPO = new LoginVerificationPO();
-
-		verification();
-
-		int rows = rows("//tr[contains(@id,\"CodesTableRow\")]");
-
-		WebElement btnModal = findElement("//tr[contains(@id,\"CodesTableRow\")][" + rows + "]/td[5]/div/button");
-
-		click(btnModal);
-
-		waitExpectedElement(txtPrefix);
-		
-		
 
 		int rowsModal = rows("//tr[contains(@id,\"undefinedTableRow\")]");
-		
-		if (rowsModal == 0) {
-			
-			assertTrue(false, noRecordFound);
-		}
-		
 
 		WebElement btnDelete = findElement("//tr[contains(@id,\"undefinedTableRow\")][" + rowsModal + "]/td[2]/div/button[2]");
 
@@ -483,10 +453,11 @@ public class CountryCodesPO extends TestBaseSteven {
 		
 		click(btnGoToLast);
 		
+		int rows = rows("//tr[contains(@id,\"CodesTableRow\")]");
 		
 		waitExpectedElement("//button[@id=\"prefixesModalBtn0\"]");
 		
-		btnModal = findElement("//tr[contains(@id,\"CodesTableRow\")][" + rows + "]/td[5]/div/button");
+		WebElement btnModal = findElement("//tr[contains(@id,\"CodesTableRow\")][" + rows + "]/td[5]/div/button");
 
 		click(btnModal);
 

@@ -1,179 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="8" passed="5" failed="3" skipped="0">
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-03-24T14:06:15 CST" name="Default suite" finished-at="2022-03-24T14:07:53 CST" duration-ms="97762">
+  <suite started-at="2022-04-06T15:22:56 CST" name="Default suite" finished-at="2022-04-06T15:24:00 CST" duration-ms="64215">
     <groups>
     </groups>
-    <test started-at="2022-03-24T14:06:15 CST" name="Default test" finished-at="2022-03-24T14:07:53 CST" duration-ms="97762">
-      <class name="com.rs.test.configuration.messageAggregators.MessageAggregators">
-        <test-method is-config="true" signature="beforeTest()[pri:0, instance:com.rs.test.configuration.messageAggregators.MessageAggregators@82de64a]" started-at="2022-03-24T14:06:15 CST" name="beforeTest" finished-at="2022-03-24T14:06:36 CST" duration-ms="20564" status="PASS">
+    <test started-at="2022-04-06T15:22:56 CST" name="Default test" finished-at="2022-04-06T15:24:00 CST" duration-ms="64215">
+      <class name="com.rs.test.spam.carrierTemplate.CarrierTemplate">
+        <test-method is-config="true" signature="beforeTest()[pri:0, instance:com.rs.test.spam.carrierTemplate.CarrierTemplate@437da279]" started-at="2022-04-06T15:22:56 CST" name="beforeTest" finished-at="2022-04-06T15:23:05 CST" duration-ms="9634" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method signature="createMessageAggregator()[pri:0, instance:com.rs.test.configuration.messageAggregators.MessageAggregators@82de64a]" started-at="2022-03-24T14:06:36 CST" name="createMessageAggregator" finished-at="2022-03-24T14:06:49 CST" duration-ms="13749" status="PASS">
+        <test-method signature="filtersActionTemplate()[pri:0, instance:com.rs.test.spam.carrierTemplate.CarrierTemplate@437da279]" started-at="2022-04-06T15:23:05 CST" name="filtersActionTemplate" finished-at="2022-04-06T15:23:59 CST" duration-ms="54162" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- createMessageAggregator -->
-        <test-method signature="editMessageAggregator()[pri:1, instance:com.rs.test.configuration.messageAggregators.MessageAggregators@82de64a]" started-at="2022-03-24T14:06:49 CST" name="editMessageAggregator" finished-at="2022-03-24T14:07:03 CST" depends-on-methods="com.rs.test.configuration.messageAggregators.MessageAggregators.createMessageAggregator" duration-ms="13467" status="FAIL">
-          <exception class="java.lang.AssertionError">
-            <message>
-              <![CDATA[The record wasn't edited sucessfully expected [true] but found [false]]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: The record wasn't edited sucessfully expected [true] but found [false]
-at org.testng.Assert.fail(Assert.java:99)
-at org.testng.Assert.failNotEquals(Assert.java:1037)
-at org.testng.Assert.assertTrue(Assert.java:45)
-at com.rs.test.pageObjectModel.configuration.messageAggregators.MessageAggregatorsPO.editMessageAggregator(MessageAggregatorsPO.java:374)
-at com.rs.test.configuration.messageAggregators.MessageAggregators.editMessageAggregator(MessageAggregators.java:40)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:564)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
-at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
-at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
-at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:794)
-at org.testng.TestRunner.run(TestRunner.java:596)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
-at org.testng.SuiteRunner.run(SuiteRunner.java:276)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
-at org.testng.TestNG.runSuites(TestNG.java:1063)
-at org.testng.TestNG.run(TestNG.java:1031)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- editMessageAggregator -->
-        <test-method signature="createRoutePoints()[pri:2, instance:com.rs.test.configuration.messageAggregators.MessageAggregators@82de64a]" started-at="2022-03-24T14:07:03 CST" name="createRoutePoints" finished-at="2022-03-24T14:07:15 CST" depends-on-methods="com.rs.test.configuration.messageAggregators.MessageAggregators.createMessageAggregator" duration-ms="12480" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- createRoutePoints -->
-        <test-method signature="editRoutePoints()[pri:1, instance:com.rs.test.configuration.messageAggregators.MessageAggregators@82de64a]" started-at="2022-03-24T14:07:15 CST" name="editRoutePoints" finished-at="2022-03-24T14:07:24 CST" depends-on-methods="com.rs.test.configuration.messageAggregators.MessageAggregators.createRoutePoints" duration-ms="8608" status="FAIL">
-          <exception class="java.lang.AssertionError">
-            <message>
-              <![CDATA[The record wasn't edited sucessfully expected [true] but found [false]]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: The record wasn't edited sucessfully expected [true] but found [false]
-at org.testng.Assert.fail(Assert.java:99)
-at org.testng.Assert.failNotEquals(Assert.java:1037)
-at org.testng.Assert.assertTrue(Assert.java:45)
-at com.rs.test.pageObjectModel.configuration.messageAggregators.MessageAggregatorsPO.editRTPoints(MessageAggregatorsPO.java:535)
-at com.rs.test.configuration.messageAggregators.MessageAggregators.editRoutePoints(MessageAggregators.java:56)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:564)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
-at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
-at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
-at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:794)
-at org.testng.TestRunner.run(TestRunner.java:596)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
-at org.testng.SuiteRunner.run(SuiteRunner.java:276)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
-at org.testng.TestNG.runSuites(TestNG.java:1063)
-at org.testng.TestNG.run(TestNG.java:1031)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- editRoutePoints -->
-        <test-method signature="deleteRoutePoints()[pri:2, instance:com.rs.test.configuration.messageAggregators.MessageAggregators@82de64a]" started-at="2022-03-24T14:07:24 CST" name="deleteRoutePoints" finished-at="2022-03-24T14:07:29 CST" depends-on-methods="com.rs.test.configuration.messageAggregators.MessageAggregators.createRoutePoints" duration-ms="4854" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- deleteRoutePoints -->
-        <test-method signature="createPeerBlock()[pri:3, instance:com.rs.test.configuration.messageAggregators.MessageAggregators@82de64a]" started-at="2022-03-24T14:07:29 CST" name="createPeerBlock" finished-at="2022-03-24T14:07:40 CST" depends-on-methods="com.rs.test.configuration.messageAggregators.MessageAggregators.createMessageAggregator" duration-ms="10877" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- createPeerBlock -->
-        <test-method signature="editPeerBlock()[pri:1, instance:com.rs.test.configuration.messageAggregators.MessageAggregators@82de64a]" started-at="2022-03-24T14:07:40 CST" name="editPeerBlock" finished-at="2022-03-24T14:07:47 CST" depends-on-methods="com.rs.test.configuration.messageAggregators.MessageAggregators.createPeerBlock" duration-ms="6948" status="FAIL">
-          <exception class="java.lang.AssertionError">
-            <message>
-              <![CDATA[The record wasn't edited sucessfully expected [true] but found [false]]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: The record wasn't edited sucessfully expected [true] but found [false]
-at org.testng.Assert.fail(Assert.java:99)
-at org.testng.Assert.failNotEquals(Assert.java:1037)
-at org.testng.Assert.assertTrue(Assert.java:45)
-at com.rs.test.pageObjectModel.configuration.messageAggregators.MessageAggregatorsPO.editPeerBlock(MessageAggregatorsPO.java:679)
-at com.rs.test.configuration.messageAggregators.MessageAggregators.editPeerBlock(MessageAggregators.java:84)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:564)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
-at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
-at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
-at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:794)
-at org.testng.TestRunner.run(TestRunner.java:596)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
-at org.testng.SuiteRunner.run(SuiteRunner.java:276)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
-at org.testng.TestNG.runSuites(TestNG.java:1063)
-at org.testng.TestNG.run(TestNG.java:1031)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- editPeerBlock -->
-        <test-method signature="deleteMessageAggregator()[pri:4, instance:com.rs.test.configuration.messageAggregators.MessageAggregators@82de64a]" started-at="2022-03-24T14:07:47 CST" name="deleteMessageAggregator" finished-at="2022-03-24T14:07:52 CST" depends-on-methods="com.rs.test.configuration.messageAggregators.MessageAggregators.createMessageAggregator" duration-ms="5875" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- deleteMessageAggregator -->
-        <test-method is-config="true" signature="afterTest()[pri:0, instance:com.rs.test.configuration.messageAggregators.MessageAggregators@82de64a]" started-at="2022-03-24T14:07:52 CST" name="afterTest" finished-at="2022-03-24T14:07:53 CST" duration-ms="297" status="PASS">
+        </test-method> <!-- filtersActionTemplate -->
+        <test-method is-config="true" signature="afterTest()[pri:0, instance:com.rs.test.spam.carrierTemplate.CarrierTemplate@437da279]" started-at="2022-04-06T15:23:59 CST" name="afterTest" finished-at="2022-04-06T15:24:00 CST" duration-ms="390" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterTest -->
-      </class> <!-- com.rs.test.configuration.messageAggregators.MessageAggregators -->
+      </class> <!-- com.rs.test.spam.carrierTemplate.CarrierTemplate -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

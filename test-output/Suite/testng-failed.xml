@@ -21,6 +21,7 @@
           <include name="beforeTest"/>
           <include name="afterTest"/>
           <include name="createMessageAggregator"/>
+          <include name="deleteRoutePoints"/>
           <include name="editMessageAggregator"/>
           <include name="editRoutePoints"/>
           <include name="editPeerBlock"/>
@@ -29,17 +30,4 @@
       </class> <!-- com.rs.test.configuration.messageAggregators.MessageAggregators -->
     </classes>
   </test> <!-- Message Aggregators(failed) -->
-  <test thread-count="5" name="Country Codes(failed)">
-    <classes>
-      <class name="com.rs.test.configuration.countryCodes.CountryCodes">
-        <methods>
-          <include name="afterTest"/>
-          <include name="beforeTest"/>
-          <include name="editModalPrefix"/>
-          <include name="createModalPrefix"/>
-          <include name="createCountryCode"/>
-        </methods>
-      </class> <!-- com.rs.test.configuration.countryCodes.CountryCodes -->
-    </classes>
-  </test> <!-- Country Codes(failed) -->
 </suite> <!-- Failed suite [Suite] -->

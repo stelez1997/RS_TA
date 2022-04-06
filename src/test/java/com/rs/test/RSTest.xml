@@ -10,12 +10,10 @@
 
 			<class name="com.rs.test.login.Login"></class>
 		</classes>
-	</test>
-	
-	
+	</test>	
 	
 	<!----><!----><!-- Configuration --><!----><!----><!---->
-	
+
 	<test name="Carrier Service">
 		<classes>
 			<class
@@ -30,14 +28,14 @@
 	</test>
 	<test name="Message Aggregators">
 		<classes>
-	
+
 			<class
 				name="com.rs.test.configuration.messageAggregators.MessageAggregators"></class>
 		</classes>
 	</test>
 	<test name="Country Codes">
 		<classes>
-	
+
 			<class
 				name="com.rs.test.configuration.countryCodes.CountryCodes"></class>
 		</classes>
@@ -62,11 +60,27 @@
 
 	<test name="Cluster Classification">
 		<classes>
-			
+
 			<class
 				name="com.rs.test.clusterConfiguration.clusterClassification.ClusterClassification"></class>
 		</classes>
 	</test>
+
+	<test name="Cluster Profile">
+		<classes>
+
+			<class
+				name="com.rs.test.clusterConfiguration.clusterProfile.ClusterProfile"></class>
+		</classes>
+	</test>
 	
+	<test name="Cluster Call to Action">
+		<classes>
+
+			<class
+				name="com.rs.test.clusterConfiguration.clusterCallToAction.ClusterCallToAction"></class>
+		</classes>
+	</test>
+
 
 </suite> <!-- Suite -->

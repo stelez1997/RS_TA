@@ -42,25 +42,42 @@ public class CharacterEncondingPO extends TestBaseSteven {
 	@FindBy(xpath = "//div[@class=\"tablePageSection\"]/div/div/button[text()=\">\"]")
 	public WebElement btnGoToNext;
 
-	// Create
-	
+	// Character Encoding Create
+
 	@FindBy(xpath = "//tr[@id=\"Character EncodingInputRow\"]/td[3]/input")
 	public WebElement txtDescription;
 
 	@FindBy(xpath = "//tr[@id=\"Character EncodingInputRow\"]/td[4]/input")
 	public WebElement txtName;
-	
+
 	@FindBy(xpath = "//tr[@id=\"Character EncodingInputRow\"]/td[5]/input")
 	public WebElement txtEscapeValue;
-	
+
 	@FindBy(xpath = "//select[@name=\"addparentEncodingId\"]")
 	public WebElement cboParentEncoding;
-	
+
 	@FindBy(xpath = "//select[@name=\"addparentEncodingId\"]/option[not(contains(text(),\"option\"))][1]")
 	public WebElement cboParentEncodingOption;
 
 	@FindBy(xpath = "//button[@id=\"Character EncodingAddBtn\"]")
 	public WebElement btnAddCharacterEncoding;
+
+	// Custom Encode Code Point
+
+	@FindBy(xpath = "//select[@name=\"addcharacterEncodingName\"]")
+	public WebElement cboEncoding;
+
+	@FindBy(xpath = "//select[@name=\"addcharacterEncodingName\"]/option[not(contains(text(),\"option\"))][1]")
+	public WebElement cboEncodingOption;
+	
+	@FindBy(xpath = "//input[@name=\"codePointOverrideHex\"]")
+	public WebElement txtCodePoint;
+
+	@FindBy(xpath = "//input[@name=\"uniChar\"]")
+	public WebElement txtUnichar;
+
+	@FindBy(xpath = "//button[@id=\"Custom Encode Code PointAddBtn\"]")
+	public WebElement btnAddCustomEncodeCodePoint;
 
 	// Search
 
@@ -91,29 +108,29 @@ public class CharacterEncondingPO extends TestBaseSteven {
 	public void clickOnGoToFirst() {
 		click(btnGoToFirst);
 
-		waitExpectedElement("//tr[contains(@id,\"Character EncodingTableRow\") and not(contains(@id,\"Default\"))]");
+		waitExpectedElement("//tr[contains(@id,\"Custom Encode Code PointTable\") ][1]/td[7]/div/button[1]");
 	}
 
 	public void clickOnGoToPrevious() {
 		click(btnGoToPrevious);
 
-		waitExpectedElement("//tr[contains(@id,\"Character EncodingTableRow\") and not(contains(@id,\"Default\"))]");
+		waitExpectedElement("//tr[contains(@id,\"Custom Encode Code PointTable\") ][1]/td[7]/div/button[1]");
 	}
 
 	public void clickOnGoToNext() {
 		click(btnGoToNext);
 
-		waitExpectedElement("//tr[contains(@id,\"Character EncodingTableRow\") and not(contains(@id,\"Default\"))]");
+		waitExpectedElement("//tr[contains(@id,\"Custom Encode Code PointTable\") ][1]/td[7]/div/button[1]");
 	}
 
 	public void clickOnGoToLast() {
 		click(btnGoToLast);
 
-		waitExpectedElement("//tr[contains(@id,\"Character EncodingTableRow\") and not(contains(@id,\"Default\"))]");
+		waitExpectedElement("//tr[contains(@id,\"Custom Encode Code PointTable\") ][1]/td[7]/div/button[1]");
 
 	}
 
-	// Create Methods
+	// Character Encoding Create Methods
 
 	public void fillOutName(String text) {
 		sendKeys(txtName, text);
@@ -122,15 +139,15 @@ public class CharacterEncondingPO extends TestBaseSteven {
 	public void fillOutDescription(String text) {
 		sendKeys(txtDescription, text);
 	}
-	
+
 	public void fillOutEscapeValue(String text) {
 		sendKeys(txtEscapeValue, text);
 	}
-	
+
 	public void clickOnCboParentEncoding() {
 		click(cboParentEncoding);
 	}
-	
+
 	public void clickOnCboParentEncodingOption() {
 		click(cboParentEncodingOption);
 	}
@@ -138,17 +155,44 @@ public class CharacterEncondingPO extends TestBaseSteven {
 	public void clickOnAddCharacterEncoding() {
 		click(btnAddCharacterEncoding);
 	}
+	
+	// Custom Encode Code Point Create Methods
 
+	public void clickOnCboEncoding() {
+		click(cboEncoding);
+	}
+
+	public void clickOnCboEncodingOption() {
+		click(cboEncodingOption);
+	}
+
+	public void fillOutCodePoint(String text) {
+		sendKeys(txtCodePoint, text);
+	}
+
+	public void fillOutUnichar(String text) {
+		sendKeys(txtUnichar, text);
+	}
+
+	public void clickOnAddCustomEncodeCodePoint() {
+		click(btnAddCustomEncodeCodePoint);
+	}
+	
+	
 	// Modals
 
-	// Create
-	
-	
-	String name = "Test";
-	String description = "Test Character";
+	//Character Encoding Create Create
+
+	String description = "Test";
+	String name = "Test Character";
 	String escapeValue = "123";
 	String cboText = "";
 	String id = "";
+	
+	//Custom Encode Code Create
+	
+	String codePoint = "0x12";
+	String unichar = "$";
 
 	public void createCharacterEncoding() {
 
@@ -165,22 +209,23 @@ public class CharacterEncondingPO extends TestBaseSteven {
 		int rowsB = rows("//tr[contains(@id,\"Character EncodingTableRow\") and not(contains(@id,\"Default\"))]");
 
 		clickOnCboParentEncoding();
-		
+
 		cboText = getText(cboParentEncodingOption);
-		
+
 		clickOnCboParentEncodingOption();
 
 		fillOutDescription(description);
-		
+
 		fillOutName(name);
-		
+
 		fillOutEscapeValue(escapeValue);
 
 		clickOnAddCharacterEncoding();
 
 		refresh();
 
-		waitExpectedElement("//tr[contains(@id,\"Character EncodingTableRow\") and not(contains(@id,\"Default\"))]/td[8]/div/button[1]");
+		waitExpectedElement(
+				"//tr[contains(@id,\"Character EncodingTableRow\") and not(contains(@id,\"Default\"))]/td[8]/div/button[1]");
 
 		clickOnGoToLast();
 
@@ -188,55 +233,64 @@ public class CharacterEncondingPO extends TestBaseSteven {
 
 		System.out.println("--------------------Creation Verification--------------------");
 		boolean created = greaterThanInt(rowsA, rowsB);
-	
+
 		assertTrue(created, createdUnSuccesfully);
-	
-		System.out.println("Record Created: "+created);
-		
+
+		System.out.println("Record Created: " + created);
+
 		created = false;
 
-		String parentEncodingA = getText("//tr[contains(@id,\"Character EncodingTableRow\") and not(contains(@id,\"Default\"))][" + rowsA + "]/td[2]/div");
-		String descriptionA = getText("//tr[contains(@id,\"Character EncodingTableRow\") and not(contains(@id,\"Default\"))][" + rowsA + "]/td[3]/div");
-		String nameA = getText("//tr[contains(@id,\"Character EncodingTableRow\") and not(contains(@id,\"Default\"))][" + rowsA + "]/td[4]/div");
-		String escapeValueA = getText("//tr[contains(@id,\"Character EncodingTableRow\") and not(contains(@id,\"Default\"))][" + rowsA + "]/td[5]/div");
+		String parentEncodingA = getText(
+				"//tr[contains(@id,\"Character EncodingTableRow\") and not(contains(@id,\"Default\"))][" + rowsA
+						+ "]/td[2]/div");
+		String descriptionA = getText(
+				"//tr[contains(@id,\"Character EncodingTableRow\") and not(contains(@id,\"Default\"))][" + rowsA
+						+ "]/td[3]/div");
+		String nameA = getText("//tr[contains(@id,\"Character EncodingTableRow\") and not(contains(@id,\"Default\"))]["
+				+ rowsA + "]/td[4]/div");
+		String escapeValueA = getText(
+				"//tr[contains(@id,\"Character EncodingTableRow\") and not(contains(@id,\"Default\"))][" + rowsA
+						+ "]/td[5]/div");
 		System.out.println("The Parent Encoding is: " + parentEncodingA);
 		System.out.println("The Description is: " + descriptionA);
 		System.out.println("The Name is: " + nameA);
 		System.out.println("The Escape Value is: " + escapeValueA);
 
-		if (parentEncodingA.equals(cboText) && descriptionA.equals(description) && nameA.equals(name)&& escapeValueA.equals(escapeValue) ) {
+		if (parentEncodingA.equals(cboText) && descriptionA.equals(description) && nameA.equals(name)
+				&& escapeValueA.equals(escapeValue)) {
 			created = true;
 		}
-		
-		id = getText("//tr[contains(@id,\"Character EncodingTableRow\") and not(contains(@id,\"Default\"))][" + rowsA + "]/td[1]/div");
-		
+
+		id = getText("//tr[contains(@id,\"Character EncodingTableRow\") and not(contains(@id,\"Default\"))][" + rowsA
+				+ "]/td[1]/div");
+
 		assertTrue(created, createdUnSuccesfully);
 
 		System.out.println("The record was created succesfully: " + created);
-		
 
 	}
-	
+
 	// Verfication before editing or deleting the record
 
 	public void verification() {
-		
+
 		clickOnGoToLast();
-		
+
 		int rows = rows("//tr[contains(@id,\"Character EncodingTableRow\") and not(contains(@id,\"Default\"))]");
-		
-		String idA = getText("//tr[contains(@id,\"Character EncodingTableRow\") and not(contains(@id,\"Default\"))][" + rows + "]/td[1]/div");
-		
+
+		String idA = getText("//tr[contains(@id,\"Character EncodingTableRow\") and not(contains(@id,\"Default\"))]["
+				+ rows + "]/td[1]/div");
+
 		boolean record = false;
-		
+
 		if (idA.equals(id)) {
 			record = true;
 		}
-		
-		System.out.println("Creation record being displayed: "+record);
-		
+
+		System.out.println("Creation record being displayed: " + record);
+
 		assertTrue(record, creationRecord);
-		
+
 	}
 
 	public void editCharacterEncoding() {
@@ -250,24 +304,36 @@ public class CharacterEncondingPO extends TestBaseSteven {
 		description = "Edition Test";
 		name = "Edition Test";
 		escapeValue = "321";
-		
+
 		int rows = rows("//tr[contains(@id,\"Character EncodingTableRow\") and not(contains(@id,\"Default\"))]");
-				
-		WebElement btnEdit = findElement("//tr[contains(@id,\"Character EncodingTableRow\") and not(contains(@id,\"Default\"))]["+rows+"]/td[8]/div/button[1]");
-		
+
+		WebElement btnEdit = findElement(
+				"//tr[contains(@id,\"Character EncodingTableRow\") and not(contains(@id,\"Default\"))][" + rows
+						+ "]/td[8]/div/button[1]");
+
 		click(btnEdit);
-		
-		WebElement cboEditParentEncoding = findElement("//tr[contains(@id,\"Character EncodingTableRow\") and not(contains(@id,\"Default\"))]["+rows+"]/td[2]/select");
-		WebElement cboEditParentEncodingO = findElement("//tr[contains(@id,\"Character EncodingTableRow\") and not(contains(@id,\"Default\"))]["+rows+"]/td[2]/select/option[not(contains(text(),\"option\"))][2]");
-		WebElement txtEditDescription = findElement("//tr[contains(@id,\"Character EncodingTableRow\") and not(contains(@id,\"Default\"))]["+rows+"]/td[3]/input");
-		WebElement txtEditName = findElement("//tr[contains(@id,\"Character EncodingTableRow\") and not(contains(@id,\"Default\"))]["+rows+"]/td[4]/input");
-		WebElement txtEditEscapeValue = findElement("//tr[contains(@id,\"Character EncodingTableRow\") and not(contains(@id,\"Default\"))]["+rows+"]/td[5]/input");
-		
+
+		WebElement cboEditParentEncoding = findElement(
+				"//tr[contains(@id,\"Character EncodingTableRow\") and not(contains(@id,\"Default\"))][" + rows
+						+ "]/td[2]/select");
+		WebElement cboEditParentEncodingO = findElement(
+				"//tr[contains(@id,\"Character EncodingTableRow\") and not(contains(@id,\"Default\"))][" + rows
+						+ "]/td[2]/select/option[not(contains(text(),\"option\"))][2]");
+		WebElement txtEditDescription = findElement(
+				"//tr[contains(@id,\"Character EncodingTableRow\") and not(contains(@id,\"Default\"))][" + rows
+						+ "]/td[3]/input");
+		WebElement txtEditName = findElement(
+				"//tr[contains(@id,\"Character EncodingTableRow\") and not(contains(@id,\"Default\"))][" + rows
+						+ "]/td[4]/input");
+		WebElement txtEditEscapeValue = findElement(
+				"//tr[contains(@id,\"Character EncodingTableRow\") and not(contains(@id,\"Default\"))][" + rows
+						+ "]/td[5]/input");
+
 		click(cboEditParentEncoding);
 		cboText = getText(cboEditParentEncodingO);
-		System.out.println("Edition option is: "+cboText);
+		System.out.println("Edition option is: " + cboText);
 		click(cboEditParentEncodingO);
-		
+
 		clear(txtEditDescription);
 		sendKeys(txtEditDescription, description);
 		clear(txtEditName);
@@ -277,76 +343,96 @@ public class CharacterEncondingPO extends TestBaseSteven {
 
 		click(btnEdit);
 
-		waitExpectedElement("//tr[contains(@id,\"Character EncodingTableRow\") and not(contains(@id,\"Default\"))]/td[8]/div/button[1]");
+		waitExpectedElement(
+				"//tr[contains(@id,\"Character EncodingTableRow\") and not(contains(@id,\"Default\"))]/td[8]/div/button[1]");
 
 		refresh();
 
-		waitExpectedElement("//tr[contains(@id,\"Character EncodingTableRow\") and not(contains(@id,\"Default\"))]/td[8]/div/button[1]");
-
+		waitExpectedElement(
+				"//tr[contains(@id,\"Character EncodingTableRow\") and not(contains(@id,\"Default\"))]/td[8]/div/button[1]");
 
 		click(btnGoToLast);
 
-		waitExpectedElement("//tr[contains(@id,\"Character EncodingTableRow\") and not(contains(@id,\"Default\"))]/td[8]/div/button[1]");
+		waitExpectedElement(
+				"//tr[contains(@id,\"Character EncodingTableRow\") and not(contains(@id,\"Default\"))]/td[8]/div/button[1]");
 
-		System.out.println("-----------------------------------------Edition Verification-------------------------------");
-		String parentEncodingA = getText("//tr[contains(@id,\"Character EncodingTableRow\") and not(contains(@id,\"Default\"))][" + rows + "]/td[2]/div");
-		String descriptionA = getText("//tr[contains(@id,\"Character EncodingTableRow\") and not(contains(@id,\"Default\"))][" + rows + "]/td[3]/div");
-		String nameA = getText("//tr[contains(@id,\"Character EncodingTableRow\") and not(contains(@id,\"Default\"))][" + rows + "]/td[4]/div");
-		String escapeValueA = getText("//tr[contains(@id,\"Character EncodingTableRow\") and not(contains(@id,\"Default\"))][" + rows + "]/td[5]/div");
+		System.out.println(
+				"-----------------------------------------Edition Verification-------------------------------");
+		String parentEncodingA = getText(
+				"//tr[contains(@id,\"Character EncodingTableRow\") and not(contains(@id,\"Default\"))][" + rows
+						+ "]/td[2]/div");
+		String descriptionA = getText(
+				"//tr[contains(@id,\"Character EncodingTableRow\") and not(contains(@id,\"Default\"))][" + rows
+						+ "]/td[3]/div");
+		String nameA = getText("//tr[contains(@id,\"Character EncodingTableRow\") and not(contains(@id,\"Default\"))]["
+				+ rows + "]/td[4]/div");
+		String escapeValueA = getText(
+				"//tr[contains(@id,\"Character EncodingTableRow\") and not(contains(@id,\"Default\"))][" + rows
+						+ "]/td[5]/div");
 		System.out.println("The Parent Encoding is: " + parentEncodingA);
 		System.out.println("The Description is: " + descriptionA);
 		System.out.println("The Name is: " + nameA);
 		System.out.println("The Escape Value is: " + escapeValueA);
-		
 
-		if (parentEncodingA.equals(cboText) && descriptionA.equals(description) && nameA.equals(name)&& escapeValueA.equals(escapeValue) ) {
+		if (parentEncodingA.equals(cboText) && descriptionA.equals(description) && nameA.equals(name)
+				&& escapeValueA.equals(escapeValue)) {
 			edited = true;
 		}
-		
+
 		assertTrue(edited, createdUnSuccesfully);
 
 		System.out.println("The record was edited succesfully: " + edited);
 
-
 	}
-	
-	public void deleteActionTemplate() {
 
+	public void deleteCharacterEncoding() {
 
 		loginVerificationPO = new LoginVerificationPO();
 
 		verification();
-		
+
 		int rowsB = rows("//tr[contains(@id,\"Character EncodingTableRow\") and not(contains(@id,\"Default\"))]");
-				
-		WebElement btnDelete = findElement("//tr[contains(@id,\"Character EncodingTableRow\") and not(contains(@id,\"Default\"))]["+rowsB+"]/td[8]/div/button[2]");
+
+		WebElement btnDelete = findElement(
+				"//tr[contains(@id,\"Character EncodingTableRow\") and not(contains(@id,\"Default\"))][" + rowsB
+						+ "]/td[8]/div/button[2]");
 
 		click(btnDelete);
 
 		refresh();
 
-		waitExpectedElement("//tr[contains(@id,\"Character EncodingTableRow\") and not(contains(@id,\"Default\"))]/td[8]/div/button[1]");
+		waitExpectedElement(
+				"//tr[contains(@id,\"Character EncodingTableRow\") and not(contains(@id,\"Default\"))]/td[8]/div/button[1]");
 
 		click(btnGoToLast);
 
-		waitExpectedElement("//tr[contains(@id,\"Character EncodingTableRow\") and not(contains(@id,\"Default\"))]/td[8]/div/button[1]");
+		waitExpectedElement(
+				"//tr[contains(@id,\"Character EncodingTableRow\") and not(contains(@id,\"Default\"))]/td[8]/div/button[1]");
 
 		int rowsA = rows("//tr[contains(@id,\"Character EncodingTableRow\") and not(contains(@id,\"Default\"))]");
 
 		boolean deleted = greaterThanInt(rowsB, rowsA);
-		
+
 		assertTrue(deleted, deletionRecord);
-		
+
 		System.out.println("The record was deleted with success: " + deleted);
-		
+
 		deleted = false;
-		
-		String idA = getText("//tr[contains(@id,\"Character EncodingTableRow\") and not(contains(@id,\"Default\"))][" + rowsA + "]/td[1]/div");
-		String parentEncodingA = getText("//tr[contains(@id,\"Character EncodingTableRow\") and not(contains(@id,\"Default\"))][" + rowsA + "]/td[2]/div");
-		String descriptionA = getText("//tr[contains(@id,\"Character EncodingTableRow\") and not(contains(@id,\"Default\"))][" + rowsA + "]/td[3]/div");
-		String nameA = getText("//tr[contains(@id,\"Character EncodingTableRow\") and not(contains(@id,\"Default\"))][" + rowsA + "]/td[4]/div");
-		String escapeValueA = getText("//tr[contains(@id,\"Character EncodingTableRow\") and not(contains(@id,\"Default\"))][" + rowsA + "]/td[5]/div");
-		
+
+		String idA = getText("//tr[contains(@id,\"Character EncodingTableRow\") and not(contains(@id,\"Default\"))]["
+				+ rowsA + "]/td[1]/div");
+		String parentEncodingA = getText(
+				"//tr[contains(@id,\"Character EncodingTableRow\") and not(contains(@id,\"Default\"))][" + rowsA
+						+ "]/td[2]/div");
+		String descriptionA = getText(
+				"//tr[contains(@id,\"Character EncodingTableRow\") and not(contains(@id,\"Default\"))][" + rowsA
+						+ "]/td[3]/div");
+		String nameA = getText("//tr[contains(@id,\"Character EncodingTableRow\") and not(contains(@id,\"Default\"))]["
+				+ rowsA + "]/td[4]/div");
+		String escapeValueA = getText(
+				"//tr[contains(@id,\"Character EncodingTableRow\") and not(contains(@id,\"Default\"))][" + rowsA
+						+ "]/td[5]/div");
+
 		System.out.println("---------------------------Deletion Verification--------------------------");
 		System.out.println("The Id is: " + idA);
 		System.out.println("The Parent Encodin is: " + parentEncodingA);
@@ -354,7 +440,7 @@ public class CharacterEncondingPO extends TestBaseSteven {
 		System.out.println("The Name is: " + nameA);
 		System.out.println("The Escape Value is: " + escapeValueA);
 
-		if (!idA.equals(id) && !parentEncodingA.equals(cboText) && !descriptionA.equals(description) 
+		if (!idA.equals(id) && !parentEncodingA.equals(cboText) && !descriptionA.equals(description)
 				&& !nameA.equals(name) && !escapeValueA.equals(escapeValue)) {
 			deleted = true;
 		}
@@ -364,6 +450,243 @@ public class CharacterEncondingPO extends TestBaseSteven {
 		assertTrue(deleted, deletionRecord);
 
 	}
+	
+	
+	public void createCustomEncodeCodePoint() {
+
+		loginVerificationPO = new LoginVerificationPO();
+
+		actionsMoveToElementElement(loginVerificationPO.btnConfiguration);
+
+		clickOnActionTemplateMenu();
+
+		actionsMoveToElementElement(btnAddCustomEncodeCodePoint);
+
+		clickOnGoToLast();
+
+		int rowsB = rows("//tr[contains(@id,\"Custom Encode Code PointTable\") ]");
+
+		clickOnCboEncoding();
+
+		cboText = getText(cboEncodingOption);
+
+		clickOnCboEncodingOption();
+
+		fillOutCodePoint(codePoint);
+
+		fillOutUnichar(unichar);
+
+		clickOnAddCustomEncodeCodePoint();
+
+		refresh();
+
+		waitExpectedElement("//tr[contains(@id,\"Custom Encode Code PointTable\") ][1]/td[7]/div/button[1]");
+
+		clickOnGoToLast();
+
+		int rowsA = rows("//tr[contains(@id,\"Custom Encode Code PointTable\") ]");
+
+		System.out.println("--------------------Creation Verification--------------------");
+		boolean created = greaterThanInt(rowsA, rowsB);
+
+		assertTrue(created, createdUnSuccesfully);
+
+		System.out.println("Record Created: " + created);
+
+		created = false;
+
+		String encodingA = getText("//tr[contains(@id,\"Custom Encode Code PointTable\") ]["+rowsA+"]/td[2]/div");
+		String codePointA = getText("//tr[contains(@id,\"Custom Encode Code PointTable\") ]["+rowsA+"]/td[3]/div");
+		String unicharA = getText("//tr[contains(@id,\"Custom Encode Code PointTable\") ]["+rowsA+"]/td[4]/div");
+		System.out.println("The Parent Encoding is: " + encodingA);
+		System.out.println("The Description is: " + codePointA);
+		System.out.println("The Name is: " + unicharA);
+
+		if (encodingA.equals(cboText) && codePointA.equals(codePoint) && unicharA.equals(unichar)) {
+			created = true;
+		}
+
+		assertTrue(created, createdUnSuccesfully);
+
+		System.out.println("The record was created succesfully: " + created);
+
+	}
+	
+	public void verificationCustomEncodeCodePoint() {
+		
+		clickOnGoToLast();
+		
+		boolean created = false;
+
+		int rows = rows("//tr[contains(@id,\"Custom Encode Code PointTable\") ]");
+
+		String encodingA = getText("//tr[contains(@id,\"Custom Encode Code PointTable\") ]["+rows+"]/td[2]/div");
+		String codePointA = getText("//tr[contains(@id,\"Custom Encode Code PointTable\") ]["+rows+"]/td[3]/div");
+		String unicharA = getText("//tr[contains(@id,\"Custom Encode Code PointTable\") ]["+rows+"]/td[4]/div");
+		System.out.println("The Encoding is: " + encodingA);
+		System.out.println("The Code Point is: " + codePointA);
+		System.out.println("The Uni Char is: " + unicharA);
+		
+		if (encodingA.equals(cboText) && codePointA.equals(codePoint) && unicharA.equals(unichar)) {
+			created = true;
+		}
+		
+		assertTrue(created, creationRecord);
+
+	}
+	
+	
+	public void editCustomEncodeCodePoint() {
+
+		verificationCustomEncodeCodePoint();
+
+		boolean edited = false;
+
+		codePoint = "0x13";
+		unichar = "#";
+
+		int rows = rows("//tr[contains(@id,\"Custom Encode Code PointTable\") ]");
+
+		WebElement btnEdit = findElement("//tr[contains(@id,\"Custom Encode Code PointTable\") ]["+rows+"]/td[7]/div/button[1]");
+
+		click(btnEdit);
+
+		WebElement cboEditEncoding = findElement("//tr[contains(@id,\"Custom Encode Code PointTable\") ]["+rows+"]/td[2]/select");
+		WebElement cboEditEncodingO = findElement("//tr[contains(@id,\"Custom Encode Code PointTable\") ]["+rows+"]/td[2]/select/option[not(contains(text(),\"option\"))][2]");
+		WebElement txtEditCodePoint = findElement("//tr[contains(@id,\"Custom Encode Code PointTable\") ]["+rows+"]/td[3]/input");
+		WebElement txtEditUniChar = findElement("//tr[contains(@id,\"Custom Encode Code PointTable\") ]["+rows+"]/td[4]/input");
+		
+		click(cboEditEncoding);
+		cboText = getText(cboEditEncodingO);
+		click(cboEditEncodingO);
+
+		clear(txtEditCodePoint);
+		sendKeys(txtEditCodePoint, codePoint);
+		
+		clear(txtEditUniChar);
+		sendKeys(txtEditUniChar, unichar);
+
+
+		click(btnEdit);
+
+		waitExpectedElement("//tr[contains(@id,\"Custom Encode Code PointTable\") ][1]/td[7]/div/button[1]");
+
+		refresh();
+
+		waitExpectedElement("//tr[contains(@id,\"Custom Encode Code PointTable\") ][1]/td[7]/div/button[1]");
+		
+		click(btnGoToLast);
+
+		waitExpectedElement("//tr[contains(@id,\"Custom Encode Code PointTable\") ][1]/td[7]/div/button[1]");
+		
+		System.out.println(
+				"-----------------------------------------Edition Verification-------------------------------");
+		String encodingA = getText("//tr[contains(@id,\"Custom Encode Code PointTable\") ]["+rows+"]/td[2]/div");
+		String codePointA = getText("//tr[contains(@id,\"Custom Encode Code PointTable\") ]["+rows+"]/td[3]/div");
+		String unicharA = getText("//tr[contains(@id,\"Custom Encode Code PointTable\") ]["+rows+"]/td[4]/div");
+		System.out.println("The Parent Encoding is: " + encodingA);
+		System.out.println("The Description is: " + codePointA);
+		System.out.println("The Name is: " + unicharA);
+
+
+		if (encodingA.equals(cboText) && codePointA.equals(codePoint) && unicharA.equals(unichar)) {
+			edited = true;
+		}
+
+		assertTrue(edited, createdUnSuccesfully);
+
+		System.out.println("The record was edited succesfully: " + edited);
+		
+		codePoint = "0x12";
+		unichar = "$";
+		
+		 btnEdit = findElement("//tr[contains(@id,\"Custom Encode Code PointTable\") ]["+rows+"]/td[7]/div/button[1]");
+		click(btnEdit);
+
+		cboEditEncoding = findElement("//tr[contains(@id,\"Custom Encode Code PointTable\") ]["+rows+"]/td[2]/select");
+		cboEditEncodingO = findElement("//tr[contains(@id,\"Custom Encode Code PointTable\") ]["+rows+"]/td[2]/select/option[not(contains(text(),\"option\"))][2]");
+		txtEditCodePoint = findElement("//tr[contains(@id,\"Custom Encode Code PointTable\") ]["+rows+"]/td[3]/input");
+		txtEditUniChar = findElement("//tr[contains(@id,\"Custom Encode Code PointTable\") ]["+rows+"]/td[4]/input");
+		
+		click(cboEditEncoding);
+		
+		cboEditEncodingO = findElement("//tr[contains(@id,\"Custom Encode Code PointTable\") ]["+rows+"]/td[2]/select/option[not(contains(text(),\"option\"))][1]");
+		cboText = getText(cboEditEncodingO);
+		click(cboEditEncodingO);
+		
+		clear(txtEditCodePoint);
+		sendKeys(txtEditCodePoint, codePoint);
+		
+		clear(txtEditUniChar);
+		sendKeys(txtEditUniChar, unichar);
+		
+		click(btnEdit);
+		
+		waitExpectedElement("//tr[contains(@id,\"Custom Encode Code PointTable\") ][1]/td[7]/div/button[1]");
+
+
+	}
+	
+	public void deleteCustomEncodeCodePoint() {
+
+
+		verificationCustomEncodeCodePoint();
+		
+		int rowsB = rows("//tr[contains(@id,\"Custom Encode Code PointTable\") ]");
+
+
+		WebElement btnDelete = findElement("//tr[contains(@id,\"Custom Encode Code PointTable\") ]["+rowsB+"]/td[7]/div/button[2]");
+
+		click(btnDelete);
+
+		refresh();
+
+		waitExpectedElement("//tr[contains(@id,\"Custom Encode Code PointTable\") ][1]/td[7]/div/button[1]");
+		
+		click(btnGoToLast);
+
+		waitExpectedElement("//tr[contains(@id,\"Custom Encode Code PointTable\") ][1]/td[7]/div/button[1]");
+		
+		int rowsA = rows("//tr[contains(@id,\"Custom Encode Code PointTable\") ]");
+
+		boolean deleted = greaterThanInt(rowsB, rowsA);
+
+		assertTrue(deleted, deletionRecord);
+	
+
+
+		System.out.println("The record was deleted with success: " + deleted);
+
+		deleted = false;
+
+		String encodingA = getText("//tr[contains(@id,\"Custom Encode Code PointTable\") ]["+rowsA+"]/td[2]/div");
+		String codePointA = getText("//tr[contains(@id,\"Custom Encode Code PointTable\") ]["+rowsA+"]/td[3]/div");
+		String unicharA = getText("//tr[contains(@id,\"Custom Encode Code PointTable\") ]["+rowsA+"]/td[4]/div");
+		System.out.println("The Encoding is: " + encodingA);
+		System.out.println("The Code Point is: " + codePointA);
+		System.out.println("The Uni Char is: " + unicharA);
+
+
+		System.out.println("---------------------------Deletion Verification--------------------------");
+		System.out.println("The Parent EncodiEncodingn is: " + encodingA);
+		System.out.println("The Code Point is: " + codePointA);
+		System.out.println("The Uni Char is: " + unicharA);
+
+		if (!encodingA.equals(cboText) && !codePointA.equals(codePoint) && !unicharA.equals(unichar) ) {
+			deleted = true;
+		}
+
+		System.out.println("The record was deleted with success: " + deleted);
+
+		assertTrue(deleted, deletionRecord);
+
+	}
+	
+	
+	
+	
+	
+	
 	
 
 }

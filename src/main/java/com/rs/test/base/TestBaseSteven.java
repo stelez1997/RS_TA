@@ -9,9 +9,11 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
+import java.util.Random;
 import java.util.concurrent.TimeUnit;
 import java.util.prefs.Preferences;
 import org.openqa.selenium.By;
@@ -93,12 +95,39 @@ public class TestBaseSteven {
 
 	}
 	
+	public void clear(String xpath) {
+		
+		findElement(xpath).clear();
+		sleep(1000);
+
+	}
+	
+	public void clearByBackSpace(WebElement element) {
+		
+		String value = getAttribute(element, "value");
+		
+		for (int i = 0; i < value.length(); i++) {
+			sendKeys(element, Keys.BACK_SPACE);
+		}
+		
+	}
+	
+	
+	
 	public void sendKeys(WebElement element, String text) {
 		
 		element.sendKeys(text);
 		sleep(500);
 		
 	}
+	
+	public void sendKeys(WebElement element, int number) {
+		
+		element.sendKeys(String.valueOf(number));
+		sleep(500);
+		
+	}
+	
 	
 	public void sendKeys(String xpath, String text) {
 		
@@ -120,16 +149,7 @@ public class TestBaseSteven {
 		sleep(500);
 		
 	}
-	
-	
-	
-	public void clear(String xpath) {
-		
-		driver.findElement(By.xpath(xpath)).clear();
-		sleep(500);
-	}
-	
-	
+
 	public void refresh() {
 				
 		driver.navigate().refresh();
@@ -279,7 +299,7 @@ public class TestBaseSteven {
 		String texto = driver.findElement(By.xpath(xpath)).getText();
 		
 		if (texto.isEmpty()==true) {
-			texto = "vazio";
+			texto = "empty";
 		}
 		
 		return texto;
@@ -316,12 +336,13 @@ public class TestBaseSteven {
 
 	public void visibilityOfElementXpath(String xpath) {
 
-		boolean isPresent = driver.findElement(By.xpath(xpath)).isDisplayed();
+		int rows = rows(xpath);
 
-		while (isPresent == false) {
-			sleep(3000);
-			isPresent = driver.findElement(By.xpath(xpath)).isDisplayed();
+		while (rows == 0) {
+			rows = rows(xpath);
 		}
+		
+		sleep(1000);
 
 	}
 	
@@ -550,6 +571,21 @@ public class TestBaseSteven {
 		
 	}
 	
+	public int random() {
+		
+		Random randomNum = new Random();
+		
+		int n = randomNum.nextInt(123456789);
+		
+		if (n <0) {
+			n = n*-1;
+		}
+		
+		return n;
+		
+		
+	}
+	
 	
 	public void close() {
 		
@@ -567,6 +603,7 @@ public class TestBaseSteven {
 	public String editionRecord ="The record wasn't edited sucessfully";
 	public String deletionRecord ="The record wasn't deleted sucessfully";
 	public String testRecord ="The testing record is being displayed";
+	public String filtersNotWorking ="The filters are not working as expected";
 	
 	
 	

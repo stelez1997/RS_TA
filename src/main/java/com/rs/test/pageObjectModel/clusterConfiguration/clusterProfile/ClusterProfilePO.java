@@ -198,9 +198,9 @@ public class ClusterProfilePO extends TestBaseSteven {
 
 		click(btnEdit);
 
-		clear(txtEditName);
+		clearByBackSpace(txtEditName);
 		sendKeys(txtEditName, nameE);
-		clear(txtEditDescription);
+		clearByBackSpace(txtEditDescription);
 		sendKeys(txtEditDescription, descriptionE);
 
 		click(btnEdit);
@@ -238,8 +238,8 @@ public class ClusterProfilePO extends TestBaseSteven {
 
 		click(btnEdit);
 
-		clear(txtEditName);
-		clear(txtEditDescription);
+		clearByBackSpace(txtEditName);
+		clearByBackSpace(txtEditDescription);
 
 		sendKeys(txtEditName, name);
 		sendKeys(txtEditDescription, description);
