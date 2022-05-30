@@ -10,7 +10,7 @@ import com.rs.test.pageObjectModel.login.LoginVerificationPO;
 
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.AfterTest;
-
+//Done
 public class MessageAggregators extends TestBaseSteven{
 
 	LoginVerificationPO loginVerificationPO;
@@ -25,8 +25,16 @@ public class MessageAggregators extends TestBaseSteven{
 	  loginVerificationPO.login();
 	  
   }
+ 
+  @Test(priority = 0)
+  public void filters() {
+	 
+	  messageAggregatorsPO.filters();
+	 
+  }
   
-  @Test()
+  
+  @Test(priority = 1)
   public void createMessageAggregator() {
 	 
 	  messageAggregatorsPO.createMessageAggregators();

@@ -81,6 +81,19 @@
 				name="com.rs.test.clusterConfiguration.clusterCallToAction.ClusterCallToAction"></class>
 		</classes>
 	</test>
+	
+	
+	<!----><!----><!-- Message Classification --><!----><!----><!---->
+	
+	
+		<test name="DCS">
+		<classes>
+
+			<class
+				name="com.rs.test.messageClassification.DCS.DCS"></class>
+		</classes>
+	</test>
+	
 
 
 </suite> <!-- Suite -->

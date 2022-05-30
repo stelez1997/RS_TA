@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.rs.test.spam.carrierTemplate.CarrierTemplate">
+      <class name="com.rs.test.clusterConfiguration.routeRules.RouteRules">
         <methods>
-          <include name="afterTest"/>
           <include name="beforeTest"/>
-          <include name="filtersActionTemplate"/>
+          <include name="afterTest"/>
+          <include name="SMSxClusterRouteRules"/>
         </methods>
-      </class> <!-- com.rs.test.spam.carrierTemplate.CarrierTemplate -->
+      </class> <!-- com.rs.test.clusterConfiguration.routeRules.RouteRules -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

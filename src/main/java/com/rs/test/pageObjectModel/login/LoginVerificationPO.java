@@ -56,7 +56,8 @@ public class LoginVerificationPO extends TestBaseSteven{
 	}
 	
 	String incorrectUsernameNPassword ="Test123";
-	String correctUsernameNPassword ="admin";
+	String correctUsername ="TESTUSER";
+	String correctPassword = "PASSWORD";
 	
 	public void fillOutUsername(String username) {
 		sendKeys(txtUsername, username);
@@ -137,7 +138,7 @@ public class LoginVerificationPO extends TestBaseSteven{
 
 		clearPassword();
 
-		fillOutPassword(correctUsernameNPassword);
+		fillOutPassword(correctUsername);
 
 		clickOnLogin();
 		
@@ -154,7 +155,7 @@ public class LoginVerificationPO extends TestBaseSteven{
 		
 		clearUsername();
 		
-		fillOutUsername(correctUsernameNPassword);
+		fillOutUsername(correctUsername);
 		
 		clearPassword();
 
@@ -177,11 +178,11 @@ public class LoginVerificationPO extends TestBaseSteven{
 		
 		clearUsername();
 
-		fillOutUsername(correctUsernameNPassword);
+		fillOutUsername(correctUsername);
 
 		clearPassword();
 
-		fillOutPassword(correctUsernameNPassword);
+		fillOutPassword(correctPassword);
 		
 		clickOnLogin();
 		
@@ -209,11 +210,11 @@ public class LoginVerificationPO extends TestBaseSteven{
 	
 		clearUsername();
 
-		fillOutUsername(correctUsernameNPassword);
+		fillOutUsername(correctUsername);
 		
 		clearPassword();
 
-		fillOutPassword(correctUsernameNPassword);
+		fillOutPassword(correctPassword);
 
 		clickOnLogin();
 		

@@ -34,21 +34,21 @@ public class CharacterEncoding extends TestBaseSteven{
 	 
   }
 
-  @Test(dependsOnMethods = "createCharacterEncoding", priority = 1)
+  @Test(dependsOnMethods = "createCharacterEncoding", priority = 2)
   public void editCharacterEncoding() {
 	 
 	  characterEncondingPO.editCharacterEncoding();
 	 
   }
   
-  @Test(dependsOnMethods = "createCharacterEncoding", priority = 2)
+  @Test(dependsOnMethods = "createCharacterEncoding", priority = 3)
   public void deleteCharacterEncoding() {
 	 
 	  characterEncondingPO.deleteCharacterEncoding();
 	 
   }
  
-  @Test(priority = 2)
+  @Test(priority = 4)
   public void createCustomEncodeCodePoint() {
 	 
 	  characterEncondingPO.createCustomEncodeCodePoint();
@@ -56,14 +56,14 @@ public class CharacterEncoding extends TestBaseSteven{
   }
   
   
-  @Test(priority = 1, dependsOnMethods = "createCustomEncodeCodePoint")
+  @Test(priority = 5, dependsOnMethods = "createCustomEncodeCodePoint")
   public void editCustomEncodeCodePoint() {
 	 
 	  characterEncondingPO.editCustomEncodeCodePoint();
 	 
   }
   
-  @Test(priority = 2, dependsOnMethods = "createCustomEncodeCodePoint")
+  @Test(priority = 6, dependsOnMethods = "createCustomEncodeCodePoint")
   public void deleteCustomEncodeCodePoint() {
 	 
 	  characterEncondingPO.deleteCustomEncodeCodePoint();

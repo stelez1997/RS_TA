@@ -8,7 +8,7 @@ import com.rs.test.pageObjectModel.login.LoginVerificationPO;
 
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.AfterTest;
-
+//Done
 public class CountryCodes extends TestBaseSteven{
 
 	LoginVerificationPO loginVerificationPO;
@@ -24,7 +24,7 @@ public class CountryCodes extends TestBaseSteven{
 	  
   }
  
-  @Test()
+  @Test(priority = 1)
   public void createCountryCode() {
 	 
 	  countryCodesPO.createCoundtryCode();
@@ -72,6 +72,17 @@ public class CountryCodes extends TestBaseSteven{
 	  countryCodesPO.delete();
 	  
   }
+ 
+  @Test(priority = 0)
+  public void filters() {
+	 
+	  countryCodesPO.filter();
+	 
+  }
+  
+ 
+  
+  
   
   @AfterTest
   public void afterTest() {

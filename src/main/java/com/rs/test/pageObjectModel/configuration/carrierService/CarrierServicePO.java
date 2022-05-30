@@ -4,6 +4,8 @@ import static org.testng.Assert.assertFalse;
 import static org.testng.Assert.assertTrue;
 
 import java.net.URL;
+import java.rmi.server.Skeleton;
+import java.util.ArrayList;
 import java.util.Iterator;
 
 import org.openqa.selenium.By;
@@ -52,55 +54,55 @@ public class CarrierServicePO extends TestBaseSteven {
 	@FindBy(xpath = "//select[@name=\"addcountryCode\"]")
 	public WebElement cboCountryCode;
 	
-	@FindBy(xpath = "//select[@name=\"addcountryCode\"]/option[not(contains(text(),\"Select\"))][1]")
+	@FindBy(xpath = "//select[@name=\"addcountryCode\"]/option[not(contains(text(),\"Select\")) and text()][1]")
 	public WebElement cboCountryCodeOption;
 	
 	@FindBy(xpath = "//select[@name=\"addoadcLookup\"]")
 	public WebElement cboOADCLookup;
 	
-	@FindBy(xpath = "//select[@name=\"addoadcLookup\"]/option[not(contains(text(),\"Select\"))][1]")
+	@FindBy(xpath = "//select[@name=\"addoadcLookup\"]/option[not(contains(text(),\"Select\")) and text()][1]")
 	public WebElement cboOADCLookupOption;
 	
 	@FindBy(xpath = "//select[@name=\"addmessageGateway\"]")
 	public WebElement cboGateway;
 	
-	@FindBy(xpath = "//select[@name=\"addmessageGateway\"]/option[not(contains(text(),\"Select\"))][1]")
+	@FindBy(xpath = "//select[@name=\"addmessageGateway\"]/option[not(contains(text(),\"Select\")) and text()][1]")
 	public WebElement cboGatewayOption;
 	
 	@FindBy(xpath = "//select[@name=\"addmoActionTemplate\"]")
 	public WebElement cboMoAction;
 	
-	@FindBy(xpath = "//select[@name=\"addmoActionTemplate\"]/option[not(contains(text(),\"Select\"))][1]")
+	@FindBy(xpath = "//select[@name=\"addmoActionTemplate\"]/option[not(contains(text(),\"Select\")) and text()][1]")
 	public WebElement cboMoActionOption;
 	
 	@FindBy(xpath = "//select[@name=\"addmtActionTemplate\"]")
 	public WebElement cboMtAction;
 	
-	@FindBy(xpath = "//select[@name=\"addmtActionTemplate\"]/option[not(contains(text(),\"Select\"))][1]")
+	@FindBy(xpath = "//select[@name=\"addmtActionTemplate\"]/option[not(contains(text(),\"Select\")) and text()][1]")
 	public WebElement cboMtActionOption;
 	
 	@FindBy(xpath = "//select[@name=\"addcharMappingEnabled\"]")
 	public WebElement cboCharMapping;
 
-	@FindBy(xpath = "//select[@name=\"addcharMappingEnabled\"]/option[not(contains(text(),\"Select\"))][1]")
+	@FindBy(xpath = "//select[@name=\"addcharMappingEnabled\"]/option[not(contains(text(),\"Select\")) and text()][1]")
 	public WebElement cboCharMappingOption;
 	
-	@FindBy(xpath = "//select[@name=\"addcountryCode\"]/option[not(contains(text(),\"Select\"))][2]")
+	@FindBy(xpath = "//select[@name=\"addcountryCode\"]/option[not(contains(text(),\"Select\")) and text()][2]")
 	public WebElement cboCountryCodeOptionE;
 	
-	@FindBy(xpath = "//select[@name=\"addoadcLookup\"]/option[not(contains(text(),\"Select\"))][2]")
+	@FindBy(xpath = "//select[@name=\"addoadcLookup\"]/option[not(contains(text(),\"Select\")) and text()][2]")
 	public WebElement cboOADCLookupOptionE;
 	
-	@FindBy(xpath = "//select[@name=\"addmessageGateway\"]/option[not(contains(text(),\"Select\"))][2]")
+	@FindBy(xpath = "//select[@name=\"addmessageGateway\"]/option[not(contains(text(),\"Select\")) and text()][2]")
 	public WebElement cboGatewayOptionE;
 	
-	@FindBy(xpath = "//select[@name=\"addmoActionTemplate\"]/option[not(contains(text(),\"Select\"))][2]")
+	@FindBy(xpath = "//select[@name=\"addmoActionTemplate\"]/option[not(contains(text(),\"Select\")) and text()][2]")
 	public WebElement cboMoActionOptionE;
 		
-	@FindBy(xpath = "//select[@name=\"addmtActionTemplate\"]/option[not(contains(text(),\"Select\"))][2]")
+	@FindBy(xpath = "//select[@name=\"addmtActionTemplate\"]/option[not(contains(text(),\"Select\")) and text()][2]")
 	public WebElement cboMtActionOptionE;
 
-	@FindBy(xpath = "//select[@name=\"addcharMappingEnabled\"]/option[not(contains(text(),\"Select\"))][2]")
+	@FindBy(xpath = "//select[@name=\"addcharMappingEnabled\"]/option[not(contains(text(),\"Select\")) and text()][2]")
 	public WebElement cboCharMappingOptionE;
 	
 	
@@ -109,11 +111,17 @@ public class CarrierServicePO extends TestBaseSteven {
 
 	// Search
 
-	@FindBy(xpath = "//button[contains(@id,\"CodesAddBtn\")]")
+	@FindBy(xpath = "//button[contains(@id,\"searchBtn\")]")
 	public WebElement btnSearch;
 
-	@FindBy(xpath = "//div[@class=\"searchBar\"]/form/span/div/input")
-	public WebElement txtSearch;
+	@FindBy(xpath = "//div[@class=\"searchBarElement\"][1]//child::input")
+	public WebElement txtSearchCarrierService;
+	
+	@FindBy(xpath = "//div[@class=\"searchBarElement\"][2]//child::select")
+	public WebElement cboSearchCountry;
+	
+	@FindBy(xpath = "//div[@class=\"searchBarElement\"][3]//child::input")
+	public WebElement txtSearchLogAgent;
 	
 
 	// Modals
@@ -130,33 +138,16 @@ public class CarrierServicePO extends TestBaseSteven {
 
 	public void clickOnCarrierServiceMenu() {
 		click(menuCarrierService);
+		visibilityOfElementXpath("//tr[contains(@id,\"ServiceTableRow\")][1]");
 	}
 
 
 	// Pagination
 
-	public void clickOnGoToFirst() {
-		click(btnGoToFirst);
-
-		waitExpectedElement("//tr[contains(@id,\"ServiceTableRow\")][1]/td[16]/div/button[1]");
-	}
-
-	public void clickOnGoToPrevious() {
-		click(btnGoToPrevious);
-
-		waitExpectedElement("//tr[contains(@id,\"ServiceTableRow\")][1]/td[16]/div/button[1]");
-	}
-
-	public void clickOnGoToNext() {
-		click(btnGoToNext);
-
-		waitExpectedElement("//tr[contains(@id,\"ServiceTableRow\")][1]/td[16]/div/button[1]");
-	}
-
 	public void clickOnGoToLast() {
 		click(btnGoToLast);
 
-		waitExpectedElement("//tr[contains(@id,\"ServiceTableRow\")][1]/td[16]/div/button[1]");
+		visibilityOfElementXpath("//tr[contains(@id,\"ServiceTableRow\")][1]");
 
 	}
 
@@ -230,6 +221,27 @@ public class CarrierServicePO extends TestBaseSteven {
 	public void clickOnAddCarrierService() {
 		click(btnAddCarrierService);
 	}
+	
+	// Filters Methods
+
+
+	public void fillOutSearchCarrierService(String text) {
+		sendKeys(txtSearchCarrierService, text);
+	}
+	
+	public void fillOutSearchLogAgent(String text) {
+		sendKeys(txtSearchLogAgent, text);
+	}
+	
+	public void clickOnCboSearchCountry() {
+		click(cboSearchCountry);
+	}
+	
+	public void clickOnBtnSearch() {
+		click(btnSearch);
+		sleep(4000);
+	}
+	
 
 
 	// Modals
@@ -283,7 +295,7 @@ public class CarrierServicePO extends TestBaseSteven {
 
 		refresh();
 
-		waitExpectedElement("//tr[contains(@id,\"ServiceTableRow\")][1]/td[16]/div/button[1]");
+		visibilityOfElementXpath("//tr[contains(@id,\"ServiceTableRow\")][1]");
 
 		clickOnGoToLast();
 
@@ -300,14 +312,10 @@ public class CarrierServicePO extends TestBaseSteven {
 	
 		created = false;
 
-		String serviceA = getText("//tr[contains(@id,\"ServiceTableRow\")][" + rowsA + "]/td[2]/div");
-		String countryCodeA = getText("//tr[contains(@id,\"ServiceTableRow\")][" + rowsA + "]/td[3]/div");
-		String OADCLookupA = getText("//tr[contains(@id,\"ServiceTableRow\")][" + rowsA + "]/td[4]/div");
-		/*String gatewayA = getText("//tr[contains(@id,\"ServiceTableRow\")][" + rowsA + "]/td[2]/div");
-		String moActionA = getText("//tr[contains(@id,\"ServiceTableRow\")][" + rowsA + "]/td[2]/div");
-		String mtActionA = getText("//tr[contains(@id,\"ServiceTableRow\")][" + rowsA + "]/td[2]/div");
-		String charMappingA = getText("//tr[contains(@id,\"ServiceTableRow\")][" + rowsA + "]/td[2]/div");
-		*/
+		String serviceA = getText("//tr[contains(@id,\"ServiceTableRow\")][" + rowsA + "]/td[3]/div");
+		String countryCodeA = getText("//tr[contains(@id,\"ServiceTableRow\")][" + rowsA + "]/td[4]/div");
+		String OADCLookupA = getText("//tr[contains(@id,\"ServiceTableRow\")][" + rowsA + "]/td[5]/div");
+
 		
 		System.out.println("The Service is: " + serviceA);
 		System.out.println("The Country Code is: " + countryCodeA);
@@ -332,7 +340,7 @@ public class CarrierServicePO extends TestBaseSteven {
 		int rows = rows("//tr[contains(@id,\"ServiceTableRow\")]");
 		boolean record = false;
 		
-		String service = getText("//tr[contains(@id,\"ServiceTableRow\")]["+rows+"]/td[2]/div");
+		String service = getText("//tr[contains(@id,\"ServiceTableRow\")]["+rows+"]/td[3]/div");
 		
 		if (service.contains(this.service)) {
 			record = true;
@@ -344,8 +352,14 @@ public class CarrierServicePO extends TestBaseSteven {
 	}
 
 	public void editCarrierService() {
-
+		
 		loginVerificationPO = new LoginVerificationPO();
+
+		actionsMoveToElementElement(loginVerificationPO.btnConfiguration);
+
+		clickOnCarrierServiceMenu();
+
+		actionsMoveToElementElement(btnGoToFirst);
 
 		verification();
 
@@ -355,29 +369,32 @@ public class CarrierServicePO extends TestBaseSteven {
 
 		String serviceE = "Ztest1";
 
-		WebElement txtEditService = findElement("//tr[contains(@id,\"ServiceTableRow\")][" + rows + "]/td[2]/input");
+		WebElement txtEditService = findElement("//tr[contains(@id,\"ServiceTableRow\")][" + rows + "]/td[3]/input");
 		//CBO
-		WebElement cboEditCountryCode = findElement("//tr[contains(@id,\"ServiceTableRow\")][" + rows + "]/td[3]/select");
-		WebElement cboEditOADCLookup = findElement("//tr[contains(@id,\"ServiceTableRow\")][" + rows + "]/td[4]/select");
-		WebElement cboEditGateway = findElement("//tr[contains(@id,\"ServiceTableRow\")][" + rows + "]/td[7]/select");
-		WebElement cboEditMOAction = findElement("//tr[contains(@id,\"ServiceTableRow\")][" + rows + "]/td[10]/select");
-		WebElement cboEditMTAction = findElement("//tr[contains(@id,\"ServiceTableRow\")][" + rows + "]/td[11]/select");
-		WebElement cboEditCharMapping = findElement("//tr[contains(@id,\"ServiceTableRow\")][" + rows + "]/td[12]/select");
+		WebElement cboEditCountryCode = findElement("//tr[contains(@id,\"ServiceTableRow\")][" + rows + "]/td[4]/select");
+		WebElement cboEditOADCLookup = findElement("//tr[contains(@id,\"ServiceTableRow\")][" + rows + "]/td[5]/select");
+		WebElement cboEditGateway = findElement("//tr[contains(@id,\"ServiceTableRow\")][" + rows + "]/td[8]/select");
+		WebElement cboEditMOAction = findElement("//tr[contains(@id,\"ServiceTableRow\")][" + rows + "]/td[11]/select");
+		WebElement cboEditMTAction = findElement("//tr[contains(@id,\"ServiceTableRow\")][" + rows + "]/td[12]/select");
+		WebElement cboEditCharMapping = findElement("//tr[contains(@id,\"ServiceTableRow\")][" + rows + "]/td[13]/select");
 		
 		//CBO Options
 		
-		WebElement cboEditCountryCodeO = findElement("//tr[contains(@id,\"ServiceTableRow\")][" + rows + "]/td[3]/select/option[not(contains(text(),\"Select\"))][2]");
-		WebElement cboEditOADCLookupO = findElement("//tr[contains(@id,\"ServiceTableRow\")][" + rows + "]/td[4]/select/option[not(contains(text(),\"Select\"))][2]");
-		WebElement cboEditGatewayO = findElement("//tr[contains(@id,\"ServiceTableRow\")][" + rows + "]/td[7]/select/option[not(contains(text(),\"Select\"))][2]");
-		WebElement cboEditMOActionO = findElement("//tr[contains(@id,\"ServiceTableRow\")][" + rows + "]/td[10]/select/option[not(contains(text(),\"Select\"))][2]");
-		WebElement cboEditMTActionO = findElement("//tr[contains(@id,\"ServiceTableRow\")][" + rows + "]/td[11]/select/option[not(contains(text(),\"Select\"))][2]");
-		WebElement cboEditCharMappingO = findElement("//tr[contains(@id,\"ServiceTableRow\")][" + rows + "]/td[12]/select/option[not(contains(text(),\"Select\"))][2]");
+		WebElement cboEditCountryCodeO = findElement("//tr[contains(@id,\"ServiceTableRow\")][" + rows + "]/td[4]/select/option[not(contains(text(),\"Select\")) and text()][2]");
+		WebElement cboEditOADCLookupO = findElement("//tr[contains(@id,\"ServiceTableRow\")][" + rows + "]/td[5]/select/option[not(contains(text(),\"Select\")) and text()][2]");
+		WebElement cboEditGatewayO = findElement("//tr[contains(@id,\"ServiceTableRow\")][" + rows + "]/td[8]/select/option[not(contains(text(),\"Select\")) and text()][2]");
+		WebElement cboEditMOActionO = findElement("//tr[contains(@id,\"ServiceTableRow\")][" + rows + "]/td[11]/select/option[not(contains(text(),\"Select\")) and text()][2]");
+		WebElement cboEditMTActionO = findElement("//tr[contains(@id,\"ServiceTableRow\")][" + rows + "]/td[12]/select/option[not(contains(text(),\"Select\")) and text()][2]");
+		WebElement cboEditCharMappingO = findElement("//tr[contains(@id,\"ServiceTableRow\")][" + rows + "]/td[13]/select/option[not(contains(text(),\"Select\")) and text()][2]");
 		
 	
-		WebElement btnEdit = findElement("//tr[contains(@id,\"ServiceTableRow\")][" + rows + "]/td[16]/div/button[1]");
+		WebElement btnEdit = findElement("//tr[contains(@id,\"ServiceTableRow\")][" + rows + "]//child::button[contains(@id,\"edit\")]");
 
+		actionsMoveToElementElement(btnEdit);
 		click(btnEdit);
-
+		System.out.println("Hizo click en el boton de editar");
+		
+		actionsMoveToElementElement(txtEditService);
 		clear(txtEditService);
 		sendKeys(txtEditService, serviceE);
 		
@@ -407,21 +424,21 @@ public class CarrierServicePO extends TestBaseSteven {
 		
 		click(btnEdit);
 
-		waitExpectedElement("//tr[contains(@id,\"ServiceTableRow\")][1]/td[16]/div/button[1]");
+		visibilityOfElementXpath("//tr[contains(@id,\"ServiceTableRow\")][1]");
 
 		refresh();
 
-		waitExpectedElement("//tr[contains(@id,\"ServiceTableRow\")][1]/td[16]/div/button[1]");
+		visibilityOfElementXpath("//tr[contains(@id,\"ServiceTableRow\")][1]");
 
 		click(btnGoToLast);
 
-		waitExpectedElement("//tr[contains(@id,\"ServiceTableRow\")][1]/td[16]/div/button[1]");
+		visibilityOfElementXpath("//tr[contains(@id,\"ServiceTableRow\")][1]");
 	
-		String serviceA = getText("//tr[contains(@id,\"ServiceTableRow\")][" + rows + "]/td[2]/div");
-		String countryCodeA = getText("//tr[contains(@id,\"ServiceTableRow\")][" + rows + "]/td[3]/div");
-		String OADCLookupA = getText("//tr[contains(@id,\"ServiceTableRow\")][" + rows + "]/td[4]/div");
-		String gatewayA = getText("//tr[contains(@id,\"ServiceTableRow\")][" + rows + "]/td[7]/div");
-		String charMappingA = getText("//tr[contains(@id,\"ServiceTableRow\")][" + rows + "]/td[12]/div");
+		String serviceA = getText("//tr[contains(@id,\"ServiceTableRow\")][" + rows + "]/td[3]/div");
+		String countryCodeA = getText("//tr[contains(@id,\"ServiceTableRow\")][" + rows + "]/td[4]/div");
+		String OADCLookupA = getText("//tr[contains(@id,\"ServiceTableRow\")][" + rows + "]/td[5]/div");
+		String gatewayA = getText("//tr[contains(@id,\"ServiceTableRow\")][" + rows + "]/td[8]/div");
+		String charMappingA = getText("//tr[contains(@id,\"ServiceTableRow\")][" + rows + "]/td[13]/div");
 
 		
 		System.out.println("-----------------------------Edition Verification------------------------------");
@@ -458,27 +475,39 @@ public class CarrierServicePO extends TestBaseSteven {
 
 		loginVerificationPO = new LoginVerificationPO();
 
+		actionsMoveToElementElement(loginVerificationPO.btnConfiguration);
+
+		clickOnCarrierServiceMenu();
+
+		actionsMoveToElementElement(btnGoToFirst);
+
 		verification();
 		
 		int rows = rows("//tr[contains(@id,\"ServiceTableRow\")]");
 
 		boolean deleted = false;
+	
 
-		WebElement btnDelete = findElement("//tr[contains(@id,\"ServiceTableRow\")][" + rows + "]/td[16]/div/button[2]");
+		WebElement btnDelete = findElement("//tr[contains(@id,\"ServiceTableRow\")][" + rows + "]//child::button[contains(@id,\"delete\")]");
 		
-		actionsMoveToElementElement(btnDelete);
+		//actionsMoveToElementElement(btnDelete);
+		click("//div[text()=\"ID\"]");
+		click("//div[text()=\"ID\"]");
 		
 		click(btnDelete);
+		sleep(5000);
+		
+		refresh();
 
-		waitExpectedElement("//tr[contains(@id,\"ServiceTableRow\")][1]/td[16]/div/button[1]");
+		visibilityOfElementXpath("//tr[contains(@id,\"ServiceTableRow\")][1]");
 
 		click(btnGoToLast);
 
-		waitExpectedElement("//tr[contains(@id,\"ServiceTableRow\")][1]/td[16]/div/button[1]");
+		visibilityOfElementXpath("//tr[contains(@id,\"ServiceTableRow\")][1]");
 
 		rows = rows("//tr[contains(@id,\"ServiceTableRow\")]");
 
-		String serviceA = getText("//tr[contains(@id,\"ServiceTableRow\")][" + rows + "]/td[2]/div");
+		String serviceA = getText("//tr[contains(@id,\"ServiceTableRow\")][" + rows + "]/td[3]/div");
 		
 		System.out.println("---------------------------Deletion Verification--------------------------");
 		
@@ -494,5 +523,100 @@ public class CarrierServicePO extends TestBaseSteven {
 
 	}
 	
+	
+	public void filters() {
+
+		loginVerificationPO = new LoginVerificationPO();
+
+		actionsMoveToElementElement(loginVerificationPO.btnConfiguration);
+
+		clickOnCarrierServiceMenu();
+
+		actionsMoveToElementElement(btnGoToFirst);
+
+		clickOnGoToLast();
+		
+		int rows = rows("//tr[contains(@id,\"Carrier ServiceTableRow\")]");
+		
+		String carrierService = getText("//tr[contains(@id,\"Carrier ServiceTableRow\")]["+rows+"]/td[3]//child::div");
+		String country = getText("//tr[contains(@id,\"Carrier ServiceTableRow\")]["+rows+"]/td[4]//child::div");
+		String logAgent = getText("//tr[contains(@id,\"Carrier ServiceTableRow\")]["+rows+"]/td[7]//child::div[text()]");
+		System.out.println("----------------country: "+country);
+		
+		// Carrier Service
+		
+		fillOutSearchCarrierService(carrierService);
+		
+		clickOnBtnSearch();
+		
+		verifyFilter("Carrier Service", carrierService, 3);
+		
+		clearByBackSpace(txtSearchCarrierService);
+	
+		
+		// Country
+		
+		clickOnCboSearchCountry();
+		
+		WebElement countryO = findElement("//div[@class=\"searchBarElement\"][2]//child::option[@value=\"" + country + "\"]");
+		
+		click(countryO);
+		
+		clickOnBtnSearch();
+		
+		verifyFilter("Country", country, 4);
+		
+		WebElement blank = findElement("//div[@class=\"searchBarElement\"][2]//child::option[contains(text(),\"Select\") or not(text())]");
+		
+		click(blank);
+
+		// Log Agent
+	
+		
+		fillOutSearchLogAgent(logAgent);
+		
+		clickOnBtnSearch();
+		
+		verifyFilter("Log Agent", logAgent, 7);
+		
+		clearByBackSpace(txtSearchLogAgent);
+		
+		clickOnBtnSearch();
+		
+		
+
+	}
+	
+	
+	public void verifyFilter(String filter, String field,int td) {
+
+		int rows = rows("//tr[contains(@id,\"Carrier ServiceTableRow\")]");
+
+		System.out.println("-----------------------------" + filter + " Verification------------------------");
+
+		System.out.println("-----The value selected is: " + field);
+		String result = "";
+		int j = 1;
+		
+		
+
+		for (int i = 0; i < rows; i++) {
+			result = getText("//tr[contains(@id,\"Carrier ServiceTableRow\")]["+j+"]/td["+td+"]//child::div");
+			System.out.println("The results after filtering are: " + result);
+
+			assertTrue(result.equals(field), filtersNotWorking);
+	
+
+			j++;
+
+		}
+
+
+	}
+
+	
+
+
+
 
 }

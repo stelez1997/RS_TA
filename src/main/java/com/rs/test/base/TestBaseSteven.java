@@ -1,6 +1,8 @@
 
 package com.rs.test.base;
 
+import static org.testng.Assert.assertTrue;
+
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.Month;
@@ -23,6 +25,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -31,13 +34,11 @@ public class TestBaseSteven {
 
 	// URL
 	protected String url = "http://localhost:3000/";
-
-
+	
+	//How to include variables on the attributes 
+	//div[@class=\"searchBarElement\"][1]//child::select/option[text()=\"" + data.get(0) + "\"]
 
 	public static WebDriver driver;
-	public String usuarioL = "TESTEAUTOMATIZADO";
-	public String senhaL = "Alltax20";
-	public int menuT = 12000;
 
 	public WebDriver initialization() {
 
@@ -83,7 +84,7 @@ public class TestBaseSteven {
 	
 	
 	public void click(String xpath) {
-		
+
 		driver.findElement(By.xpath(xpath)).click();
 		sleep(500);
 	}
@@ -206,6 +207,12 @@ public class TestBaseSteven {
 		actions.moveToElement(element).perform();
 		sleep(1000);
 	}
+	
+	public void actionsMoveToElementElement(String xpath) {
+		Actions actions = new Actions(driver);
+		actions.moveToElement(findElement(xpath)).perform();
+		sleep(1000);
+	}
 
 	public void invisibilityOfElement(String xpath) {
 		WebDriverWait wait = new WebDriverWait(driver, 360);
@@ -246,7 +253,46 @@ public class TestBaseSteven {
 		actions.dragAndDrop(element, hacia).perform();
 
 	}
-
+	
+	public void scrollDown(int times) {
+		
+		click("//body");
+		
+		for (int i = 0; i < times; i++) {
+			findElement("//body").sendKeys(Keys.ARROW_DOWN);
+			findElement("//body").sendKeys(Keys.ARROW_DOWN);
+			findElement("//body").sendKeys(Keys.ARROW_DOWN);
+			findElement("//body").sendKeys(Keys.ARROW_DOWN);
+		}
+		
+	}
+	
+	public void scrollUp(int times) {
+		
+		click("//body");
+		
+		for (int i = 0; i < times; i++) {
+			findElement("//body").sendKeys(Keys.ARROW_UP);
+			findElement("//body").sendKeys(Keys.ARROW_UP);
+			findElement("//body").sendKeys(Keys.ARROW_UP);
+			findElement("//body").sendKeys(Keys.ARROW_UP);
+		}
+		
+	}
+	
+	public void orderTable(WebElement header, String verificationId, String idToBeVerified) {
+		
+		
+		while (!idToBeVerified.equals(verificationId)) {
+			
+			click(header);
+			
+		}
+		
+		
+		
+	}
+	
 	public String fechaActual() {
 
 		Date fecha = new Date();
@@ -405,7 +451,7 @@ public class TestBaseSteven {
 		String anioString = String.valueOf(anio);
 		return anioString;
 	}
-	
+	/*
 	public void idInserir(String nome,String idRegistro) {
 		Preferences id = Preferences.userRoot();
 
@@ -425,126 +471,7 @@ public class TestBaseSteven {
 
 	}
 
-	public void idInserir1(String idRegistro) {
-
-		Preferences id = Preferences.userRoot();
-
-		id.put("idR1", idRegistro);
-
-	}
-
-	public String idObter1() {
-
-		Preferences id = Preferences.userRoot();
-
-		long idRegistro = id.getLong("idR1", 1);
-
-		String idReturn = String.valueOf(idRegistro);
-
-		return idReturn;
-
-	}
-
-	public void idInserir2(String idRegistro) {
-
-		Preferences id = Preferences.userRoot();
-
-		id.put("idR2", idRegistro);
-
-	}
-
-	public String idObter2() {
-
-		Preferences id = Preferences.userRoot();
-
-		long idRegistro = id.getLong("idR2", 1);
-
-		String idReturn = String.valueOf(idRegistro);
-
-		return idReturn;
-
-	}
-
-	public void idInserir3(String idRegistro) {
-
-		Preferences id = Preferences.userRoot();
-
-		id.put("idR3", idRegistro);
-
-	}
-
-	public String idObter3() {
-
-		Preferences id = Preferences.userRoot();
-
-		long idRegistro = id.getLong("idR3", 1);
-
-		String idReturn = String.valueOf(idRegistro);
-
-		return idReturn;
-
-	}
-
-	public void idInserir4(String idRegistro) {
-
-		Preferences id = Preferences.userRoot();
-
-		id.put("idR4", idRegistro);
-
-	}
-
-	public String idObter4() {
-
-		Preferences id = Preferences.userRoot();
-
-		long idRegistro = id.getLong("idR4", 1);
-
-		String idReturn = String.valueOf(idRegistro);
-
-		return idReturn;
-
-	}
-	
-	public void idInserir5(String idRegistro) {
-
-		Preferences id = Preferences.userRoot();
-
-		id.put("idR5", idRegistro);
-
-	}
-
-	public String idObter5() {
-
-		Preferences id = Preferences.userRoot();
-
-		long idRegistro = id.getLong("idR5", 1);
-
-		String idReturn = String.valueOf(idRegistro);
-
-		return idReturn;
-
-	}
-	
-	
-	public void idInserir6(String idRegistro) {
-
-		Preferences id = Preferences.userRoot();
-
-		id.put("idR6", idRegistro);
-
-	}
-
-	public String idObter6() {
-
-		Preferences id = Preferences.userRoot();
-
-		long idRegistro = id.getLong("idR6", 1);
-
-		String idReturn = String.valueOf(idRegistro);
-
-		return idReturn;
-
-	}
+*/
 	
 	public boolean greaterThanInt(int mayor,int menor) {
 		
@@ -571,11 +498,11 @@ public class TestBaseSteven {
 		
 	}
 	
-	public int random() {
+	public int random(int range) {
 		
 		Random randomNum = new Random();
 		
-		int n = randomNum.nextInt(123456789);
+		int n = randomNum.nextInt(range);
 		
 		if (n <0) {
 			n = n*-1;
@@ -583,6 +510,42 @@ public class TestBaseSteven {
 		
 		return n;
 		
+		
+	}
+	
+	public String convertToString(int number) {
+		
+		return String.valueOf(number);
+		
+	}
+	
+	public String convertToString(double number) {
+		
+		return String.valueOf(number);
+		
+	}
+	
+	public String convertToString(float number) {
+		
+		return String.valueOf(number);
+		
+	}
+	
+	public Integer convertToInt(String number) {
+		
+		return Integer.valueOf(number);
+		
+	}
+	
+	public Double convertToDouble(String number) {
+		
+		return Double.valueOf(number);
+		
+	}
+	
+	public Float convertToFloat(String number) {
+		
+		return Float.valueOf(number);
 		
 	}
 	
@@ -600,8 +563,8 @@ public class TestBaseSteven {
 	public String createdUnSuccesfully ="The record was not created successfully";
 	public String createdSuccesfully ="The record was created successfully";
 	public String creationRecord ="The creation record is not being displayed";
-	public String editionRecord ="The record wasn't edited sucessfully";
-	public String deletionRecord ="The record wasn't deleted sucessfully";
+	public String editionRecord ="The record wasn't edited successfully";
+	public String deletionRecord ="The record wasn't deleted successfully";
 	public String testRecord ="The testing record is being displayed";
 	public String filtersNotWorking ="The filters are not working as expected";
 	

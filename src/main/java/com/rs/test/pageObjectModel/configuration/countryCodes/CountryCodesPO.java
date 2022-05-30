@@ -4,6 +4,8 @@ import static org.testng.Assert.assertFalse;
 import static org.testng.Assert.assertTrue;
 
 import java.net.URL;
+import java.util.Iterator;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -28,17 +30,8 @@ public class CountryCodesPO extends TestBaseSteven {
 
 	// pagination
 
-	@FindBy(xpath = "//div[@class=\"tablePageSection\"]/div/div/button[text()=\"<<\"]")
-	public WebElement btnGoToFirst;
-
-	@FindBy(xpath = "//div[@class=\"tablePageSection\"]/div/div/button[text()=\"<\"]")
-	public WebElement btnGoToPrevious;
-
 	@FindBy(xpath = "//div[@class=\"tablePageSection\"]/div/div/button[text()=\">>\"]")
 	public WebElement btnGoToLast;
-
-	@FindBy(xpath = "//div[@class=\"tablePageSection\"]/div/div/button[text()=\">\"]")
-	public WebElement btnGoToNext;
 
 	// Create
 
@@ -53,11 +46,11 @@ public class CountryCodesPO extends TestBaseSteven {
 
 	// Search
 
-	@FindBy(xpath = "//button[contains(@id,\"CodesAddBtn\")]")
+	@FindBy(xpath = "//button[@id=\"searchBtn\"]")
 	public WebElement btnSearch;
 
-	@FindBy(xpath = "//div[@class=\"searchBar\"]/form/span/div/input")
-	public WebElement txtSearch;
+	@FindBy(xpath = "//div[@class=\"searchBarElement\"]//child::input")
+	public WebElement txtSearchCountry;
 
 	// Modals
 
@@ -81,28 +74,11 @@ public class CountryCodesPO extends TestBaseSteven {
 
 	// Pagination
 
-	public void clickOnGoToFirst() {
-		click(btnGoToFirst);
-
-		waitExpectedElement("//button[@id=\"prefixesModalBtn0\"]");
-	}
-
-	public void clickOnGoToPrevious() {
-		click(btnGoToPrevious);
-
-		waitExpectedElement("//button[@id=\"prefixesModalBtn0\"]");
-	}
-
-	public void clickOnGoToNext() {
-		click(btnGoToNext);
-
-		waitExpectedElement("//button[@id=\"prefixesModalBtn0\"]");
-	}
 
 	public void clickOnGoToLast() {
 		click(btnGoToLast);
 
-		waitExpectedElement("//button[@id=\"prefixesModalBtn0\"]");
+		visibilityOfElementXpath("//tr[contains(@id,\"CodesTableRow\")]");
 	}
 
 	// Create Methods
@@ -117,6 +93,17 @@ public class CountryCodesPO extends TestBaseSteven {
 
 	public void clickOnAddCountryCode() {
 		click(btnAddCountryCode);
+	}
+	
+	// Search Methods
+
+	public void fillOutSearchCountry(String text) {
+		sendKeys(txtSearchCountry, text);
+	}
+	
+	public void clickOnSearchButton() {
+		click(btnSearch);
+		sleep(4000);
 	}
 
 	// Modals
@@ -145,7 +132,7 @@ public class CountryCodesPO extends TestBaseSteven {
 
 		refresh();
 
-		waitExpectedElement("//button[@id=\"prefixesModalBtn0\"]");
+		visibilityOfElementXpath("//tr[contains(@id,\"CodesTableRow\")]");
 
 		clickOnGoToLast();
 
@@ -162,8 +149,8 @@ public class CountryCodesPO extends TestBaseSteven {
 
 		created = false;
 
-		String codeA = getText("//tr[contains(@id,\"CodesTableRow\")][" + rowsA + "]/td[1]/div");
-		String CountryA = getText("//tr[contains(@id,\"CodesTableRow\")][" + rowsA + "]/td[2]/div");
+		String codeA = getText("//tr[contains(@id,\"CodesTableRow\")][" + rowsA + "]/td[2]/div");
+		String CountryA = getText("//tr[contains(@id,\"CodesTableRow\")][" + rowsA + "]/td[3]/div");
 
 		System.out.println("The code is: " + codeA);
 		System.out.println("The country is: " + CountryA);
@@ -189,8 +176,8 @@ public class CountryCodesPO extends TestBaseSteven {
 		
 		System.out.println("-----------------------------Creation Record Verification------------------------------");
 
-		String codeA = getText("//tr[contains(@id,\"CodesTableRow\")][" + rows + "]/td[1]/div");
-		String countryA = getText("//tr[contains(@id,\"CodesTableRow\")][" + rows + "]/td[2]/div");
+		String codeA = getText("//tr[contains(@id,\"CodesTableRow\")][" + rows + "]/td[2]/div");
+		String countryA = getText("//tr[contains(@id,\"CodesTableRow\")][" + rows + "]/td[3]/div");
 
 		if ( codeA.equals(code)&& countryA.contains("Test")) {
 			creationRecord = true;
@@ -215,9 +202,9 @@ public class CountryCodesPO extends TestBaseSteven {
 		String codeE = "ZZ";
 		String countryE = "Test 04";
 
-		WebElement txtEditCode = findElement("//tr[contains(@id,\"CodesTableRow\")][" + rows + "]/td[1]/input");
-		WebElement txtEditCountry = findElement("//tr[contains(@id,\"CodesTableRow\")][" + rows + "]/td[2]/input");
-		WebElement btnEdit = findElement("//tr[contains(@id,\"CodesTableRow\")][" + rows + "]/td[6]/div/button[1]");
+		WebElement txtEditCode = findElement("//tr[contains(@id,\"CodesTableRow\")][" + rows + "]/td[2]/input");
+		WebElement txtEditCountry = findElement("//tr[contains(@id,\"CodesTableRow\")][" + rows + "]/td[3]/input");
+		WebElement btnEdit = findElement("//tr[contains(@id,\"CodesTableRow\")][" + rows + "]//child::button[contains(@id,\"edit\")]");
 
 		click(btnEdit);
 
@@ -232,18 +219,18 @@ public class CountryCodesPO extends TestBaseSteven {
 
 		click(btnEdit);
 
-		waitExpectedElement("//button[@id=\"prefixesModalBtn0\"]");
+		visibilityOfElementXpath("//tr[contains(@id,\"CodesTableRow\")]");
 
 		refresh();
 
-		waitExpectedElement("//button[@id=\"prefixesModalBtn0\"]");
+		visibilityOfElementXpath("//tr[contains(@id,\"CodesTableRow\")]");
 
 		click(btnGoToLast);
 
-		waitExpectedElement("//button[@id=\"prefixesModalBtn0\"]");
+		visibilityOfElementXpath("//tr[contains(@id,\"CodesTableRow\")]");
 
-		String codeA = getText("//tr[contains(@id,\"CodesTableRow\")][" + rows + "]/td[1]/div");
-		String CountryA = getText("//tr[contains(@id,\"CodesTableRow\")][" + rows + "]/td[2]/div");
+		String codeA = getText("//tr[contains(@id,\"CodesTableRow\")][" + rows + "]/td[2]/div");
+		String CountryA = getText("//tr[contains(@id,\"CodesTableRow\")][" + rows + "]/td[3]/div");
 		
 		System.out.println("-----------------------------Edition Verification------------------------------");
 		
@@ -279,22 +266,22 @@ public class CountryCodesPO extends TestBaseSteven {
 
 		boolean deleted = false;
 
-		WebElement btnDelete = findElement("//tr[contains(@id,\"CodesTableRow\")][" + rows + "]/td[6]/div/button[2]");
+		WebElement btnDelete = findElement("//tr[contains(@id,\"CodesTableRow\")][" + rows + "]//child::button[contains(@id,\"delete\")]");
 
 		click(btnDelete);
 
 		refresh();
 
-		waitExpectedElement("//button[@id=\"prefixesModalBtn0\"]");
+		visibilityOfElementXpath("//tr[contains(@id,\"CodesTableRow\")]");
 
 		click(btnGoToLast);
 
-		waitExpectedElement("//button[@id=\"prefixesModalBtn0\"]");
+		visibilityOfElementXpath("//tr[contains(@id,\"CodesTableRow\")]");
 
 		rows = rows("//tr[contains(@id,\"CodesTableRow\")]");
 
-		String codeA = getText("//tr[contains(@id,\"CodesTableRow\")][" + rows + "]/td[1]/div");
-		String CountryA = getText("//tr[contains(@id,\"CodesTableRow\")][" + rows + "]/td[2]/div");
+		String codeA = getText("//tr[contains(@id,\"CodesTableRow\")][" + rows + "]/td[2]/div");
+		String CountryA = getText("//tr[contains(@id,\"CodesTableRow\")][" + rows + "]/td[3]/div");
 		
 		
 		System.out.println("---------------------------Deletion Verification--------------------------");
@@ -322,7 +309,7 @@ public class CountryCodesPO extends TestBaseSteven {
 
 		int rows = rows("//tr[contains(@id,\"CodesTableRow\")]");
 
-		WebElement btnModal = findElement("//tr[contains(@id,\"CodesTableRow\")][" + rows + "]/td[5]/div/button");
+		WebElement btnModal = findElement("//tr[contains(@id,\"CodesTableRow\")][" + rows + "]//child::button[contains(@id,\"prefixes\")]");
 
 		click(btnModal);
 
@@ -342,7 +329,7 @@ public class CountryCodesPO extends TestBaseSteven {
 
 		clickOnGoToLast();
 
-		btnModal = findElement("//tr[contains(@id,\"CodesTableRow\")][" + rows + "]/td[5]/div/button");
+		btnModal = findElement("//tr[contains(@id,\"CodesTableRow\")][" + rows + "]//child::button[contains(@id,\"prefixes\")]");
 
 		click(btnModal);
 
@@ -363,7 +350,7 @@ public class CountryCodesPO extends TestBaseSteven {
 
 		created = false;
 
-		String prefixCreated = getText("//tr[contains(@id,\"undefinedTableRow\")][" + rowsModalA + "]/td[1]/div");
+		String prefixCreated = getText("//tr[contains(@id,\"undefinedTableRow\")][" + rowsModalA + "]/td[2]/div");
 		System.out.println("The prefix is: " + prefixCreated);
 
 		if (prefixCreated.equals(prefix)) {
@@ -380,25 +367,27 @@ public class CountryCodesPO extends TestBaseSteven {
 
 	public void editPrefix() {
 
+
 		int rowsModal = rows("//tr[contains(@id,\"undefinedTableRow\")]");
 		
 
-		WebElement btnEdit = findElement("//tr[contains(@id,\"undefinedTableRow\")][" + rowsModal + "]/td[2]/div/button[1]");
+		WebElement btnEdit = findElement("//tr[contains(@id,\"undefinedTableRow\")][" + rowsModal + "]//child::button[contains(@id,\"edit\")]");
 
 		click(btnEdit);
 
-		int prefixEdit = random();
+		int prefixEdit = random(9999);
 		System.out.println("Prefix Number is: "+prefixEdit);
 
-		WebElement txtEditPrefix = findElement("//tr[contains(@id,\"undefinedTableRow\")][" + rowsModal + "]/td[1]/input");
+		WebElement txtEditPrefix = findElement("//tr[contains(@id,\"undefinedTableRow\")][" + rowsModal + "]/td[2]/input");
 
 		clear(txtEditPrefix);
 		
 		sendKeys(txtEditPrefix, prefixEdit);
 
-		btnEdit = findElement("//tr[contains(@id,\"undefinedTableRow\")][" + rowsModal + "]/td[2]/div/button[1]");
+		btnEdit = findElement("//tr[contains(@id,\"undefinedTableRow\")][" + rowsModal + "]//child::button[contains(@id,\"confirm\")]");
 
 		click(btnEdit);
+		sleep(5000);
 		
 
 		refresh();
@@ -414,13 +403,13 @@ public class CountryCodesPO extends TestBaseSteven {
 		int rows = rows("//tr[contains(@id,\"CodesTableRow\")]");
 
 		
-		WebElement btnModal = findElement("//tr[contains(@id,\"CodesTableRow\")][" + rows + "]/td[5]/div/button");
+		WebElement btnModal = findElement("//tr[contains(@id,\"CodesTableRow\")][" + rows + "]//child::button[contains(@id,\"prefixes\")]");
 
 		click(btnModal);
 
 		waitExpectedElement(txtPrefix);
 		
-		String editionText = getText("//tr[contains(@id,\"undefinedTableRow\")]["+rowsModal+"]/td[1]/div");
+		String editionText = getText("//tr[contains(@id,\"undefinedTableRow\")]["+rowsModal+"]/td[2]/div");
 		
 		System.out.println("--------------------------Prefix Edition Verification-----------------------");
 		
@@ -440,12 +429,15 @@ public class CountryCodesPO extends TestBaseSteven {
 	}
 
 	public void deletePrefix() {
+		
 
 		int rowsModal = rows("//tr[contains(@id,\"undefinedTableRow\")]");
 
-		WebElement btnDelete = findElement("//tr[contains(@id,\"undefinedTableRow\")][" + rowsModal + "]/td[2]/div/button[2]");
+		WebElement btnDelete = findElement("//tr[contains(@id,\"undefinedTableRow\")][" + rowsModal + "]//child::button[contains(@id,\"delete\")]");
 
 		click(btnDelete);
+		
+		sleep(5000);
 
 		refresh();
 
@@ -457,7 +449,7 @@ public class CountryCodesPO extends TestBaseSteven {
 		
 		waitExpectedElement("//button[@id=\"prefixesModalBtn0\"]");
 		
-		WebElement btnModal = findElement("//tr[contains(@id,\"CodesTableRow\")][" + rows + "]/td[5]/div/button");
+		WebElement btnModal = findElement("//tr[contains(@id,\"CodesTableRow\")][" + rows + "]//child::button[contains(@id,\"prefixes\")]");
 
 		click(btnModal);
 
@@ -475,4 +467,47 @@ public class CountryCodesPO extends TestBaseSteven {
 		
 		
 	}
+
+	public void filter() {
+
+		loginVerificationPO = new LoginVerificationPO();
+
+		actionsMoveToElementElement(loginVerificationPO.btnConfiguration);
+
+		clickOnCountryCodesMenu();
+
+		actionsMoveToElementElement(btnAddCountryCode);
+
+		clickOnGoToLast();
+		
+		int rows = rows("//tr[contains(@id,\"CodesTableRow\")]");
+		
+		String country = getText("//tr[contains(@id,\"CodesTableRow\")]["+rows+"]/td[3]//child::div");
+		
+		fillOutSearchCountry(country);
+		
+		clickOnSearchButton();
+		
+		rows = rows("//tr[contains(@id,\"CodesTableRow\")]");
+		int j = 1;
+		System.out.println("-------------------------Filter Verification------------------------------");
+		System.out.println("The country to look for is: "+country);
+		System.out.println("-------------------------------------");
+		for (int i = 0; i < rows; i++) {
+			
+			
+
+			String result = getText("//tr[contains(@id,\"CodesTableRow\")]["+j+"]/td[3]//child::div");
+			
+			System.out.println("The Results are: "+result);
+			assertTrue(result.equals(country), filtersNotWorking);
+			
+		}
+
+	}
+
+
+
+
+
 }

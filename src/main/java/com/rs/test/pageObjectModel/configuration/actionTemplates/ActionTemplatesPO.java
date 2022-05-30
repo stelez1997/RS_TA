@@ -7,6 +7,7 @@ import java.net.URL;
 import java.util.Iterator;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -148,7 +149,7 @@ public class ActionTemplatesPO extends TestBaseSteven {
 
 		refresh();
 
-		waitExpectedElement("//button[@id=\"actionsModalBtn0\"]");
+		waitExpectedElement("//tr[contains(@id,\"TemplateTableRow\")][1]");
 
 		clickOnGoToLast();
 
@@ -168,7 +169,7 @@ public class ActionTemplatesPO extends TestBaseSteven {
 		
 		for (int i = 0; i < rowsB; i++) {
 
-			String template = getText("//tr[contains(@id,\"TemplateTableRow\")]["+f+"]/td[1]/div");
+			String template = getText("//tr[contains(@id,\"TemplateTableRow\")]["+f+"]/td[2]/div");
 	
 			if (template.equals(templateName)) {
 				position = f;
@@ -180,8 +181,8 @@ public class ActionTemplatesPO extends TestBaseSteven {
 	
 		created = false;
 
-		String templeateA = getText("//tr[contains(@id,\"TemplateTableRow\")][" + position + "]/td[1]/div");
-		String descriptionA = getText("//tr[contains(@id,\"TemplateTableRow\")][" + position + "]/td[2]/div");
+		String templeateA = getText("//tr[contains(@id,\"TemplateTableRow\")][" + position + "]/td[2]/div");
+		String descriptionA = getText("//tr[contains(@id,\"TemplateTableRow\")][" + position + "]/td[3]/div");
 
 		System.out.println("The Template is: " + templeateA);
 		System.out.println("The Description is: " + descriptionA);
@@ -200,15 +201,16 @@ public class ActionTemplatesPO extends TestBaseSteven {
 	// Verfication before editing or deleting the record
 
 	public int verification() {
-		/*
-		int rowsModal = rows("//div[contains(@style,\"none\") and @class=\"tablePageModalBack\"]");
+
 		
-		if (rowsModal ==0) {
-			
-			refresh();
-			waitExpectedElement("//button[@id=\"prefixesModalBtn0\"]");
-		}
-		*/
+		loginVerificationPO = new LoginVerificationPO();
+
+		actionsMoveToElementElement(loginVerificationPO.btnConfiguration);
+
+		clickOnActionTemplateMenu();
+
+		actionsMoveToElementElement(btnAddTemplate);
+
 		
 		clickOnGoToLast();
 		
@@ -219,8 +221,8 @@ public class ActionTemplatesPO extends TestBaseSteven {
 		
 		for (int i = 0; i < rows; i++) {
 
-			String template = getText("//tr[contains(@id,\"TemplateTableRow\")]["+f+"]/td[1]/div");
-			String descriptionR = getText("//tr[contains(@id,\"TemplateTableRow\")]["+f+"]/td[2]/div");
+			String template = getText("//tr[contains(@id,\"TemplateTableRow\")]["+f+"]/td[2]/div");
+			String descriptionR = getText("//tr[contains(@id,\"TemplateTableRow\")]["+f+"]/td[3]/div");
 	
 			if (template.contains(templateName) && descriptionR.contains(description)) {
 				position = f;
@@ -245,17 +247,19 @@ public class ActionTemplatesPO extends TestBaseSteven {
 		loginVerificationPO = new LoginVerificationPO();
 
 		int rows = verification();
-
-
+		
+		
 		boolean edited = false;
 
 		String templateE = "TestTemplate1";
 		String descriptionE = "Test Template1";
 
-		WebElement txtEditTemplateName = findElement("//tr[contains(@id,\"TemplateTableRow\")][" + rows + "]/td[1]/input");
-		WebElement txtEditDescription = findElement("//tr[contains(@id,\"TemplateTableRow\")][" + rows + "]/td[2]/input");
-		WebElement btnEdit = findElement("//tr[contains(@id,\"TemplateTableRow\")][" + rows + "]/td[6]/div/button[1]");
-
+		WebElement txtEditTemplateName = findElement("//tr[contains(@id,\"TemplateTableRow\")][" + rows + "]/td[2]/input");
+		WebElement txtEditDescription = findElement("//tr[contains(@id,\"TemplateTableRow\")][" + rows + "]/td[3]/input");
+		WebElement btnEdit = findElement("//tr[contains(@id,\"TemplateTableRow\")][" + rows + "]//child::button[contains(@id,\"edit\")]");
+		
+		scrollDown(4);
+		
 		click(btnEdit);
 		
 		clear(txtEditTemplateName);
@@ -265,18 +269,18 @@ public class ActionTemplatesPO extends TestBaseSteven {
 
 		click(btnEdit);
 
-		waitExpectedElement("//button[@id=\"actionsModalBtn0\"]");
+		waitExpectedElement("//tr[contains(@id,\"TemplateTableRow\")][1]");
 
 		refresh();
 
-		waitExpectedElement("//button[@id=\"actionsModalBtn0\"]");
+		waitExpectedElement("//tr[contains(@id,\"TemplateTableRow\")][1]");
 
 		click(btnGoToLast);
 
-		waitExpectedElement("//button[@id=\"actionsModalBtn0\"]");
+		waitExpectedElement("//tr[contains(@id,\"TemplateTableRow\")][1]");
 
-		String templateA = getText("//tr[contains(@id,\"TemplateTableRow\")][" + rows + "]/td[1]/div");
-		String descriptionA = getText("//tr[contains(@id,\"TemplateTableRow\")][" + rows + "]/td[2]/div");
+		String templateA = getText("//tr[contains(@id,\"TemplateTableRow\")][" + rows + "]/td[2]/div");
+		String descriptionA = getText("//tr[contains(@id,\"TemplateTableRow\")][" + rows + "]/td[3]/div");
 		
 		System.out.println("-----------------------------Edition Verification------------------------------");
 		
@@ -302,22 +306,24 @@ public class ActionTemplatesPO extends TestBaseSteven {
 
 		boolean deleted = false;
 
-		WebElement btnDelete = findElement("//tr[contains(@id,\"TemplateTableRow\")][" + rows + "]/td[6]/div/button[2]");
+		WebElement btnDelete = findElement("//tr[contains(@id,\"TemplateTableRow\")][" + rows + "]//child::button[contains(@id,\"delete\")]");
 
+		scrollDown(5);
+		
 		click(btnDelete);
 
 		refresh();
 
-		waitExpectedElement("//button[@id=\"actionsModalBtn0\"]");
+		waitExpectedElement("//tr[contains(@id,\"TemplateTableRow\")][1]");
 
 		click(btnGoToLast);
 
-		waitExpectedElement("//button[@id=\"actionsModalBtn0\"]");
+		waitExpectedElement("//tr[contains(@id,\"TemplateTableRow\")][1]");
 
 		rows = rows("//tr[contains(@id,\"TemplateTableRow\")]");
 
-		String templateA = getText("//tr[contains(@id,\"TemplateTableRow\")][" + rows + "]/td[1]/div");
-		String descriptionA = getText("//tr[contains(@id,\"TemplateTableRow\")][" + rows + "]/td[2]/div");
+		String templateA = getText("//tr[contains(@id,\"TemplateTableRow\")][" + rows + "]/td[2]/div");
+		String descriptionA = getText("//tr[contains(@id,\"TemplateTableRow\")][" + rows + "]/td[3]/div");
 		
 		
 		System.out.println("---------------------------Deletion Verification--------------------------");

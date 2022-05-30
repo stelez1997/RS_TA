@@ -10,7 +10,7 @@ import com.rs.test.pageObjectModel.login.LoginVerificationPO;
 
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.AfterTest;
-
+//Done
 public class CarrierService extends TestBaseSteven{
 
 	LoginVerificationPO loginVerificationPO;
@@ -26,7 +26,14 @@ public class CarrierService extends TestBaseSteven{
 	  
   }
   
-  @Test()
+  @Test(priority = 0)
+  public void filters() {
+	 
+	  carrierServicePO.filters();
+	 
+  }
+  
+  @Test(priority = 1)
   public void createCarrierService() {
 	 
 	  carrierServicePO.createCarrierService();

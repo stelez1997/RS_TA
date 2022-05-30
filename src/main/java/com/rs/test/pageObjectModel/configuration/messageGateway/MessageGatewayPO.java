@@ -67,26 +67,22 @@ public class MessageGatewayPO extends TestBaseSteven {
 
 	public void clickOnGoToFirst() {
 		click(btnGoToFirst);
-
-		waitExpectedElement("//tr[@id=\"Message GatewayTableRow0\"]/td[5]/div/button[1]");
+		visibilityOfElementXpath("//tr[contains(@id,\"Message GatewayTableRow\")][1]");
 	}
 
 	public void clickOnGoToPrevious() {
 		click(btnGoToPrevious);
-
-		waitExpectedElement("//tr[@id=\"Message GatewayTableRow0\"]/td[5]/div/button[1]");
+		visibilityOfElementXpath("//tr[contains(@id,\"Message GatewayTableRow\")][1]");
 	}
 
 	public void clickOnGoToNext() {
 		click(btnGoToNext);
-
-		waitExpectedElement("//tr[@id=\"Message GatewayTableRow0\"]/td[5]/div/button[1]");
+		visibilityOfElementXpath("//tr[contains(@id,\"Message GatewayTableRow\")][1]");
 	}
 
 	public void clickOnGoToLast() {
 		click(btnGoToLast);
-
-		waitExpectedElement("//tr[@id=\"Message GatewayTableRow0\"]/td[5]/div/button[1]");
+		visibilityOfElementXpath("//tr[contains(@id,\"Message GatewayTableRow\")][1]");
 	}
 
 	// Create Methods
@@ -127,10 +123,11 @@ public class MessageGatewayPO extends TestBaseSteven {
 		fillOutDescription(description);
 
 		clickOnAddMessageGateway();
+		sleep(5000);
 
 		refresh();
 
-		waitExpectedElement(btnAddMessageGateway);
+		visibilityOfElementXpath("//tr[contains(@id,\"Message GatewayTableRow\")][1]");
 
 		clickOnGoToLast();
 
@@ -148,8 +145,8 @@ public class MessageGatewayPO extends TestBaseSteven {
 		
 		System.out.println("--------------------------Creation Verification-----------------------");
 
-		String messageGatewayA = getText("//tr[contains(@id,\"GatewayTableRow\")][" + rowsA + "]/td[1]/div");
-		String descriptionA = getText("//tr[contains(@id,\"GatewayTableRow\")][" + rowsA + "]/td[2]/div");
+		String messageGatewayA = getText("//tr[contains(@id,\"GatewayTableRow\")][" + rowsA + "]/td[2]/div");
+		String descriptionA = getText("//tr[contains(@id,\"GatewayTableRow\")][" + rowsA + "]/td[3]/div");
 
 		System.out.println("The Message Gateway is: " + messageGatewayA);
 		System.out.println("The Description is: " + descriptionA);
@@ -168,13 +165,21 @@ public class MessageGatewayPO extends TestBaseSteven {
 
 	public void verification() {
 		
+		loginVerificationPO = new LoginVerificationPO();
+
+		actionsMoveToElementElement(loginVerificationPO.btnConfiguration);
+
+		clickOnMessageGatewayMenu();
+
+		actionsMoveToElementElement(btnAddMessageGateway);
+		
 		clickOnGoToLast();
 
 		int rows = rows("//tr[contains(@id,\"GatewayTableRow\")]");
 		boolean creationRecord = false;
 
-		String messageGatewayA = getText("//tr[contains(@id,\"GatewayTableRow\")][" + rows + "]/td[1]/div");
-		String descriptionA = getText("//tr[contains(@id,\"GatewayTableRow\")][" + rows + "]/td[2]/div");
+		String messageGatewayA = getText("//tr[contains(@id,\"GatewayTableRow\")][" + rows + "]/td[2]/div");
+		String descriptionA = getText("//tr[contains(@id,\"GatewayTableRow\")][" + rows + "]/td[3]/div");
 
 		if ( messageGatewayA.contains("Test") && descriptionA.contains("Test")) {
 			creationRecord = true;
@@ -199,9 +204,9 @@ public class MessageGatewayPO extends TestBaseSteven {
 		String messageGatewayE = "ZZEdition Test";
 		String descriptionE = "Test 02";
 
-		WebElement txtEditMessageGateWay = findElement("//tr[contains(@id,\"GatewayTableRow\")][" + rows + "]/td[1]/input");
-		WebElement txtEditDescription = findElement("//tr[contains(@id,\"GatewayTableRow\")][" + rows + "]/td[2]/input");
-		WebElement btnEdit = findElement("//tr[contains(@id,\"GatewayTableRow\")][" + rows + "]/td[5]/div/button[1]");
+		WebElement txtEditMessageGateWay = findElement("//tr[contains(@id,\"GatewayTableRow\")][" + rows + "]/td[2]/input");
+		WebElement txtEditDescription = findElement("//tr[contains(@id,\"GatewayTableRow\")][" + rows + "]/td[3]/input");
+		WebElement btnEdit = findElement("//tr[contains(@id,\"GatewayTableRow\")]["+rows+"]//child::button[contains(@id,\"edit\")]");
 
 		click(btnEdit);
 
@@ -213,18 +218,18 @@ public class MessageGatewayPO extends TestBaseSteven {
 
 		click(btnEdit);
 
-		waitExpectedElement("//tr[contains(@id,\"GatewayTableRow\")][1]/td[5]/div/button[1]");
+		visibilityOfElementXpath("//tr[contains(@id,\"Message GatewayTableRow\")][1]");
 
 		refresh();
 
-		waitExpectedElement("//tr[contains(@id,\"GatewayTableRow\")][1]/td[5]/div/button[1]");
+		visibilityOfElementXpath("//tr[contains(@id,\"Message GatewayTableRow\")][1]");
 
 		click(btnGoToLast);
 
-		waitExpectedElement("//tr[contains(@id,\"GatewayTableRow\")][1]/td[5]/div/button[1]");
+		visibilityOfElementXpath("//tr[contains(@id,\"Message GatewayTableRow\")][1]");
 
-		String messageGatewayA = getText("//tr[contains(@id,\"GatewayTableRow\")][" + rows + "]/td[1]/div");
-		String descriptionA = getText("//tr[contains(@id,\"GatewayTableRow\")][" + rows + "]/td[2]/div");
+		String messageGatewayA = getText("//tr[contains(@id,\"GatewayTableRow\")][" + rows + "]/td[2]/div");
+		String descriptionA = getText("//tr[contains(@id,\"GatewayTableRow\")][" + rows + "]/td[3]/div");
 		
 		System.out.println("--------------------------Edition Verification-----------------------");
 		
@@ -252,22 +257,22 @@ public class MessageGatewayPO extends TestBaseSteven {
 
 		boolean deleted = false;
 
-		WebElement btnDelete = findElement("//tr[contains(@id,\"GatewayTableRow\")][" + rows + "]/td[5]/div/button[2]");
-
+		WebElement btnDelete = findElement("//tr[contains(@id,\"GatewayTableRow\")][" + rows + "]//child::button[contains(@id,\"delete\")]");
+		
 		click(btnDelete);
 
 		refresh();
 
-		waitExpectedElement("//tr[contains(@id,\"GatewayTableRow\")][1]/td[5]/div/button[1]");
+		visibilityOfElementXpath("//tr[contains(@id,\"Message GatewayTableRow\")][1]");
 
 		click(btnGoToLast);
 
-		waitExpectedElement("//tr[contains(@id,\"GatewayTableRow\")][1]/td[5]/div/button[1]");
+		visibilityOfElementXpath("//tr[contains(@id,\"Message GatewayTableRow\")][1]");
 
 		rows = rows("//tr[contains(@id,\"GatewayTableRow\")]");
 
-		String messageGatewayA = getText("//tr[contains(@id,\"GatewayTableRow\")][" + rows + "]/td[1]/div");
-		String descriptionA = getText("//tr[contains(@id,\"GatewayTableRow\")][" + rows + "]/td[2]/div");
+		String messageGatewayA = getText("//tr[contains(@id,\"GatewayTableRow\")][" + rows + "]/td[2]/div");
+		String descriptionA = getText("//tr[contains(@id,\"GatewayTableRow\")][" + rows + "]/td[3]/div");
 		
 		System.out.println("--------------------------Deletion Verification-----------------------");
 

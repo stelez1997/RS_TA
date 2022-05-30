@@ -40,33 +40,6 @@ public class ActionTemplates extends TestBaseSteven{
 	  
   }
   
- /*
-  @Test(dependsOnMethods = "createCountryCode",priority = 1)
-
-  public void createModalPrefix() {
-	 
-	  countryCodesPO.addPrefix();
-	 
-  }
- 
- 
-
-  @Test(dependsOnMethods = "createModalPrefix",priority = 2)
-
-  public void editModalPrefix() {
-	 
-	  countryCodesPO.editPrefix();
-	 
-  }
-  
-  
-  @Test(dependsOnMethods = "createModalPrefix", priority = 3)
-
-  public void deleteModalPrefix() {
-	 
-	  countryCodesPO.deletePrefix();	 
-  }
-  */
   
   @Test(dependsOnMethods = "createActionTemplate", priority = 4)
   public void deleteActionTemplate() {

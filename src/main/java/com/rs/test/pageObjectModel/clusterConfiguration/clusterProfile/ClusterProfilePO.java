@@ -53,7 +53,7 @@ public class ClusterProfilePO extends TestBaseSteven {
 	@FindBy(xpath = "//select[@name=\"adddefaultRouteAction\"]")
 	public WebElement cboDefaultRoute;
 	
-	@FindBy(xpath = "//select[@name=\"adddefaultRouteAction\"]/option[not(contains(text(),\"option\"))][1]")
+	@FindBy(xpath = "//select[@name=\"adddefaultRouteAction\"]/option[not(contains(text(),\"option\"))and text()][1]")
 	public WebElement cboDefaultRouteOption;
 
 	@FindBy(xpath = "//button[@id=\"Cluster ClassificationAddBtn\"]")
@@ -89,25 +89,25 @@ public class ClusterProfilePO extends TestBaseSteven {
 	public void clickOnGoToFirst() {
 		click(btnGoToFirst);
 
-		waitExpectedElement("//tr[contains(@id,\"Cluster ProfileTableRow0\")]/td[8]/div/button[1]");
+		visibilityOfElementXpath("//tr[contains(@id,\"ProfileTableRow\")][1]");
 	}
 
 	public void clickOnGoToPrevious() {
 		click(btnGoToPrevious);
 
-		waitExpectedElement("//tr[contains(@id,\"Cluster ProfileTableRow0\")]/td[8]/div/button[1]");
+		visibilityOfElementXpath("//tr[contains(@id,\"ProfileTableRow\")][1]");
 	}
 
 	public void clickOnGoToNext() {
 		click(btnGoToNext);
 
-		waitExpectedElement("//tr[contains(@id,\"Cluster ProfileTableRow0\")]/td[8]/div/button[1]");
+		visibilityOfElementXpath("//tr[contains(@id,\"ProfileTableRow\")][1]");
 	}
 
 	public void clickOnGoToLast() {
 		click(btnGoToLast);
 
-		waitExpectedElement("//tr[contains(@id,\"Cluster ProfileTableRow0\")]/td[8]/div/button[1]");
+		visibilityOfElementXpath("//tr[contains(@id,\"ProfileTableRow\")][1]");
 	}
 
 	// Edit Methods
@@ -134,7 +134,7 @@ public class ClusterProfilePO extends TestBaseSteven {
 
 	// Verfication before editing or deleting the record
 
-	public void verification() {
+	public int verification() {
 		
 		loginVerificationPO = new LoginVerificationPO();
 
@@ -151,7 +151,7 @@ public class ClusterProfilePO extends TestBaseSteven {
 		int j = 1;
 		for (int i = 0; i < rows; i++) {
 			
-			String idR = getText("//tr[contains(@id,\"ProfileTableRow\")][" + j + "]/td[1]/div");
+			String idR = getText("//tr[contains(@id,\"ProfileTableRow\")][" + j + "]/td[2]/div");
 			
 			if (idR.equals(id)) {
 				record = true;
@@ -165,8 +165,8 @@ public class ClusterProfilePO extends TestBaseSteven {
 		
 		System.out.println("-----------------------------Test Record Verification------------------------------");
 
-		String nameA = getText("//tr[contains(@id,\"ProfileTableRow\")][" + rows + "]/td[2]/div");
-		String descriptionA = getText("//tr[contains(@id,\"ProfileTableRow\")][" + rows + "]/td[3]/div");
+		String nameA = getText("//tr[contains(@id,\"ProfileTableRow\")][" + j + "]/td[3]/div");
+		String descriptionA = getText("//tr[contains(@id,\"ProfileTableRow\")][" + j + "]/td[4]/div");
 		
 		System.out.println("Record Name: "+nameA);
 		System.out.println("Record Description: "+descriptionA);
@@ -178,24 +178,25 @@ public class ClusterProfilePO extends TestBaseSteven {
 		System.out.println("The testing record is being displayed: " + record);
 
 		assertTrue(record, this.creationRecord);
+		return j;
 
 	}
 
 	public void editClusterProfile() {
 		
-		verification();
-		
-		int rows = rows("//tr[contains(@id,\"ProfileTableRow\")]");
+
+		int rows = verification();
+		int rows2 = rows("//tr[contains(@id,\"ProfileTableRow\")]");
 
 		boolean edited = false;
 
 		String nameE = "EditionTest";
 		String descriptionE = "Edition Test";
 
-		WebElement txtEditName = findElement("//tr[contains(@id,\"ProfileTableRow\")][" + rows + "]/td[2]/input");
-		WebElement txtEditDescription = findElement("//tr[contains(@id,\"ProfileTableRow\")][" + rows + "]/td[3]/input");
-		WebElement btnEdit = findElement("//tr[contains(@id,\"ProfileTableRow\")][" + rows + "]/td[8]/div/button[1]");
-
+		WebElement txtEditName = findElement("//tr[contains(@id,\"ProfileTableRow\")][" + rows + "]/td[3]/input");
+		WebElement txtEditDescription = findElement("//tr[contains(@id,\"ProfileTableRow\")][" + rows + "]/td[4]/input");
+		WebElement btnEdit = findElement("//tr[contains(@id,\"ProfileTableRow\")][" + rows + "]//child::button[contains(@id,\"edit\")]");
+		scrollDown(rows2);
 		click(btnEdit);
 
 		clearByBackSpace(txtEditName);
@@ -204,19 +205,20 @@ public class ClusterProfilePO extends TestBaseSteven {
 		sendKeys(txtEditDescription, descriptionE);
 
 		click(btnEdit);
+		sleep(5000);
 
-		waitExpectedElement("//tr[contains(@id,\"Cluster ProfileTableRow0\")]/td[8]/div/button[1]");
+		visibilityOfElementXpath("//tr[contains(@id,\"ProfileTableRow\")][1]");
 
 		refresh();
 
-		waitExpectedElement("//tr[contains(@id,\"Cluster ProfileTableRow0\")]/td[8]/div/button[1]");
+		visibilityOfElementXpath("//tr[contains(@id,\"ProfileTableRow\")][1]");
 
 		click(btnGoToLast);
 
-		waitExpectedElement("//tr[contains(@id,\"Cluster ProfileTableRow0\")]/td[8]/div/button[1]");
+		visibilityOfElementXpath("//tr[contains(@id,\"ProfileTableRow\")][1]");
 
-		String nameA = getText("//tr[contains(@id,\"ProfileTableRow\")][" + rows + "]/td[2]/div");
-		String descriptionA = getText("//tr[contains(@id,\"ProfileTableRow\")][" + rows + "]/td[3]/div");
+		String nameA = getText("//tr[contains(@id,\"ProfileTableRow\")][" + rows + "]/td[3]/div");
+		String descriptionA = getText("//tr[contains(@id,\"ProfileTableRow\")][" + rows + "]/td[4]/div");
 		
 		System.out.println("-----------------------------Edition Verification------------------------------");
 		
@@ -232,10 +234,10 @@ public class ClusterProfilePO extends TestBaseSteven {
 
 		assertTrue(edited, editionRecord);
 		
-		txtEditName = findElement("//tr[contains(@id,\"ProfileTableRow\")][" + rows + "]/td[2]/input");
-		txtEditDescription = findElement("//tr[contains(@id,\"ProfileTableRow\")][" + rows + "]/td[3]/input");
-		btnEdit = findElement("//tr[contains(@id,\"ProfileTableRow\")][" + rows + "]/td[8]/div/button[1]");
-
+		txtEditName = findElement("//tr[contains(@id,\"ProfileTableRow\")][" + rows + "]/td[3]/input");
+		txtEditDescription = findElement("//tr[contains(@id,\"ProfileTableRow\")][" + rows + "]/td[4]/input");
+		btnEdit = findElement("//tr[contains(@id,\"ProfileTableRow\")][" + rows + "]//child::button[contains(@id,\"edit\")]");
+		scrollDown(rows2);
 		click(btnEdit);
 
 		clearByBackSpace(txtEditName);
@@ -243,10 +245,11 @@ public class ClusterProfilePO extends TestBaseSteven {
 
 		sendKeys(txtEditName, name);
 		sendKeys(txtEditDescription, description);
-
+		
 		click(btnEdit);
+		sleep(5000);
 
-		waitExpectedElement("//tr[contains(@id,\"Cluster ProfileTableRow0\")]/td[8]/div/button[1]");
+		visibilityOfElementXpath("//tr[contains(@id,\"ProfileTableRow\")][1]");
 		 
 	}
 

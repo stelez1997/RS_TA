@@ -8,6 +8,7 @@ import java.net.URL;
 import java.util.GregorianCalendar;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.SendKeysAction;
@@ -56,7 +57,7 @@ public class MessageAggregatorsPO extends TestBaseSteven {
 	@FindBy(xpath = "//select[contains(@id,\"addoadcLookup\")]")
 	public WebElement cboOADCLookup;
 
-	@FindBy(xpath = "//select[@name=\"addoadcLookup\"]/option[not(contains(text(),\"option\"))][1]")
+	@FindBy(xpath = "//select[@name=\"addoadcLookup\"]/option[not(contains(text(),\"option\")) and text()][1]")
 	public WebElement cboOADCLookupOption;
 
 	@FindBy(xpath = "//button[contains(@id,\"Message\")]")
@@ -73,7 +74,7 @@ public class MessageAggregatorsPO extends TestBaseSteven {
 	@FindBy(xpath = "//select[@name=\"adddefaultRoutePoint\"]")
 	public WebElement cboRtDefault;
 
-	@FindBy(xpath = "//select[@name=\"adddefaultRoutePoint\"]/option[not(contains(text(),\"option\"))][1]")
+	@FindBy(xpath = "//select[@name=\"adddefaultRoutePoint\"]/option[not(contains(text(),\"option\")) and text()][1]")
 	public WebElement cboRtDefaultOption;
 
 	@FindBy(xpath = "//button[@id=\"undefinedAddBtn\"]")
@@ -87,19 +88,27 @@ public class MessageAggregatorsPO extends TestBaseSteven {
 	@FindBy(xpath = "//select[@id=\"adddestAggregator.aggregator\"]")
 	public WebElement cboMessageAggregator;
 
-	@FindBy(xpath = "//select[@id=\"adddestAggregator.aggregator\"]/option[not(contains(text(),\"option\"))][1]")
+	@FindBy(xpath = "//select[@id=\"adddestAggregator.aggregator\"]/option[not(contains(text(),\"option\")) and text()][1]")
 	public WebElement cboMessageAggregatorOption;
 
 	@FindBy(xpath = "//select[@id=\"addblocked\"]")
 	public WebElement cboBlocked;
 
-	@FindBy(xpath = "//select[@id=\"addblocked\"]/option[not(contains(text(),\"option\"))][1]")
+	@FindBy(xpath = "//select[@id=\"addblocked\"]/option[not(contains(text(),\"option\")) and text()][1]")
 	public WebElement cboBlockedOption;
+	
+	//Filters
+	@FindBy(xpath = "//div[@class=\"searchBarElement\"][1]//child::input")
+	public WebElement txtSearchMessageAggregator;
+	
+	@FindBy(xpath = "//button[@id=\"searchBtn\"]")
+	public WebElement btnSearch;
+
 
 	LoginVerificationPO loginVerificationPO;
 
-	String messageAggregator = "ZTest01";
-	String description = "Test 01";
+	String messageAggregator = "ZTest_01";
+	String description = "Test_01";
 	String cboText = "";
 
 	String rtName = "RTTest";
@@ -109,6 +118,7 @@ public class MessageAggregatorsPO extends TestBaseSteven {
 
 	public void clickOnMessageAggregatorsMenu() {
 		click(messageAggregatorsMenu);
+		waitExpectedElement("//tr[contains(@id,\"Message AggregatorsTableRow\")][1]");
 	}
 
 	// Pagination
@@ -116,25 +126,25 @@ public class MessageAggregatorsPO extends TestBaseSteven {
 	public void clickOnGoToFirst() {
 		click(btnGoToFirst);
 
-		waitExpectedElement("//button[@id=\"messageAggregatorRoutePointListModalBtn0\"]");
+		waitExpectedElement("//tr[contains(@id,\"Message AggregatorsTableRow\")][1]");
 	}
 
 	public void clickOnGoToPrevious() {
 		click(btnGoToPrevious);
 
-		waitExpectedElement("//button[@id=\"messageAggregatorRoutePointListModalBtn0\"]");
+		waitExpectedElement("//tr[contains(@id,\"Message AggregatorsTableRow\")][1]");
 	}
 
 	public void clickOnGoToNext() {
 		click(btnGoToNext);
 
-		waitExpectedElement("//button[@id=\"messageAggregatorRoutePointListModalBtn0\"]");
+		waitExpectedElement("//tr[contains(@id,\"Message AggregatorsTableRow\")][1]");
 	}
 
 	public void clickOnGoToLast() {
 		click(btnGoToLast);
 
-		waitExpectedElement("//button[@id=\"messageAggregatorRoutePointListModalBtn0\"]");
+		waitExpectedElement("//tr[contains(@id,\"Message AggregatorsTableRow\")][1]");
 	}
 
 	// Create Methods
@@ -157,6 +167,7 @@ public class MessageAggregatorsPO extends TestBaseSteven {
 
 	public void clickOnAddMessageAggregators() {
 		click(btnAddMessageAggregators);
+		sleep(5000);
 	}
 
 	public void clickOnbtnModal() {
@@ -210,6 +221,18 @@ public class MessageAggregatorsPO extends TestBaseSteven {
 	public void clickOnAddPeerBlock() {
 		click(btnAddRTPoints);
 	}
+	
+	//filters
+	
+	public void fillOutSearchMessageAggregator(String text) {
+		sendKeys(txtSearchMessageAggregator, text);
+	}
+	
+	public void clickOnBtnSearch() {
+		click(btnSearch);
+		sleep(5000);
+	}
+	
 
 	// Modals
 
@@ -249,7 +272,7 @@ public class MessageAggregatorsPO extends TestBaseSteven {
 
 		refresh();
 
-		waitExpectedElement(btnAddMessageAggregators);
+		waitExpectedElement("//tr[contains(@id,\"Message AggregatorsTableRow\")][1]");
 
 		clickOnGoToLast();
 
@@ -260,16 +283,20 @@ public class MessageAggregatorsPO extends TestBaseSteven {
 		if (rowsA > rowsB) {
 			created = true;
 		}
-
+		
+		System.out.println("Llego antes de la berificacion del rows");
+		System.out.println("Rows B: "+rowsB);
+		System.out.println("Rows A: "+rowsA);
 		assertTrue(created, createdUnSuccesfully);
+		System.out.println("paso antes de la berificacion del rows");
 
 		created = false;
 
 		System.out.println("--------------------------Creation Verification-----------------------");
 
-		String messageAggregatorA = getText("//tr[contains(@id,\"AggregatorsTableRow\")][" + rowsA + "]/td[1]/div");
-		String descriptionA = getText("//tr[contains(@id,\"AggregatorsTableRow\")][" + rowsA + "]/td[2]/div");
-		String oADCLookupA = getText("//tr[contains(@id,\"AggregatorsTableRow\")][" + rowsA + "]/td[3]/div");
+		String messageAggregatorA = getText("//tr[contains(@id,\"AggregatorsTableRow\")][" + rowsA + "]/td[2]/div");
+		String descriptionA = getText("//tr[contains(@id,\"AggregatorsTableRow\")][" + rowsA + "]/td[3]/div");
+		String oADCLookupA = getText("//tr[contains(@id,\"AggregatorsTableRow\")][" + rowsA + "]/td[4]/div");
 
 		System.out.println("The Message Gateway is: " + messageAggregatorA);
 		System.out.println("The Description is: " + descriptionA);
@@ -288,14 +315,26 @@ public class MessageAggregatorsPO extends TestBaseSteven {
 	// Verfication before editing or deleting the record
 
 	public void verification() {
+		
+
+		loginVerificationPO = new LoginVerificationPO();
+
+		actionsMoveToElementElement(loginVerificationPO.btnConfiguration);
+
+		clickOnMessageAggregatorsMenu();
+
+		actionsMoveToElementElement(btnAddMessageAggregators);
+		
+		waitExpectedElement("//tr[contains(@id,\"Message AggregatorsTableRow\")][1]");
 
 		clickOnGoToLast();
+
 
 		int rows = rows("//tr[contains(@id,\"AggregatorsTableRow\")]");
 		boolean creationRecord = false;
 
-		String messageAggregatorA = getText("//tr[contains(@id,\"AggregatorsTableRow\")][" + rows + "]/td[1]/div");
-		String descriptionA = getText("//tr[contains(@id,\"AggregatorsTableRow\")][" + rows + "]/td[2]/div");
+		String messageAggregatorA = getText("//tr[contains(@id,\"AggregatorsTableRow\")][" + rows + "]/td[2]/div");
+		String descriptionA = getText("//tr[contains(@id,\"AggregatorsTableRow\")][" + rows + "]/td[3]/div");
 
 		if (messageAggregatorA.contains("Test") && descriptionA.contains("Test")) {
 			creationRecord = true;
@@ -315,22 +354,18 @@ public class MessageAggregatorsPO extends TestBaseSteven {
 
 		boolean edited = false;
 
-		String messageGatewayE = "ZEdition Test";
-		String descriptionE = "Test 02";
+		String messageGatewayE = "ZTest_Edition";
+		String descriptionE = "Test_01";
 
-		WebElement txtEditMessageGateWay = findElement(
-				"//tr[contains(@id,\"AggregatorsTableRow\")][" + rows + "]/td[1]/input");
-		WebElement txtEditDescription = findElement(
-				"//tr[contains(@id,\"AggregatorsTableRow\")][" + rows + "]/td[2]/input");
-		WebElement cboEditOADCLookup = findElement(
-				"//tr[contains(@id,\"AggregatorsTableRow\")][" + rows + "]/td[3]/select");
-		WebElement cboEditOADCLookupO = findElement("//tr[contains(@id,\"AggregatorsTableRow\")][" + rows
-				+ "]/td[3]/select//option[not(contains(text(),\"option\"))][2]");
+		WebElement txtEditMessageGateWay = findElement("//tr[contains(@id,\"AggregatorsTableRow\")][" + rows + "]/td[2]/input");
+		WebElement txtEditDescription = findElement("//tr[contains(@id,\"AggregatorsTableRow\")][" + rows + "]/td[3]/input");
+		WebElement btnEdit = findElement("//tr[contains(@id,\"AggregatorsTableRow\")][" + rows + "]/td[11]/div/button[1]");
 
-		WebElement btnEdit = findElement(
-				"//tr[contains(@id,\"AggregatorsTableRow\")][" + rows + "]/td[10]/div/button[1]");
-
+		click("//div[text()=\"Message Aggregator\"]");
+		click("//div[text()=\"Message Aggregator\"]");
+		
 		click(btnEdit);
+		sleep(5000);
 
 		clear(txtEditMessageGateWay);
 		sendKeys(txtEditMessageGateWay, messageGatewayE);
@@ -338,25 +373,20 @@ public class MessageAggregatorsPO extends TestBaseSteven {
 		clear(txtEditDescription);
 		sendKeys(txtEditDescription, descriptionE);
 
-		click(cboEditOADCLookup);
-		cboText = getText(cboEditOADCLookupO);
-		click(cboEditOADCLookupO);
-		sendKeys(cboEditOADCLookup, Keys.ESCAPE);
-
 		click(btnEdit);
 
-		waitExpectedElement("//button[@id=\"messageAggregatorRoutePointListModalBtn0\"]");
+		waitExpectedElement("//tr[contains(@id,\"Message AggregatorsTableRow\")][1]");
 
 		refresh();
 
-		waitExpectedElement("//button[@id=\"messageAggregatorRoutePointListModalBtn0\"]");
+		waitExpectedElement("//tr[contains(@id,\"Message AggregatorsTableRow\")][1]");
 
 		clickOnGoToLast();
 
-		waitExpectedElement("//button[@id=\"messageAggregatorRoutePointListModalBtn0\"]");
+		waitExpectedElement("//tr[contains(@id,\"Message AggregatorsTableRow\")][1]");
 
-		String messageGatewayA = getText("//tr[contains(@id,\"AggregatorsTableRow\")][" + rows + "]/td[1]/div");
-		String descriptionA = getText("//tr[contains(@id,\"AggregatorsTableRow\")][" + rows + "]/td[2]/div");
+		String messageGatewayA = getText("//tr[contains(@id,\"AggregatorsTableRow\")][" + rows + "]/td[2]/div");
+		String descriptionA = getText("//tr[contains(@id,\"AggregatorsTableRow\")][" + rows + "]/td[3]/div");
 
 
 		System.out.println("--------------------------Edition Verification-----------------------");
@@ -386,24 +416,28 @@ public class MessageAggregatorsPO extends TestBaseSteven {
 		boolean deleted = false;
 
 		WebElement btnDelete = findElement(
-				"//tr[contains(@id,\"AggregatorsTableRow\")][" + rows + "]/td[10]/div/button[2]");
+				"//tr[contains(@id,\"AggregatorsTableRow\")][" + rows + "]/td[11]/div/button[2]");
+		
+		click("//div[text()=\"Message Aggregator\"]");
+		click("//div[text()=\"Message Aggregator\"]");
 
 		click(btnDelete);
+		sleep(5000);
 
 		refresh();
 
-		waitExpectedElement("//button[@id=\"messageAggregatorRoutePointListModalBtn0\"]");
+		waitExpectedElement("//tr[contains(@id,\"Message AggregatorsTableRow\")][1]");
 
 		click(btnGoToLast);
 
-		waitExpectedElement("//button[@id=\"messageAggregatorRoutePointListModalBtn0\"]");
+		waitExpectedElement("//tr[contains(@id,\"Message AggregatorsTableRow\")][1]");
 
 		int rowsA = rows("//tr[contains(@id,\"AggregatorsTableRow\")]");
 
 		deleted = greaterThanInt(rows, rowsA);
 
-		String messageAggregatorA = getText("//tr[contains(@id,\"AggregatorsTableRow\")][" + rowsA + "]/td[1]/div");
-		String descriptionA = getText("//tr[contains(@id,\"AggregatorsTableRow\")][" + rowsA + "]/td[2]/div");
+		String messageAggregatorA = getText("//tr[contains(@id,\"AggregatorsTableRow\")][" + rowsA + "]/td[2]/div");
+		String descriptionA = getText("//tr[contains(@id,\"AggregatorsTableRow\")][" + rowsA + "]/td[3]/div");
 
 		System.out.println("--------------------------Deletion Verification-----------------------");
 
@@ -430,8 +464,11 @@ public class MessageAggregatorsPO extends TestBaseSteven {
 		int rows = rows("//tr[contains(@id,\"AggregatorsTableRow\")]");
 
 		WebElement btnRTPoints = findElement(
-				"//tr[contains(@id,\"AggregatorsTableRow\")][" + rows + "]/td[8]/div/button");
-
+				"//tr[contains(@id,\"AggregatorsTableRow\")][" + rows + "]/td[9]/div/button");
+		
+		click("//div[text()=\"Message Aggregator\"]");
+		click("//div[text()=\"Message Aggregator\"]");
+		
 		click(btnRTPoints);
 
 		waitExpectedElement(btnAddRTPoints);
@@ -449,14 +486,17 @@ public class MessageAggregatorsPO extends TestBaseSteven {
 
 		refresh();
 
-		waitExpectedElement("//button[@id=\"messageAggregatorRoutePointListModalBtn0\"]");
+		waitExpectedElement("//tr[contains(@id,\"Message AggregatorsTableRow\")][1]");
 
 		clickOnGoToLast();
 
-		waitExpectedElement("//button[@id=\"messageAggregatorRoutePointListModalBtn0\"]");
+		waitExpectedElement("//tr[contains(@id,\"Message AggregatorsTableRow\")][1]");
 
-		btnRTPoints = findElement("//tr[contains(@id,\"AggregatorsTableRow\")][" + rows + "]/td[8]/div/button");
+		btnRTPoints = findElement("//tr[contains(@id,\"AggregatorsTableRow\")][" + rows + "]/td[9]/div/button");
 
+		click("//div[text()=\"Message Aggregator\"]");
+		click("//div[text()=\"Message Aggregator\"]");
+		
 		click(btnRTPoints);
 
 		waitExpectedElement(btnAddRTPoints);
@@ -471,8 +511,8 @@ public class MessageAggregatorsPO extends TestBaseSteven {
 
 		created = false;
 
-		String rtNameA = getText("//tr[contains(@id,\"undefinedTableRow\")][" + rtRowsA + "]/td[1]/div");
-		String rtDescriptionA = getText("//tr[contains(@id,\"undefinedTableRow\")][" + rtRowsA + "]/td[2]/div");
+		String rtNameA = getText("//tr[contains(@id,\"undefinedTableRow\")][" + rtRowsA + "]/td[2]/div");
+		String rtDescriptionA = getText("//tr[contains(@id,\"undefinedTableRow\")][" + rtRowsA + "]/td[3]/div");
 
 		if (rtNameA.equals(rtName) && rtDescriptionA.equals(rtDescription)) {
 			created = true;
@@ -489,19 +529,19 @@ public class MessageAggregatorsPO extends TestBaseSteven {
 		int rtRows = rows("//tr[contains(@id,\"undefinedTableRow\")]");
 
 		WebElement btnEdit = findElement(
-				"//tr[contains(@id,\"undefinedTableRow\")][" + rtRows + "]/td[4]/div/button[contains(@id,\"edit\")]");
+				"//tr[contains(@id,\"undefinedTableRow\")][" + rtRows + "]/td[5]//child::button[contains(@id,\"edit\")]");
 
 		click(btnEdit);
 
-		WebElement txtEditName = findElement("//tr[contains(@id,\"undefinedTableRow\")][" + rtRows + "]/td[1]/input");
+		WebElement txtEditName = findElement("//tr[contains(@id,\"undefinedTableRow\")][" + rtRows + "]/td[2]/input");
 		WebElement txtEditDescription = findElement(
-				"//tr[contains(@id,\"undefinedTableRow\")][" + rtRows + "]/td[2]/input");
+				"//tr[contains(@id,\"undefinedTableRow\")][" + rtRows + "]/td[3]/input");
 
 		String editName = "EditionTest";
 		String editDescription = "Editon Test";
 
-		clear(txtEditName);
-		clear(txtEditDescription);
+		clearByBackSpace(txtEditName);
+		clearByBackSpace(txtEditDescription);
 
 		sendKeys(txtEditName, editName);
 		sendKeys(txtEditDescription, editDescription);
@@ -509,20 +549,25 @@ public class MessageAggregatorsPO extends TestBaseSteven {
 		click(btnEdit);
 
 		refresh();
+		
+		waitExpectedElement("//tr[contains(@id,\"Message AggregatorsTableRow\")][1]");
 
 		clickOnGoToLast();
 
 		int rows = rows("//tr[contains(@id,\"AggregatorsTableRow\")]");
 
 		WebElement btnRTPoints = findElement(
-				"//tr[contains(@id,\"AggregatorsTableRow\")][" + rows + "]/td[8]/div/button");
+				"//tr[contains(@id,\"AggregatorsTableRow\")][" + rows + "]/td[9]/div/button");
+		
+		click("//div[text()=\"Message Aggregator\"]");
+		click("//div[text()=\"Message Aggregator\"]");
 
 		click(btnRTPoints);
 
 		waitExpectedElement(btnAddRTPoints);
 
-		String editNameA = getText("//tr[contains(@id,\"undefinedTableRow\")][" + rtRows + "]/td[1]/div");
-		String editDescriptionA = getText("//tr[contains(@id,\"undefinedTableRow\")][" + rtRows + "]/td[2]/div");
+		String editNameA = getText("//tr[contains(@id,\"undefinedTableRow\")][" + rtRows + "]/td[2]/div");
+		String editDescriptionA = getText("//tr[contains(@id,\"undefinedTableRow\")][" + rtRows + "]/td[3]/div");
 
 		boolean edited = false;
 
@@ -541,7 +586,7 @@ public class MessageAggregatorsPO extends TestBaseSteven {
 		int rtRows = rows("//tr[contains(@id,\"undefinedTableRow\")]");
 
 		WebElement btnDelete = findElement(
-				"//tr[contains(@id,\"undefinedTableRow\")][" + rtRows + "]/td[4]/div/button[contains(@id,\"delete\")]");
+				"//tr[contains(@id,\"undefinedTableRow\")]["+rtRows+"]/td[5]//child::button[contains(@id,\"delete\")]");
 
 		click(btnDelete);
 
@@ -550,10 +595,15 @@ public class MessageAggregatorsPO extends TestBaseSteven {
 		clickOnGoToLast();
 
 		int rows = rows("//tr[contains(@id,\"AggregatorsTableRow\")]");
+		
+
 
 		WebElement btnRTPoints = findElement(
-				"//tr[contains(@id,\"AggregatorsTableRow\")][" + rows + "]/td[8]/div/button");
+				"//tr[contains(@id,\"AggregatorsTableRow\")][" + rows + "]/td[9]/div/button");
 
+		click("//div[text()=\"Message Aggregator\"]");
+		click("//div[text()=\"Message Aggregator\"]");
+		
 		click(btnRTPoints);
 
 		waitExpectedElement(btnAddRTPoints);
@@ -574,11 +624,15 @@ public class MessageAggregatorsPO extends TestBaseSteven {
 	// Blocks---------------------------------------
 
 	public void createPeerBlock() {
+		
+		verification();
 
 		int rows = rows("//tr[contains(@id,\"AggregatorsTableRow\")]");
 
-		WebElement btnPeerBlock = findElement("//tr[contains(@id,\"AggregatorsTableRow\")][" + rows + "]/td[9]/div/button");
-
+		WebElement btnPeerBlock = findElement("//tr[contains(@id,\"AggregatorsTableRow\")]["+rows+"]//child::button[contains(@id,\"blockedDestinations\")]");
+		
+		click("//div[text()=\"Message Aggregator\"]");
+		click("//div[text()=\"Message Aggregator\"]");
 		click(btnPeerBlock);
 
 		waitExpectedElement(btnAddRTPoints);
@@ -594,17 +648,19 @@ public class MessageAggregatorsPO extends TestBaseSteven {
 		clickOnCboBlockedOption();
 
 		clickOnAddRtPoints();
+		sleep(5000);
 
 		refresh();
 
-		waitExpectedElement("//button[@id=\"messageAggregatorRoutePointListModalBtn0\"]");
+		waitExpectedElement("//tr[contains(@id,\"Message AggregatorsTableRow\")][1]");
 
 		clickOnGoToLast();
 
-		waitExpectedElement("//button[@id=\"messageAggregatorRoutePointListModalBtn0\"]");
+		waitExpectedElement("//tr[contains(@id,\"Message AggregatorsTableRow\")][1]");
 
-		btnPeerBlock = findElement("//tr[contains(@id,\"AggregatorsTableRow\")][" + rows + "]/td[9]/div/button");
-
+		btnPeerBlock = findElement("//tr[contains(@id,\"AggregatorsTableRow\")]["+rows+"]//child::button[contains(@id,\"blockedDestinations\")]");
+		click("//div[text()=\"Message Aggregator\"]");
+		click("//div[text()=\"Message Aggregator\"]");
 		click(btnPeerBlock);
 
 		waitExpectedElement(btnAddRTPoints);
@@ -620,8 +676,8 @@ public class MessageAggregatorsPO extends TestBaseSteven {
 		created = false;
 		
 		
-		String messageAggregatorA = getText("//tr[contains(@id,\"undefinedTableRow\")][" + pbRowsA + "]/td[1]/div");
-		String blockedA = getText("//tr[contains(@id,\"undefinedTableRow\")][" + pbRowsA + "]/td[2]/div");
+		String messageAggregatorA = getText("//tr[contains(@id,\"undefinedTableRow\")][" + pbRowsA + "]/td[2]/div");
+		String blockedA = getText("//tr[contains(@id,\"undefinedTableRow\")][" + pbRowsA + "]/td[3]/div");
 		System.out.println("------------------------------------------");
 		System.out.println("Message Aggregator: "+messageAggregatorA);
 		System.out.println("Blocked: "+blockedA);
@@ -640,12 +696,12 @@ public class MessageAggregatorsPO extends TestBaseSteven {
 
 		int rtRows = rows("//tr[contains(@id,\"undefinedTableRow\")]");
 
-		WebElement btnEdit = findElement("//tr[contains(@id,\"undefinedTableRow\")][" + rtRows + "]/td[7]/div/button[contains(@id,\"edit\")]");
+		WebElement btnEdit = findElement("//tr[contains(@id,\"undefinedTableRow\")][" + rtRows + "]//child::button[contains(@id,\"edit\")]");
 
 		click(btnEdit);
 
-		WebElement cboEditBlocked = findElement("//tr[contains(@id,\"undefinedTableRow\")][" + rtRows + "]/td[2]/select");
-		WebElement cboEditBlockedOption = findElement("//tr[contains(@id,\"undefinedTableRow\")]["+rtRows+"]/td[2]/select/option[3]");
+		WebElement cboEditBlocked = findElement("//tr[contains(@id,\"undefinedTableRow\")][" + rtRows + "]/td[3]/select");
+		WebElement cboEditBlockedOption = findElement("//tr[contains(@id,\"undefinedTableRow\")]["+rtRows+"]/td[3]/select/option[3]");
 		String editBlockedText = getText(cboEditBlockedOption);
 		click(cboEditBlocked);
 		click(cboEditBlockedOption);
@@ -660,13 +716,16 @@ public class MessageAggregatorsPO extends TestBaseSteven {
 		
 		int rows = rows("//tr[contains(@id,\"AggregatorsTableRow\")]");
 
-		WebElement btnPeerBlock = findElement("//tr[contains(@id,\"AggregatorsTableRow\")][" + rows + "]/td[9]/div/button");
+		WebElement btnPeerBlock = findElement("//tr[contains(@id,\"AggregatorsTableRow\")][" + rows + "]//child::button[contains(@id,\"blockedDestinations\")]");
+		
+		click("//div[text()=\"Message Aggregator\"]");
+		click("//div[text()=\"Message Aggregator\"]");
 		
 		click(btnPeerBlock);
 
 		waitExpectedElement(btnAddRTPoints);
 
-		String editBlockedA = getText("//tr[contains(@id,\"undefinedTableRow\")][" + rtRows + "]/td[2]/div");
+		String editBlockedA = getText("//tr[contains(@id,\"undefinedTableRow\")][" + rtRows + "]/td[3]/div");
 
 		boolean edited = false;
 
@@ -677,6 +736,70 @@ public class MessageAggregatorsPO extends TestBaseSteven {
 		System.out.println("Edited successfully: " + edited);
 		
 		assertTrue(edited, editionRecord);
+
+	}
+	
+	public void filters() {
+
+		loginVerificationPO = new LoginVerificationPO();
+
+		actionsMoveToElementElement(loginVerificationPO.btnConfiguration);
+
+		clickOnMessageAggregatorsMenu();
+
+		actionsMoveToElementElement(btnGoToFirst);
+
+		clickOnGoToLast();
+		
+		int rows = rows("//tr[contains(@id,\"AggregatorsTableRow\")]");
+		
+		String messageAggregator = getText("//tr[contains(@id,\"AggregatorsTableRow\")]["+rows+"]/td[2]//child::div");
+		System.out.println("----------------Message Aggregator: "+messageAggregator);
+		
+		// Carrier Service
+		
+		fillOutSearchMessageAggregator(messageAggregator);
+		
+		clickOnBtnSearch();
+		
+		verifyFilter("Message Aggregator", messageAggregator, 2);
+		
+		refresh();
+		
+		waitExpectedElement("//tr[contains(@id,\"Message AggregatorsTableRow\")][1]");
+		
+		
+		
+	
+		
+		
+
+	}
+	
+	
+	public void verifyFilter(String filter, String field,int td) {
+
+		int rows = rows("//tr[contains(@id,\"AggregatorsTableRow\")]");
+
+		System.out.println("-----------------------------" + filter + " Verification------------------------");
+
+		System.out.println("-----The value selected is: " + field);
+		String result = "";
+		int j = 1;
+		
+		
+
+		for (int i = 0; i < rows; i++) {
+			result = getText("//tr[contains(@id,\"AggregatorsTableRow\")]["+j+"]/td["+td+"]//child::div");
+			System.out.println("The results after filtering are: " + result);
+
+			assertTrue(result.equals(field), filtersNotWorking);
+	
+
+			j++;
+
+		}
+
 
 	}
 

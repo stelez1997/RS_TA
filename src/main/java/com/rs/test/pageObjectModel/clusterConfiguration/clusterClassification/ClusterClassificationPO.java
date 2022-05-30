@@ -51,7 +51,7 @@ public class ClusterClassificationPO extends TestBaseSteven {
 	@FindBy(xpath = "//select[@name=\"adddefaultRouteAction\"]")
 	public WebElement cboDefaultRoute;
 	
-	@FindBy(xpath = "//select[@name=\"adddefaultRouteAction\"]/option[not(contains(text(),\"option\"))][1]")
+	@FindBy(xpath = "//select[@name=\"adddefaultRouteAction\"]/option[not(contains(text(),\"option\")) and text()][1]")
 	public WebElement cboDefaultRouteOption;
 
 	@FindBy(xpath = "//button[@id=\"Cluster ClassificationAddBtn\"]")
@@ -87,25 +87,25 @@ public class ClusterClassificationPO extends TestBaseSteven {
 	public void clickOnGoToFirst() {
 		click(btnGoToFirst);
 
-		waitExpectedElement("//tr[@id=\"Cluster ClassificationTableRow0\"]/td[9]/div/button[1]");
+		visibilityOfElementXpath("//tr[contains(@id,\"ClassificationTableRow\")][1]");
 	}
 
 	public void clickOnGoToPrevious() {
 		click(btnGoToPrevious);
 
-		waitExpectedElement("//tr[@id=\"Cluster ClassificationTableRow0\"]/td[9]/div/button[1]");
+		visibilityOfElementXpath("//tr[contains(@id,\"ClassificationTableRow\")][1]");
 	}
 
 	public void clickOnGoToNext() {
 		click(btnGoToNext);
 
-		waitExpectedElement("//tr[@id=\"Cluster ClassificationTableRow0\"]/td[9]/div/button[1]");
+		visibilityOfElementXpath("//tr[contains(@id,\"ClassificationTableRow\")][1]");
 	}
 
 	public void clickOnGoToLast() {
 		click(btnGoToLast);
 
-		waitExpectedElement("//tr[@id=\"Cluster ClassificationTableRow0\"]/td[9]/div/button[1]");
+		visibilityOfElementXpath("//tr[contains(@id,\"ClassificationTableRow\")][1]");
 	}
 
 	// Create Methods
@@ -153,7 +153,7 @@ public class ClusterClassificationPO extends TestBaseSteven {
 
 		int rowsB = rows("//tr[contains(@id,\"ClassificationTableRow\")]");
 		
-		String idB = getText("//tr[contains(@id,\"ClassificationTableRow\")]["+rowsB+"]/td[1]/div");
+		String idB = getText("//tr[contains(@id,\"ClassificationTableRow\")]["+rowsB+"]/td[2]/div");
 		System.out.println("Last id before creation: "+idB);
 
 		fillOutName(name);
@@ -168,11 +168,11 @@ public class ClusterClassificationPO extends TestBaseSteven {
 		clickOnCboDefaultRouteOption();
 
 		clickOnAddClusterClassification();
+		sleep(5000);
 
 		refresh();
 
-		waitExpectedElement("//tr[@id=\"Cluster ClassificationTableRow0\"]/td[9]/div/button[1]");
-
+		visibilityOfElementXpath("//tr[contains(@id,\"ClassificationTableRow\")][1]");
 		clickOnGoToLast();
 
 		int rowsA = rows("//tr[contains(@id,\"ClassificationTableRow\")]");
@@ -188,9 +188,9 @@ public class ClusterClassificationPO extends TestBaseSteven {
 		
 		created = false;
 
-		String nameA = getText("//tr[contains(@id,\"ClassificationTableRow\")][" + rowsA + "]/td[2]/div");
-		String descriptionA = getText("//tr[contains(@id,\"ClassificationTableRow\")][" + rowsA + "]/td[3]/div");
-		String defaultRouteA = getText("//tr[contains(@id,\"ClassificationTableRow\")][" + rowsA + "]/td[4]/div");
+		String nameA = getText("//tr[contains(@id,\"ClassificationTableRow\")][" + rowsA + "]/td[3]/div");
+		String descriptionA = getText("//tr[contains(@id,\"ClassificationTableRow\")][" + rowsA + "]/td[4]/div");
+		String defaultRouteA = getText("//tr[contains(@id,\"ClassificationTableRow\")][" + rowsA + "]/td[5]/div");
 
 		System.out.println("The name is: " + nameA);
 		System.out.println("The description is: " + descriptionA);
@@ -209,6 +209,14 @@ public class ClusterClassificationPO extends TestBaseSteven {
 	// Verfication before editing or deleting the record
 
 	public void verification() {
+		
+		loginVerificationPO = new LoginVerificationPO();
+
+		actionsMoveToElementElement(loginVerificationPO.btnClusterConfiguration);
+
+		clickOnClusterClassificationMenu();
+
+		actionsMoveToElementElement(btnAddClusterClassification);
 
 		clickOnGoToLast();
 
@@ -217,8 +225,8 @@ public class ClusterClassificationPO extends TestBaseSteven {
 		
 		System.out.println("-----------------------------Creation Record Verification------------------------------");
 
-		String nameA = getText("//tr[contains(@id,\"ClassificationTableRow\")][" + rows + "]/td[2]/div");
-		String descriptionA = getText("//tr[contains(@id,\"ClassificationTableRow\")][" + rows + "]/td[3]/div");
+		String nameA = getText("//tr[contains(@id,\"ClassificationTableRow\")][" + rows + "]/td[3]/div");
+		String descriptionA = getText("//tr[contains(@id,\"ClassificationTableRow\")][" + rows + "]/td[4]/div");
 
 		if ( nameA.contains("Test")&& descriptionA.contains("Test")) {
 			creationRecord = true;
@@ -243,12 +251,13 @@ public class ClusterClassificationPO extends TestBaseSteven {
 		name = "Edition Test";
 		description = "Edition Test 04";
 
-		WebElement txtEditName = findElement("//tr[contains(@id,\"ClassificationTableRow\")][" + rows + "]/td[2]/input");
-		WebElement txtEditDescription = findElement("//tr[contains(@id,\"ClassificationTableRow\")][" + rows + "]/td[3]/input");
-		WebElement cboEditDefaultRoute = findElement("//tr[contains(@id,\"ClassificationTableRow\")][" + rows + "]/td[4]/select");
-		WebElement cboEditDefaultRouteO = findElement("//tr[contains(@id,\"ClassificationTableRow\")][" + rows + "]/td[4]/select/option[not(contains(text(),\"option\"))][2]");
-		WebElement btnEdit = findElement("//tr[contains(@id,\"ClassificationTableRow\")][" + rows + "]/td[9]/div/button[1]");
-
+		WebElement txtEditName = findElement("//tr[contains(@id,\"ClassificationTableRow\")][" + rows + "]/td[3]/input");
+		WebElement txtEditDescription = findElement("//tr[contains(@id,\"ClassificationTableRow\")][" + rows + "]/td[4]/input");
+		WebElement cboEditDefaultRoute = findElement("//tr[contains(@id,\"ClassificationTableRow\")][" + rows + "]/td[5]/select");
+		WebElement cboEditDefaultRouteO = findElement("//tr[contains(@id,\"ClassificationTableRow\")][" + rows + "]/td[5]/select/option[not(contains(text(),\"option\")) and text()][2]");
+		WebElement btnEdit = findElement("//tr[contains(@id,\"ClassificationTableRow\")][" + rows + "]//child::button[contains(@id,\"edit\")]");
+		scrollDown(rows);
+		
 		click(btnEdit);
 
 		clear(txtEditName);
@@ -263,19 +272,19 @@ public class ClusterClassificationPO extends TestBaseSteven {
 
 		click(btnEdit);
 
-		waitExpectedElement("//tr[@id=\"Cluster ClassificationTableRow0\"]/td[9]/div/button[1]");
+		visibilityOfElementXpath("//tr[contains(@id,\"ClassificationTableRow\")][1]");
 
 		refresh();
 
-		waitExpectedElement("//tr[@id=\"Cluster ClassificationTableRow0\"]/td[9]/div/button[1]");
+		visibilityOfElementXpath("//tr[contains(@id,\"ClassificationTableRow\")][1]");
 
 		click(btnGoToLast);
 
-		waitExpectedElement("//tr[@id=\"Cluster ClassificationTableRow0\"]/td[9]/div/button[1]");
+		visibilityOfElementXpath("//tr[contains(@id,\"ClassificationTableRow\")][1]");
 
-		String nameA = getText("//tr[contains(@id,\"ClassificationTableRow\")][" + rows + "]/td[2]/div");
-		String descriptionA = getText("//tr[contains(@id,\"ClassificationTableRow\")][" + rows + "]/td[3]/div");
-		String defaultRouteA = getText("//tr[contains(@id,\"ClassificationTableRow\")][" + rows + "]/td[4]/div");
+		String nameA = getText("//tr[contains(@id,\"ClassificationTableRow\")][" + rows + "]/td[3]/div");
+		String descriptionA = getText("//tr[contains(@id,\"ClassificationTableRow\")][" + rows + "]/td[4]/div");
+		String defaultRouteA = getText("//tr[contains(@id,\"ClassificationTableRow\")][" + rows + "]/td[5]/div");
 		
 		System.out.println("-----------------------------Edition Verification------------------------------");
 		
@@ -304,22 +313,23 @@ public class ClusterClassificationPO extends TestBaseSteven {
 
 		boolean deleted = false;
 
-		WebElement btnDelete = findElement("//tr[contains(@id,\"ClassificationTableRow\")][" + rows + "]/td[9]/div/button[2]");
-
+		WebElement btnDelete = findElement("//tr[contains(@id,\"ClassificationTableRow\")][" + rows + "]//child::button[contains(@id,\"delete\")]");
+		scrollDown(rows);
+		sleep(5000);
 		click(btnDelete);
 
 		refresh();
 
-		waitExpectedElement("//tr[@id=\"Cluster ClassificationTableRow0\"]/td[9]/div/button[1]");
+		visibilityOfElementXpath("//tr[contains(@id,\"ClassificationTableRow\")][1]");
 
 		click(btnGoToLast);
 
-		waitExpectedElement("//tr[@id=\"Cluster ClassificationTableRow0\"]/td[9]/div/button[1]");
+		visibilityOfElementXpath("//tr[contains(@id,\"ClassificationTableRow\")][1]");
 
 		rows = rows("//tr[contains(@id,\"ClassificationTableRow\")]");
 
-		String nameA = getText("//tr[contains(@id,\"ClassificationTableRow\")][" + rows + "]/td[2]/div");
-		String descriptionA = getText("//tr[contains(@id,\"ClassificationTableRow\")][" + rows + "]/td[3]/div");
+		String nameA = getText("//tr[contains(@id,\"ClassificationTableRow\")][" + rows + "]/td[3]/div");
+		String descriptionA = getText("//tr[contains(@id,\"ClassificationTableRow\")][" + rows + "]/td[4]/div");
 		
 		System.out.println("---------------------------Deletion Verification--------------------------");
 		
