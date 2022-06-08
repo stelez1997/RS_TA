@@ -26,7 +26,7 @@ public class CarrierTemplate extends TestBaseSteven {
 
 
 	@Test()
-	public void filtersActionTemplate() {
+	public void filtersCarrierTemplate() {
 
 		carrierTemplatesPO.filters();
 

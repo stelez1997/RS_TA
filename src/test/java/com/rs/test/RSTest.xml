@@ -94,6 +94,19 @@
 		</classes>
 	</test>
 	
+	
+		<!----><!----><!-- SPAM --><!----><!----><!---->
+	
+	
+		<test name="Carrier Template">
+		<classes>
+
+			<class
+				name="com.rs.test.spam.carrierTemplate.CarrierTemplate"></class>
+		</classes>
+	</test>
+	
+	
 
 
 </suite> <!-- Suite -->

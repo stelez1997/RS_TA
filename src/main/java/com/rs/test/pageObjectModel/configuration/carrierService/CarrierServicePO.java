@@ -335,12 +335,21 @@ public class CarrierServicePO extends TestBaseSteven {
 
 	public void verification() {
 		
+		loginVerificationPO = new LoginVerificationPO();
+
+		actionsMoveToElementElement(loginVerificationPO.btnConfiguration);
+
+		clickOnCarrierServiceMenu();
+
+		actionsMoveToElementElement(btnGoToLast);
+		
 		clickOnGoToLast();
 		
-		int rows = rows("//tr[contains(@id,\"ServiceTableRow\")]");
 		boolean record = false;
 		
-		String service = getText("//tr[contains(@id,\"ServiceTableRow\")]["+rows+"]/td[3]/div");
+		orderService();
+		
+		String service = getText("//tr[contains(@id,\"ServiceTableRow\")][1]/td[3]/div");
 		
 		if (service.contains(this.service)) {
 			record = true;
@@ -352,14 +361,6 @@ public class CarrierServicePO extends TestBaseSteven {
 	}
 
 	public void editCarrierService() {
-		
-		loginVerificationPO = new LoginVerificationPO();
-
-		actionsMoveToElementElement(loginVerificationPO.btnConfiguration);
-
-		clickOnCarrierServiceMenu();
-
-		actionsMoveToElementElement(btnGoToFirst);
 
 		verification();
 
@@ -369,38 +370,31 @@ public class CarrierServicePO extends TestBaseSteven {
 
 		String serviceE = "Ztest1";
 
-		WebElement txtEditService = findElement("//tr[contains(@id,\"ServiceTableRow\")][" + rows + "]/td[3]/input");
+		WebElement txtEditService = findElement("//tr[contains(@id,\"ServiceTableRow\")][1]/td[3]/input");
 		//CBO
-		WebElement cboEditCountryCode = findElement("//tr[contains(@id,\"ServiceTableRow\")][" + rows + "]/td[4]/select");
-		WebElement cboEditOADCLookup = findElement("//tr[contains(@id,\"ServiceTableRow\")][" + rows + "]/td[5]/select");
-		WebElement cboEditGateway = findElement("//tr[contains(@id,\"ServiceTableRow\")][" + rows + "]/td[8]/select");
-		WebElement cboEditMOAction = findElement("//tr[contains(@id,\"ServiceTableRow\")][" + rows + "]/td[11]/select");
-		WebElement cboEditMTAction = findElement("//tr[contains(@id,\"ServiceTableRow\")][" + rows + "]/td[12]/select");
-		WebElement cboEditCharMapping = findElement("//tr[contains(@id,\"ServiceTableRow\")][" + rows + "]/td[13]/select");
+		WebElement cboEditOADCLookup = findElement("//tr[contains(@id,\"ServiceTableRow\")][1]//select[@id=\"editoadcLookup\"]");
+		WebElement cboEditGateway = findElement("//tr[contains(@id,\"ServiceTableRow\")][1]//select[@id=\"editmessageGateway\"]");
+		WebElement cboEditMOAction = findElement("//tr[contains(@id,\"ServiceTableRow\")][1]//select[@id=\"editmoActionTemplate\"]");
+		WebElement cboEditMTAction = findElement("//tr[contains(@id,\"ServiceTableRow\")][1]//select[@id=\"editmtActionTemplate\"]");
+		WebElement cboEditCharMapping = findElement("//tr[contains(@id,\"ServiceTableRow\")][1]//select[@id=\"editcharMappingEnabled\"]");
 		
 		//CBO Options
 		
-		WebElement cboEditCountryCodeO = findElement("//tr[contains(@id,\"ServiceTableRow\")][" + rows + "]/td[4]/select/option[not(contains(text(),\"Select\")) and text()][2]");
-		WebElement cboEditOADCLookupO = findElement("//tr[contains(@id,\"ServiceTableRow\")][" + rows + "]/td[5]/select/option[not(contains(text(),\"Select\")) and text()][2]");
-		WebElement cboEditGatewayO = findElement("//tr[contains(@id,\"ServiceTableRow\")][" + rows + "]/td[8]/select/option[not(contains(text(),\"Select\")) and text()][2]");
-		WebElement cboEditMOActionO = findElement("//tr[contains(@id,\"ServiceTableRow\")][" + rows + "]/td[11]/select/option[not(contains(text(),\"Select\")) and text()][2]");
-		WebElement cboEditMTActionO = findElement("//tr[contains(@id,\"ServiceTableRow\")][" + rows + "]/td[12]/select/option[not(contains(text(),\"Select\")) and text()][2]");
-		WebElement cboEditCharMappingO = findElement("//tr[contains(@id,\"ServiceTableRow\")][" + rows + "]/td[13]/select/option[not(contains(text(),\"Select\")) and text()][2]");
+		WebElement cboEditOADCLookupO = findElement("//tr[contains(@id,\"ServiceTableRow\")][1]//select[@id=\"editoadcLookup\"]/option[not(contains(text(),\"Select\")) and text()][2]");
+		WebElement cboEditGatewayO = findElement("//tr[contains(@id,\"ServiceTableRow\")][1]//select[@id=\"editmessageGateway\"]/option[not(contains(text(),\"Select\")) and text()][2]");
+		WebElement cboEditMOActionO = findElement("//tr[contains(@id,\"ServiceTableRow\")][1]//select[@id=\"editmoActionTemplate\"]/option[not(contains(text(),\"Select\")) and text()][2]");
+		WebElement cboEditMTActionO = findElement("//tr[contains(@id,\"ServiceTableRow\")][1]//select[@id=\"editmtActionTemplate\"]/option[not(contains(text(),\"Select\")) and text()][2]");
+		WebElement cboEditCharMappingO = findElement("//tr[contains(@id,\"ServiceTableRow\")][1]//select[@id=\"editcharMappingEnabled\"]/option[not(contains(text(),\"Select\")) and text()][2]");
 		
-	
-		WebElement btnEdit = findElement("//tr[contains(@id,\"ServiceTableRow\")][" + rows + "]//child::button[contains(@id,\"edit\")]");
-
-		actionsMoveToElementElement(btnEdit);
+		WebElement btnEdit = findElement("//tr[contains(@id,\"ServiceTableRow\")][1]//child::button[contains(@id,\"edit\")]");
+		
+		orderService();
+		
 		click(btnEdit);
-		System.out.println("Hizo click en el boton de editar");
 		
-		actionsMoveToElementElement(txtEditService);
+
 		clear(txtEditService);
 		sendKeys(txtEditService, serviceE);
-		
-		click(cboEditCountryCode);
-		cboCountryCodeText = getText(cboEditCountryCodeO);
-		click(cboEditCountryCodeO);
 		
 		click(cboEditOADCLookup);
 		cboOADCLookpText = getText(cboEditOADCLookupO);
@@ -423,6 +417,7 @@ public class CarrierServicePO extends TestBaseSteven {
 		click(cboEditCharMappingO);
 		
 		click(btnEdit);
+		sleep(5000);
 
 		visibilityOfElementXpath("//tr[contains(@id,\"ServiceTableRow\")][1]");
 
@@ -433,32 +428,31 @@ public class CarrierServicePO extends TestBaseSteven {
 		click(btnGoToLast);
 
 		visibilityOfElementXpath("//tr[contains(@id,\"ServiceTableRow\")][1]");
+		
+		orderService();
 	
-		String serviceA = getText("//tr[contains(@id,\"ServiceTableRow\")][" + rows + "]/td[3]/div");
-		String countryCodeA = getText("//tr[contains(@id,\"ServiceTableRow\")][" + rows + "]/td[4]/div");
-		String OADCLookupA = getText("//tr[contains(@id,\"ServiceTableRow\")][" + rows + "]/td[5]/div");
-		String gatewayA = getText("//tr[contains(@id,\"ServiceTableRow\")][" + rows + "]/td[8]/div");
-		String charMappingA = getText("//tr[contains(@id,\"ServiceTableRow\")][" + rows + "]/td[13]/div");
+		String serviceA = getText("//tr[contains(@id,\"ServiceTableRow\")][1]/td[3]/div");
+		String OADCLookupA = getText("//tr[contains(@id,\"ServiceTableRow\")][1]/td[5]/div");
+		String gatewayA = getText("//tr[contains(@id,\"ServiceTableRow\")][1]/td[8]/div");
+		String charMappingA = getText("//tr[contains(@id,\"ServiceTableRow\")][1]/td[13]/div");
 
 		
 		System.out.println("-----------------------------Edition Verification------------------------------");
 		
 		System.out.println("The Information selected is:-------------------------------------------");
 		System.out.println("The Service is: " + serviceE);
-		System.out.println("The Country Code is: " + cboCountryCodeText);
 		System.out.println("The OACDLookup is: "+ cboOADCLookpText);
 		System.out.println("The Gateway is: " + cboGatewayText);
 		System.out.println("The Char Mapping is: " + cboCharMappingText);
 		System.out.println("The Information presented is:-------------------------------------------");
 		
 		System.out.println("The Service is: " + serviceA);
-		System.out.println("The Coutry Code is: " + countryCodeA);
 		System.out.println("The OADC Lookup is: " + OADCLookupA);
 		System.out.println("The Gateway is: " + gatewayA);
 		System.out.println("The Char Mapping is: " + charMappingA);
 
 
-		if (serviceA.equals(serviceE) && countryCodeA.equals(cboCountryCodeText) && OADCLookupA.equals(cboOADCLookpText)
+		if (serviceA.equals(serviceE) && OADCLookupA.equals(cboOADCLookpText)
 				&& gatewayA.equals(cboGatewayText) && charMappingA.equals(cboCharMappingText)) {
 			edited = true;
 		}
@@ -473,26 +467,16 @@ public class CarrierServicePO extends TestBaseSteven {
 	
 	public void deleteCarrierService() {
 
-		loginVerificationPO = new LoginVerificationPO();
-
-		actionsMoveToElementElement(loginVerificationPO.btnConfiguration);
-
-		clickOnCarrierServiceMenu();
-
-		actionsMoveToElementElement(btnGoToFirst);
-
 		verification();
 		
-		int rows = rows("//tr[contains(@id,\"ServiceTableRow\")]");
-
+		int rowsB = rows("//tr[contains(@id,\"ServiceTableRow\")]");
+		
 		boolean deleted = false;
 	
 
-		WebElement btnDelete = findElement("//tr[contains(@id,\"ServiceTableRow\")][" + rows + "]//child::button[contains(@id,\"delete\")]");
+		WebElement btnDelete = findElement("//tr[contains(@id,\"ServiceTableRow\")][1]//child::button[contains(@id,\"delete\")]");
 		
-		//actionsMoveToElementElement(btnDelete);
-		click("//div[text()=\"ID\"]");
-		click("//div[text()=\"ID\"]");
+		orderService();
 		
 		click(btnDelete);
 		sleep(5000);
@@ -504,18 +488,17 @@ public class CarrierServicePO extends TestBaseSteven {
 		click(btnGoToLast);
 
 		visibilityOfElementXpath("//tr[contains(@id,\"ServiceTableRow\")][1]");
+		
+		int rowsA = rows("//tr[contains(@id,\"ServiceTableRow\")]");
 
-		rows = rows("//tr[contains(@id,\"ServiceTableRow\")]");
-
-		String serviceA = getText("//tr[contains(@id,\"ServiceTableRow\")][" + rows + "]/td[3]/div");
+		String serviceA = getText("//tr[contains(@id,\"ServiceTableRow\")][1]/td[3]/div");
 		
 		System.out.println("---------------------------Deletion Verification--------------------------");
 		
 		System.out.println("The service is: " + serviceA);
 
-		if (!serviceA.equals(service)) {
-			deleted = true;
-		}
+		deleted = greaterThanInt(rowsB, rowsA);
+
 
 		System.out.println("The record was deleted with success: " + deleted);
 
@@ -613,6 +596,30 @@ public class CarrierServicePO extends TestBaseSteven {
 
 
 	}
+	
+	public void orderService() {
+		
+		String service = getText("//tr[contains(@id,\"ServiceTableRow\")][1]/td[3]/div");
+		int count = 1;
+		
+		while (!service.contains(this.service)) {
+			
+			click("//div[text()=\"ID\"]");
+			sleep(500);
+			service = getText("//tr[contains(@id,\"ServiceTableRow\")][1]/td[3]/div");
+			count ++;
+			
+			if (count >3) {
+				assertTrue(false, creationRecord);
+			}
+			
+			
+		}
+
+
+	}
+	
+	
 
 	
 

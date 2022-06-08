@@ -1,33 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
-  <test thread-count="5" name="Carrier Service(failed)">
-    <classes>
-      <class name="com.rs.test.configuration.carrierService.CarrierService">
-        <methods>
-          <include name="createCarrierService"/>
-          <include name="beforeTest"/>
-          <include name="editCarrierService"/>
-          <include name="afterTest"/>
-        </methods>
-      </class> <!-- com.rs.test.configuration.carrierService.CarrierService -->
-    </classes>
-  </test> <!-- Carrier Service(failed) -->
   <test thread-count="5" name="Message Aggregators(failed)">
     <classes>
       <class name="com.rs.test.configuration.messageAggregators.MessageAggregators">
         <methods>
-          <include name="createPeerBlock"/>
           <include name="beforeTest"/>
           <include name="afterTest"/>
           <include name="createMessageAggregator"/>
-          <include name="deleteRoutePoints"/>
           <include name="editMessageAggregator"/>
-          <include name="editRoutePoints"/>
-          <include name="editPeerBlock"/>
-          <include name="createRoutePoints"/>
         </methods>
       </class> <!-- com.rs.test.configuration.messageAggregators.MessageAggregators -->
     </classes>
   </test> <!-- Message Aggregators(failed) -->
+  <test thread-count="5" name="Carrier Template(failed)">
+    <classes>
+      <class name="com.rs.test.spam.carrierTemplate.CarrierTemplate">
+        <methods>
+          <include name="afterTest"/>
+          <include name="beforeTest"/>
+          <include name="filtersActionTemplate"/>
+        </methods>
+      </class> <!-- com.rs.test.spam.carrierTemplate.CarrierTemplate -->
+    </classes>
+  </test> <!-- Carrier Template(failed) -->
 </suite> <!-- Failed suite [Suite] -->

@@ -25,14 +25,13 @@ public class MessageAggregators extends TestBaseSteven{
 	  loginVerificationPO.login();
 	  
   }
- 
+
   @Test(priority = 0)
   public void filters() {
 	 
 	  messageAggregatorsPO.filters();
 	 
   }
-  
   
   @Test(priority = 1)
   public void createMessageAggregator() {
@@ -50,7 +49,7 @@ public class MessageAggregators extends TestBaseSteven{
   }
 
   // ---------------------------------------Rt Points------------------------------------------
-  
+
   @Test(dependsOnMethods = "createMessageAggregator", priority = 2)
   public void createRoutePoints() {
 	 

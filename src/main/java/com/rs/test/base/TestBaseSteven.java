@@ -256,7 +256,7 @@ public class TestBaseSteven {
 	
 	public void scrollDown(int times) {
 		
-		click("//body");
+		actionsMoveToElementElement("//body");
 		
 		for (int i = 0; i < times; i++) {
 			findElement("//body").sendKeys(Keys.ARROW_DOWN);

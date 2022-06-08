@@ -109,17 +109,27 @@ public class CarrierTemplatesPO extends TestBaseSteven {
 
 		sleep(4000);
 	}
-	
+
 	public void clickOnCboDestinationCarrier() {
 		click(cboSearchDestionationCarrierService);
 	}
-	
+
 	public void clickOnCboSapSpam() {
 		click(cboSearchSapSpam);
 	}
-	
-	
+
 	public void filters() {
+		
+
+		loginVerificationPO = new LoginVerificationPO();
+
+		actionsMoveToElementElement(loginVerificationPO.btnSpam);
+
+		clickOnCarrierTemplatesMenu();
+
+		actionsMoveToElementElement(btnSearch);
+
+		clickOnGoToLast();
 
 		ArrayList<String> data = getFilterData();
 
@@ -129,46 +139,44 @@ public class CarrierTemplatesPO extends TestBaseSteven {
 
 		clickOnSearchButton();
 
-		verifyFilter("Rule Id", data, 0, 1);
+		verifyFilter("Rule Id", data, 0, 2);
 
 		clearSearchRuleID();
-		
+
 		sleep(2000);
 
 		clickOnSearchButton();
-		  
-		  // ------------------------------------------Destionation Carrier
-		  
-		  sendKeys(cboSearchDestionationCarrierService, data.get(1)); 
-		  sleep(2000);
-		  
-		  clickOnSearchButton();
-		  
-		  verifyFilter("Destionation Carrier Service",data,1,2);
-		  
-		  clickOnSearchButton();
-		  
-		  sendKeys(cboSearchDestionationCarrierService, "Select an");
-		  
-		  clickOnSearchButton();
-		  
-		  
-		  // ------------------------------------------SAP Spam Template
-		  
-		  sendKeys(cboSearchSapSpam, data.get(2)); 
-		  sleep(2000);
-		  
-		  clickOnSearchButton();
-		  
-		  verifyFilter("SAP Spam Template",data,2,3);
-		  
-		  clickOnSearchButton();
-		  
-		  sendKeys(cboSearchSapSpam, "Select an");
-		  
-		  clickOnSearchButton();
-		  
-		  
+
+		// ------------------------------------------Destionation Carrier
+
+		sendKeys(cboSearchDestionationCarrierService, data.get(1));
+		sleep(2000);
+
+		clickOnSearchButton();
+
+		verifyFilter("Destionation Carrier Service", data, 1, 3);
+
+		clickOnCboDestinationCarrier();
+	
+		click("//select[@id=\"adddestServiceName\"]/option[contains(text(),\"Select an\") or (not(text()))]");
+
+		clickOnSearchButton();
+
+		// ------------------------------------------SAP Spam Template
+
+		sendKeys(cboSearchSapSpam, data.get(2));
+		sleep(2000);
+
+		clickOnSearchButton();
+
+		verifyFilter("SAP Spam Template", data, 2, 4);
+
+		clickOnSearchButton();
+
+		click("//select[@id=\"addspamTemplateName\"]/option[contains(text(),\"Select an\") or (not(text()))]");
+
+		clickOnSearchButton();
+
 	}
 
 	public void verifyFilter(String filter, ArrayList<String> data, int index, int td) {
@@ -203,14 +211,6 @@ public class CarrierTemplatesPO extends TestBaseSteven {
 
 	public ArrayList<String> getFilterData() {
 
-		loginVerificationPO = new LoginVerificationPO();
-
-		actionsMoveToElementElement(loginVerificationPO.btnSpam);
-
-		clickOnCarrierTemplatesMenu();
-
-		clickOnGoToLast();
-
 		int rows = rows("//tr[contains(@id,\"TemplatesTableRow\")]");
 
 		ArrayList<String> data = new ArrayList<String>();
@@ -219,9 +219,9 @@ public class CarrierTemplatesPO extends TestBaseSteven {
 
 		for (int i = 0; i < rows; i++) {
 
-			String ruleId = getText("//tr[contains(@id,\"TemplatesTableRow\")][" + j + "]/td[1]/div");
-			String destinationCarrier = getText("//tr[contains(@id,\"TemplatesTableRow\")][" + j + "]/td[2]/div");
-			String sapSpam = getText("//tr[contains(@id,\"TemplatesTableRow\")][" + j + "]/td[3]/div");
+			String ruleId = getText("//tr[contains(@id,\"TemplatesTableRow\")][" + j + "]/td[2]/div");
+			String destinationCarrier = getText("//tr[contains(@id,\"TemplatesTableRow\")][" + j + "]/td[3]/div");
+			String sapSpam = getText("//tr[contains(@id,\"TemplatesTableRow\")][" + j + "]/td[4]/div");
 
 			if (!ruleId.equals("empty") && !destinationCarrier.equals("empty") && !sapSpam.equals("empty")) {
 

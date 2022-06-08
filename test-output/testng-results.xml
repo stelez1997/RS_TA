@@ -2,24 +2,24 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-05-18T18:44:25 CST" name="Default suite" finished-at="2022-05-18T18:45:02 CST" duration-ms="37209">
+  <suite started-at="2022-06-08T13:17:09 CST" name="Default suite" finished-at="2022-06-08T13:18:14 CST" duration-ms="64926">
     <groups>
     </groups>
-    <test started-at="2022-05-18T18:44:25 CST" name="Default test" finished-at="2022-05-18T18:45:02 CST" duration-ms="37209">
-      <class name="com.rs.test.clusterConfiguration.routeRules.RouteRules">
-        <test-method is-config="true" signature="beforeTest()[pri:0, instance:com.rs.test.clusterConfiguration.routeRules.RouteRules@437da279]" started-at="2022-05-18T18:44:25 CST" name="beforeTest" finished-at="2022-05-18T18:44:35 CST" duration-ms="10146" status="PASS">
+    <test started-at="2022-06-08T13:17:09 CST" name="Default test" finished-at="2022-06-08T13:18:14 CST" duration-ms="64926">
+      <class name="com.rs.test.spam.carrierTemplate.CarrierTemplate">
+        <test-method is-config="true" signature="beforeTest()[pri:0, instance:com.rs.test.spam.carrierTemplate.CarrierTemplate@437da279]" started-at="2022-06-08T13:17:09 CST" name="beforeTest" finished-at="2022-06-08T13:17:21 CST" duration-ms="11907" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method signature="SMSxClusterRouteRules()[pri:0, instance:com.rs.test.clusterConfiguration.routeRules.RouteRules@437da279]" started-at="2022-05-18T18:44:35 CST" name="SMSxClusterRouteRules" finished-at="2022-05-18T18:45:02 CST" duration-ms="26704" status="PASS">
+        <test-method signature="filtersCarrierTemplate()[pri:0, instance:com.rs.test.spam.carrierTemplate.CarrierTemplate@437da279]" started-at="2022-06-08T13:17:21 CST" name="filtersCarrierTemplate" finished-at="2022-06-08T13:18:14 CST" duration-ms="52669" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- SMSxClusterRouteRules -->
-        <test-method is-config="true" signature="afterTest()[pri:0, instance:com.rs.test.clusterConfiguration.routeRules.RouteRules@437da279]" started-at="2022-05-18T18:45:02 CST" name="afterTest" finished-at="2022-05-18T18:45:02 CST" duration-ms="327" status="PASS">
+        </test-method> <!-- filtersCarrierTemplate -->
+        <test-method is-config="true" signature="afterTest()[pri:0, instance:com.rs.test.spam.carrierTemplate.CarrierTemplate@437da279]" started-at="2022-06-08T13:18:14 CST" name="afterTest" finished-at="2022-06-08T13:18:14 CST" duration-ms="303" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterTest -->
-      </class> <!-- com.rs.test.clusterConfiguration.routeRules.RouteRules -->
+      </class> <!-- com.rs.test.spam.carrierTemplate.CarrierTemplate -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
