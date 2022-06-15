@@ -154,6 +154,7 @@ public class TestBaseSteven {
 	public void refresh() {
 				
 		driver.navigate().refresh();
+	
 	}
 	
 	public String url() {

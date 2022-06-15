@@ -48,12 +48,54 @@ public class CarrierService extends TestBaseSteven{
 	 
   }
   
-  @Test(dependsOnMethods = "createCarrierService", priority = 1)
+  @Test(dependsOnMethods = "createCarrierService", priority = 6)
   public void deleteCarrierService() {
 	 
 	  carrierServicePO.deleteCarrierService();
 	 
   }
+  
+  //Route Point
+  
+  @Test(dependsOnMethods = "createCarrierService", priority = 1)
+  public void createRoutePoint() {
+	 
+	  carrierServicePO.createRoutePoint();
+	 
+  }
+  
+  @Test(dependsOnMethods = "createRoutePoint", priority = 2)
+  public void editRoutePoint() {
+	 
+	  carrierServicePO.editRoutePoint();
+	 
+  }
+  
+  @Test(dependsOnMethods = "createRoutePoint", priority = 3)
+  public void deleteRoutePoint() {
+	 
+	  carrierServicePO.deleteRoutePoint();
+	 
+  }
+  
+  //Log Agent
+  
+  @Test(dependsOnMethods = "createCarrierService", priority = 4)
+  public void createLogAgent() {
+	 
+	  carrierServicePO.createLogAgent();
+	 
+  }
+  
+
+  
+  @Test(dependsOnMethods = "createLogAgent", priority = 5)
+  public void deleteLogAgent() {
+	 
+	  carrierServicePO.deleteLogAgent();
+	 
+  }
+  
   
  
   

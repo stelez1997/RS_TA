@@ -125,6 +125,33 @@ public class CarrierServicePO extends TestBaseSteven {
 	
 
 	// Modals
+	
+	//Route Points
+	
+	@FindBy(xpath = "//button[@id=\"AddBtn\"]")
+	public WebElement btnAddRoutePoint;
+	
+	@FindBy(xpath = "//input[@name=\"routePoint\"]")
+	public WebElement txtRoutePointName;
+	
+	@FindBy(xpath = "//input[@name=\"description\"]")
+	public WebElement txtRoutePointDescription;
+	
+	
+	//Log Agent
+	
+	@FindBy(xpath = "//select[@id=\"addlogAgent\"]")
+	public WebElement cboNameLogAgent;
+	
+	@FindBy(xpath = "//select[@id=\"addlogAgent\"]//option[text()][1]")
+	public WebElement cboNameLogAgentO;
+	
+	@FindBy(xpath = "//button[@id=\"AddBtn\"]")
+	public WebElement btnAddLogAgent;
+	
+	
+	
+	
 
 	@FindBy(xpath = "//input[@name=\"prefix\"]")
 	public WebElement txtPrefix;
@@ -245,11 +272,47 @@ public class CarrierServicePO extends TestBaseSteven {
 
 
 	// Modals
+	
+	//Route Point
+	
+	
+	public void fillOutRoutePointName(String text) {
+		sendKeys(txtRoutePointName, text);
+	}
+	
+	public void fillOutRoutePointDescription(String text) {
+		sendKeys(txtRoutePointDescription, text);
+	}
+	
+	public void clickOnBtnAddRoutePoint() {
+		click(btnAddRoutePoint);
+		sleep(5000);
+	}
+	
+	//Log Agent
+	
+	public void selectLogAgent() {
+		
+		click(cboNameLogAgent);
+		sleep(1000);
+		nameLogAgent = getText(cboNameLogAgentO);
+		click(cboNameLogAgentO);
+		sleep(1000);
+
+	}
+	
+	public void clickOnBtnAddLogAgent() {
+		click(btnAddLogAgent);
+		sleep(5000);
+	}
+	
+	
 
 	// Create
 	
 	
 	String service = "Ztest";
+	String nameLogAgent = "";
 	
 	public void createCarrierService() {
 
@@ -334,6 +397,14 @@ public class CarrierServicePO extends TestBaseSteven {
 	// Verfication before editing or deleting the record
 
 	public void verification() {
+		
+		int modal = rows("//div[@class=\"tablePageModalBack\" and not(contains(@style,\"display: none\"))]");
+		
+		if (modal != 0) {
+			
+			click("//div[@class=\"tablePageModalBack\" and not(contains(@style,\"display: none\"))]//button[text()=\"X\"]");
+			
+		}
 		
 		loginVerificationPO = new LoginVerificationPO();
 
@@ -619,10 +690,270 @@ public class CarrierServicePO extends TestBaseSteven {
 
 	}
 	
+	//Route Points
 	
+	public void createRoutePoint() {
 
+		verification();
+		
+		orderService();
+		
+		WebElement routePointTable = findElement("//tr[contains(@id,\"ServiceTableRow\")][1]//button[contains(@id,\"RoutePoint\")]");
+		
+		click(routePointTable);
+		
+		waitExpectedElement("//button[@id=\"AddBtn\"]");
+		
+		int rowsB = rows("//div[@class=\"tablePageModalBack\" and not(contains(@style,\"none\"))]//tr[contains(@id,\"TableRow\")]");
+		
+		String name ="TA_Test";
+		String description = "Test";
+		
+		fillOutRoutePointName(name);
+		fillOutRoutePointDescription(description);
+		
+		clickOnBtnAddRoutePoint();
+		
+		refresh();
+		
+		visibilityOfElementXpath("//tr[contains(@id,\"ServiceTableRow\")][1]");
+		
+		clickOnGoToLast();
+		
+		orderService();
+		
+		routePointTable = findElement("//tr[contains(@id,\"ServiceTableRow\")][1]//button[contains(@id,\"RoutePoint\")]");
+		
+		click(routePointTable);
+		
+		waitExpectedElement("//button[@id=\"AddBtn\"]");
+		
+		int rowsA = rows("//div[@class=\"tablePageModalBack\" and not(contains(@style,\"none\"))]//tr[contains(@id,\"TableRow\")]");
+		
+		boolean created = greaterThanInt(rowsA, rowsB);
+		
+		System.out.println("Record Created: "+created);
+		assertTrue(created, createdUnSuccesfully);
+		
+		String nameA = getText("//div[@class=\"tablePageModalBack\" and not(contains(@style,\"none\"))]//tr[contains(@id,\"TableRow\")]["+rowsA+"]//td[2]");
+		String descriptionA = getText("//div[@class=\"tablePageModalBack\" and not(contains(@style,\"none\"))]//tr[contains(@id,\"TableRow\")]["+rowsA+"]//td[3]");
+		
+		created = false;
+		
+		if (nameA.equals(name) && descriptionA.equals(description)) {
+			created = true;
+		}
+		
+		System.out.println("Record created successfully: "+created);
+		assertTrue(created, createdUnSuccesfully);
+		
 	
+	}
+	
+	public void editRoutePoint() {
 
+		verification();
+		
+		orderService();
+		
+		WebElement routePointTable = findElement("//tr[contains(@id,\"ServiceTableRow\")][1]//button[contains(@id,\"RoutePoint\")]");
+		
+		click(routePointTable);
+		
+		waitExpectedElement("//button[@id=\"AddBtn\"]");
+		
+		int rows = rows("//div[@class=\"tablePageModalBack\" and not(contains(@style,\"none\"))]//tr[contains(@id,\"TableRow\")]");
+		
+		WebElement btnEdit = findElement("//div[@class=\"tablePageModalBack\" and not(contains(@style,\"none\"))]//tr[contains(@id,\"TableRow\")]["+rows+"]//button[contains(@id,\"edit\")]");
+		click(btnEdit);
+		
+		WebElement txtEditName = findElement("//div[@class=\"tablePageModalBack\" and not(contains(@style,\"none\"))]//tr[contains(@id,\"TableRow\")]["+rows+"]//input[contains(@id,\"routePoint\")]");
+		WebElement txtEditDescription = findElement("//div[@class=\"tablePageModalBack\" and not(contains(@style,\"none\"))]//tr[contains(@id,\"TableRow\")]["+rows+"]//input[contains(@id,\"description\")]");
+		
+		
+		String name ="TA_Edit";
+		String description = "Test_Edition";
+		
+		clearByBackSpace(txtEditName);
+		clearByBackSpace(txtEditDescription);
+		
+		sendKeys(txtEditName, name);
+		sendKeys(txtEditDescription, description);
+		
+		click(btnEdit);
+		sleep(5000);
+
+		refresh();
+		
+		visibilityOfElementXpath("//tr[contains(@id,\"ServiceTableRow\")][1]");
+		
+		clickOnGoToLast();
+		
+		orderService();
+		
+		routePointTable = findElement("//tr[contains(@id,\"ServiceTableRow\")][1]//button[contains(@id,\"RoutePoint\")]");
+		
+		click(routePointTable);
+		
+		waitExpectedElement("//button[@id=\"AddBtn\"]");
+		
+		String nameA = getText("//div[@class=\"tablePageModalBack\" and not(contains(@style,\"none\"))]//tr[contains(@id,\"TableRow\")]["+rows+"]//td[2]/div");
+		String descriptionA = getText("//div[@class=\"tablePageModalBack\" and not(contains(@style,\"none\"))]//tr[contains(@id,\"TableRow\")]["+rows+"]//td[3]/div");
+		
+		boolean edited = false;
+		
+		if (nameA.equals(name) && descriptionA.equals(description)) {
+			edited = true;
+		}
+		
+		System.out.println("Record edited successfully: "+edited);
+		assertTrue(edited, editionRecord);
+		
+	
+		
+		
+	}
+	
+	public void deleteRoutePoint() {
+
+		verification();
+		
+		orderService();
+		
+		WebElement routePointTable = findElement("//tr[contains(@id,\"ServiceTableRow\")][1]//button[contains(@id,\"RoutePoint\")]");
+		
+		click(routePointTable);
+		
+		waitExpectedElement("//button[@id=\"AddBtn\"]");
+		
+		int rowsB = rows("//div[@class=\"tablePageModalBack\" and not(contains(@style,\"none\"))]//tr[contains(@id,\"TableRow\")]");
+		
+		WebElement btnDelete = findElement("//div[@class=\"tablePageModalBack\" and not(contains(@style,\"none\"))]//tr[contains(@id,\"TableRow\")]["+rowsB+"]//button[contains(@id,\"delete\")]");
+		click(btnDelete);
+		sleep(5000);
+
+		refresh();
+		
+		visibilityOfElementXpath("//tr[contains(@id,\"ServiceTableRow\")][1]");
+		
+		clickOnGoToLast();
+		
+		orderService();
+		
+		routePointTable = findElement("//tr[contains(@id,\"ServiceTableRow\")][1]//button[contains(@id,\"RoutePoint\")]");
+		
+		click(routePointTable);
+		
+		waitExpectedElement("//button[@id=\"AddBtn\"]");
+		
+		int rowsA = rows("//div[@class=\"tablePageModalBack\" and not(contains(@style,\"none\"))]//tr[contains(@id,\"TableRow\")]");
+		
+		
+		boolean deleted = greaterThanInt(rowsB, rowsA);
+		
+		System.out.println("Record deleted Sucessfully: "+deleted);
+		assertTrue(deleted, deletionRecord);
+		
+	}
+	
+	//Log Agent
+	
+	public void createLogAgent() {
+
+		verification();
+		
+		orderService();
+		
+		WebElement logAgentTable = findElement("//tr[contains(@id,\"ServiceTableRow\")][1]//button[contains(@id,\"logAgent\")]");
+		
+		click(logAgentTable);
+		
+		waitExpectedElement("//button[@id=\"AddBtn\"]");
+		
+		int rowsB = rows("//div[@class=\"tablePageModalBack\" and not(contains(@style,\"none\"))]//tr[contains(@id,\"TableRow\")]");
+		
+		selectLogAgent();
+		
+		clickOnBtnAddLogAgent();
+		
+		refresh();
+		
+		visibilityOfElementXpath("//tr[contains(@id,\"ServiceTableRow\")][1]");
+		
+		clickOnGoToLast();
+		
+		orderService();
+		
+		logAgentTable = findElement("//tr[contains(@id,\"ServiceTableRow\")][1]//button[contains(@id,\"logAgent\")]");
+		
+		click(logAgentTable);
+		
+		waitExpectedElement("//button[@id=\"AddBtn\"]");
+		
+		int rowsA = rows("//div[@class=\"tablePageModalBack\" and not(contains(@style,\"none\"))]//tr[contains(@id,\"TableRow\")]");
+		
+		boolean created = greaterThanInt(rowsA, rowsB);
+		
+		System.out.println("Record Created: "+created);
+		assertTrue(created, createdUnSuccesfully);
+		
+		String logAgentA = getText("//div[@class=\"tablePageModalBack\" and not(contains(@style,\"none\"))]//tr[contains(@id,\"TableRow\")]["+rowsA+"]//td[2]");
+
+		created = false;
+		
+		if (logAgentA.equals(nameLogAgent)) {
+			created = true;
+		}
+		
+		System.out.println("Record created successfully: "+created);
+		assertTrue(created, createdUnSuccesfully);
+		
+	
+	}
+	
+	
+	public void deleteLogAgent() {
+
+		verification();
+		
+		orderService();
+		
+		WebElement logAgentTable = findElement("//tr[contains(@id,\"ServiceTableRow\")][1]//button[contains(@id,\"logAgent\")]");
+		
+		click(logAgentTable);
+		
+		waitExpectedElement("//button[@id=\"AddBtn\"]");
+		
+		int rowsB = rows("//div[@class=\"tablePageModalBack\" and not(contains(@style,\"none\"))]//tr[contains(@id,\"TableRow\")]");
+		
+		WebElement btnDelete = findElement("//div[@class=\"tablePageModalBack\" and not(contains(@style,\"none\"))]//tr[contains(@id,\"TableRow\")]["+rowsB+"]//button[contains(@id,\"delete\")]");
+		click(btnDelete);
+		sleep(5000);
+
+		refresh();
+		
+		visibilityOfElementXpath("//tr[contains(@id,\"ServiceTableRow\")][1]");
+		
+		clickOnGoToLast();
+		
+		orderService();
+		
+		logAgentTable = findElement("//tr[contains(@id,\"ServiceTableRow\")][1]//button[contains(@id,\"logAgent\")]");
+		
+		click(logAgentTable);
+		
+		waitExpectedElement("//button[@id=\"AddBtn\"]");
+		
+		int rowsA = rows("//div[@class=\"tablePageModalBack\" and not(contains(@style,\"none\"))]//tr[contains(@id,\"TableRow\")]");
+		
+		
+		boolean deleted = greaterThanInt(rowsB, rowsA);
+		
+		System.out.println("Record deleted Sucessfully: "+deleted);
+		assertTrue(deleted, deletionRecord);
+		
+	}
+	
 
 
 
