@@ -1,57 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="9" passed="9" failed="0" skipped="0">
+<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-06-15T15:06:16 CST" name="Default suite" finished-at="2022-06-15T15:10:26 CST" duration-ms="250685">
+  <suite started-at="2022-07-01T15:52:38 CST" name="Default suite" finished-at="2022-07-01T15:54:14 CST" duration-ms="96305">
     <groups>
     </groups>
-    <test started-at="2022-06-15T15:06:16 CST" name="Default test" finished-at="2022-06-15T15:10:26 CST" duration-ms="250685">
-      <class name="com.rs.test.configuration.carrierService.CarrierService">
-        <test-method is-config="true" signature="beforeTest()[pri:0, instance:com.rs.test.configuration.carrierService.CarrierService@6253c26]" started-at="2022-06-15T15:06:16 CST" name="beforeTest" finished-at="2022-06-15T15:06:26 CST" duration-ms="9742" status="PASS">
+    <test started-at="2022-07-01T15:52:38 CST" name="Default test" finished-at="2022-07-01T15:54:14 CST" duration-ms="96305">
+      <class name="com.rs.test.clusterConfiguration.clusterAdmin.ClusterAdmin">
+        <test-method is-config="true" signature="beforeTest()[pri:0, instance:com.rs.test.clusterConfiguration.clusterAdmin.ClusterAdmin@437da279]" started-at="2022-07-01T15:52:38 CST" name="beforeTest" finished-at="2022-07-01T15:52:57 CST" duration-ms="19402" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method signature="filters()[pri:0, instance:com.rs.test.configuration.carrierService.CarrierService@6253c26]" started-at="2022-06-15T15:06:26 CST" name="filters" finished-at="2022-06-15T15:06:59 CST" duration-ms="33649" status="PASS">
+        <test-method signature="createQueueMonitor()[pri:0, instance:com.rs.test.clusterConfiguration.clusterAdmin.ClusterAdmin@437da279]" started-at="2022-07-01T15:52:57 CST" name="createQueueMonitor" finished-at="2022-07-01T15:53:21 CST" duration-ms="23889" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- filters -->
-        <test-method signature="createCarrierService()[pri:1, instance:com.rs.test.configuration.carrierService.CarrierService@6253c26]" started-at="2022-06-15T15:06:59 CST" name="createCarrierService" finished-at="2022-06-15T15:07:19 CST" duration-ms="19740" status="PASS">
+        </test-method> <!-- createQueueMonitor -->
+        <test-method signature="editQueueMonitor()[pri:1, instance:com.rs.test.clusterConfiguration.clusterAdmin.ClusterAdmin@437da279]" started-at="2022-07-01T15:53:21 CST" name="editQueueMonitor" finished-at="2022-07-01T15:53:51 CST" depends-on-methods="com.rs.test.clusterConfiguration.clusterAdmin.ClusterAdmin.createQueueMonitor" duration-ms="29857" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- createCarrierService -->
-        <test-method signature="editCarrierService()[pri:0, instance:com.rs.test.configuration.carrierService.CarrierService@6253c26]" started-at="2022-06-15T15:07:19 CST" name="editCarrierService" finished-at="2022-06-15T15:07:49 CST" depends-on-methods="com.rs.test.configuration.carrierService.CarrierService.createCarrierService" duration-ms="30211" status="PASS">
+        </test-method> <!-- editQueueMonitor -->
+        <test-method signature="deleteQueueMonitor()[pri:2, instance:com.rs.test.clusterConfiguration.clusterAdmin.ClusterAdmin@437da279]" started-at="2022-07-01T15:53:51 CST" name="deleteQueueMonitor" finished-at="2022-07-01T15:54:14 CST" depends-on-methods="com.rs.test.clusterConfiguration.clusterAdmin.ClusterAdmin.createQueueMonitor" duration-ms="23015" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- editCarrierService -->
-        <test-method signature="createRoutePoint()[pri:1, instance:com.rs.test.configuration.carrierService.CarrierService@6253c26]" started-at="2022-06-15T15:07:49 CST" name="createRoutePoint" finished-at="2022-06-15T15:08:15 CST" depends-on-methods="com.rs.test.configuration.carrierService.CarrierService.createCarrierService" duration-ms="26099" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- createRoutePoint -->
-        <test-method signature="editRoutePoint()[pri:2, instance:com.rs.test.configuration.carrierService.CarrierService@6253c26]" started-at="2022-06-15T15:08:15 CST" name="editRoutePoint" finished-at="2022-06-15T15:08:48 CST" depends-on-methods="com.rs.test.configuration.carrierService.CarrierService.createRoutePoint" duration-ms="32477" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- editRoutePoint -->
-        <test-method signature="deleteRoutePoint()[pri:3, instance:com.rs.test.configuration.carrierService.CarrierService@6253c26]" started-at="2022-06-15T15:08:48 CST" name="deleteRoutePoint" finished-at="2022-06-15T15:09:13 CST" depends-on-methods="com.rs.test.configuration.carrierService.CarrierService.createRoutePoint" duration-ms="25558" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- deleteRoutePoint -->
-        <test-method signature="createLogAgent()[pri:4, instance:com.rs.test.configuration.carrierService.CarrierService@6253c26]" started-at="2022-06-15T15:09:13 CST" name="createLogAgent" finished-at="2022-06-15T15:09:41 CST" depends-on-methods="com.rs.test.configuration.carrierService.CarrierService.createCarrierService" duration-ms="28125" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- createLogAgent -->
-        <test-method signature="deleteLogAgent()[pri:5, instance:com.rs.test.configuration.carrierService.CarrierService@6253c26]" started-at="2022-06-15T15:09:41 CST" name="deleteLogAgent" finished-at="2022-06-15T15:10:07 CST" depends-on-methods="com.rs.test.configuration.carrierService.CarrierService.createLogAgent" duration-ms="25713" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- deleteLogAgent -->
-        <test-method signature="deleteCarrierService()[pri:6, instance:com.rs.test.configuration.carrierService.CarrierService@6253c26]" started-at="2022-06-15T15:10:07 CST" name="deleteCarrierService" finished-at="2022-06-15T15:10:26 CST" depends-on-methods="com.rs.test.configuration.carrierService.CarrierService.createCarrierService" duration-ms="19040" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- deleteCarrierService -->
-        <test-method is-config="true" signature="afterTest()[pri:0, instance:com.rs.test.configuration.carrierService.CarrierService@6253c26]" started-at="2022-06-15T15:10:26 CST" name="afterTest" finished-at="2022-06-15T15:10:26 CST" duration-ms="286" status="PASS">
+        </test-method> <!-- deleteQueueMonitor -->
+        <test-method is-config="true" signature="afterTest()[pri:0, instance:com.rs.test.clusterConfiguration.clusterAdmin.ClusterAdmin@437da279]" started-at="2022-07-01T15:54:14 CST" name="afterTest" finished-at="2022-07-01T15:54:14 CST" duration-ms="87" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterTest -->
-      </class> <!-- com.rs.test.configuration.carrierService.CarrierService -->
+      </class> <!-- com.rs.test.clusterConfiguration.clusterAdmin.ClusterAdmin -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

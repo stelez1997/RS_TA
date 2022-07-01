@@ -176,22 +176,10 @@ public class DCSPO extends TestBaseSteven {
 
 		System.out.println("Record created: " + created);
 
-		created = false;
-
-		String hubIdA = getText("//tr[contains(@id, \"DCSTableRow\")][1]/td[2]/div");
-		String dcsA = getText("//tr[contains(@id, \"DCSTableRow\")][1]/td[3]/div");
-		System.out.println("The DCSA is: " + dcsA);
-		System.out.println("The HubA Id is: " + hubIdA);
-
-		if (hubIdA.equals(hubId) && dcsA.equals(dcs)) {
-			created = true;
-			assertTrue(created);
-			System.out.println(createdSuccesfully);
-
-		} else {
-			assertTrue(created);
-			System.out.println(createdUnSuccesfully);
-		}
+		created = greaterThanInt(rowsA, rowsB);
+		System.out.println("Record created succesfully: "+created);
+		assertTrue(created, createdUnSuccesfully);
+		
 
 	}
 
@@ -214,10 +202,10 @@ public class DCSPO extends TestBaseSteven {
 		int j = 1;
 		for (int i = 0; i < rows; i++) {
 
-			String hubId = getText("//tr[contains(@id,\"DCSTableRow\")][" + j + "]/td[2]/div");
-			String dcs = getText("//tr[contains(@id,\"DCSTableRow\")][" + j + "]/td[3]/div");
+			String user = getText("//tr[contains(@id,\"DCSTableRow\")][" + j + "]/td[4]/div");
 
-			if (hubId.equals(this.hubId) && dcs.equals(this.dcs)) {
+
+			if (user.equals(testUser)) {
 				System.out.println("Creation Record Displayed at Position: " + j);
 				record = true;
 				assertTrue(record, testRecord);

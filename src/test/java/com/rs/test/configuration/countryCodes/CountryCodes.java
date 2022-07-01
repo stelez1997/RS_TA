@@ -32,15 +32,15 @@ public class CountryCodes extends TestBaseSteven{
   }
   
   
-  @Test(dependsOnMethods = "createCountryCode", priority = 0)
+  @Test(dependsOnMethods = "createCountryCode", priority = 2)
   public void editContryCode() {
 	  
-	  countryCodesPO.edit();
+	  countryCodesPO.editCountryCode();
 	  
   }
   
  
-  @Test(dependsOnMethods = "createCountryCode",priority = 1)
+  @Test(dependsOnMethods = "createCountryCode",priority = 3)
 
   public void createModalPrefix() {
 	 
@@ -50,7 +50,7 @@ public class CountryCodes extends TestBaseSteven{
  
  
 
-  @Test(dependsOnMethods = "createModalPrefix",priority = 2)
+  @Test(dependsOnMethods = "createModalPrefix",priority = 4)
 
   public void editModalPrefix() {
 	 
@@ -59,17 +59,17 @@ public class CountryCodes extends TestBaseSteven{
   }
   
   
-  @Test(dependsOnMethods = "createModalPrefix", priority = 3)
+  @Test(dependsOnMethods = "createModalPrefix", priority = 5)
 
   public void deleteModalPrefix() {
 	 
 	  countryCodesPO.deletePrefix();	 
   }
   
-  @Test(dependsOnMethods = "createCountryCode", priority = 4)
+  @Test(dependsOnMethods = "createCountryCode", priority = 6)
   public void deleteCountryCode() {
 	  
-	  countryCodesPO.delete();
+	  countryCodesPO.deleteCountryCode();
 	  
   }
  

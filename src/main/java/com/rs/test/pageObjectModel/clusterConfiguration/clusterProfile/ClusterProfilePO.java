@@ -126,7 +126,7 @@ public class ClusterProfilePO extends TestBaseSteven {
 
 	// Create
 	
-	String id = "2002";
+	String id = "5";
 	String name = "TestQA";
 	String description = "Test QA";
 
@@ -196,7 +196,7 @@ public class ClusterProfilePO extends TestBaseSteven {
 		WebElement txtEditName = findElement("//tr[contains(@id,\"ProfileTableRow\")][" + rows + "]/td[3]/input");
 		WebElement txtEditDescription = findElement("//tr[contains(@id,\"ProfileTableRow\")][" + rows + "]/td[4]/input");
 		WebElement btnEdit = findElement("//tr[contains(@id,\"ProfileTableRow\")][" + rows + "]//child::button[contains(@id,\"edit\")]");
-		scrollDown(rows2);
+
 		click(btnEdit);
 
 		clearByBackSpace(txtEditName);
@@ -237,7 +237,6 @@ public class ClusterProfilePO extends TestBaseSteven {
 		txtEditName = findElement("//tr[contains(@id,\"ProfileTableRow\")][" + rows + "]/td[3]/input");
 		txtEditDescription = findElement("//tr[contains(@id,\"ProfileTableRow\")][" + rows + "]/td[4]/input");
 		btnEdit = findElement("//tr[contains(@id,\"ProfileTableRow\")][" + rows + "]//child::button[contains(@id,\"edit\")]");
-		scrollDown(rows2);
 		click(btnEdit);
 
 		clearByBackSpace(txtEditName);

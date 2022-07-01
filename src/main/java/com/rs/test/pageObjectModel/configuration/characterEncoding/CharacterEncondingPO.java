@@ -247,7 +247,7 @@ public class CharacterEncondingPO extends TestBaseSteven {
 	String name = "Test Character";
 	String escapeValue = "123";
 	String cboText = "";
-	String id = "";
+	String id = "500000000000005";
 
 	// Custom Encode Code Create
 
@@ -265,8 +265,6 @@ public class CharacterEncondingPO extends TestBaseSteven {
 		actionsMoveToElementElement(btnAddCharacterEncoding);
 		
 		int rowsB = rows("//tr[contains(@id,\"Character EncodingTableRow\") and not(contains(@id,\"Default\"))]");
-		
-		scrollDown(rowsB);
 
 		clickOnGoToLast(1);
 
@@ -289,7 +287,7 @@ public class CharacterEncondingPO extends TestBaseSteven {
 		waitExpectedElement(
 				"//tr[contains(@id,\"Character EncodingTable\") and not(contains(@id,\"Default\"))][1]//button[contains(@id,\"edit\")]");
 		
-		scrollDown(rowsB);
+
 		clickOnGoToLast(1);
 
 		int rowsA = rows("//tr[contains(@id,\"Character EncodingTableRow\") and not(contains(@id,\"Default\"))]");
@@ -337,9 +335,11 @@ public class CharacterEncondingPO extends TestBaseSteven {
 
 	public void verification(int table) {
 		
-		loginVerificationPO = new LoginVerificationPO();
+		//refresh();
 		
-		scrollUp(10);
+		visibilityOfElementXpath("//tr[contains(@id,\"Custom Encode Code PointTable\") ][1]");
+		
+		loginVerificationPO = new LoginVerificationPO();
 
 		actionsMoveToElementElement(loginVerificationPO.btnConfiguration);
 
@@ -353,13 +353,6 @@ public class CharacterEncondingPO extends TestBaseSteven {
 		}else {
 			rows = rows("//tr[contains(@id,\"PointTable\")]");
 		}
-	
-		if (table !=1) {
-			scrollDown(rows+3);
-		}else {
-			scrollDown(rows);
-		}
-
 
 		clickOnGoToLast(1);
 		
@@ -387,8 +380,6 @@ public class CharacterEncondingPO extends TestBaseSteven {
 	}
 
 	public void editCharacterEncoding() {
-
-		loginVerificationPO = new LoginVerificationPO();
 
 		verification(1);
 
@@ -448,7 +439,7 @@ public class CharacterEncondingPO extends TestBaseSteven {
 
 		waitExpectedElement("//tr[contains(@id,\"Character EncodingTableRow\") and not(contains(@id,\"Default\"))]//button[contains(@id,\"edit\")]");
 
-		scrollDown(rows);
+
 		clickOnGoToLast(1);
 
 		waitExpectedElement("//tr[contains(@id,\"Character EncodingTableRow\") and not(contains(@id,\"Default\"))]//button[contains(@id,\"edit\")]");
@@ -501,7 +492,7 @@ public class CharacterEncondingPO extends TestBaseSteven {
 		waitExpectedElement(
 				"//tr[contains(@id,\"Character EncodingTableRow\") and not(contains(@id,\"Default\"))]//button[contains(@id,\"delete\")]");
 		
-		scrollDown(rowsB);
+
 		clickOnGoToLast(1);
 
 		int rowsA = rows("//tr[contains(@id,\"Character EncodingTableRow\") and not(contains(@id,\"Default\"))]");
@@ -551,7 +542,7 @@ public class CharacterEncondingPO extends TestBaseSteven {
 	public void createCustomEncodeCodePoint() {
 		loginVerificationPO = new LoginVerificationPO();
 		
-		scrollUp(10);
+
 
 		actionsMoveToElementElement(loginVerificationPO.btnConfiguration);
 
@@ -561,7 +552,7 @@ public class CharacterEncondingPO extends TestBaseSteven {
 		
 		int rowsB = rows("//tr[contains(@id,\"PointTable\")]");
 		
-		scrollDown(rowsB+3);
+
 
 		clickOnGoToLast(2);
 
@@ -581,7 +572,7 @@ public class CharacterEncondingPO extends TestBaseSteven {
 
 		waitExpectedElement("//tr[contains(@id,\"PointTable\")][1]//button[contains(@id,\"edit\")]");
 		
-		scrollDown(rowsB+3);
+
 
 		clickOnGoToLast(2);
 
@@ -664,7 +655,7 @@ public class CharacterEncondingPO extends TestBaseSteven {
 
 		waitExpectedElement("//tr[contains(@id,\"Custom Encode Code PointTable\") ][1]//button[contains(@id,\"edit\")]");
 		
-		scrollDown(rows+3);
+
 		
 		clickOnGoToLast(2);
 
@@ -698,13 +689,12 @@ public class CharacterEncondingPO extends TestBaseSteven {
 				"//tr[contains(@id,\"Custom Encode Code PointTable\") ][" + rowsB + "]//button[contains(@id,\"delete\")]");
 
 		click(btnDelete);
+		sleep(5000);
 
 		refresh();
 
-		waitExpectedElement("//tr[contains(@id,\"Custom Encode Code PointTable\") ][1]//button[contains(@id,\"delete\")]");
-		
-		scrollDown(rowsB+3);
-		
+		waitExpectedElement("//tr[contains(@id,\"Custom Encode Code PointTable\") ][1]");
+	
 		clickOnGoToLast(2);
 
 		int rowsA = rows("//tr[contains(@id,\"Custom Encode Code PointTable\") ]");

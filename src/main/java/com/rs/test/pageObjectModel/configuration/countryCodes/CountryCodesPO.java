@@ -7,6 +7,7 @@ import java.net.URL;
 import java.util.Iterator;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -74,7 +75,6 @@ public class CountryCodesPO extends TestBaseSteven {
 
 	// Pagination
 
-
 	public void clickOnGoToLast() {
 		click(btnGoToLast);
 
@@ -93,14 +93,15 @@ public class CountryCodesPO extends TestBaseSteven {
 
 	public void clickOnAddCountryCode() {
 		click(btnAddCountryCode);
+		sleep(5000);
 	}
-	
+
 	// Search Methods
 
 	public void fillOutSearchCountry(String text) {
 		sendKeys(txtSearchCountry, text);
 	}
-	
+
 	public void clickOnSearchButton() {
 		click(btnSearch);
 		sleep(4000);
@@ -124,6 +125,7 @@ public class CountryCodesPO extends TestBaseSteven {
 
 		int rowsB = rows("//tr[contains(@id,\"CodesTableRow\")]");
 
+		
 		fillOutCode(code);
 
 		fillOutCountry(country);
@@ -162,24 +164,36 @@ public class CountryCodesPO extends TestBaseSteven {
 		assertTrue(created, createdUnSuccesfully);
 
 		System.out.println("The record was created succesfully: " + created);
-
+		
 	}
 
 	// Verfication before editing or deleting the record
 
 	public void verification() {
 		
+		refresh();
+		
+		visibilityOfElementXpath("//tr[contains(@id,\"CodesTableRow\")][1]");
+
+		loginVerificationPO = new LoginVerificationPO();
+
+		actionsMoveToElementElement(loginVerificationPO.btnConfiguration);
+
+		clickOnCountryCodesMenu();
+
+		actionsMoveToElementElement(btnAddCountryCode);
+
 		clickOnGoToLast();
 
 		int rows = rows("//tr[contains(@id,\"CodesTableRow\")]");
 		boolean creationRecord = false;
-		
+
 		System.out.println("-----------------------------Creation Record Verification------------------------------");
 
 		String codeA = getText("//tr[contains(@id,\"CodesTableRow\")][" + rows + "]/td[2]/div");
 		String countryA = getText("//tr[contains(@id,\"CodesTableRow\")][" + rows + "]/td[3]/div");
 
-		if ( codeA.equals(code)&& countryA.contains("Test")) {
+		if (codeA.equals(code) && countryA.contains("Test")) {
 			creationRecord = true;
 		}
 
@@ -189,9 +203,7 @@ public class CountryCodesPO extends TestBaseSteven {
 
 	}
 
-	public void edit() {
-
-		loginVerificationPO = new LoginVerificationPO();
+	public void editCountryCode() {
 
 		verification();
 
@@ -204,18 +216,19 @@ public class CountryCodesPO extends TestBaseSteven {
 
 		WebElement txtEditCode = findElement("//tr[contains(@id,\"CodesTableRow\")][" + rows + "]/td[2]/input");
 		WebElement txtEditCountry = findElement("//tr[contains(@id,\"CodesTableRow\")][" + rows + "]/td[3]/input");
-		WebElement btnEdit = findElement("//tr[contains(@id,\"CodesTableRow\")][" + rows + "]//child::button[contains(@id,\"edit\")]");
-
+		WebElement btnEdit = findElement(
+				"//tr[contains(@id,\"CodesTableRow\")][" + rows + "]//child::button[contains(@id,\"edit\")]");
+		
 		click(btnEdit);
 
 		clear(txtEditCode);
 		txtEditCode.sendKeys(codeE);
-		
+
 		clear(txtEditCountry);
 		txtEditCountry.sendKeys(countryE);
-		
-		//sendKeys(txtEditCode, codeE);
-		//sendKeys(txtEditCountry, countryE);
+
+		// sendKeys(txtEditCode, codeE);
+		// sendKeys(txtEditCountry, countryE);
 
 		click(btnEdit);
 
@@ -231,9 +244,9 @@ public class CountryCodesPO extends TestBaseSteven {
 
 		String codeA = getText("//tr[contains(@id,\"CodesTableRow\")][" + rows + "]/td[2]/div");
 		String CountryA = getText("//tr[contains(@id,\"CodesTableRow\")][" + rows + "]/td[3]/div");
-		
+
 		System.out.println("-----------------------------Edition Verification------------------------------");
-		
+
 		System.out.println("The code is: " + codeA);
 		System.out.println("The country is: " + CountryA);
 
@@ -245,20 +258,9 @@ public class CountryCodesPO extends TestBaseSteven {
 
 		assertTrue(edited, editionRecord);
 
-
 	}
 
-	public void delete() {
-		
-		int modal = rows("//input[@name=\"prefix\"]");
-		
-		if (modal == 1) {
-			
-			WebElement btnClose = findElement("//button[@class=\"tablePageModalCloseButton\"]");
-			
-			click(btnClose);
-			
-		}
+	public void deleteCountryCode() {
 
 		verification();
 
@@ -266,7 +268,8 @@ public class CountryCodesPO extends TestBaseSteven {
 
 		boolean deleted = false;
 
-		WebElement btnDelete = findElement("//tr[contains(@id,\"CodesTableRow\")][" + rows + "]//child::button[contains(@id,\"delete\")]");
+		WebElement btnDelete = findElement(
+				"//tr[contains(@id,\"CodesTableRow\")][" + rows + "]//child::button[contains(@id,\"delete\")]");
 
 		click(btnDelete);
 		sleep(5000);
@@ -283,10 +286,9 @@ public class CountryCodesPO extends TestBaseSteven {
 
 		String codeA = getText("//tr[contains(@id,\"CodesTableRow\")][" + rows + "]/td[2]/div");
 		String CountryA = getText("//tr[contains(@id,\"CodesTableRow\")][" + rows + "]/td[3]/div");
-		
-		
+
 		System.out.println("---------------------------Deletion Verification--------------------------");
-		
+
 		System.out.println("The code is: " + codeA);
 		System.out.println("The country is: " + CountryA);
 
@@ -301,14 +303,13 @@ public class CountryCodesPO extends TestBaseSteven {
 	}
 
 	public void addPrefix() {
-		
-		loginVerificationPO = new LoginVerificationPO();
 
 		verification();
 
 		int rows = rows("//tr[contains(@id,\"CodesTableRow\")]");
 
-		WebElement btnModal = findElement("//tr[contains(@id,\"CodesTableRow\")][" + rows + "]//child::button[contains(@id,\"prefixes\")]");
+		WebElement btnModal = findElement(
+				"//tr[contains(@id,\"CodesTableRow\")][" + rows + "]//child::button[contains(@id,\"prefixes\")]");
 
 		click(btnModal);
 
@@ -328,8 +329,9 @@ public class CountryCodesPO extends TestBaseSteven {
 
 		clickOnGoToLast();
 
-		btnModal = findElement("//tr[contains(@id,\"CodesTableRow\")][" + rows + "]//child::button[contains(@id,\"prefixes\")]");
-
+		btnModal = findElement(
+				"//tr[contains(@id,\"CodesTableRow\")][" + rows + "]//child::button[contains(@id,\"prefixes\")]");
+		
 		click(btnModal);
 
 		waitExpectedElement(txtPrefix);
@@ -337,7 +339,7 @@ public class CountryCodesPO extends TestBaseSteven {
 		int rowsModalA = rows("//tr[contains(@id,\"TableRow\") and not(contains(@id,\"Country\"))]");
 
 		boolean created = false;
-		
+
 		System.out.println("------------------------------Prefix Creation Verification---------------------------");
 
 		if (rowsModalA > rowsModalB) {
@@ -349,7 +351,8 @@ public class CountryCodesPO extends TestBaseSteven {
 
 		created = false;
 
-		String prefixCreated = getText("//tr[contains(@id,\"TableRow\") and not(contains(@id,\"Country\"))][" + rowsModalA + "]/td[2]/div");
+		String prefixCreated = getText(
+				"//tr[contains(@id,\"TableRow\") and not(contains(@id,\"Country\"))][" + rowsModalA + "]/td[2]/div");
 		System.out.println("The prefix is: " + prefixCreated);
 
 		if (prefixCreated.equals(prefix)) {
@@ -365,106 +368,128 @@ public class CountryCodesPO extends TestBaseSteven {
 	}
 
 	public void editPrefix() {
+		
+		verification();
 
+		int rows = rows("//tr[contains(@id,\"CodesTableRow\")]");
+
+		WebElement btnModal = findElement(
+				"//tr[contains(@id,\"CodesTableRow\")][" + rows + "]//child::button[contains(@id,\"prefixes\")]");
+
+		click(btnModal);
+
+		waitExpectedElement(txtPrefix);
 
 		int rowsModal = rows("//tr[contains(@id,\"TableRow\") and not(contains(@id,\"Country\"))]");
-		
 
-		WebElement btnEdit = findElement("//tr[contains(@id,\"TableRow\") and not(contains(@id,\"Country\"))][" + rowsModal + "]//child::button[contains(@id,\"edit\")]");
+		WebElement btnEdit = findElement("//tr[contains(@id,\"TableRow\") and not(contains(@id,\"Country\"))]["
+				+ rowsModal + "]//child::button[contains(@id,\"edit\")]");
 
 		click(btnEdit);
 
 		int prefixEdit = random(9999);
-		System.out.println("Prefix Number is: "+prefixEdit);
+		System.out.println("Prefix Number is: " + prefixEdit);
 
-		WebElement txtEditPrefix = findElement("//tr[contains(@id,\"TableRow\") and not(contains(@id,\"Country\"))][" + rowsModal + "]/td[2]/input");
+		WebElement txtEditPrefix = findElement(
+				"//tr[contains(@id,\"TableRow\") and not(contains(@id,\"Country\"))][" + rowsModal + "]/td[2]/input");
 
 		clear(txtEditPrefix);
-		
+
 		sendKeys(txtEditPrefix, prefixEdit);
 
-		btnEdit = findElement("//tr[contains(@id,\"TableRow\") and not(contains(@id,\"Country\"))][" + rowsModal + "]//child::button[contains(@id,\"confirm\")]");
+		btnEdit = findElement("//tr[contains(@id,\"TableRow\") and not(contains(@id,\"Country\"))][" + rowsModal
+				+ "]//child::button[contains(@id,\"confirm\")]");
 
 		click(btnEdit);
 		sleep(5000);
-		
 
 		refresh();
 
 		visibilityOfElementXpath("//tr[contains(@id,\"CodesTableRow\")][1]");
-		
-		click(btnGoToLast);
-		
-		
-		visibilityOfElementXpath("//tr[contains(@id,\"CodesTableRow\")][1]");
-		
-		
-		int rows = rows("//tr[contains(@id,\"CodesTableRow\")]");
 
-		
-		WebElement btnModal = findElement("//tr[contains(@id,\"CodesTableRow\")][" + rows + "]//child::button[contains(@id,\"prefixes\")]");
+		click(btnGoToLast);
+
+		visibilityOfElementXpath("//tr[contains(@id,\"CodesTableRow\")][1]");
+
+		rows = rows("//tr[contains(@id,\"CodesTableRow\")]");
+
+		btnModal = findElement(
+				"//tr[contains(@id,\"CodesTableRow\")][" + rows + "]//child::button[contains(@id,\"prefixes\")]");
 
 		click(btnModal);
 
 		waitExpectedElement(txtPrefix);
-		
-		String editionText = getText("//tr[contains(@id,\"TableRow\") and not(contains(@id,\"Country\"))]["+rowsModal+"]/td[2]/div");
-		
+
+		String editionText = getText(
+				"//tr[contains(@id,\"TableRow\") and not(contains(@id,\"Country\"))][" + rowsModal + "]/td[2]/div");
+
 		System.out.println("--------------------------Prefix Edition Verification-----------------------");
-		
-		System.out.println("The record after edition is: "+editionText);
-		
+
+		System.out.println("The record after edition is: " + editionText);
+
 		boolean edited = false;
-		
+
 		if (editionText.equals(String.valueOf(prefixEdit))) {
 			edited = true;
 		}
-		
-		System.out.println("The Prefix was edited successfully: "+edited);
-		
+
+		System.out.println("The Prefix was edited successfully: " + edited);
+
 		assertTrue(edited, editionRecord);
-		
-		
+
 	}
 
 	public void deletePrefix() {
 		
+		verification();
+
+		int rows = rows("//tr[contains(@id,\"CodesTableRow\")]");
+
+		WebElement btnModal = findElement(
+				"//tr[contains(@id,\"CodesTableRow\")][" + rows + "]//child::button[contains(@id,\"prefixes\")]");
+
+		click(btnModal);
+
+		waitExpectedElement(txtPrefix);
 
 		int rowsModal = rows("//tr[contains(@id,\"TableRow\") and not(contains(@id,\"Country\"))]");
 
-		WebElement btnDelete = findElement("//tr[contains(@id,\"TableRow\") and not(contains(@id,\"Country\"))][" + rowsModal + "]//child::button[contains(@id,\"delete\")]");
+		WebElement btnDelete = findElement("//tr[contains(@id,\"TableRow\") and not(contains(@id,\"Country\"))]["
+				+ rowsModal + "]//child::button[contains(@id,\"delete\")]");
 
 		click(btnDelete);
-		
+
 		sleep(5000);
 
 		refresh();
 
 		visibilityOfElementXpath("//tr[contains(@id,\"CodesTableRow\")][1]");
-		
-		click(btnGoToLast);
-		
-		int rows = rows("//tr[contains(@id,\"CodesTableRow\")]");
-		
-		visibilityOfElementXpath("//tr[contains(@id,\"CodesTableRow\")][1]");
-		
-		WebElement btnModal = findElement("//tr[contains(@id,\"CodesTableRow\")][" + rows + "]//child::button[contains(@id,\"prefixes\")]");
 
+		click(btnGoToLast);
+
+		rows = rows("//tr[contains(@id,\"CodesTableRow\")]");
+
+		visibilityOfElementXpath("//tr[contains(@id,\"CodesTableRow\")][1]");
+
+		
+		btnModal = findElement(
+				"//tr[contains(@id,\"CodesTableRow\")][" + rows + "]//child::button[contains(@id,\"prefixes\")]");
+
+		
 		click(btnModal);
 
 		waitExpectedElement(txtPrefix);
-		
+
 		int rowsModalA = rows("//tr[contains(@id,\"TableRow\") and not(contains(@id,\"Country\"))]");
-		
+
 		boolean deleted = greaterThanInt(rowsModal, rowsModalA);
-	
+
 		System.out.println("--------------------------Prefix Deletion Verification-----------------------");
-		
-		System.out.println("The Prefix was deleted successfully: "+deleted);
-		
+
+		System.out.println("The Prefix was deleted successfully: " + deleted);
+
 		assertTrue(deleted, deletionRecord);
-		
-		
+
 	}
 
 	public void filter() {
@@ -478,34 +503,33 @@ public class CountryCodesPO extends TestBaseSteven {
 		actionsMoveToElementElement(btnAddCountryCode);
 
 		clickOnGoToLast();
-		
+
 		int rows = rows("//tr[contains(@id,\"CodesTableRow\")]");
-		
-		String country = getText("//tr[contains(@id,\"CodesTableRow\")]["+rows+"]/td[3]//child::div");
-		
+
+		String country = getText("//tr[contains(@id,\"CodesTableRow\")][" + rows + "]/td[3]//child::div");
+
 		fillOutSearchCountry(country);
-		
+
 		clickOnSearchButton();
-		
+
 		rows = rows("//tr[contains(@id,\"CodesTableRow\")]");
 		int j = 1;
 		System.out.println("-------------------------Filter Verification------------------------------");
-		System.out.println("The country to look for is: "+country);
+		System.out.println("The country to look for is: " + country);
 		System.out.println("-------------------------------------");
 		for (int i = 0; i < rows; i++) {
-			
-			
 
-			String result = getText("//tr[contains(@id,\"CodesTableRow\")]["+j+"]/td[3]//child::div");
-			
-			System.out.println("The Results are: "+result);
+			String result = getText("//tr[contains(@id,\"CodesTableRow\")][" + j + "]/td[3]//child::div");
+
+			System.out.println("The Results are: " + result);
 			assertTrue(result.equals(country), filtersNotWorking);
-			
+
 		}
+		
+		refresh();
+		visibilityOfElementXpath("//tr[contains(@id,\"CodesTableRow\")][1]");
 
 	}
-
-
 
 
 

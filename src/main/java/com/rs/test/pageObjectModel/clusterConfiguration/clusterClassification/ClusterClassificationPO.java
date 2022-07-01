@@ -47,10 +47,10 @@ public class ClusterClassificationPO extends TestBaseSteven {
 
 	@FindBy(xpath = "//input[@name=\"description\"]")
 	public WebElement txtDescription;
-	
+
 	@FindBy(xpath = "//select[@name=\"adddefaultRouteAction\"]")
 	public WebElement cboDefaultRoute;
-	
+
 	@FindBy(xpath = "//select[@name=\"adddefaultRouteAction\"]/option[not(contains(text(),\"option\")) and text()][1]")
 	public WebElement cboDefaultRouteOption;
 
@@ -74,7 +74,6 @@ public class ClusterClassificationPO extends TestBaseSteven {
 	public WebElement btnAddPrefix;
 
 	LoginVerificationPO loginVerificationPO;
-
 
 	// Menu
 
@@ -117,11 +116,11 @@ public class ClusterClassificationPO extends TestBaseSteven {
 	public void fillOutDescription(String text) {
 		sendKeys(txtDescription, text);
 	}
-	
+
 	public void clickOnCboDefaultRoute() {
 		click(cboDefaultRoute);
 	}
-	
+
 	public void clickOnCboDefaultRouteOption() {
 		click(cboDefaultRouteOption);
 	}
@@ -133,7 +132,7 @@ public class ClusterClassificationPO extends TestBaseSteven {
 	// Modals
 
 	// Create
-	
+
 	String id = "";
 	String name = "Test";
 	String description = "Test 01";
@@ -152,19 +151,19 @@ public class ClusterClassificationPO extends TestBaseSteven {
 		clickOnGoToLast();
 
 		int rowsB = rows("//tr[contains(@id,\"ClassificationTableRow\")]");
-		
-		String idB = getText("//tr[contains(@id,\"ClassificationTableRow\")]["+rowsB+"]/td[2]/div");
-		System.out.println("Last id before creation: "+idB);
+
+		String idB = getText("//tr[contains(@id,\"ClassificationTableRow\")][" + rowsB + "]/td[2]/div");
+		System.out.println("Last id before creation: " + idB);
 
 		fillOutName(name);
 
 		fillOutDescription(description);
-		
+
 		clickOnCboDefaultRoute();
-		
+
 		cboText = getText(cboDefaultRouteOption);
-		System.out.println("Cbo option is: " +cboText);
-		
+		System.out.println("Cbo option is: " + cboText);
+
 		clickOnCboDefaultRouteOption();
 
 		clickOnAddClusterClassification();
@@ -179,13 +178,12 @@ public class ClusterClassificationPO extends TestBaseSteven {
 
 		System.out.println("--------------------Creation Verification--------------------");
 
-		
-		boolean created = greaterThanInt(rowsA, rowsB);	
-		
-		System.out.println("Record created: "+created);
-		
-		assertTrue(created, createdUnSuccesfully);	
-		
+		boolean created = greaterThanInt(rowsA, rowsB);
+
+		System.out.println("Record created: " + created);
+
+		assertTrue(created, createdUnSuccesfully);
+
 		created = false;
 
 		String nameA = getText("//tr[contains(@id,\"ClassificationTableRow\")][" + rowsA + "]/td[3]/div");
@@ -196,7 +194,7 @@ public class ClusterClassificationPO extends TestBaseSteven {
 		System.out.println("The description is: " + descriptionA);
 		System.out.println("The default route is: " + defaultRouteA);
 
-		if (nameA.equals(name) && descriptionA.equals(description) && defaultRouteA.equals(cboText) ) {
+		if (nameA.equals(name) && descriptionA.equals(description) && defaultRouteA.equals(cboText)) {
 			created = true;
 		}
 
@@ -209,7 +207,7 @@ public class ClusterClassificationPO extends TestBaseSteven {
 	// Verfication before editing or deleting the record
 
 	public void verification() {
-		
+
 		loginVerificationPO = new LoginVerificationPO();
 
 		actionsMoveToElementElement(loginVerificationPO.btnClusterConfiguration);
@@ -222,13 +220,13 @@ public class ClusterClassificationPO extends TestBaseSteven {
 
 		int rows = rows("//tr[contains(@id,\"ClassificationTableRow\")]");
 		boolean creationRecord = false;
-		
+
 		System.out.println("-----------------------------Creation Record Verification------------------------------");
 
 		String nameA = getText("//tr[contains(@id,\"ClassificationTableRow\")][" + rows + "]/td[3]/div");
 		String descriptionA = getText("//tr[contains(@id,\"ClassificationTableRow\")][" + rows + "]/td[4]/div");
 
-		if ( nameA.contains("Test")&& descriptionA.contains("Test")) {
+		if (nameA.contains("Test") && descriptionA.contains("Test")) {
 			creationRecord = true;
 		}
 
@@ -251,23 +249,28 @@ public class ClusterClassificationPO extends TestBaseSteven {
 		name = "Edition Test";
 		description = "Edition Test 04";
 
-		WebElement txtEditName = findElement("//tr[contains(@id,\"ClassificationTableRow\")][" + rows + "]/td[3]/input");
-		WebElement txtEditDescription = findElement("//tr[contains(@id,\"ClassificationTableRow\")][" + rows + "]/td[4]/input");
-		WebElement cboEditDefaultRoute = findElement("//tr[contains(@id,\"ClassificationTableRow\")][" + rows + "]/td[5]/select");
-		WebElement cboEditDefaultRouteO = findElement("//tr[contains(@id,\"ClassificationTableRow\")][" + rows + "]/td[5]/select/option[not(contains(text(),\"option\")) and text()][2]");
-		WebElement btnEdit = findElement("//tr[contains(@id,\"ClassificationTableRow\")][" + rows + "]//child::button[contains(@id,\"edit\")]");
-		scrollDown(rows);
+		WebElement txtEditName = findElement(
+				"//tr[contains(@id,\"ClassificationTableRow\")][" + rows + "]/td[3]/input");
+		WebElement txtEditDescription = findElement(
+				"//tr[contains(@id,\"ClassificationTableRow\")][" + rows + "]/td[4]/input");
+		WebElement cboEditDefaultRoute = findElement(
+				"//tr[contains(@id,\"ClassificationTableRow\")][" + rows + "]/td[5]/select");
+		WebElement cboEditDefaultRouteO = findElement("//tr[contains(@id,\"ClassificationTableRow\")][" + rows
+				+ "]/td[5]/select/option[not(contains(text(),\"option\")) and text()][2]");
+		WebElement btnEdit = findElement(
+				"//tr[contains(@id,\"ClassificationTableRow\")][" + rows + "]//child::button[contains(@id,\"edit\")]");
 		
+		orderClassification();
 		click(btnEdit);
 
 		clear(txtEditName);
 		sendKeys(txtEditName, name);
 		clear(txtEditDescription);
 		sendKeys(txtEditDescription, description);
-		
+
 		click(cboEditDefaultRoute);
 		cboText = getText(cboEditDefaultRouteO);
-		System.out.println("Cbo option is: "+cboText);
+		System.out.println("Cbo option is: " + cboText);
 		click(cboEditDefaultRouteO);
 
 		click(btnEdit);
@@ -285,21 +288,20 @@ public class ClusterClassificationPO extends TestBaseSteven {
 		String nameA = getText("//tr[contains(@id,\"ClassificationTableRow\")][" + rows + "]/td[3]/div");
 		String descriptionA = getText("//tr[contains(@id,\"ClassificationTableRow\")][" + rows + "]/td[4]/div");
 		String defaultRouteA = getText("//tr[contains(@id,\"ClassificationTableRow\")][" + rows + "]/td[5]/div");
-		
+
 		System.out.println("-----------------------------Edition Verification------------------------------");
-		
+
 		System.out.println("The name is: " + nameA);
 		System.out.println("The description is: " + descriptionA);
 		System.out.println("The default route is: " + defaultRouteA);
 
-		if (nameA.equals(name) && descriptionA.equals(description)  && defaultRouteA.equals(cboText)) {
+		if (nameA.equals(name) && descriptionA.equals(description) && defaultRouteA.equals(cboText)) {
 			edited = true;
 		}
 
 		System.out.println("The record was edited with success: " + edited);
 
 		assertTrue(edited, editionRecord);
-
 
 	}
 
@@ -313,11 +315,12 @@ public class ClusterClassificationPO extends TestBaseSteven {
 
 		boolean deleted = false;
 
-		WebElement btnDelete = findElement("//tr[contains(@id,\"ClassificationTableRow\")][" + rows + "]//child::button[contains(@id,\"delete\")]");
-		scrollDown(rows);
-		sleep(5000);
+		WebElement btnDelete = findElement("//tr[contains(@id,\"ClassificationTableRow\")][" + rows
+				+ "]//child::button[contains(@id,\"delete\")]");
+		orderClassification();
 		click(btnDelete);
-
+		sleep(5000);
+		
 		refresh();
 
 		visibilityOfElementXpath("//tr[contains(@id,\"ClassificationTableRow\")][1]");
@@ -330,9 +333,9 @@ public class ClusterClassificationPO extends TestBaseSteven {
 
 		String nameA = getText("//tr[contains(@id,\"ClassificationTableRow\")][" + rows + "]/td[3]/div");
 		String descriptionA = getText("//tr[contains(@id,\"ClassificationTableRow\")][" + rows + "]/td[4]/div");
-		
+
 		System.out.println("---------------------------Deletion Verification--------------------------");
-		
+
 		System.out.println("The name is: " + nameA);
 		System.out.println("The description is: " + descriptionA);
 
@@ -346,5 +349,24 @@ public class ClusterClassificationPO extends TestBaseSteven {
 
 	}
 
+	public void orderClassification() {
+
+		String classification = getText("//tr[contains(@id,\"ClassificationTable\")][1]/td[3]/div");
+		int count = 1;
+
+		while (!classification.contains("Test")) {
+
+			click("//div[text()=\"ID\"]");
+			sleep(500);
+			classification = getText("//tr[contains(@id,\"ClassificationTable\")][1]/td[3]/div");
+			count++;
+
+			if (count > 3) {
+				assertTrue(false, creationRecord);
+			}
+
+		}
+
+	}
 
 }

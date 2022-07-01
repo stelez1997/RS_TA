@@ -27,7 +27,7 @@ public class ClusterProfile extends TestBaseSteven{
   }
  
   @Test()
-  public void createClusterProfile() {
+  public void editClusterProfile() {
 	 
 	  clusterProfilePO.editClusterProfile();
 	 

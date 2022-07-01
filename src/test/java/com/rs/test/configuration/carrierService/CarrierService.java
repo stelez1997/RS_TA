@@ -48,7 +48,7 @@ public class CarrierService extends TestBaseSteven{
 	 
   }
   
-  @Test(dependsOnMethods = "createCarrierService", priority = 6)
+  @Test(dependsOnMethods = "createCarrierService", priority = 12)
   public void deleteCarrierService() {
 	 
 	  carrierServicePO.deleteCarrierService();
@@ -96,7 +96,76 @@ public class CarrierService extends TestBaseSteven{
 	 
   }
   
+  //MO Char
+  @Test(dependsOnMethods = "createCarrierService", priority = 6)
+  public void createMOChar() {
+	 
+	  carrierServicePO.createMOChar();
+	 
+  }
   
+  @Test(dependsOnMethods = "createMOChar", priority = 7)
+  public void editMOChar() {
+	 
+	  carrierServicePO.editMOChar();
+	 
+  }
+  
+  @Test(dependsOnMethods = "createMOChar", priority = 8)
+  public void deleteMOChar() {
+	 
+	  carrierServicePO.deleteMOChar();
+	 
+  }
+  
+  
+  //MT Char
+  @Test(dependsOnMethods = "createCarrierService", priority = 9)
+  public void createMTChar() {
+	 
+	  carrierServicePO.createMTChar();
+	 
+  }
+ 
+
+  @Test(dependsOnMethods = "createMTChar", priority = 10)
+  public void editMTChar() {
+	 
+	  carrierServicePO.editMTChar();
+	 
+  }
+  
+
+  @Test(dependsOnMethods = "createMTChar", priority = 11)
+  public void deleteMTChar() {
+	 
+	  carrierServicePO.deleteMTChar();
+	 
+  }
+  
+  //MSG Props
+  @Test(dependsOnMethods = "createCarrierService", priority = 9)
+  public void createMSGProps() {
+	 
+	  carrierServicePO.createMSGProps();
+	 
+  }
+  
+
+  @Test(dependsOnMethods = "createMSGProps", priority = 9)
+  public void editMSGProps() {
+	 
+	  carrierServicePO.editMSGProps();
+	 
+  }
+  
+
+  @Test(dependsOnMethods = "createMSGProps", priority = 9)
+  public void deleteMSGProps() {
+	 
+	  carrierServicePO.deleteMSGProps();
+	 
+  }
  
   
   @AfterTest

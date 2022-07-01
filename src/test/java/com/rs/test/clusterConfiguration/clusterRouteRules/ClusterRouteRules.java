@@ -1,30 +1,30 @@
-package com.rs.test.clusterConfiguration.routeRules;
+package com.rs.test.clusterConfiguration.clusterRouteRules;
 
 import org.testng.annotations.Test;
 
 import com.rs.test.base.TestBaseSteven;
+import com.rs.test.pageObjectModel.clusterConfiguration.clusteRouteRules.ClusterRouteRulesPO;
 import com.rs.test.pageObjectModel.clusterConfiguration.clusterClassification.ClusterClassificationPO;
-import com.rs.test.pageObjectModel.clusterConfiguration.routeRules.RouteRulesPO;
 import com.rs.test.pageObjectModel.login.LoginVerificationPO;
 
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.AfterTest;
 
-public class RouteRules extends TestBaseSteven{
+public class ClusterRouteRules extends TestBaseSteven{
 
 	LoginVerificationPO loginVerificationPO;
-	RouteRulesPO routeRulesPO;
+	ClusterRouteRulesPO routeRulesPO;
 
   @BeforeTest
   public void beforeTest() {
 	   
 	  driver = initialization();
 	  loginVerificationPO = new LoginVerificationPO();
-	  routeRulesPO = new RouteRulesPO();
+	  routeRulesPO = new ClusterRouteRulesPO();
 	  loginVerificationPO.login();
 	  
   }
- /*
+ 
   //----------------------------------SMSX Cluster Router Rules
   @Test(priority = 0)
   public void createSMSXClusterRouteRules() {
@@ -68,12 +68,20 @@ public class RouteRules extends TestBaseSteven{
 	  routeRulesPO.deleteISMSClusterRouteRules();
 	 
   }
-  */
   
-  @Test()
-  public void SMSxClusterRouteRules() {
+  
+  @Test(priority = 6)
+  public void filtersSMSxClusterRouteRules() {
 	 
 	  routeRulesPO.SMSxFilters();
+	 
+  }
+ 
+  
+  @Test(priority = 7)
+  public void filtersISMSClusterRouteRules() {
+	 
+	  routeRulesPO.ISMSFilters();
 	 
   }
   

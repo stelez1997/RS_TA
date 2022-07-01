@@ -73,7 +73,7 @@
 				name="com.rs.test.clusterConfiguration.clusterProfile.ClusterProfile"></class>
 		</classes>
 	</test>
-	
+
 	<test name="Cluster Call to Action">
 		<classes>
 
@@ -81,32 +81,53 @@
 				name="com.rs.test.clusterConfiguration.clusterCallToAction.ClusterCallToAction"></class>
 		</classes>
 	</test>
-	
-	
-	<!----><!----><!-- Message Classification --><!----><!----><!---->
-	
-	
-		<test name="DCS">
+
+	<test name="Cluster Route Rules">
 		<classes>
 
 			<class
-				name="com.rs.test.messageClassification.DCS.DCS"></class>
+				name="com.rs.test.clusterConfiguration.clusterRouteRules.ClusterRouteRules"></class>
+		</classes>
+	</test>
+	
+	<test name="Cluster summary">
+		<classes>
+
+			<class
+				name="com.rs.test.clusterConfiguration.clusterSummary.ClusterSummary"></class>
+		</classes>
+	</test>
+	
+		<test name="Cluster Admin">
+		<classes>
+
+			<class
+				name="com.rs.test.clusterConfiguration.clusterAdmin.ClusterAdmin"></class>
+		</classes>
+	</test>
+	
+	<!----><!----><!-- Message Classification --><!----><!----><!---->
+
+
+	<test name="DCS">
+		<classes>
+
+			<class name="com.rs.test.messageClassification.DCS.DCS"></class>
 		</classes>
 	</test>
 	
 	
 		<!----><!----><!-- SPAM --><!----><!----><!---->
-	
-	
-		<test name="Carrier Template">
+
+
+	<test name="Carrier Template">
 		<classes>
 
-			<class
-				name="com.rs.test.spam.carrierTemplate.CarrierTemplate"></class>
+			<class name="com.rs.test.spam.carrierTemplate.CarrierTemplate"></class>
 		</classes>
 	</test>
-	
-	
+
+
 
 
 </suite> <!-- Suite -->

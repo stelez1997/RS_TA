@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.rs.test.configuration.carrierService.CarrierService">
+      <class name="com.rs.test.clusterConfiguration.clusterAdmin.ClusterAdmin">
         <methods>
-          <include name="editLogAgent"/>
           <include name="beforeTest"/>
           <include name="afterTest"/>
+          <include name="deleteQueueMonitor"/>
         </methods>
-      </class> <!-- com.rs.test.configuration.carrierService.CarrierService -->
+      </class> <!-- com.rs.test.clusterConfiguration.clusterAdmin.ClusterAdmin -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

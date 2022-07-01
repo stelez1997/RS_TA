@@ -233,7 +233,8 @@ public class ClusterCallToActionPO extends TestBaseSteven {
 	String cboOrigCSText = "";
 	String cboClassificationText = "";
 	String cboRouteActionText = "";
-	String senderID = "TATest";
+	String senderIDEdition = "TATest";
+	int idRecord = 5;
 
 	public void createClusterCallToAction() {
 
@@ -253,7 +254,7 @@ public class ClusterCallToActionPO extends TestBaseSteven {
 
 		selectCboOrigCS();
 
-		fillOutSenderID(senderID);
+		fillOutSenderID(senderIDEdition);
 
 		selectCboClassification();
 
@@ -300,21 +301,23 @@ public class ClusterCallToActionPO extends TestBaseSteven {
 		System.out.println("The classification is: " + classificationA);
 		System.out.println("The route action is: " + routeActionA);
 
-		if (hubIDA.equals(cboHubIdText) && origCSA.equals(cboOrigCSText) && senderIDA.equals(senderID)
+		if (hubIDA.equals(cboHubIdText) && origCSA.equals(cboOrigCSText) && senderIDA.equals(senderIDEdition)
 				&& classificationA.equals(cboClassificationText) && routeActionA.equals(cboRouteActionText)) {
 			created = true;
 		}
 
 		assertTrue(created, createdUnSuccesfully);
+		
+		idRecord = convertToInt(getText("//tr[contains(@id,\"Cluster Call To ActionTableRow\")][" + rowsA + "]/td[2]/div"));
 
 		System.out.println("The record was created succesfully: " + created);
 
 	}
 
-	// Verfication before editing or deleting the record
 
-	public void verification() {
-		
+
+	public void editClusterCallToAction() {
+
 		loginVerificationPO = new LoginVerificationPO();
 
 		actionsMoveToElementElement(loginVerificationPO.btnClusterConfiguration);
@@ -324,33 +327,29 @@ public class ClusterCallToActionPO extends TestBaseSteven {
 		actionsMoveToElementElement(btnAddClusterCallToAction);
 
 		clickOnGoToLast();
-
-		int rows = rows("//tr[contains(@id,\"Cluster Call To ActionTableRow\")]");
-		boolean creationRecord = false;
-
-		System.out.println("-----------------------------Creation Record Verification------------------------------");
-
-		String senderIDA = getText("//tr[contains(@id,\"Cluster Call To ActionTableRow\")][" + rows + "]/td[6]/div");
-
-		if (senderIDA.contains("TATest")) {
-			creationRecord = true;
-		}
-
-		System.out.println("The record of creation is being displayed: " + creationRecord);
-
-		assertTrue(creationRecord, this.creationRecord);
-
-	}
-
-	public void editClusterCallToAction() {
-
-		verification();
-
-		int rows = rows("//tr[contains(@id,\"Cluster Call To ActionTableRow\")]");
-
+		
+		String record = "TATest";
+		
+		fillOutSearchSenderID(record);
+		
+		clickOnSearchButton();
+		sleep(5000);
+		
 		boolean edited = false;
+		
+		int rows = rows("//tr[contains(@id,\"Cluster Call To ActionTableRow\")]");
+		
+		String senderId = getText("//tr[contains(@id,\"ActionTable\")][1]//td[6]/div");
+		
+		if (senderId.equals(record) && rows ==1) {
+			edited = true;
+		}
+		
+		assertTrue(edited,creationRecord);
+		
+		edited = false;
 
-		senderID = "TATest1";
+		senderIDEdition = "TATest1";
 
 		WebElement cboEditHubID = findElement(
 				"//tr[contains(@id,\"ActionTableRow\")][" + rows + "]//child::select[@name=\"editmessageTypeName\"]");
@@ -377,8 +376,6 @@ public class ClusterCallToActionPO extends TestBaseSteven {
 
 		WebElement btnEdit = findElement("//tr[contains(@id,\"ActionTableRow\")][" + rows + "]//child::button[1]");
 
-		scrollDown(15);
-		
 		click(btnEdit);
 
 		click(cboEditHubID);
@@ -390,7 +387,7 @@ public class ClusterCallToActionPO extends TestBaseSteven {
 		click(cboEditOrigCSO);
 
 		clear(txtEditSenderID);
-		sendKeys(txtEditSenderID, senderID);
+		sendKeys(txtEditSenderID, senderIDEdition);
 
 		click(cboEditClassification);
 		cboClassificationText = getText(cboEditClassificationO);
@@ -402,14 +399,12 @@ public class ClusterCallToActionPO extends TestBaseSteven {
 
 		System.out.println("The hub id selected is: " + cboHubIdText);
 		System.out.println("The origi cs selectedis: " + cboOrigCSText);
-		System.out.println("The sender id ented is: " + senderID);
+		System.out.println("The sender id ented is: " + senderIDEdition);
 		System.out.println("The classification selected is: " + cboClassificationText);
 		System.out.println("The route action selected is: " + cboRouteActionText);
 
 		click(btnEdit);
 		sleep(5000);
-
-		visibilityOfElementXpath("//tr[contains(@id,\"Cluster Call To ActionTableRow\")][1]");
 
 		refresh();
 
@@ -418,13 +413,19 @@ public class ClusterCallToActionPO extends TestBaseSteven {
 		click(btnGoToLast);
 
 		visibilityOfElementXpath("//tr[contains(@id,\"Cluster Call To ActionTableRow\")][1]");
+		
+
+		fillOutSearchSenderID(senderIDEdition);
+		
+		clickOnSearchButton();
+		sleep(5000);
 
 		System.out.println("-------------------Verification After Edition--------------------------------");
-		String hubIDA = getText("//tr[contains(@id,\"ActionTableRow\")][" + rows + "]/td[4]/div");
-		String origCSA = getText("//tr[contains(@id,\"ActionTableRow\")][" + rows + "]/td[5]/div");
-		String senderIDA = getText("//tr[contains(@id,\"ActionTableRow\")][" + rows + "]/td[6]/div");
-		String classificationA = getText("//tr[contains(@id,\"ActionTableRow\")][" + rows + "]/td[8]/div");
-		String routeActionA = getText("//tr[contains(@id,\"ActionTableRow\")][" + rows + "]/td[9]/div");
+		String hubIDA = getText("//tr[contains(@id,\"ActionTableRow\")][1]/td[4]/div");
+		String origCSA = getText("//tr[contains(@id,\"ActionTableRow\")][1]/td[5]/div");
+		String senderIDA = getText("//tr[contains(@id,\"ActionTableRow\")][1]/td[6]/div");
+		String classificationA = getText("//tr[contains(@id,\"ActionTableRow\")][1]/td[8]/div");
+		String routeActionA = getText("//tr[contains(@id,\"ActionTableRow\")][1]/td[9]/div");
 
 		System.out.println("The hub id is: " + hubIDA);
 		System.out.println("The origi cs is: " + origCSA);
@@ -432,7 +433,7 @@ public class ClusterCallToActionPO extends TestBaseSteven {
 		System.out.println("The classification is: " + classificationA);
 		System.out.println("The route action is: " + routeActionA);
 
-		if (hubIDA.equals(cboHubIdText) && origCSA.equals(cboOrigCSText) && senderIDA.equals(senderID)
+		if (hubIDA.equals(cboHubIdText) && origCSA.equals(cboOrigCSText) && senderIDA.equals(senderIDEdition)
 				&& classificationA.equals(cboClassificationText) && routeActionA.equals(cboRouteActionText)) {
 			edited = true;
 		}
@@ -440,20 +441,58 @@ public class ClusterCallToActionPO extends TestBaseSteven {
 		assertTrue(edited, editionRecord);
 
 		System.out.println("The record was edited succesfully: " + edited);
+		
+		refresh();
+
+		visibilityOfElementXpath("//tr[contains(@id,\"Cluster Call To ActionTableRow\")][1]");
 
 	}
 
 	public void deleteClusterCallToAction() {
 
-		verification();
 
-		int rows = rows("//tr[contains(@id,\"Cluster Call To ActionTableRow\")]");
+		loginVerificationPO = new LoginVerificationPO();
 
-		boolean deleted = false;
+		actionsMoveToElementElement(loginVerificationPO.btnClusterConfiguration);
 
-		WebElement btnDelete = findElement("//tr[contains(@id,\"ActionTableRow\")][" + rows + "]//child::button[2]");
+		clickOnClusterCallToActionMenu();
+
+		actionsMoveToElementElement(btnAddClusterCallToAction);
+
+		clickOnGoToLast();
 		
-		scrollDown(15);
+		boolean deleted = false;
+		
+		int rowsB = rows("//tr[contains(@id,\"Cluster Call To ActionTableRow\")]");
+		int j = 1;
+		String senderIDDelete = getText("//tr[contains(@id,\"Cluster Call To ActionTableRow\")][" + j + "]/td[6]/div");
+		
+		for (int i = 0; i < rowsB; i++) {
+			
+			int id = convertToInt(getText("//tr[contains(@id,\"Cluster Call To ActionTableRow\")][" + j + "]/td[2]/div"));
+			
+			if (id == this.idRecord) {
+				
+				senderIDDelete = getText("//tr[contains(@id,\"Cluster Call To ActionTableRow\")][" + j + "]/td[6]/div");
+				deleted = true;
+				break;
+				
+			}
+			
+			j++;
+			
+		}
+		
+		fillOutSearchSenderID(senderIDDelete);
+		
+		clickOnSearchButton();
+		sleep(5000);
+	
+		assertTrue(deleted, creationRecord);
+		
+		deleted = false;
+
+		WebElement btnDelete = findElement("//tr[contains(@id,\"ActionTableRow\")][1]//child::button[contains(@id,\"delete\")]");
 		
 		click(btnDelete);
 		sleep(5000);
@@ -466,22 +505,17 @@ public class ClusterCallToActionPO extends TestBaseSteven {
 
 		visibilityOfElementXpath("//tr[contains(@id,\"Cluster Call To ActionTableRow\")][1]");
 
-		rows = rows("//tr[contains(@id,\"Cluster Call To ActionTableRow\")]");
-
-		String senderIDA = getText("//tr[contains(@id,\"Cluster Call To ActionTableRow\")][" + rows + "]/td[6]/div");
+		int rowsA = rows("//tr[contains(@id,\"Cluster Call To ActionTableRow\")]");
 
 		System.out.println("---------------------------Deletion Verification--------------------------");
 
-		System.out.println("The Sender Id is: " + senderIDA);
 
-		if (!senderIDA.contains("TATest")) {
-			deleted = true;
-		}
+		deleted = greaterThanInt(rowsB, rowsA);
 
 		System.out.println("The record was deleted with success: " + deleted);
 
 		assertTrue(deleted, deletionRecord);
-
+		
 	}
 
 	public void filters() {

@@ -72,8 +72,21 @@ public class TestBaseSteven {
 	
 	public void click(WebElement element) {
 		
-		element.click();
-		sleep(500);
+		boolean clickable = false;
+		do {
+			try {
+				clickable = true;
+				element.click();
+				
+				
+			} catch (Exception e) {
+				actionsMoveToElementElementSimple(element);
+				element.click();
+			}
+		} while (clickable ==false);
+		
+		sleep(100);
+		
 	}
 	
 	public WebElement findElement(String xpath) {
@@ -84,12 +97,31 @@ public class TestBaseSteven {
 	
 	
 	public void click(String xpath) {
-
-		driver.findElement(By.xpath(xpath)).click();
-		sleep(500);
+		WebElement element = findElement(xpath);
+		boolean clickable = false;
+		do {
+			try {
+				clickable = true;
+				element.click();
+			} catch (Exception e) {
+				actionsMoveToElementElementSimple(element);
+				element.click();
+			}
+		} while (clickable ==false);
 	}
 	
 	public void clear(WebElement element) {
+	
+		boolean clickable = false;
+		do {
+			try {
+				clickable = true;
+				element.click();
+			} catch (Exception e) {
+				actionsMoveToElementElementSimple(element);
+
+			}
+		} while (clickable ==false);
 		
 		element.clear();
 		sleep(1000);
@@ -98,12 +130,34 @@ public class TestBaseSteven {
 	
 	public void clear(String xpath) {
 		
-		findElement(xpath).clear();
+		WebElement element = findElement(xpath);
+		boolean clickable = false;
+		do {
+			try {
+				clickable = true;
+				element.click();
+			} catch (Exception e) {
+				actionsMoveToElementElementSimple(element);
+			}
+		} while (clickable ==false);
+		
+		element.clear();
 		sleep(1000);
 
 	}
 	
 	public void clearByBackSpace(WebElement element) {
+		
+		boolean clickable = false;
+		do {
+			try {
+				clickable = true;
+				element.click();
+			} catch (Exception e) {
+				actionsMoveToElementElementSimple(element);
+				element.click();
+			}
+		} while (clickable ==false);
 		
 		String value = getAttribute(element, "value");
 		
@@ -117,12 +171,32 @@ public class TestBaseSteven {
 	
 	public void sendKeys(WebElement element, String text) {
 		
+		boolean clickable = false;
+		do {
+			try {
+				clickable = true;
+				element.click();
+			} catch (Exception e) {
+				actionsMoveToElementElementSimple(element);
+			}
+		} while (clickable ==false);
+		
 		element.sendKeys(text);
 		sleep(500);
 		
 	}
 	
 	public void sendKeys(WebElement element, int number) {
+		
+		boolean clickable = false;
+		do {
+			try {
+				clickable = true;
+				element.click();
+			} catch (Exception e) {
+				actionsMoveToElementElementSimple(element);
+			}
+		} while (clickable ==false);
 		
 		element.sendKeys(String.valueOf(number));
 		sleep(500);
@@ -132,20 +206,49 @@ public class TestBaseSteven {
 	
 	public void sendKeys(String xpath, String text) {
 		
-		driver.findElement(By.xpath(xpath)).sendKeys(text);
+		WebElement element = findElement(xpath);
+		boolean clickable = false;
+		do {
+			try {
+				clickable = true;
+				element.click();
+			} catch (Exception e) {
+				actionsMoveToElementElementSimple(element);
+			}
+		} while (clickable ==false);
+		element.sendKeys(text);
 		sleep(500);
 		
 	}
 	
 	public void sendKeys(String xpath, Keys keys) {
 		
-		driver.findElement(By.xpath(xpath)).sendKeys(keys);
+		WebElement element = findElement(xpath);
+		boolean clickable = false;
+		do {
+			try {
+				clickable = true;
+				element.click();
+			} catch (Exception e) {
+				actionsMoveToElementElementSimple(element);
+			}
+		} while (clickable ==false);
+		element.sendKeys(keys);
 		sleep(500);
 		
 	}
 	
 	public void sendKeys(WebElement element, Keys keys) {
 		
+		boolean clickable = false;
+		do {
+			try {
+				clickable = true;
+				element.click();
+			} catch (Exception e) {
+				actionsMoveToElementElementSimple(element);
+			}
+		} while (clickable ==false);
 		element.sendKeys(keys);
 		sleep(500);
 		
@@ -195,21 +298,56 @@ public class TestBaseSteven {
 
 	}
 	
-
-	public void actionsMoveToElementXpath(String xpath) {
+	public void actionsMoveToElementElementSimple(WebElement element) {
+		
 		Actions actions = new Actions(driver);
-		actions.moveToElement(driver.findElement(By.xpath(xpath))).perform();
+		actions.moveToElement(element).perform();
+		sleep(1000);
+	}
 	
-	
+	public void actionsMoveToElementElementSimple(String xpath) {
+		
+		WebElement element = findElement(xpath);
+		Actions actions = new Actions(driver);
+		actions.moveToElement(element).perform();
+		sleep(1000);
 	}
 
+
 	public void actionsMoveToElementElement(WebElement element) {
+		
+		boolean clickable = false;
+		do {
+			try {
+				element.click();
+				clickable = true;
+			} catch (Exception e) {
+				actionsMoveToElementElementSimple(element);
+
+			}
+		} while (clickable ==false);
+		
 		Actions actions = new Actions(driver);
 		actions.moveToElement(element).perform();
 		sleep(1000);
 	}
 	
 	public void actionsMoveToElementElement(String xpath) {
+		
+		WebElement element = findElement(xpath);
+		boolean clickable = false;
+		do {
+			try {
+				element.click();
+				clickable = true;
+				break;
+			} catch (Exception e) {
+				actionsMoveToElementElementSimple(element);
+
+			}
+	
+		} while (clickable ==false);
+		
 		Actions actions = new Actions(driver);
 		actions.moveToElement(findElement(xpath)).perform();
 		sleep(1000);
@@ -235,20 +373,53 @@ public class TestBaseSteven {
 	}
 
 	public void dobleClickXpath(String locator) {
-
-		Actions actions = new Actions(driver);
-		actions.doubleClick(driver.findElement(By.xpath(locator))).perform();
+		
+		WebElement element = findElement(locator);
+		boolean clickable = false;
+		do {
+			try {
+				
+				Actions actions = new Actions(driver);
+				actions.doubleClick(element).perform();
+				clickable = true;
+			} catch (Exception e) {
+				actionsMoveToElementElementSimple(element);
+			}
+		} while (clickable ==false);
+		
+		
 
 	}
 
 	public void dobleClickElement(WebElement element) {
+	
+		boolean clickable = false;
+		do {
+			try {
+				clickable = true;
+				Actions actions = new Actions(driver);
+				actions.doubleClick(element).perform();
+			} catch (Exception e) {
+				actionsMoveToElementElementSimple(element);
+			}
+		} while (clickable ==false);
+		
+		
 
-		Actions actions = new Actions(driver);
-		actions.doubleClick(element).perform();
 
 	}
 
 	public void moveToElement(WebElement element, WebElement hacia) {
+		
+		boolean clickable = false;
+		do {
+			try {
+				clickable = true;
+				element.click();
+			} catch (Exception e) {
+				actionsMoveToElementElementSimple(element);
+			}
+		} while (clickable ==false);
 		Actions actions = new Actions(driver);
 
 		actions.dragAndDrop(element, hacia).perform();
@@ -373,12 +544,14 @@ public class TestBaseSteven {
 		WebDriverWait wait = new WebDriverWait(driver, 360);
 
 		wait.until(ExpectedConditions.attributeToBeNotEmpty(element, attribute));
+		
 	}
 
 	public void attributoNotToBeEmptyXpath(String xpath, String attribute) {
 		WebDriverWait wait = new WebDriverWait(driver, 360);
 
 		wait.until(ExpectedConditions.attributeToBeNotEmpty(driver.findElement(By.xpath(xpath)), attribute));
+		
 	}
 
 	public void visibilityOfElementXpath(String xpath) {
@@ -550,6 +723,10 @@ public class TestBaseSteven {
 		
 	}
 	
+	public void pending() {
+		assertTrue(false, pendingToBeAutomated);
+	}
+	
 	
 	public void close() {
 		
@@ -568,7 +745,8 @@ public class TestBaseSteven {
 	public String deletionRecord ="The record wasn't deleted successfully";
 	public String testRecord ="The testing record is being displayed";
 	public String filtersNotWorking ="The filters are not working as expected";
-	
+	public String pendingToBeAutomated ="This page is not automated yet, due to a bug";
+	public String testUser ="TESTUSER";
 	
 	
 	
