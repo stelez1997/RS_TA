@@ -37,29 +37,12 @@
       </class> <!-- com.rs.test.configuration.messageAggregators.MessageAggregators -->
     </classes>
   </test> <!-- Message Aggregators(failed) -->
-  <test thread-count="5" name="Cluster Call to Action(failed)">
-    <classes>
-      <class name="com.rs.test.clusterConfiguration.clusterCallToAction.ClusterCallToAction">
-        <methods>
-          <include name="createClusterCallToAction"/>
-          <include name="beforeTest"/>
-          <include name="filters"/>
-          <include name="deleteClusterCallToAction"/>
-          <include name="afterTest"/>
-          <include name="editClusterCallToAction"/>
-        </methods>
-      </class> <!-- com.rs.test.clusterConfiguration.clusterCallToAction.ClusterCallToAction -->
-    </classes>
-  </test> <!-- Cluster Call to Action(failed) -->
   <test thread-count="5" name="Cluster Route Rules(failed)">
     <classes>
       <class name="com.rs.test.clusterConfiguration.clusterRouteRules.ClusterRouteRules">
         <methods>
           <include name="deleteISMSClusterRouteRules"/>
-          <include name="editSMSXClusterRouteRules"/>
           <include name="editISMSClusterRouteRules"/>
-          <include name="deleteSMSXClusterRouteRules"/>
-          <include name="createSMSXClusterRouteRules"/>
           <include name="afterTest"/>
           <include name="createISMSClusterRouteRules"/>
           <include name="beforeTest"/>
@@ -67,4 +50,27 @@
       </class> <!-- com.rs.test.clusterConfiguration.clusterRouteRules.ClusterRouteRules -->
     </classes>
   </test> <!-- Cluster Route Rules(failed) -->
+  <test thread-count="5" name="Bill Class(failed)">
+    <classes>
+      <class name="com.rs.test.messageClassification.BillClass.BillClass">
+        <methods>
+          <include name="beforeTest"/>
+          <include name="createBillClass"/>
+          <include name="afterTest"/>
+          <include name="editBillClass"/>
+        </methods>
+      </class> <!-- com.rs.test.messageClassification.BillClass.BillClass -->
+    </classes>
+  </test> <!-- Bill Class(failed) -->
+  <test thread-count="5" name="Carrier Template(failed)">
+    <classes>
+      <class name="com.rs.test.spam.carrierTemplate.CarrierTemplate">
+        <methods>
+          <include name="afterTest"/>
+          <include name="beforeTest"/>
+          <include name="filtersCarrierTemplate"/>
+        </methods>
+      </class> <!-- com.rs.test.spam.carrierTemplate.CarrierTemplate -->
+    </classes>
+  </test> <!-- Carrier Template(failed) -->
 </suite> <!-- Failed suite [Suite] -->

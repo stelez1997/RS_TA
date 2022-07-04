@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.rs.test.clusterConfiguration.clusterAdmin.ClusterAdmin">
+      <class name="com.rs.test.messageClassification.ChangeSet.ChangeSet">
         <methods>
           <include name="beforeTest"/>
+          <include name="createChangeSet"/>
           <include name="afterTest"/>
-          <include name="deleteQueueMonitor"/>
         </methods>
-      </class> <!-- com.rs.test.clusterConfiguration.clusterAdmin.ClusterAdmin -->
+      </class> <!-- com.rs.test.messageClassification.ChangeSet.ChangeSet -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
