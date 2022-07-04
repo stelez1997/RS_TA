@@ -29,7 +29,7 @@ public class LoginVerificationPO extends TestBaseSteven{
 	@FindBy(xpath = "//button[text()=\"Login\"]")
 	public WebElement btnLogin;
 	
-	@FindBy(xpath = "//form[@class=\"loginForm\"]/div/span")
+	@FindBy(xpath = "//span[contains(text(),\"Incorrect\")]")
 	public WebElement spnVerificationMessage;
 	
 	@FindBy(xpath = "//button[@class=\"logMenuLinkButton\"]")
@@ -78,6 +78,7 @@ public class LoginVerificationPO extends TestBaseSteven{
 	public void clickOnLogin() {
 		
 		click(btnLogin);
+		sleep(2000);
 	}
 	
 	// Menu Buttons
@@ -145,6 +146,7 @@ public class LoginVerificationPO extends TestBaseSteven{
 		style = getAttribute(spnVerificationMessage,"style");
 		
 		displayed = !style.contains("none");
+	
 		
 		System.out.println("Error message being displayed: "+displayed);
 		
