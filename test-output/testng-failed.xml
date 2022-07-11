@@ -3,13 +3,15 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.rs.test.messageClassification.ChangeSet.ChangeSet">
+      <class name="com.rs.test.configuration.actionTemplates.ActionTemplates">
         <methods>
-          <include name="beforeTest"/>
-          <include name="createChangeSet"/>
+          <include name="createActionTemplate"/>
           <include name="afterTest"/>
+          <include name="deleteActionTemplate"/>
+          <include name="editActionTemplate"/>
+          <include name="beforeTest"/>
         </methods>
-      </class> <!-- com.rs.test.messageClassification.ChangeSet.ChangeSet -->
+      </class> <!-- com.rs.test.configuration.actionTemplates.ActionTemplates -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

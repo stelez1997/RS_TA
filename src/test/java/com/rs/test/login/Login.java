@@ -25,8 +25,6 @@ public class Login extends TestBaseSteven{
 	  
 	  loginVerificationPO.verifyLogin();
 
-	  
-	  
   }
   
   @AfterTest

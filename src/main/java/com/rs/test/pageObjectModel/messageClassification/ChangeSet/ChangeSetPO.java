@@ -61,6 +61,7 @@ public class ChangeSetPO extends TestBaseSteven {
 	
 	@FindBy(xpath = "//div[@aria-selected=\"true\"]")
 	public WebElement dtpScheduledO;
+	
 
 	@FindBy(xpath = "//button[@id=\"Message Classification Change SetAddBtn\"]")
 	public WebElement btnAddChangeSet;
@@ -141,6 +142,7 @@ public class ChangeSetPO extends TestBaseSteven {
 
 	public void clickOnAddBillClass() {
 		click(btnAddChangeSet);
+		btnAddChangeSet.click();
 		sleep(5000);
 	}
 	
