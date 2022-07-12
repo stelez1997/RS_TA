@@ -1,12 +1,10 @@
-package com.rs.test.messageClassification.ChangeSet;
+package com.rs.test.routeRules;
 
 import org.testng.annotations.Test;
 
 import com.rs.test.base.TestBaseSteven;
 import com.rs.test.pageObjectModel.login.LoginVerificationPO;
-import com.rs.test.pageObjectModel.messageClassification.BillClass.BillClassPO;
-import com.rs.test.pageObjectModel.messageClassification.ChangeSet.ChangeSetPO;
-import com.rs.test.pageObjectModel.messageClassification.DCS.DCSPO;
+import com.rs.test.pageObjectModel.routingRules.ChangeSet.ChangeSetPO;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.AfterTest;
 //Done
@@ -31,20 +29,6 @@ public class ChangeSet extends TestBaseSteven {
 	public void createChangeSet() {
 
 		changeSetPO.createChangeSet();
-
-	}
-	
-	@Test(dependsOnMethods = "createChangeSet", priority = 0)
-	public void editChangeSet() {
-
-		changeSetPO.editChangeSet();
-
-	}
-	
-	@Test(dependsOnMethods = "createChangeSet", priority = 1)
-	public void deleteChangeSet() {
-
-		changeSetPO.deleteChangeSet();
 
 	}
 	

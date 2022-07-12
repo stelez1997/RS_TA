@@ -67,22 +67,22 @@ public class MessageGatewayPO extends TestBaseSteven {
 
 	public void clickOnGoToFirst() {
 		click(btnGoToFirst);
-		visibilityOfElementXpath("//tr[contains(@id,\"Message GatewayTableRow\")][1]");
+		visibilityOfElement("//tr[contains(@id,\"Message GatewayTableRow\")][1]");
 	}
 
 	public void clickOnGoToPrevious() {
 		click(btnGoToPrevious);
-		visibilityOfElementXpath("//tr[contains(@id,\"Message GatewayTableRow\")][1]");
+		visibilityOfElement("//tr[contains(@id,\"Message GatewayTableRow\")][1]");
 	}
 
 	public void clickOnGoToNext() {
 		click(btnGoToNext);
-		visibilityOfElementXpath("//tr[contains(@id,\"Message GatewayTableRow\")][1]");
+		visibilityOfElement("//tr[contains(@id,\"Message GatewayTableRow\")][1]");
 	}
 
 	public void clickOnGoToLast() {
 		click(btnGoToLast);
-		visibilityOfElementXpath("//tr[contains(@id,\"Message GatewayTableRow\")][1]");
+		visibilityOfElement("//tr[contains(@id,\"Message GatewayTableRow\")][1]");
 	}
 
 	// Create Methods
@@ -127,7 +127,7 @@ public class MessageGatewayPO extends TestBaseSteven {
 
 		refresh();
 
-		visibilityOfElementXpath("//tr[contains(@id,\"Message GatewayTableRow\")][1]");
+		visibilityOfElement("//tr[contains(@id,\"Message GatewayTableRow\")][1]");
 
 		clickOnGoToLast();
 
@@ -218,15 +218,15 @@ public class MessageGatewayPO extends TestBaseSteven {
 
 		click(btnEdit);
 
-		visibilityOfElementXpath("//tr[contains(@id,\"Message GatewayTableRow\")][1]");
+		visibilityOfElement("//tr[contains(@id,\"Message GatewayTableRow\")][1]");
 
 		refresh();
 
-		visibilityOfElementXpath("//tr[contains(@id,\"Message GatewayTableRow\")][1]");
+		visibilityOfElement("//tr[contains(@id,\"Message GatewayTableRow\")][1]");
 
 		click(btnGoToLast);
 
-		visibilityOfElementXpath("//tr[contains(@id,\"Message GatewayTableRow\")][1]");
+		visibilityOfElement("//tr[contains(@id,\"Message GatewayTableRow\")][1]");
 
 		String messageGatewayA = getText("//tr[contains(@id,\"GatewayTableRow\")][" + rows + "]/td[2]/div");
 		String descriptionA = getText("//tr[contains(@id,\"GatewayTableRow\")][" + rows + "]/td[3]/div");
@@ -263,11 +263,11 @@ public class MessageGatewayPO extends TestBaseSteven {
 
 		refresh();
 
-		visibilityOfElementXpath("//tr[contains(@id,\"Message GatewayTableRow\")][1]");
+		visibilityOfElement("//tr[contains(@id,\"Message GatewayTableRow\")][1]");
 
 		click(btnGoToLast);
 
-		visibilityOfElementXpath("//tr[contains(@id,\"Message GatewayTableRow\")][1]");
+		visibilityOfElement("//tr[contains(@id,\"Message GatewayTableRow\")][1]");
 
 		rows = rows("//tr[contains(@id,\"GatewayTableRow\")]");
 

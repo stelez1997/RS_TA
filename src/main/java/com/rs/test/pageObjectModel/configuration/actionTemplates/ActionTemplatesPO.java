@@ -257,8 +257,7 @@ public class ActionTemplatesPO extends TestBaseSteven {
 		WebElement txtEditTemplateName = findElement("//tr[contains(@id,\"TemplateTableRow\")][" + rows + "]/td[2]/input");
 		WebElement txtEditDescription = findElement("//tr[contains(@id,\"TemplateTableRow\")][" + rows + "]/td[3]/input");
 		WebElement btnEdit = findElement("//tr[contains(@id,\"TemplateTableRow\")][" + rows + "]//child::button[contains(@id,\"edit\")]");
-		
-		scrollDown(4);
+
 		
 		click(btnEdit);
 		
@@ -268,6 +267,7 @@ public class ActionTemplatesPO extends TestBaseSteven {
 		sendKeys(txtEditDescription, descriptionE);
 
 		click(btnEdit);
+		sleep(5000);
 
 		waitExpectedElement("//tr[contains(@id,\"TemplateTableRow\")][1]");
 
@@ -308,9 +308,9 @@ public class ActionTemplatesPO extends TestBaseSteven {
 
 		WebElement btnDelete = findElement("//tr[contains(@id,\"TemplateTableRow\")][" + rows + "]//child::button[contains(@id,\"delete\")]");
 
-		scrollDown(5);
 		
 		click(btnDelete);
+		sleep(5000);
 
 		refresh();
 

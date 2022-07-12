@@ -547,7 +547,7 @@ public class MessageAggregatorsPO extends TestBaseSteven {
 		sleep(5000);
 
 		refresh();
-		visibilityOfElementXpath("//tr[contains(@id,\"AggregatorsTableRow\")][1]");
+		visibilityOfElement("//tr[contains(@id,\"AggregatorsTableRow\")][1]");
 
 		waitExpectedElement("//tr[contains(@id,\"Message AggregatorsTableRow\")][1]");
 
@@ -592,7 +592,7 @@ public class MessageAggregatorsPO extends TestBaseSteven {
 		sleep(5000);
 
 		refresh();
-		visibilityOfElementXpath("//tr[contains(@id,\"AggregatorsTableRow\")][1]");
+		visibilityOfElement("//tr[contains(@id,\"AggregatorsTableRow\")][1]");
 
 		clickOnGoToLast();
 
@@ -717,7 +717,7 @@ public class MessageAggregatorsPO extends TestBaseSteven {
 		sleep(5000);
 
 		refresh();
-		visibilityOfElementXpath("//tr[contains(@id,\"AggregatorsTableRow\")][1]");
+		visibilityOfElement("//tr[contains(@id,\"AggregatorsTableRow\")][1]");
 
 		clickOnGoToLast();
 

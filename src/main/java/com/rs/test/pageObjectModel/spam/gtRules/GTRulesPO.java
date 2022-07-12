@@ -65,7 +65,7 @@ public class GTRulesPO extends TestBaseSteven {
 	public void clickOnGTSpamMenu() {
 		click(menuGtSpam);
 
-		visibilityOfElementXpath("//tr[contains(@id,\"RulesTable\")][1]");
+		visibilityOfElement("//tr[contains(@id,\"RulesTable\")][1]");
 	}
 
 	// Pagination
@@ -73,25 +73,25 @@ public class GTRulesPO extends TestBaseSteven {
 	public void clickOnGoToFirst() {
 		click(btnGoToFirst);
 
-		visibilityOfElementXpath("//tr[contains(@id,\"RulesTable\")][1]");
+		visibilityOfElement("//tr[contains(@id,\"RulesTable\")][1]");
 	}
 
 	public void clickOnGoToPrevious() {
 		click(btnGoToPrevious);
 
-		visibilityOfElementXpath("//tr[contains(@id,\"RulesTable\")][1]");
+		visibilityOfElement("//tr[contains(@id,\"RulesTable\")][1]");
 	}
 
 	public void clickOnGoToNext() {
 		click(btnGoToNext);
 
-		visibilityOfElementXpath("//tr[contains(@id,\"RulesTable\")][1]");
+		visibilityOfElement("//tr[contains(@id,\"RulesTable\")][1]");
 	}
 
 	public void clickOnGoToLast() {
 		click(btnGoToLast);
 
-		visibilityOfElementXpath("//tr[contains(@id,\"RulesTable\")][1]");
+		visibilityOfElement("//tr[contains(@id,\"RulesTable\")][1]");
 	}
 
 	// Search Methods

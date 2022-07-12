@@ -114,8 +114,8 @@ public class CharacterEncondingPO extends TestBaseSteven {
 	public void clickOnCharacterEncodingMenu() {
 		
 		click(menuActionTemplates);
-		visibilityOfElementXpath("//tr[contains(@id,\"Character EncodingTable\") and not(contains(@id,\"Default\"))][1]//button[contains(@id,\"edit\")]");
-		visibilityOfElementXpath("//tr[contains(@id,\"Custom Encode Code PointTable\") ][1]//button[contains(@id,\"edit\")]");
+		visibilityOfElement("//tr[contains(@id,\"Character EncodingTable\") and not(contains(@id,\"Default\"))][1]//button[contains(@id,\"edit\")]");
+		visibilityOfElement("//tr[contains(@id,\"Custom Encode Code PointTable\") ][1]//button[contains(@id,\"edit\")]");
 	
 	}
 
@@ -337,7 +337,7 @@ public class CharacterEncondingPO extends TestBaseSteven {
 		
 		//refresh();
 		
-		visibilityOfElementXpath("//tr[contains(@id,\"Custom Encode Code PointTable\") ][1]");
+		visibilityOfElement("//tr[contains(@id,\"Custom Encode Code PointTable\") ][1]");
 		
 		loginVerificationPO = new LoginVerificationPO();
 

@@ -89,25 +89,25 @@ public class ClusterProfilePO extends TestBaseSteven {
 	public void clickOnGoToFirst() {
 		click(btnGoToFirst);
 
-		visibilityOfElementXpath("//tr[contains(@id,\"ProfileTableRow\")][1]");
+		visibilityOfElement("//tr[contains(@id,\"ProfileTableRow\")][1]");
 	}
 
 	public void clickOnGoToPrevious() {
 		click(btnGoToPrevious);
 
-		visibilityOfElementXpath("//tr[contains(@id,\"ProfileTableRow\")][1]");
+		visibilityOfElement("//tr[contains(@id,\"ProfileTableRow\")][1]");
 	}
 
 	public void clickOnGoToNext() {
 		click(btnGoToNext);
 
-		visibilityOfElementXpath("//tr[contains(@id,\"ProfileTableRow\")][1]");
+		visibilityOfElement("//tr[contains(@id,\"ProfileTableRow\")][1]");
 	}
 
 	public void clickOnGoToLast() {
 		click(btnGoToLast);
 
-		visibilityOfElementXpath("//tr[contains(@id,\"ProfileTableRow\")][1]");
+		visibilityOfElement("//tr[contains(@id,\"ProfileTableRow\")][1]");
 	}
 
 	// Edit Methods
@@ -207,15 +207,15 @@ public class ClusterProfilePO extends TestBaseSteven {
 		click(btnEdit);
 		sleep(5000);
 
-		visibilityOfElementXpath("//tr[contains(@id,\"ProfileTableRow\")][1]");
+		visibilityOfElement("//tr[contains(@id,\"ProfileTableRow\")][1]");
 
 		refresh();
 
-		visibilityOfElementXpath("//tr[contains(@id,\"ProfileTableRow\")][1]");
+		visibilityOfElement("//tr[contains(@id,\"ProfileTableRow\")][1]");
 
 		click(btnGoToLast);
 
-		visibilityOfElementXpath("//tr[contains(@id,\"ProfileTableRow\")][1]");
+		visibilityOfElement("//tr[contains(@id,\"ProfileTableRow\")][1]");
 
 		String nameA = getText("//tr[contains(@id,\"ProfileTableRow\")][" + rows + "]/td[3]/div");
 		String descriptionA = getText("//tr[contains(@id,\"ProfileTableRow\")][" + rows + "]/td[4]/div");
@@ -248,7 +248,7 @@ public class ClusterProfilePO extends TestBaseSteven {
 		click(btnEdit);
 		sleep(5000);
 
-		visibilityOfElementXpath("//tr[contains(@id,\"ProfileTableRow\")][1]");
+		visibilityOfElement("//tr[contains(@id,\"ProfileTableRow\")][1]");
 		 
 	}
 

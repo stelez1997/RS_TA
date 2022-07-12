@@ -72,29 +72,29 @@ public class ClusterSummaryPO extends TestBaseSteven {
 
 	public void clickOnClusterClassificationSuggestion() {
 		click(menuClusterClassificationSuggestion);
-		visibilityOfElementXpath("//tr[contains(@id,\"Classification\")][1]");
+		visibilityOfElement("//tr[contains(@id,\"Classification\")][1]");
 	}
 
 	// Pagination
 
 	public void clickOnGoToFirst() {
 		click(btnGoToFirst);
-		visibilityOfElementXpath("//tr[contains(@id,\"Classification\")][1]");
+		visibilityOfElement("//tr[contains(@id,\"Classification\")][1]");
 	}
 
 	public void clickOnGoToPrevious() {
 		click(btnGoToPrevious);
-		visibilityOfElementXpath("//tr[contains(@id,\"Classification\")][1]");
+		visibilityOfElement("//tr[contains(@id,\"Classification\")][1]");
 	}
 
 	public void clickOnGoToNext() {
 		click(btnGoToNext);
-		visibilityOfElementXpath("//tr[contains(@id,\"Classification\")][1]");
+		visibilityOfElement("//tr[contains(@id,\"Classification\")][1]");
 	}
 
 	public void clickOnGoToLast() {
 		click(btnGoToLast);
-		visibilityOfElementXpath("//tr[contains(@id,\"Classification\")][1]");
+		visibilityOfElement("//tr[contains(@id,\"Classification\")][1]");
 	}
 
 	// Create Methods
@@ -136,11 +136,11 @@ public class ClusterSummaryPO extends TestBaseSteven {
 		
 		clickOnClusterClassificationSuggestion();
 		
-		visibilityOfElementXpath("//tr[contains(@id,\"ClassificationTable\")][1]");
+		visibilityOfElement("//tr[contains(@id,\"ClassificationTable\")][1]");
 
 		clickOnGoToLast();
 		
-		visibilityOfElementXpath("//tr[contains(@id,\"ClassificationTable\")][1]");
+		visibilityOfElement("//tr[contains(@id,\"ClassificationTable\")][1]");
 		
 		int rowsB = rows("//tr[contains(@id,\"ClassificationTable\")]");
 		
@@ -154,11 +154,11 @@ public class ClusterSummaryPO extends TestBaseSteven {
 		
 		sleep(5000);
 		refresh();
-		visibilityOfElementXpath("//tr[contains(@id,\"ClassificationTable\")][1]");
+		visibilityOfElement("//tr[contains(@id,\"ClassificationTable\")][1]");
 		
 		clickOnGoToLast();
 		
-		visibilityOfElementXpath("//tr[contains(@id,\"ClassificationTable\")][1]");
+		visibilityOfElement("//tr[contains(@id,\"ClassificationTable\")][1]");
 		
 		int rowsA = rows("//tr[contains(@id,\"ClassificationTable\")]");
 		
@@ -211,11 +211,11 @@ public class ClusterSummaryPO extends TestBaseSteven {
 		
 		clickOnClusterClassificationSuggestion();
 		
-		visibilityOfElementXpath("//tr[contains(@id,\"ClassificationTable\")][1]");
+		visibilityOfElement("//tr[contains(@id,\"ClassificationTable\")][1]");
 
 		clickOnGoToLast();
 		
-		visibilityOfElementXpath("//tr[contains(@id,\"ClassificationTable\")][1]");
+		visibilityOfElement("//tr[contains(@id,\"ClassificationTable\")][1]");
 
 		int rows = rows("//tr[contains(@id,\"ClassificationTable\")]");
 		boolean record = false;
@@ -273,15 +273,15 @@ public class ClusterSummaryPO extends TestBaseSteven {
 		click(btnEdit);
 		sleep(5000);
 
-		visibilityOfElementXpath("//tr[contains(@id,\"ClassificationTable\")][1]");
+		visibilityOfElement("//tr[contains(@id,\"ClassificationTable\")][1]");
 
 		refresh();
 
-		visibilityOfElementXpath("//tr[contains(@id,\"ClassificationTable\")][1]");
+		visibilityOfElement("//tr[contains(@id,\"ClassificationTable\")][1]");
 		
 		click(btnGoToLast);
 
-		visibilityOfElementXpath("//tr[contains(@id,\"ClassificationTable\")][1]");
+		visibilityOfElement("//tr[contains(@id,\"ClassificationTable\")][1]");
 
 		String priorityA = getText("//tr[contains(@id,\"ClassificationTable\")][" + rows + "]/td[2]/div");
 		String messageContainsA = getText("//tr[contains(@id,\"ClassificationTable\")][" + rows + "]/td[3]/div");

@@ -65,7 +65,7 @@ public class CarrierTemplatesPO extends TestBaseSteven {
 	public void clickOnCarrierTemplatesMenu() {
 		click(menuCarrierTemplates);
 
-		visibilityOfElementXpath("//tr[contains(@id,\"TemplatesTableRow\")][1]");
+		visibilityOfElement("//tr[contains(@id,\"TemplatesTableRow\")][1]");
 	}
 
 	// Pagination
@@ -73,25 +73,25 @@ public class CarrierTemplatesPO extends TestBaseSteven {
 	public void clickOnGoToFirst() {
 		click(btnGoToFirst);
 
-		visibilityOfElementXpath("//tr[contains(@id,\"TemplatesTableRow\")][1]");
+		visibilityOfElement("//tr[contains(@id,\"TemplatesTableRow\")][1]");
 	}
 
 	public void clickOnGoToPrevious() {
 		click(btnGoToPrevious);
 
-		visibilityOfElementXpath("//tr[contains(@id,\"TemplatesTableRow\")][1]");
+		visibilityOfElement("//tr[contains(@id,\"TemplatesTableRow\")][1]");
 	}
 
 	public void clickOnGoToNext() {
 		click(btnGoToNext);
 
-		visibilityOfElementXpath("//tr[contains(@id,\"TemplatesTableRow\")][1]");
+		visibilityOfElement("//tr[contains(@id,\"TemplatesTableRow\")][1]");
 	}
 
 	public void clickOnGoToLast() {
 		click(btnGoToLast);
 
-		visibilityOfElementXpath("//tr[contains(@id,\"TemplatesTableRow\")][1]");
+		visibilityOfElement("//tr[contains(@id,\"TemplatesTableRow\")][1]");
 	}
 
 	// Search Methods

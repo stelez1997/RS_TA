@@ -66,10 +66,10 @@ public class ClusterRouteRulesPO extends TestBaseSteven {
 
 		if (page == 1) {
 			click(btnGoToFirstSMSx);
-			visibilityOfElementXpath("//tr[contains(@id,\"RulesTable\") and not(contains(@id,\"ISMS\"))][1]");
+			visibilityOfElement("//tr[contains(@id,\"RulesTable\") and not(contains(@id,\"ISMS\"))][1]");
 		} else {
 			click(btnGoToFirstISMS);
-			visibilityOfElementXpath("//tr[contains(@id,\"RulesTable\") and not(contains(@id,\"SMSx\"))][1]");
+			visibilityOfElement("//tr[contains(@id,\"RulesTable\") and not(contains(@id,\"SMSx\"))][1]");
 		}
 
 	}
@@ -77,30 +77,30 @@ public class ClusterRouteRulesPO extends TestBaseSteven {
 	public void clickOnGoToPrevious(int page) {
 		if (page == 1) {
 			click(btnGoToPreviousSMSx);
-			visibilityOfElementXpath("//tr[contains(@id,\"RulesTable\") and not(contains(@id,\"ISMS\"))][1]");
+			visibilityOfElement("//tr[contains(@id,\"RulesTable\") and not(contains(@id,\"ISMS\"))][1]");
 		} else {
 			click(btnGoToPreviousISMS);
-			visibilityOfElementXpath("//tr[contains(@id,\"RulesTable\") and not(contains(@id,\"SMSx\"))][1]");
+			visibilityOfElement("//tr[contains(@id,\"RulesTable\") and not(contains(@id,\"SMSx\"))][1]");
 		}
 	}
 
 	public void clickOnGoToNext(int page) {
 		if (page == 1) {
 			click(btnGoToNextSMSx);
-			visibilityOfElementXpath("//tr[contains(@id,\"RulesTable\") and not(contains(@id,\"ISMS\"))][1]");
+			visibilityOfElement("//tr[contains(@id,\"RulesTable\") and not(contains(@id,\"ISMS\"))][1]");
 		} else {
 			click(btnGoToNextISMS);
-			visibilityOfElementXpath("//tr[contains(@id,\"RulesTable\") and not(contains(@id,\"SMSx\"))][1]");
+			visibilityOfElement("//tr[contains(@id,\"RulesTable\") and not(contains(@id,\"SMSx\"))][1]");
 		}
 	}
 
 	public void clickOnGoToLast(int page) {
 		if (page == 1) {
 			click(btnGoToFirstSMSx);
-			visibilityOfElementXpath("//tr[contains(@id,\"RulesTable\") and not(contains(@id,\"ISMS\"))][1]");
+			visibilityOfElement("//tr[contains(@id,\"RulesTable\") and not(contains(@id,\"ISMS\"))][1]");
 		} else {
 			click(btnGoToFirstISMS);
-			visibilityOfElementXpath("//tr[contains(@id,\"RulesTable\") and not(contains(@id,\"SMSx\"))][1]");
+			visibilityOfElement("//tr[contains(@id,\"RulesTable\") and not(contains(@id,\"SMSx\"))][1]");
 		}
 	}
 
@@ -240,7 +240,7 @@ public class ClusterRouteRulesPO extends TestBaseSteven {
 
 	public void selectOrigCC() {
 
-		visibilityOfElementXpath(
+		visibilityOfElement(
 				"//tr[contains(@id,\"SMSx\")]//child::select[@id=\"addorigCountry\"]/option[not(contains(text(),\"Select\"))and text()]");
 		click(cboOrigCC);
 		cboTextOrigCC = getText(cboOrigCCOption);
@@ -252,7 +252,7 @@ public class ClusterRouteRulesPO extends TestBaseSteven {
 
 	public void selectOrigPrefix() {
 
-		visibilityOfElementXpath(
+		visibilityOfElement(
 				"//tr[contains(@id,\"SMSx\")]//child::select[@id=\"addorigPrefix\"]/option[not(contains(text(),\"Select\"))and text()]");
 		click(cboOrigPrefix);
 		cboTextOrigPrefix = getText(cboOrigPrefixOption);
@@ -263,7 +263,7 @@ public class ClusterRouteRulesPO extends TestBaseSteven {
 
 	public void selectOrigCS() {
 
-		visibilityOfElementXpath(
+		visibilityOfElement(
 				"//tr[contains(@id,\"SMSx\")]//child::select[@id=\"addorigServiceName\"]/option[not(contains(text(),\"Select\"))and text()]");
 		click(cboOrigCS);
 		cboTextOrigCS = getText(cboOrigCSOption);
@@ -274,7 +274,7 @@ public class ClusterRouteRulesPO extends TestBaseSteven {
 
 	public void selectDestCC() {
 
-		visibilityOfElementXpath(
+		visibilityOfElement(
 				"//tr[contains(@id,\"SMSx\")]//child::select[@id=\"adddestCountry\"]/option[not(contains(text(),\"Select\"))and text()]");
 		click(cboDestCC);
 		cboTextDestCC = getText(cboDestCCOption);
@@ -285,7 +285,7 @@ public class ClusterRouteRulesPO extends TestBaseSteven {
 
 	public void selectDestPrefix() {
 
-		visibilityOfElementXpath(
+		visibilityOfElement(
 				"//tr[contains(@id,\"SMSx\")]//child::select[@id=\"adddestPrefix\"]/option[not(contains(text(),\"Select\"))and text()]");
 		click(cboDestPrefix);
 		cboTextDestPrefix = getText(cboDestPrefixOption);
@@ -296,7 +296,7 @@ public class ClusterRouteRulesPO extends TestBaseSteven {
 
 	public void selectDestCS() {
 
-		visibilityOfElementXpath(
+		visibilityOfElement(
 				"//tr[contains(@id,\"SMSx\")]//child::select[@id=\"adddestServiceName\"]/option[not(contains(text(),\"Select\"))and text()]");
 		click(cboDestCS);
 		cboTextDestCS = getText(cboDestCSOption);
@@ -307,7 +307,7 @@ public class ClusterRouteRulesPO extends TestBaseSteven {
 
 	public void selectClusterProfile() {
 
-		visibilityOfElementXpath(
+		visibilityOfElement(
 				"//tr[contains(@id,\"SMSx\")]//child::select[@id=\"addclusterProfileName\"]/option[not(contains(text(),\"Select\"))and text()]");
 		click(cboClusterProfile);
 		cboTextClusterProfile = getText(cboClusterProfileOption);
@@ -371,7 +371,7 @@ public class ClusterRouteRulesPO extends TestBaseSteven {
 
 	public void selectOrigPrefixISMS() {
 
-		visibilityOfElementXpath(
+		visibilityOfElement(
 				"//tr[contains(@id,\"ISMS\")]//child::select[@id=\"addorigPrefix\"]/option[not(contains(text(),\"Select\"))and text()]");
 		click(cboOrigPrefixISMS);
 		cboTextOrigPrefixISMS = getText(cboOrigPrefixISMSOption);
@@ -383,7 +383,7 @@ public class ClusterRouteRulesPO extends TestBaseSteven {
 
 	public void selectOrigRefOpName() {
 
-		visibilityOfElementXpath(
+		visibilityOfElement(
 				"//tr[contains(@id,\"ISMS\")]//child::select[@id=\"addorigRefOpNameDesc\"]/option[not(contains(text(),\"Select\"))and text()]");
 		click(cboOrigRefOpName);
 		cboTextOrigRefOpName = getText(cboOrigRefOpNameOption);
@@ -400,7 +400,7 @@ public class ClusterRouteRulesPO extends TestBaseSteven {
 
 	public void selectDestPrefixISMS() {
 
-		visibilityOfElementXpath(
+		visibilityOfElement(
 				"//tr[contains(@id,\"ISMS\")]//child::select[@id=\"adddestPrefix\"]/option[not(contains(text(),\"Select\"))and text()]");
 		click(cboDestPrefixISMS);
 		cboTextDestPrefixISMS = getText(cboDestPrefixISMSOption);
@@ -411,7 +411,7 @@ public class ClusterRouteRulesPO extends TestBaseSteven {
 
 	public void selectDestRefOpName() {
 
-		visibilityOfElementXpath(
+		visibilityOfElement(
 				"//tr[contains(@id,\"ISMS\")]//child::select[@id=\"adddestRefOpNameDesc\"]/option[not(contains(text(),\"Select\"))and text()]");
 		click(cboDestRefOpName);
 		cboTextDestReOfName = getText(cboDestRefOpNameOption);
@@ -422,7 +422,7 @@ public class ClusterRouteRulesPO extends TestBaseSteven {
 
 	public void selectClusterProfileISMS() {
 
-		visibilityOfElementXpath(
+		visibilityOfElement(
 				"//tr[contains(@id,\"ISMS\")]//child::select[@id=\"addclusterProfileName\"]/option[not(contains(text(),\"Select\"))and text()]");
 		click(cboClusterProfileISMS);
 		cboTextClusterProfileISMS = getText(cboClusterProfileISMSOption);
@@ -469,11 +469,11 @@ public class ClusterRouteRulesPO extends TestBaseSteven {
 
 		refresh();
 
-		visibilityOfElementXpath("//tr[contains(@id,\"RulesTable\") and not(contains(@id,\"ISMS\"))][1]");
+		visibilityOfElement("//tr[contains(@id,\"RulesTable\") and not(contains(@id,\"ISMS\"))][1]");
 
 		clickOnGoToLast(1);
 
-		visibilityOfElementXpath("//tr[contains(@id,\"RulesTable\") and not(contains(@id,\"ISMS\"))][1]");
+		visibilityOfElement("//tr[contains(@id,\"RulesTable\") and not(contains(@id,\"ISMS\"))][1]");
 
 		int rowsA = rows("//tr[contains(@id,\"RulesTable\") and not(contains(@id,\"ISMS\"))]");
 
@@ -483,9 +483,9 @@ public class ClusterRouteRulesPO extends TestBaseSteven {
 		System.out.println("Record Created: " + created);
 		created = false;
 
-		visibilityOfElementXpath(
+		visibilityOfElement(
 				"//tr[contains(@id,\"SMSx\")]//child::select[@id=\"addorigCountry\"]/option[not(contains(text(),\"Select\"))and text()]");
-		visibilityOfElementXpath(
+		visibilityOfElement(
 				"//tr[contains(@id,\"SMSx\")]//child::select[@id=\"adddestCountry\"]/option[not(contains(text(),\"Select\"))and text()]");
 
 		click("//tr[@id=\"SMSx Cluster Route RulesHeader\"]//div[text()=\"Rule ID\"]");
@@ -590,19 +590,19 @@ public class ClusterRouteRulesPO extends TestBaseSteven {
 
 		click(btnEdit);
 
-		visibilityOfElementXpath(
+		visibilityOfElement(
 				"//tr[contains(@id,\"SMSx\")]//child::select[@id=\"addclusterProfileName\"]/option[not(contains(text(),\"Select\"))and text()]");
-		visibilityOfElementXpath(
+		visibilityOfElement(
 				"//tr[contains(@id,\"SMSx\")]//child::select[@id=\"adddestServiceName\"]/option[not(contains(text(),\"Select\"))and text()]");
-		visibilityOfElementXpath(
+		visibilityOfElement(
 				"//tr[contains(@id,\"SMSx\")]//child::select[@id=\"adddestCountry\"]/option[not(contains(text(),\"Select\"))and text()]");
-		visibilityOfElementXpath(
+		visibilityOfElement(
 				"//tr[contains(@id,\"SMSx\")]//child::select[@id=\"addorigServiceName\"]/option[not(contains(text(),\"Select\"))and text()]");
-		visibilityOfElementXpath(
+		visibilityOfElement(
 				"//tr[contains(@id,\"SMSx\")]//child::select[@id=\"addorigPrefix\"]/option[not(contains(text(),\"Select\"))and text()]");
-		visibilityOfElementXpath(
+		visibilityOfElement(
 				"//tr[contains(@id,\"SMSx\")]//child::select[@id=\"addorigCountry\"]/option[not(contains(text(),\"Select\"))and text()]");
-		visibilityOfElementXpath(
+		visibilityOfElement(
 				"//tr[contains(@id,\"SMSx\")]//child::select[@id=\"adddestPrefix\"]/option[not(contains(text(),\"Select\"))and text()]");
 
 		WebElement origCC = findElement(
@@ -682,27 +682,27 @@ public class ClusterRouteRulesPO extends TestBaseSteven {
 
 		refresh();
 
-		visibilityOfElementXpath("//tr[contains(@id,\"RulesTable\") and not(contains(@id,\"ISMS\"))][1]");
+		visibilityOfElement("//tr[contains(@id,\"RulesTable\") and not(contains(@id,\"ISMS\"))][1]");
 
 		clickOnGoToLast(1);
 
-		visibilityOfElementXpath("//tr[contains(@id,\"RulesTable\") and not(contains(@id,\"ISMS\"))][1]");
+		visibilityOfElement("//tr[contains(@id,\"RulesTable\") and not(contains(@id,\"ISMS\"))][1]");
 
 		orderSMSx();
 
-		visibilityOfElementXpath(
+		visibilityOfElement(
 				"//tr[contains(@id,\"SMSx\")]//child::select[@id=\"addclusterProfileName\"]/option[not(contains(text(),\"Select\"))and text()]");
-		visibilityOfElementXpath(
+		visibilityOfElement(
 				"//tr[contains(@id,\"SMSx\")]//child::select[@id=\"adddestServiceName\"]/option[not(contains(text(),\"Select\"))and text()]");
-		visibilityOfElementXpath(
+		visibilityOfElement(
 				"//tr[contains(@id,\"SMSx\")]//child::select[@id=\"adddestCountry\"]/option[not(contains(text(),\"Select\"))and text()]");
-		visibilityOfElementXpath(
+		visibilityOfElement(
 				"//tr[contains(@id,\"SMSx\")]//child::select[@id=\"addorigServiceName\"]/option[not(contains(text(),\"Select\"))and text()]");
-		visibilityOfElementXpath(
+		visibilityOfElement(
 				"//tr[contains(@id,\"SMSx\")]//child::select[@id=\"addorigPrefix\"]/option[not(contains(text(),\"Select\"))and text()]");
-		visibilityOfElementXpath(
+		visibilityOfElement(
 				"//tr[contains(@id,\"SMSx\")]//child::select[@id=\"addorigCountry\"]/option[not(contains(text(),\"Select\"))and text()]");
-		visibilityOfElementXpath(
+		visibilityOfElement(
 				"//tr[contains(@id,\"SMSx\")]//child::select[@id=\"adddestPrefix\"]/option[not(contains(text(),\"Select\"))and text()]");
 
 		String origCCA = getText("//tr[contains(@id,\"RulesTable\") and not(contains(@id,\"ISMS\"))][1]/td[4]/div");
@@ -747,7 +747,7 @@ public class ClusterRouteRulesPO extends TestBaseSteven {
 
 		refresh();
 
-		visibilityOfElementXpath("//tr[contains(@id,\"RulesTable\") and not(contains(@id,\"ISMS\"))][1]");
+		visibilityOfElement("//tr[contains(@id,\"RulesTable\") and not(contains(@id,\"ISMS\"))][1]");
 
 		clickOnGoToLast(1);
 
@@ -928,19 +928,19 @@ public class ClusterRouteRulesPO extends TestBaseSteven {
 
 		actionsMoveToElementElement(btnGoToFirstSMSx);
 
-		visibilityOfElementXpath("//tr[contains(@id,\"RulesTable\") and not(contains(@id,\"ISMS\"))]");
+		visibilityOfElement("//tr[contains(@id,\"RulesTable\") and not(contains(@id,\"ISMS\"))]");
 
-		visibilityOfElementXpath(
+		visibilityOfElement(
 				"//h1[text()=\"SMSx Cluster Route Rules\"]//ancestor::div[2]/div[not(contains(@style,\"display: none\"))]//div[@class=\"searchBarElement\"][2]//option[not(contains(text(),\"Select\"))and text()]");
-		visibilityOfElementXpath(
+		visibilityOfElement(
 				"//h1[text()=\"SMSx Cluster Route Rules\"]//ancestor::div[2]/div[not(contains(@style,\"display: none\"))]//div[@class=\"searchBarElement\"][3]//option[not(contains(text(),\"Select\"))and text()]");
-		visibilityOfElementXpath(
+		visibilityOfElement(
 				"//h1[text()=\"SMSx Cluster Route Rules\"]//ancestor::div[2]/div[not(contains(@style,\"display: none\"))]//div[@class=\"searchBarElement\"][4]//option[not(contains(text(),\"Select\"))and text()]");
-		visibilityOfElementXpath(
+		visibilityOfElement(
 				"//h1[text()=\"SMSx Cluster Route Rules\"]//ancestor::div[2]/div[not(contains(@style,\"display: none\"))]//div[@class=\"searchBarElement\"][5]//option[not(contains(text(),\"Select\"))and text()]");
-		visibilityOfElementXpath(
+		visibilityOfElement(
 				"//h1[text()=\"SMSx Cluster Route Rules\"]//ancestor::div[2]/div[not(contains(@style,\"display: none\"))]//div[@class=\"searchBarElement\"][6]//option[not(contains(text(),\"Select\"))and text()]");
-		visibilityOfElementXpath(
+		visibilityOfElement(
 				"//h1[text()=\"SMSx Cluster Route Rules\"]//ancestor::div[2]/div[not(contains(@style,\"display: none\"))]//div[@class=\"searchBarElement\"][7]//option[not(contains(text(),\"Select\"))and text()]");
 
 		ArrayList<String> data = new ArrayList<String>();
@@ -1045,11 +1045,11 @@ public class ClusterRouteRulesPO extends TestBaseSteven {
 
 		refresh();
 
-		visibilityOfElementXpath("//tr[contains(@id,\"RulesTable\") and not(contains(@id,\"SMSx\"))][1]");
+		visibilityOfElement("//tr[contains(@id,\"RulesTable\") and not(contains(@id,\"SMSx\"))][1]");
 
 		clickOnGoToLast(2);
 
-		visibilityOfElementXpath("//tr[contains(@id,\"RulesTable\") and not(contains(@id,\"SMSx\"))][1]");
+		visibilityOfElement("//tr[contains(@id,\"RulesTable\") and not(contains(@id,\"SMSx\"))][1]");
 
 		int rowsA = rows("//tr[contains(@id,\"RulesTable\") and not(contains(@id,\"SMSx\"))]");
 		
@@ -1120,7 +1120,7 @@ public class ClusterRouteRulesPO extends TestBaseSteven {
 
 		actionsMoveToElementElement(btnGoToFirstSMSx);
 
-		visibilityOfElementXpath("//tr[contains(@id,\"RulesTable\") and not(contains(@id,\"SMSx\"))][1]");
+		visibilityOfElement("//tr[contains(@id,\"RulesTable\") and not(contains(@id,\"SMSx\"))][1]");
 
 
 		clickOnGoToLast(2);
@@ -1178,15 +1178,15 @@ public class ClusterRouteRulesPO extends TestBaseSteven {
 
 		click(btnEdit);
 
-		visibilityOfElementXpath(
+		visibilityOfElement(
 				"//tr[contains(@id,\"ISMS\")]//child::select[@id=\"addorigPrefix\"]/option[not(contains(text(),\"Select\"))and text()]");
-		visibilityOfElementXpath(
+		visibilityOfElement(
 				"//tr[contains(@id,\"ISMS\")]//child::select[@id=\"addorigRefOpNameDesc\"]/option[not(contains(text(),\"Select\"))and text()]");
-		visibilityOfElementXpath(
+		visibilityOfElement(
 				"//tr[contains(@id,\"ISMS\")]//child::select[@id=\"adddestPrefix\"]/option[not(contains(text(),\"Select\"))and text()]");
-		visibilityOfElementXpath(
+		visibilityOfElement(
 				"//tr[contains(@id,\"ISMS\")]//child::select[@id=\"adddestRefOpNameDesc\"]/option[not(contains(text(),\"Select\"))and text()]");
-		visibilityOfElementXpath(
+		visibilityOfElement(
 				"//tr[contains(@id,\"ISMS\")]//child::select[@id=\"addclusterProfileName\"]/option[not(contains(text(),\"Select\"))and text()]");
 
 		WebElement origPrefixE = findElement(
@@ -1254,7 +1254,7 @@ public class ClusterRouteRulesPO extends TestBaseSteven {
 
 		refresh();
 
-		visibilityOfElementXpath("//tr[contains(@id,\"RulesTable\") and not(contains(@id,\"SMSx\"))][1]");
+		visibilityOfElement("//tr[contains(@id,\"RulesTable\") and not(contains(@id,\"SMSx\"))][1]");
 
 		clickOnGoToLast(2);
 
@@ -1304,7 +1304,7 @@ public class ClusterRouteRulesPO extends TestBaseSteven {
 
 		refresh();
 
-		visibilityOfElementXpath("//tr[contains(@id,\"RulesTable\") and not(contains(@id,\"ISMS\"))][1]");
+		visibilityOfElement("//tr[contains(@id,\"RulesTable\") and not(contains(@id,\"ISMS\"))][1]");
 
 		clickOnGoToLast(2);
 
@@ -1460,15 +1460,15 @@ public class ClusterRouteRulesPO extends TestBaseSteven {
 
 		int rows = rows("//tr[contains(@id,\"RulesTable\") and not(contains(@id,\"ISMS\"))]");
 
-		visibilityOfElementXpath("//tr[contains(@id,\"RulesTable\") and not(contains(@id,\"SMSx\"))]");
+		visibilityOfElement("//tr[contains(@id,\"RulesTable\") and not(contains(@id,\"SMSx\"))]");
 
-		visibilityOfElementXpath(
+		visibilityOfElement(
 				"//h1[contains(text(),\"ISMS\")]//ancestor::div[1]//div[@class=\"searchBarElement\"][3]//option[not(contains(text(),\"Select\"))and text()]");
-		visibilityOfElementXpath(
+		visibilityOfElement(
 				"//h1[contains(text(),\"ISMS\")]//ancestor::div[1]//div[@class=\"searchBarElement\"][4]//option[not(contains(text(),\"Select\"))and text()]");
-		visibilityOfElementXpath(
+		visibilityOfElement(
 				"//h1[contains(text(),\"ISMS\")]//ancestor::div[1]//div[@class=\"searchBarElement\"][5]//option[not(contains(text(),\"Select\"))and text()]");
-		visibilityOfElementXpath(
+		visibilityOfElement(
 				"//h1[contains(text(),\"ISMS\")]//ancestor::div[1]//div[@class=\"searchBarElement\"][6]//option[not(contains(text(),\"Select\"))and text()]");
 
 		ArrayList<String> data = new ArrayList<String>();

@@ -426,31 +426,6 @@ public class TestBaseSteven {
 
 	}
 	
-	public void scrollDown(int times) {
-		
-		actionsMoveToElementElement("//body");
-		
-		for (int i = 0; i < times; i++) {
-			findElement("//body").sendKeys(Keys.ARROW_DOWN);
-			findElement("//body").sendKeys(Keys.ARROW_DOWN);
-			findElement("//body").sendKeys(Keys.ARROW_DOWN);
-			findElement("//body").sendKeys(Keys.ARROW_DOWN);
-		}
-		
-	}
-	
-	public void scrollUp(int times) {
-		
-		click("//body");
-		
-		for (int i = 0; i < times; i++) {
-			findElement("//body").sendKeys(Keys.ARROW_UP);
-			findElement("//body").sendKeys(Keys.ARROW_UP);
-			findElement("//body").sendKeys(Keys.ARROW_UP);
-			findElement("//body").sendKeys(Keys.ARROW_UP);
-		}
-		
-	}
 	
 	public void orderTable(WebElement header, String verificationId, String idToBeVerified) {
 		
@@ -554,7 +529,7 @@ public class TestBaseSteven {
 		
 	}
 
-	public void visibilityOfElementXpath(String xpath) {
+	public void visibilityOfElement(String xpath) {
 
 		int rows = rows(xpath);
 
@@ -720,6 +695,57 @@ public class TestBaseSteven {
 	public Float convertToFloat(String number) {
 		
 		return Float.valueOf(number);
+		
+	}
+	
+	public static void convertToDate(String data,String format){
+		
+		SimpleDateFormat df = new SimpleDateFormat(format);
+		
+		Date expectedDate = null;
+		
+		try {
+			
+			expectedDate = df.parse(data);
+			System.out.println(df.format(expectedDate));
+			
+		} catch (Exception e) {
+			System.out.println(e);
+		}
+		
+		String fecha = String.valueOf(df.format(expectedDate));
+		System.out.println("Fecha String: "+ fecha);
+
+	}
+	
+	public String changeDateFormat(String date,String format, String formatToBeChanged){
+		
+		SimpleDateFormat df1 = new SimpleDateFormat(format);
+		
+		Date expectedDate = null;
+		
+		try {
+			
+			expectedDate = df1.parse(date);
+		
+			
+			
+		} catch (Exception e) {
+			System.out.println(e);
+		}
+		df1 = new SimpleDateFormat(formatToBeChanged);
+		String dateFormated = String.valueOf(df1.format(expectedDate));
+		System.out.println("Date Formated: "+ dateFormated);
+		
+		return dateFormated;
+
+	}
+	
+	public String split(String text, String splitChar, int index) {
+		
+		String[] split = text.split(splitChar);
+		
+		return split[index];
 		
 	}
 	

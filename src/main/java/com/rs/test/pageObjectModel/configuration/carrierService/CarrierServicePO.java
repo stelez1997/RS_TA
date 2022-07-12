@@ -230,7 +230,7 @@ public class CarrierServicePO extends TestBaseSteven {
 
 	public void clickOnCarrierServiceMenu() {
 		click(menuCarrierService);
-		visibilityOfElementXpath("//tr[contains(@id,\"ServiceTableRow\")][1]");
+		visibilityOfElement("//tr[contains(@id,\"ServiceTableRow\")][1]");
 	}
 
 	// Pagination
@@ -238,7 +238,7 @@ public class CarrierServicePO extends TestBaseSteven {
 	public void clickOnGoToLast() {
 		click(btnGoToLast);
 
-		visibilityOfElementXpath("//tr[contains(@id,\"ServiceTableRow\")][1]");
+		visibilityOfElement("//tr[contains(@id,\"ServiceTableRow\")][1]");
 
 	}
 
@@ -557,7 +557,7 @@ public class CarrierServicePO extends TestBaseSteven {
 
 		refresh();
 
-		visibilityOfElementXpath("//tr[contains(@id,\"ServiceTableRow\")][1]");
+		visibilityOfElement("//tr[contains(@id,\"ServiceTableRow\")][1]");
 
 		clickOnGoToLast();
 
@@ -698,15 +698,15 @@ public class CarrierServicePO extends TestBaseSteven {
 		click(btnEdit);
 		sleep(5000);
 
-		visibilityOfElementXpath("//tr[contains(@id,\"ServiceTableRow\")][1]");
+		visibilityOfElement("//tr[contains(@id,\"ServiceTableRow\")][1]");
 
 		refresh();
 
-		visibilityOfElementXpath("//tr[contains(@id,\"ServiceTableRow\")][1]");
+		visibilityOfElement("//tr[contains(@id,\"ServiceTableRow\")][1]");
 
 		click(btnGoToLast);
 
-		visibilityOfElementXpath("//tr[contains(@id,\"ServiceTableRow\")][1]");
+		visibilityOfElement("//tr[contains(@id,\"ServiceTableRow\")][1]");
 
 		orderService();
 
@@ -758,11 +758,11 @@ public class CarrierServicePO extends TestBaseSteven {
 
 		refresh();
 
-		visibilityOfElementXpath("//tr[contains(@id,\"ServiceTableRow\")][1]");
+		visibilityOfElement("//tr[contains(@id,\"ServiceTableRow\")][1]");
 
 		click(btnGoToLast);
 
-		visibilityOfElementXpath("//tr[contains(@id,\"ServiceTableRow\")][1]");
+		visibilityOfElement("//tr[contains(@id,\"ServiceTableRow\")][1]");
 
 		int rowsA = rows("//tr[contains(@id,\"ServiceTableRow\")]");
 
@@ -913,7 +913,7 @@ public class CarrierServicePO extends TestBaseSteven {
 
 		refresh();
 
-		visibilityOfElementXpath("//tr[contains(@id,\"ServiceTableRow\")][1]");
+		visibilityOfElement("//tr[contains(@id,\"ServiceTableRow\")][1]");
 
 		clickOnGoToLast();
 
@@ -994,7 +994,7 @@ public class CarrierServicePO extends TestBaseSteven {
 
 		refresh();
 
-		visibilityOfElementXpath("//tr[contains(@id,\"ServiceTableRow\")][1]");
+		visibilityOfElement("//tr[contains(@id,\"ServiceTableRow\")][1]");
 
 		clickOnGoToLast();
 
@@ -1049,7 +1049,7 @@ public class CarrierServicePO extends TestBaseSteven {
 
 		refresh();
 
-		visibilityOfElementXpath("//tr[contains(@id,\"ServiceTableRow\")][1]");
+		visibilityOfElement("//tr[contains(@id,\"ServiceTableRow\")][1]");
 
 		clickOnGoToLast();
 
@@ -1096,7 +1096,7 @@ public class CarrierServicePO extends TestBaseSteven {
 
 		refresh();
 
-		visibilityOfElementXpath("//tr[contains(@id,\"ServiceTableRow\")][1]");
+		visibilityOfElement("//tr[contains(@id,\"ServiceTableRow\")][1]");
 
 		clickOnGoToLast();
 
@@ -1155,7 +1155,7 @@ public class CarrierServicePO extends TestBaseSteven {
 
 		refresh();
 
-		visibilityOfElementXpath("//tr[contains(@id,\"ServiceTableRow\")][1]");
+		visibilityOfElement("//tr[contains(@id,\"ServiceTableRow\")][1]");
 
 		clickOnGoToLast();
 
@@ -1205,7 +1205,7 @@ public class CarrierServicePO extends TestBaseSteven {
 
 		refresh();
 
-		visibilityOfElementXpath("//tr[contains(@id,\"ServiceTableRow\")][1]");
+		visibilityOfElement("//tr[contains(@id,\"ServiceTableRow\")][1]");
 
 		clickOnGoToLast();
 
@@ -1311,7 +1311,7 @@ public class CarrierServicePO extends TestBaseSteven {
 
 		refresh();
 
-		visibilityOfElementXpath("//tr[contains(@id,\"ServiceTableRow\")][1]");
+		visibilityOfElement("//tr[contains(@id,\"ServiceTableRow\")][1]");
 
 		clickOnGoToLast();
 
@@ -1377,7 +1377,7 @@ public class CarrierServicePO extends TestBaseSteven {
 
 		refresh();
 
-		visibilityOfElementXpath("//tr[contains(@id,\"ServiceTableRow\")][1]");
+		visibilityOfElement("//tr[contains(@id,\"ServiceTableRow\")][1]");
 
 		clickOnGoToLast();
 
@@ -1428,7 +1428,7 @@ public class CarrierServicePO extends TestBaseSteven {
 
 		refresh();
 
-		visibilityOfElementXpath("//tr[contains(@id,\"ServiceTableRow\")][1]");
+		visibilityOfElement("//tr[contains(@id,\"ServiceTableRow\")][1]");
 
 		clickOnGoToLast();
 
@@ -1530,7 +1530,7 @@ public class CarrierServicePO extends TestBaseSteven {
 
 		refresh();
 
-		visibilityOfElementXpath("//tr[contains(@id,\"ServiceTableRow\")][1]");
+		visibilityOfElement("//tr[contains(@id,\"ServiceTableRow\")][1]");
 
 		clickOnGoToLast();
 
@@ -1595,7 +1595,7 @@ public class CarrierServicePO extends TestBaseSteven {
 
 		refresh();
 
-		visibilityOfElementXpath("//tr[contains(@id,\"ServiceTableRow\")][1]");
+		visibilityOfElement("//tr[contains(@id,\"ServiceTableRow\")][1]");
 
 		clickOnGoToLast();
 
@@ -1648,7 +1648,7 @@ public class CarrierServicePO extends TestBaseSteven {
 
 		refresh();
 
-		visibilityOfElementXpath("//tr[contains(@id,\"ServiceTableRow\")][1]");
+		visibilityOfElement("//tr[contains(@id,\"ServiceTableRow\")][1]");
 
 		clickOnGoToLast();
 
@@ -1837,7 +1837,7 @@ public class CarrierServicePO extends TestBaseSteven {
 
 		refresh();
 
-		visibilityOfElementXpath("//tr[contains(@id,\"ServiceTableRow\")][1]");
+		visibilityOfElement("//tr[contains(@id,\"ServiceTableRow\")][1]");
 
 		clickOnGoToLast();
 

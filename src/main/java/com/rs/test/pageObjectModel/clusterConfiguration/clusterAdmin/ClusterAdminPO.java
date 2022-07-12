@@ -77,22 +77,22 @@ public class ClusterAdminPO extends TestBaseSteven {
 
 	public void clickOnGoToFirst() {
 		click(btnGoToFirst);
-		visibilityOfElementXpath("//tr[contains(@id,\"MonitorTable\")][1]");
+		visibilityOfElement("//tr[contains(@id,\"MonitorTable\")][1]");
 	}
 
 	public void clickOnGoToPrevious() {
 		click(btnGoToPrevious);
-		visibilityOfElementXpath("//tr[contains(@id,\"MonitorTable\")][1]");
+		visibilityOfElement("//tr[contains(@id,\"MonitorTable\")][1]");
 	}
 
 	public void clickOnGoToNext() {
 		click(btnGoToNext);
-		visibilityOfElementXpath("//tr[contains(@id,\"MonitorTable\")][1]");
+		visibilityOfElement("//tr[contains(@id,\"MonitorTable\")][1]");
 	}
 
 	public void clickOnGoToLast() {
 		click(btnGoToLast);
-		visibilityOfElementXpath("//tr[contains(@id,\"MonitorTable\")][1]");
+		visibilityOfElement("//tr[contains(@id,\"MonitorTable\")][1]");
 	}
 
 	// Create Methods
@@ -152,7 +152,7 @@ public class ClusterAdminPO extends TestBaseSteven {
 
 		actionsMoveToElementElement(btnGoToFirst);
 		
-		visibilityOfElementXpath("//tr[contains(@id,\"MonitorTable\")][1]");
+		visibilityOfElement("//tr[contains(@id,\"MonitorTable\")][1]");
 
 		clickOnGoToLast();
 		
@@ -169,11 +169,11 @@ public class ClusterAdminPO extends TestBaseSteven {
 		
 		sleep(5000);
 		refresh();
-		visibilityOfElementXpath("//tr[contains(@id,\"MonitorTable\")][1]");
+		visibilityOfElement("//tr[contains(@id,\"MonitorTable\")][1]");
 		
 		clickOnGoToLast();
 		
-		visibilityOfElementXpath("//tr[contains(@id,\"MonitorTable\")][1]");
+		visibilityOfElement("//tr[contains(@id,\"MonitorTable\")][1]");
 		
 		int rowsA = rows("//tr[contains(@id,\"MonitorTable\")]");
 		
@@ -232,11 +232,11 @@ public class ClusterAdminPO extends TestBaseSteven {
 		actionsMoveToElementElement(btnGoToFirst);
 		
 		
-		visibilityOfElementXpath("//tr[contains(@id,\"MonitorTable\")][1]");
+		visibilityOfElement("//tr[contains(@id,\"MonitorTable\")][1]");
 
 		clickOnGoToLast();
 		
-		visibilityOfElementXpath("//tr[contains(@id,\"MonitorTable\")][1]");
+		visibilityOfElement("//tr[contains(@id,\"MonitorTable\")][1]");
 		
 		boolean record = false;
 		
@@ -307,15 +307,15 @@ public class ClusterAdminPO extends TestBaseSteven {
 		click(btnEdit);
 		sleep(5000);
 
-		visibilityOfElementXpath("//tr[contains(@id,\"MonitorTable\")][1]");
+		visibilityOfElement("//tr[contains(@id,\"MonitorTable\")][1]");
 
 		refresh();
 
-		visibilityOfElementXpath("//tr[contains(@id,\"MonitorTable\")][1]");
+		visibilityOfElement("//tr[contains(@id,\"MonitorTable\")][1]");
 		
 		click(btnGoToLast);
 
-		visibilityOfElementXpath("//tr[contains(@id,\"MonitorTable\")][1]");
+		visibilityOfElement("//tr[contains(@id,\"MonitorTable\")][1]");
 		
 		position = getQueuePosition();
 

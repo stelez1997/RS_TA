@@ -86,25 +86,25 @@ public class ClusterClassificationPO extends TestBaseSteven {
 	public void clickOnGoToFirst() {
 		click(btnGoToFirst);
 
-		visibilityOfElementXpath("//tr[contains(@id,\"ClassificationTableRow\")][1]");
+		visibilityOfElement("//tr[contains(@id,\"ClassificationTableRow\")][1]");
 	}
 
 	public void clickOnGoToPrevious() {
 		click(btnGoToPrevious);
 
-		visibilityOfElementXpath("//tr[contains(@id,\"ClassificationTableRow\")][1]");
+		visibilityOfElement("//tr[contains(@id,\"ClassificationTableRow\")][1]");
 	}
 
 	public void clickOnGoToNext() {
 		click(btnGoToNext);
 
-		visibilityOfElementXpath("//tr[contains(@id,\"ClassificationTableRow\")][1]");
+		visibilityOfElement("//tr[contains(@id,\"ClassificationTableRow\")][1]");
 	}
 
 	public void clickOnGoToLast() {
 		click(btnGoToLast);
 
-		visibilityOfElementXpath("//tr[contains(@id,\"ClassificationTableRow\")][1]");
+		visibilityOfElement("//tr[contains(@id,\"ClassificationTableRow\")][1]");
 	}
 
 	// Create Methods
@@ -171,7 +171,7 @@ public class ClusterClassificationPO extends TestBaseSteven {
 
 		refresh();
 
-		visibilityOfElementXpath("//tr[contains(@id,\"ClassificationTableRow\")][1]");
+		visibilityOfElement("//tr[contains(@id,\"ClassificationTableRow\")][1]");
 		clickOnGoToLast();
 
 		int rowsA = rows("//tr[contains(@id,\"ClassificationTableRow\")]");
@@ -275,15 +275,15 @@ public class ClusterClassificationPO extends TestBaseSteven {
 
 		click(btnEdit);
 
-		visibilityOfElementXpath("//tr[contains(@id,\"ClassificationTableRow\")][1]");
+		visibilityOfElement("//tr[contains(@id,\"ClassificationTableRow\")][1]");
 
 		refresh();
 
-		visibilityOfElementXpath("//tr[contains(@id,\"ClassificationTableRow\")][1]");
+		visibilityOfElement("//tr[contains(@id,\"ClassificationTableRow\")][1]");
 
 		click(btnGoToLast);
 
-		visibilityOfElementXpath("//tr[contains(@id,\"ClassificationTableRow\")][1]");
+		visibilityOfElement("//tr[contains(@id,\"ClassificationTableRow\")][1]");
 
 		String nameA = getText("//tr[contains(@id,\"ClassificationTableRow\")][" + rows + "]/td[3]/div");
 		String descriptionA = getText("//tr[contains(@id,\"ClassificationTableRow\")][" + rows + "]/td[4]/div");
@@ -323,11 +323,11 @@ public class ClusterClassificationPO extends TestBaseSteven {
 		
 		refresh();
 
-		visibilityOfElementXpath("//tr[contains(@id,\"ClassificationTableRow\")][1]");
+		visibilityOfElement("//tr[contains(@id,\"ClassificationTableRow\")][1]");
 
 		click(btnGoToLast);
 
-		visibilityOfElementXpath("//tr[contains(@id,\"ClassificationTableRow\")][1]");
+		visibilityOfElement("//tr[contains(@id,\"ClassificationTableRow\")][1]");
 
 		rows = rows("//tr[contains(@id,\"ClassificationTableRow\")]");
 

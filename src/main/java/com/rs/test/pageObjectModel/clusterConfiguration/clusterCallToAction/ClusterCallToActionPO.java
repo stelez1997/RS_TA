@@ -120,22 +120,22 @@ public class ClusterCallToActionPO extends TestBaseSteven {
 
 	public void clickOnGoToFirst() {
 		click(btnGoToFirst);
-		visibilityOfElementXpath("//tr[contains(@id,\"Cluster Call To ActionTableRow\")][1]");
+		visibilityOfElement("//tr[contains(@id,\"Cluster Call To ActionTableRow\")][1]");
 	}
 
 	public void clickOnGoToPrevious() {
 		click(btnGoToPrevious);
-		visibilityOfElementXpath("//tr[contains(@id,\"Cluster Call To ActionTableRow\")][1]");
+		visibilityOfElement("//tr[contains(@id,\"Cluster Call To ActionTableRow\")][1]");
 	}
 
 	public void clickOnGoToNext() {
 		click(btnGoToNext);
-		visibilityOfElementXpath("//tr[contains(@id,\"Cluster Call To ActionTableRow\")][1]");
+		visibilityOfElement("//tr[contains(@id,\"Cluster Call To ActionTableRow\")][1]");
 	}
 
 	public void clickOnGoToLast() {
 		click(btnGoToLast);
-		visibilityOfElementXpath("//tr[contains(@id,\"Cluster Call To ActionTableRow\")][1]");
+		visibilityOfElement("//tr[contains(@id,\"Cluster Call To ActionTableRow\")][1]");
 	}
 
 	// Create Methods
@@ -271,7 +271,7 @@ public class ClusterCallToActionPO extends TestBaseSteven {
 
 		refresh();
 
-		visibilityOfElementXpath("//tr[contains(@id,\"Cluster Call To ActionTableRow\")][1]");
+		visibilityOfElement("//tr[contains(@id,\"Cluster Call To ActionTableRow\")][1]");
 
 		clickOnGoToLast();
 
@@ -408,11 +408,11 @@ public class ClusterCallToActionPO extends TestBaseSteven {
 
 		refresh();
 
-		visibilityOfElementXpath("//tr[contains(@id,\"Cluster Call To ActionTableRow\")][1]");
+		visibilityOfElement("//tr[contains(@id,\"Cluster Call To ActionTableRow\")][1]");
 
 		click(btnGoToLast);
 
-		visibilityOfElementXpath("//tr[contains(@id,\"Cluster Call To ActionTableRow\")][1]");
+		visibilityOfElement("//tr[contains(@id,\"Cluster Call To ActionTableRow\")][1]");
 		
 
 		fillOutSearchSenderID(senderIDEdition);
@@ -444,7 +444,7 @@ public class ClusterCallToActionPO extends TestBaseSteven {
 		
 		refresh();
 
-		visibilityOfElementXpath("//tr[contains(@id,\"Cluster Call To ActionTableRow\")][1]");
+		visibilityOfElement("//tr[contains(@id,\"Cluster Call To ActionTableRow\")][1]");
 
 	}
 
@@ -499,11 +499,11 @@ public class ClusterCallToActionPO extends TestBaseSteven {
 
 		refresh();
 
-		visibilityOfElementXpath("//tr[contains(@id,\"Cluster Call To ActionTableRow\")][1]");
+		visibilityOfElement("//tr[contains(@id,\"Cluster Call To ActionTableRow\")][1]");
 
 		click(btnGoToLast);
 
-		visibilityOfElementXpath("//tr[contains(@id,\"Cluster Call To ActionTableRow\")][1]");
+		visibilityOfElement("//tr[contains(@id,\"Cluster Call To ActionTableRow\")][1]");
 
 		int rowsA = rows("//tr[contains(@id,\"Cluster Call To ActionTableRow\")]");
 

@@ -56,7 +56,7 @@ public class ChangeSetPO extends TestBaseSteven {
 	@FindBy(xpath = "//input[@name=\"description\"]")
 	public WebElement txtDescription;
 	
-	@FindBy(xpath = "//tr[contains(@id, \"SetInputRow\")]//div[@class=\"react-datepicker__input-container\"]")
+	@FindBy(xpath = "//tr[contains(@id, \"SetInputRow\")]//div[@class=\"react-datepicker__input-container\"]/input")
 	public WebElement dtpScheduled;
 	
 	@FindBy(xpath = "//div[@aria-selected=\"true\"]")
@@ -133,9 +133,9 @@ public class ChangeSetPO extends TestBaseSteven {
 		click(dtpScheduled);
 		sleep(1000);
 		click(dtpScheduledO);
-		dtpScheduledText = getText(dtpScheduled);
-		
-		
+		dtpScheduledText = getAttribute(dtpScheduled, "value");
+		System.out.println("The Date selected is: "+dtpScheduledText);
+
 	}
 
 
@@ -176,9 +176,9 @@ public class ChangeSetPO extends TestBaseSteven {
 		clickOnChangeSetMenu();
 
 		actionsMoveToElementElement(btnAddChangeSet);
-
-		clickOnGoToLast();
-
+		
+		waitExpectedElement("//tr[contains(@id,\"SetTable\")][1]");
+		
 		int rowsB = rows("//tr[contains(@id,\"SetTable\")]");
 		
 		selectHubID();
@@ -193,35 +193,35 @@ public class ChangeSetPO extends TestBaseSteven {
 
 		refresh();
 		
-		invisibilityOfElement("//tr[contains(@id,\"SetTable\")][1]");
-
-		clickOnGoToLast();
+		visibilityOfElement("//tr[contains(@id,\"SetTable\")][1]");
 		
 		int rowsA = rows("//tr[contains(@id,\"SetTable\")]");
 		
 		String hubIDA = getText("//tr[contains(@id,\"SetTable\")][1]/td[2]");
 		String caseNameA = getText("//tr[contains(@id,\"SetTable\")][1]/td[3]");
 		String descriptionA = getText("//tr[contains(@id,\"SetTable\")][1]/td[4]");
-		String scheduledA = getText("//tr[contains(@id,\"SetTable\")][1]/td[4]");
-	
+		String scheduledA = getText("//tr[contains(@id,\"SetTable\")][1]/td[9]");
+		scheduledA = split(scheduledA, ",", 0);
+		System.out.println("Split date: "+scheduledA);
+		scheduledA = changeDateFormat(scheduledA, "dd/MM/yyyy", "MM/dd/yyyy");
+		
+		
 		System.out.println("--------------------------------Creation Verification-------------------------");
 		System.out.println("Options Entered--------");
 		System.out.println("The Hub Id is: " + cboHubIdText);
 		System.out.println("The Case is: " + caseName);
 		System.out.println("The Description is: " + description);
+		System.out.println("The Scheduled Date is: " + dtpScheduledText);
+	
 		System.out.println("Information After Creation--------");
 		System.out.println("The Hub Id is: " + hubIDA);
 		System.out.println("The Case is: " + caseNameA);
 		System.out.println("The Description is: " + descriptionA);
-
-		boolean created = greaterThanInt(rowsA, rowsB);
-		assertTrue(created, createdUnSuccesfully);
+		System.out.println("The Scheduled Date is: " + scheduledA);
 		
-		System.out.println("Record created: " + created);
+		boolean created = false;
 		
-		created = false;
-		
-		if (hubIDA.equals(cboHubIdText) && caseNameA.equals(caseName) && descriptionA.equals(description)) {
+		if (hubIDA.equals(cboHubIdText) && caseNameA.equals(caseName) && descriptionA.equals(description) && dtpScheduledText.equals(scheduledA)) {
 			created = true;
 		}
 
@@ -235,7 +235,7 @@ public class ChangeSetPO extends TestBaseSteven {
 
 	// Verfication before editing or deleting the record
 
-	public int verification() {
+	public void verification() {
 
 		loginVerificationPO = new LoginVerificationPO();
 
@@ -244,50 +244,84 @@ public class ChangeSetPO extends TestBaseSteven {
 		clickOnChangeSetMenu();
 
 		actionsMoveToElementElement(btnAddChangeSet);
-
-		clickOnGoToLast();
-
-		int rows = rows("//tr[contains(@id,\"SetTable\")]");
-		boolean record = false;
-		int j = 1;
-		for (int i = 0; i < rows; i++) {
-
-			String billClass = getText("//tr[contains(@id,\"SetTable\")][" + j + "]/td[3]/div");
-
-
-			if (billClass.equals(this.caseName)) {
-				System.out.println("Creation Record Displayed at Position: " + j);
-				record = true;
-				assertTrue(record, testRecord);
-				break;
-			}
-
-			j++;
-
+		
+		visibilityOfElement("//tr[contains(@id,\"SetTable\")][1]");
+		
+		String caseNameV = getText("//tr[contains(@id,\"SetTable\")][1]/td[3]");
+		
+		boolean creationRecord = false;
+		
+		if (caseNameV.contains(caseName)) {
+			creationRecord = true;
 		}
 
-		if (record != true) {
-			System.out.println(creationRecord);
-		}
-
-		return j;
+		assertTrue(creationRecord, this.creationRecord);
 
 	}
 	
-	public void editBillClass() {
+	public void editChangeSet() {
 
-			assertTrue(false, pendingToBeAutomated);
-		
+			verification();
+			
+			WebElement btnEdit = findElement("//tr[contains(@id,\"SetTable\")][1]//button[contains(@id,\"edit\")]");
+			click(btnEdit);
+			
+			String descriptionEdit = "TATest1";
+			
+			WebElement txtDescriptionE = findElement("//tr[contains(@id,\"SetTable\")][1]//input[contains(@id,\"description\")]");
+			WebElement dtpScheduledE = findElement("//tr[contains(@id,\"SetTable\")][1]//div[@class=\"react-datepicker-wrapper\"]//input");
+			
+			clearByBackSpace(txtDescriptionE);
+			sendKeys(txtDescriptionE, descriptionEdit);
+			
+			click(dtpScheduledE);
+			sleep(1000);
+			WebElement dtpScheduledEO = findElement("//div[@aria-selected=\"true\"]//following-sibling::div[1]");
+			click(dtpScheduledEO);
+			dtpScheduledText = getAttribute(dtpScheduledE, "value");
+			System.out.println("The Date selected is: "+dtpScheduledText);
+			
+			click(btnEdit);
+			sleep(5000);
+			
+			refresh();
+			
+			visibilityOfElement("//tr[contains(@id,\"SetTable\")][1]");
+			
+			
+			String descriptionA = getText("//tr[contains(@id,\"SetTable\")][1]/td[4]");
+			String scheduledA = getText("//tr[contains(@id,\"SetTable\")][1]/td[9]");
+			scheduledA = split(scheduledA, ",", 0);
+			System.out.println("Split date: "+scheduledA);
+			scheduledA = changeDateFormat(scheduledA, "dd/MM/yyyy", "MM/dd/yyyy");
+			
+			
+			System.out.println("--------------------------------Edition Verification-------------------------");
+			System.out.println("Options Entered--------");
+			System.out.println("The Description is: " + descriptionEdit);
+			System.out.println("The Scheduled Date is: " + dtpScheduledText);
+			System.out.println("Information After Creation--------");
+			System.out.println("The Description is: " + descriptionA);
+			System.out.println("The Scheduled Date is: " + scheduledA);
+			
+			boolean edited = false;
+			
+			if (descriptionA.equals(descriptionEdit) && scheduledA.equals(dtpScheduledText)) {
+				edited = true;
+			}
+
+			System.out.println("Record edited succesfully: "+edited);
+			assertTrue(edited, editionRecord);
+				
 
 	}
 
-	public void deleteBillClass() {
+	public void deleteChangeSet() {
 
-		int position = verification();
-		int rowsB = rows("//tr[contains(@id,\"SetTable\")]");
-
-		WebElement btnDelete = findElement(
-				"//tr[contains(@id,\"SetTable\")][" + position + "]//child::button[contains(@id,\"delete\")]");
+		verification();
+		
+		String descriptionB = getText("//tr[contains(@id,\"SetTable\")][1]/td[4]");
+		WebElement btnDelete = findElement("//tr[contains(@id,\"SetTable\")][1]//child::button[contains(@id,\"delete\")]");
 
 		click(btnDelete);
 		sleep(5000);
@@ -295,17 +329,24 @@ public class ChangeSetPO extends TestBaseSteven {
 		refresh();
 
 		waitExpectedElement("//tr[contains(@id,\"SetTable\")]");
+		
+		String descriptionA = getText("//tr[contains(@id,\"SetTable\")][1]/td[4]");
+		
+		System.out.println("--------------------------------Creation Verification-------------------------");
+		System.out.println("Options Entered--------");
+		System.out.println("The Description before edition is: " + descriptionB);
+		System.out.println("Information After Creation--------");
+		System.out.println("The Description after edition is: " + descriptionA);
+		
+		boolean deleted = false;
+		
+		if (!descriptionA.equals(descriptionB) ) {
+			deleted = true;
+		}
 
-		clickOnGoToLast();
-
-		int rowsA = rows("//tr[contains(@id,\"SetTable\")]");
-
-		boolean deleted = greaterThanInt(rowsB, rowsA);
-
+		System.out.println("Record deleted succesfully: "+deleted);
 		assertTrue(deleted, deletionRecord);
-		System.out.println("Record deleted: " + deleted);
 
 	}
-
 	
 }

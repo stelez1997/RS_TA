@@ -78,7 +78,7 @@ public class CountryCodesPO extends TestBaseSteven {
 	public void clickOnGoToLast() {
 		click(btnGoToLast);
 
-		visibilityOfElementXpath("//tr[contains(@id,\"CodesTableRow\")]");
+		visibilityOfElement("//tr[contains(@id,\"CodesTableRow\")]");
 	}
 
 	// Create Methods
@@ -134,7 +134,7 @@ public class CountryCodesPO extends TestBaseSteven {
 
 		refresh();
 
-		visibilityOfElementXpath("//tr[contains(@id,\"CodesTableRow\")]");
+		visibilityOfElement("//tr[contains(@id,\"CodesTableRow\")]");
 
 		clickOnGoToLast();
 
@@ -173,7 +173,7 @@ public class CountryCodesPO extends TestBaseSteven {
 		
 		refresh();
 		
-		visibilityOfElementXpath("//tr[contains(@id,\"CodesTableRow\")][1]");
+		visibilityOfElement("//tr[contains(@id,\"CodesTableRow\")][1]");
 
 		loginVerificationPO = new LoginVerificationPO();
 
@@ -232,15 +232,15 @@ public class CountryCodesPO extends TestBaseSteven {
 
 		click(btnEdit);
 
-		visibilityOfElementXpath("//tr[contains(@id,\"CodesTableRow\")]");
+		visibilityOfElement("//tr[contains(@id,\"CodesTableRow\")]");
 
 		refresh();
 
-		visibilityOfElementXpath("//tr[contains(@id,\"CodesTableRow\")]");
+		visibilityOfElement("//tr[contains(@id,\"CodesTableRow\")]");
 
 		click(btnGoToLast);
 
-		visibilityOfElementXpath("//tr[contains(@id,\"CodesTableRow\")]");
+		visibilityOfElement("//tr[contains(@id,\"CodesTableRow\")]");
 
 		String codeA = getText("//tr[contains(@id,\"CodesTableRow\")][" + rows + "]/td[2]/div");
 		String CountryA = getText("//tr[contains(@id,\"CodesTableRow\")][" + rows + "]/td[3]/div");
@@ -276,11 +276,11 @@ public class CountryCodesPO extends TestBaseSteven {
 
 		refresh();
 
-		visibilityOfElementXpath("//tr[contains(@id,\"CodesTableRow\")]");
+		visibilityOfElement("//tr[contains(@id,\"CodesTableRow\")]");
 
 		click(btnGoToLast);
 
-		visibilityOfElementXpath("//tr[contains(@id,\"CodesTableRow\")]");
+		visibilityOfElement("//tr[contains(@id,\"CodesTableRow\")]");
 
 		rows = rows("//tr[contains(@id,\"CodesTableRow\")]");
 
@@ -321,11 +321,11 @@ public class CountryCodesPO extends TestBaseSteven {
 
 		click(btnAddPrefix);
 
-		visibilityOfElementXpath("//tr[contains(@id,\"CodesTableRow\")][1]");
+		visibilityOfElement("//tr[contains(@id,\"CodesTableRow\")][1]");
 
 		refresh();
 
-		visibilityOfElementXpath("//tr[contains(@id,\"CodesTableRow\")][1]");
+		visibilityOfElement("//tr[contains(@id,\"CodesTableRow\")][1]");
 
 		clickOnGoToLast();
 
@@ -405,11 +405,11 @@ public class CountryCodesPO extends TestBaseSteven {
 
 		refresh();
 
-		visibilityOfElementXpath("//tr[contains(@id,\"CodesTableRow\")][1]");
+		visibilityOfElement("//tr[contains(@id,\"CodesTableRow\")][1]");
 
 		click(btnGoToLast);
 
-		visibilityOfElementXpath("//tr[contains(@id,\"CodesTableRow\")][1]");
+		visibilityOfElement("//tr[contains(@id,\"CodesTableRow\")][1]");
 
 		rows = rows("//tr[contains(@id,\"CodesTableRow\")]");
 
@@ -463,13 +463,13 @@ public class CountryCodesPO extends TestBaseSteven {
 
 		refresh();
 
-		visibilityOfElementXpath("//tr[contains(@id,\"CodesTableRow\")][1]");
+		visibilityOfElement("//tr[contains(@id,\"CodesTableRow\")][1]");
 
 		click(btnGoToLast);
 
 		rows = rows("//tr[contains(@id,\"CodesTableRow\")]");
 
-		visibilityOfElementXpath("//tr[contains(@id,\"CodesTableRow\")][1]");
+		visibilityOfElement("//tr[contains(@id,\"CodesTableRow\")][1]");
 
 		
 		btnModal = findElement(
@@ -527,7 +527,7 @@ public class CountryCodesPO extends TestBaseSteven {
 		}
 		
 		refresh();
-		visibilityOfElementXpath("//tr[contains(@id,\"CodesTableRow\")][1]");
+		visibilityOfElement("//tr[contains(@id,\"CodesTableRow\")][1]");
 
 	}
 
