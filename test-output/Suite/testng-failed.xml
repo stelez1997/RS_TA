@@ -26,45 +26,6 @@
       </class> <!-- com.rs.test.configuration.messageAggregators.MessageAggregators -->
     </classes>
   </test> <!-- Message Aggregators(failed) -->
-  <test thread-count="5" name="Action Templates(failed)">
-    <classes>
-      <class name="com.rs.test.configuration.actionTemplates.ActionTemplates">
-        <methods>
-          <include name="createActionTemplate"/>
-          <include name="afterTest"/>
-          <include name="deleteActionTemplate"/>
-          <include name="editActionTemplate"/>
-          <include name="beforeTest"/>
-        </methods>
-      </class> <!-- com.rs.test.configuration.actionTemplates.ActionTemplates -->
-    </classes>
-  </test> <!-- Action Templates(failed) -->
-  <test thread-count="5" name="Character Encoding(failed)">
-    <classes>
-      <class name="com.rs.test.configuration.characterEncoding.CharacterEncoding">
-        <methods>
-          <include name="createCustomEncodeCodePoint"/>
-          <include name="deleteCustomEncodeCodePoint"/>
-          <include name="beforeTest"/>
-          <include name="editCustomEncodeCodePoint"/>
-          <include name="afterTest"/>
-        </methods>
-      </class> <!-- com.rs.test.configuration.characterEncoding.CharacterEncoding -->
-    </classes>
-  </test> <!-- Character Encoding(failed) -->
-  <test thread-count="5" name="Cluster Call to Action(failed)">
-    <classes>
-      <class name="com.rs.test.clusterConfiguration.clusterCallToAction.ClusterCallToAction">
-        <methods>
-          <include name="createClusterCallToAction"/>
-          <include name="beforeTest"/>
-          <include name="deleteClusterCallToAction"/>
-          <include name="afterTest"/>
-          <include name="editClusterCallToAction"/>
-        </methods>
-      </class> <!-- com.rs.test.clusterConfiguration.clusterCallToAction.ClusterCallToAction -->
-    </classes>
-  </test> <!-- Cluster Call to Action(failed) -->
   <test thread-count="5" name="Cluster Route Rules(failed)">
     <classes>
       <class name="com.rs.test.clusterConfiguration.clusterRouteRules.ClusterRouteRules">

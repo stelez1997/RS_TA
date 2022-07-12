@@ -6,10 +6,8 @@
       <class name="com.rs.test.messageClassification.ChangeSet.ChangeSet">
         <methods>
           <include name="beforeTest"/>
-          <include name="editChangeSet"/>
-          <include name="createChangeSet"/>
+          <include name="createChangeSetMessageClassification"/>
           <include name="afterTest"/>
-          <include name="deleteChangeSet"/>
         </methods>
       </class> <!-- com.rs.test.messageClassification.ChangeSet.ChangeSet -->
     </classes>
