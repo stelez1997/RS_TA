@@ -123,6 +123,13 @@
 		</classes>
 	</test>
 	
+		<test name="Message Classification Change Set">
+		<classes>
+
+			<class name="com.rs.test.messageClassification.ChangeSet.ChangeSet"></class>
+		</classes>
+	</test>
+	
 	
 		<!----><!----><!-- SPAM --><!----><!----><!---->
 
@@ -133,7 +140,8 @@
 			<class name="com.rs.test.spam.carrierTemplate.CarrierTemplate"></class>
 		</classes>
 	</test>
-
+	
+	
 
 
 

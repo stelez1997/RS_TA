@@ -7,6 +7,7 @@ import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.Month;
 import java.time.format.TextStyle;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Date;
@@ -35,8 +36,9 @@ public class TestBaseSteven {
 	// URL
 	protected String url = "http://localhost:3000/";
 	
+	//ArrayList<String> dataE = new ArrayList<String>();
 	//How to include variables on the attributes 
-	//div[@class=\"searchBarElement\"][1]//child::select/option[text()=\"" + data.get(0) + "\"]
+	//WebElement example = findElement("//div[@class=\"searchBarElement\"][1]//child::select/option[text()=\"" + dataE.get(0) + "\"]");
 
 	public static WebDriver driver;
 
@@ -753,6 +755,26 @@ public class TestBaseSteven {
 		assertTrue(false, pendingToBeAutomated);
 	}
 	
+	public void verificateData(ArrayList<String> dataB, ArrayList<String> dataA) {
+		
+		if (dataA.size() == dataB.size()) {
+			
+			for (int i = 0; i < dataA.size(); i++) {
+				
+				if (!dataA.get(i).equals(dataB.get(i))) {
+					assertTrue(false, createdSuccesfully);
+				}
+				
+			}
+		}else {
+			
+			assertTrue(false, errorData);
+
+		}
+		
+	}
+
+	
 	
 	public void close() {
 		
@@ -772,6 +794,7 @@ public class TestBaseSteven {
 	public String testRecord ="The testing record is being displayed";
 	public String filtersNotWorking ="The filters are not working as expected";
 	public String pendingToBeAutomated ="This page is not automated yet, due to a bug";
+	public String errorData ="The data in the arrays is not equal";
 	public String testUser ="TESTUSER";
 	
 	

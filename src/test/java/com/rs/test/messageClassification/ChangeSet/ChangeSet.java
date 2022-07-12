@@ -34,21 +34,42 @@ public class ChangeSet extends TestBaseSteven {
 
 	}
 	
-	@Test(dependsOnMethods = "createChangeSet", priority = 0)
+	@Test(dependsOnMethods = "createChangeSet", priority = 1)
 	public void editChangeSet() {
 
 		changeSetPO.editChangeSet();
 
 	}
 	
-	@Test(dependsOnMethods = "createChangeSet", priority = 1)
+	@Test(dependsOnMethods = "createChangeSet", priority = 2)
+	public void createChangeSetMessageClassification() {
+
+		changeSetPO.createChangeSetMessageClassification();
+
+	}
+	
+
+	@Test(dependsOnMethods = "createChangeSetMessageClassification", priority = 3)
+	public void editChangeSetMessageClassification() {
+
+		changeSetPO.editChangeSetMessageClassification();
+
+	}
+	
+	@Test(dependsOnMethods = "createChangeSetMessageClassification", priority = 4)
+	public void deleteChangeSetMessageClassification() {
+
+		changeSetPO.deleteChangeSetMessageClassification();
+
+	}
+	
+	@Test(dependsOnMethods = "createChangeSet", priority = 5)
 	public void deleteChangeSet() {
 
 		changeSetPO.deleteChangeSet();
 
 	}
 	
-
 	@AfterTest
 	public void afterTest() {
 
