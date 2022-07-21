@@ -26,7 +26,7 @@
       <span class="top-banner-title-font">Test results</span>
       <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">1 suite, 1 failed test</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -40,7 +40,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" panel-name="suite-Default_suite" class="navigator-link">
-              <span class="suite-name border-passed">Default suite</span>
+              <span class="suite-name border-failed">Default suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -51,7 +51,7 @@
               <ul>
                 <li>
                   <a href="#" panel-name="test-xml-Default_suite" class="navigator-link ">
-                    <span>C:\Users\stelez\AppData\Local\Temp\testng-eclipse-824675043\testng-customsuite.xml</span>
+                    <span>C:\Users\ankver\AppData\Local\Temp\testng-eclipse--1805854367\testng-customsuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -93,56 +93,40 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">8 methods,   8 passed</span>
+                    <span class="method-stats">3 methods, 1 failed,  2 skipped,  </span>
                   </li>
                   <li>
-                    <span class="method-list-title passed">Passed methods</span>
-                    <span class="show-or-hide-methods passed">
-                      <a href="#" panel-name="suite-Default_suite" class="hide-methods passed suite-Default_suite"> (hide)</a> <!-- hide-methods passed suite-Default_suite -->
-                      <a href="#" panel-name="suite-Default_suite" class="show-methods passed suite-Default_suite"> (show)</a> <!-- show-methods passed suite-Default_suite -->
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-Default_suite" class="hide-methods failed suite-Default_suite"> (hide)</a> <!-- hide-methods failed suite-Default_suite -->
+                      <a href="#" panel-name="suite-Default_suite" class="show-methods failed suite-Default_suite"> (show)</a> <!-- show-methods failed suite-Default_suite -->
                     </span>
-                    <div class="method-list-content passed suite-Default_suite">
+                    <div class="method-list-content failed suite-Default_suite">
                       <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="com.rs.test.clusterConfiguration.clusterRouteRules.ClusterRouteRules" class="method navigator-link" hash-for-method="createISMSClusterRouteRules">createISMSClusterRouteRules</a> <!-- method navigator-link -->
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="com.rs.test.spam.SpamTemplate.SpamTemplate$OADCRules" class="method navigator-link" hash-for-method="createSpamTemp">createSpamTemp</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content failed suite-Default_suite -->
+                  </li>
+                  <li>
+                    <span class="method-list-title skipped">Skipped methods</span>
+                    <span class="show-or-hide-methods skipped">
+                      <a href="#" panel-name="suite-Default_suite" class="hide-methods skipped suite-Default_suite"> (hide)</a> <!-- hide-methods skipped suite-Default_suite -->
+                      <a href="#" panel-name="suite-Default_suite" class="show-methods skipped suite-Default_suite"> (show)</a> <!-- show-methods skipped suite-Default_suite -->
+                    </span>
+                    <div class="method-list-content skipped suite-Default_suite">
+                      <span>
+                        <img src="skipped.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="com.rs.test.spam.SpamTemplate.SpamTemplate$OADCRules" class="method navigator-link" hash-for-method="deleteSpamTemp">deleteSpamTemp</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="com.rs.test.clusterConfiguration.clusterRouteRules.ClusterRouteRules" class="method navigator-link" hash-for-method="createSMSXClusterRouteRules">createSMSXClusterRouteRules</a> <!-- method navigator-link -->
+                        <img src="skipped.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="com.rs.test.spam.SpamTemplate.SpamTemplate$OADCRules" class="method navigator-link" hash-for-method="editSpamTemp">editSpamTemp</a> <!-- method navigator-link -->
                       </span>
                       <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="com.rs.test.clusterConfiguration.clusterRouteRules.ClusterRouteRules" class="method navigator-link" hash-for-method="deleteISMSClusterRouteRules">deleteISMSClusterRouteRules</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="com.rs.test.clusterConfiguration.clusterRouteRules.ClusterRouteRules" class="method navigator-link" hash-for-method="deleteSMSXClusterRouteRules">deleteSMSXClusterRouteRules</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="com.rs.test.clusterConfiguration.clusterRouteRules.ClusterRouteRules" class="method navigator-link" hash-for-method="editISMSClusterRouteRules">editISMSClusterRouteRules</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="com.rs.test.clusterConfiguration.clusterRouteRules.ClusterRouteRules" class="method navigator-link" hash-for-method="editSMSXClusterRouteRules">editSMSXClusterRouteRules</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="com.rs.test.clusterConfiguration.clusterRouteRules.ClusterRouteRules" class="method navigator-link" hash-for-method="filtersISMSClusterRouteRules">filtersISMSClusterRouteRules</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="com.rs.test.clusterConfiguration.clusterRouteRules.ClusterRouteRules" class="method navigator-link" hash-for-method="filtersSMSxClusterRouteRules">filtersSMSxClusterRouteRules</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                    </div> <!-- method-list-content passed suite-Default_suite -->
+                    </div> <!-- method-list-content skipped suite-Default_suite -->
                   </li>
                 </ul>
               </div> <!-- suite-section-content -->
@@ -154,74 +138,151 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Default_suite" class="panel Default_suite">
-          <div class="suite-Default_suite-class-passed">
+          <div class="suite-Default_suite-class-failed">
             <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
-              <span class="class-name">com.rs.test.clusterConfiguration.clusterRouteRules.ClusterRouteRules</span>
+              <img src="failed.png"/>
+              <span class="class-name">com.rs.test.spam.SpamTemplate.SpamTemplate$OADCRules</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="createISMSClusterRouteRules">
-                  </a> <!-- createISMSClusterRouteRules -->
-                  <span class="method-name">createISMSClusterRouteRules</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="createSMSXClusterRouteRules">
-                  </a> <!-- createSMSXClusterRouteRules -->
-                  <span class="method-name">createSMSXClusterRouteRules</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="deleteISMSClusterRouteRules">
-                  </a> <!-- deleteISMSClusterRouteRules -->
-                  <span class="method-name">deleteISMSClusterRouteRules</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="deleteSMSXClusterRouteRules">
-                  </a> <!-- deleteSMSXClusterRouteRules -->
-                  <span class="method-name">deleteSMSXClusterRouteRules</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="editISMSClusterRouteRules">
-                  </a> <!-- editISMSClusterRouteRules -->
-                  <span class="method-name">editISMSClusterRouteRules</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="editSMSXClusterRouteRules">
-                  </a> <!-- editSMSXClusterRouteRules -->
-                  <span class="method-name">editSMSXClusterRouteRules</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="filtersISMSClusterRouteRules">
-                  </a> <!-- filtersISMSClusterRouteRules -->
-                  <span class="method-name">filtersISMSClusterRouteRules</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="filtersSMSxClusterRouteRules">
-                  </a> <!-- filtersSMSxClusterRouteRules -->
-                  <span class="method-name">filtersSMSxClusterRouteRules</span>
+                  <a name="createSpamTemp">
+                  </a> <!-- createSpamTemp -->
+                  <span class="method-name">createSpamTemp</span>
+                  <div class="stack-trace">org.openqa.selenium.WebDriverException: chrome not reachable
+  (Session info: chrome=103.0.5060.114)
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;WIN-31811410113&apos;, ip: &apos;10.186.244.24&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;11.0.12&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 103.0.5060.114, chrome: {chromedriverVersion: 103.0.5060.53 (a1711811edd7..., userDataDir: C:\Users\ankver\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:56148}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 897905febd63f505ff759541ac75316d
+*** Element info: {Using=xpath, value=//tr[contains(@id,&quot;Spam Change SetTableRow1&quot;)}
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:205)
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:201)
+	at org.openqa.selenium.support.ui.ExpectedConditions$22.apply(ExpectedConditions.java:641)
+	at org.openqa.selenium.support.ui.ExpectedConditions$22.apply(ExpectedConditions.java:638)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
+	at com.rs.test.base.TestBaseSteven.waitExpectedElement(TestBaseSteven.java:297)
+	at com.rs.test.pageObjectModel.spam.SpamTemplate.SpamTemplatePO.createSpamTemp(SpamTemplatePO.java:154)
+	at com.rs.test.spam.SpamTemplate.SpamTemplate$OADCRules.createSpamTemp(SpamTemplate.java:34)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.testng.TestRunner.privateRun(TestRunner.java:794)
+	at org.testng.TestRunner.run(TestRunner.java:596)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+	at org.testng.TestNG.runSuites(TestNG.java:1063)
+	at org.testng.TestNG.run(TestNG.java:1031)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+
+</div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Default_suite-class-passed -->
+          </div> <!-- suite-Default_suite-class-failed -->
+          <div class="suite-Default_suite-class-skipped">
+            <div class="main-panel-header rounded-window-top">
+              <img src="skipped.png"/>
+              <span class="class-name">com.rs.test.spam.SpamTemplate.SpamTemplate$OADCRules</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="deleteSpamTemp">
+                  </a> <!-- deleteSpamTemp -->
+                  <span class="method-name">deleteSpamTemp</span>
+                  <div class="stack-trace">java.lang.Throwable: Method SpamTemplate$OADCRules.deleteSpamTemp()[pri:2, instance:com.rs.test.spam.SpamTemplate.SpamTemplate$OADCRules@316bcf94] depends on not successfully finished methods
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:102)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.testng.TestRunner.privateRun(TestRunner.java:794)
+	at org.testng.TestRunner.run(TestRunner.java:596)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+	at org.testng.TestNG.runSuites(TestNG.java:1063)
+	at org.testng.TestNG.run(TestNG.java:1031)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="editSpamTemp">
+                  </a> <!-- editSpamTemp -->
+                  <span class="method-name">editSpamTemp</span>
+                  <div class="stack-trace">java.lang.Throwable: Method SpamTemplate$OADCRules.editSpamTemp()[pri:1, instance:com.rs.test.spam.SpamTemplate.SpamTemplate$OADCRules@316bcf94] depends on not successfully finished methods
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:102)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.testng.TestRunner.privateRun(TestRunner.java:794)
+	at org.testng.TestRunner.run(TestRunner.java:596)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+	at org.testng.TestNG.runSuites(TestNG.java:1063)
+	at org.testng.TestNG.run(TestNG.java:1031)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Default_suite-class-skipped -->
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\stelez\AppData\Local\Temp\testng-eclipse-824675043\testng-customsuite.xml</span>
+            <span class="header-content">C:\Users\ankver\AppData\Local\Temp\testng-eclipse--1805854367\testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -230,7 +291,7 @@
 &lt;suite name=&quot;Default suite&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
   &lt;test thread-count=&quot;5&quot; name=&quot;Default test&quot; verbose=&quot;2&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;com.rs.test.clusterConfiguration.clusterRouteRules.ClusterRouteRules&quot;/&gt;
+      &lt;class name=&quot;com.rs.test.spam.SpamTemplate.SpamTemplate&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Default test --&gt;
 &lt;/suite&gt; &lt;!-- Default suite --&gt;
@@ -270,44 +331,24 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(8);
+data.addRows(3);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'createISMSClusterRouteRules')
-data.setCell(0, 2, 'com.rs.test.clusterConfiguration.clusterRouteRules.ClusterRouteRules')
-data.setCell(0, 3, 255818);
+data.setCell(0, 1, 'createSpamTemp')
+data.setCell(0, 2, 'com.rs.test.spam.SpamTemplate.SpamTemplate$OADCRules')
+data.setCell(0, 3, 129821);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'filtersSMSxClusterRouteRules')
-data.setCell(1, 2, 'com.rs.test.clusterConfiguration.clusterRouteRules.ClusterRouteRules')
-data.setCell(1, 3, 110540);
+data.setCell(1, 1, 'deleteSpamTemp')
+data.setCell(1, 2, 'com.rs.test.spam.SpamTemplate.SpamTemplate$OADCRules')
+data.setCell(1, 3, 0);
 data.setCell(2, 0, 2)
-data.setCell(2, 1, 'filtersISMSClusterRouteRules')
-data.setCell(2, 2, 'com.rs.test.clusterConfiguration.clusterRouteRules.ClusterRouteRules')
-data.setCell(2, 3, 98169);
-data.setCell(3, 0, 3)
-data.setCell(3, 1, 'editSMSXClusterRouteRules')
-data.setCell(3, 2, 'com.rs.test.clusterConfiguration.clusterRouteRules.ClusterRouteRules')
-data.setCell(3, 3, 89830);
-data.setCell(4, 0, 4)
-data.setCell(4, 1, 'editISMSClusterRouteRules')
-data.setCell(4, 2, 'com.rs.test.clusterConfiguration.clusterRouteRules.ClusterRouteRules')
-data.setCell(4, 3, 72020);
-data.setCell(5, 0, 5)
-data.setCell(5, 1, 'createSMSXClusterRouteRules')
-data.setCell(5, 2, 'com.rs.test.clusterConfiguration.clusterRouteRules.ClusterRouteRules')
-data.setCell(5, 3, 65397);
-data.setCell(6, 0, 6)
-data.setCell(6, 1, 'deleteSMSXClusterRouteRules')
-data.setCell(6, 2, 'com.rs.test.clusterConfiguration.clusterRouteRules.ClusterRouteRules')
-data.setCell(6, 3, 41432);
-data.setCell(7, 0, 7)
-data.setCell(7, 1, 'deleteISMSClusterRouteRules')
-data.setCell(7, 2, 'com.rs.test.clusterConfiguration.clusterRouteRules.ClusterRouteRules')
-data.setCell(7, 3, 39396);
+data.setCell(2, 1, 'editSpamTemp')
+data.setCell(2, 2, 'com.rs.test.spam.SpamTemplate.SpamTemplate$OADCRules')
+data.setCell(2, 3, 0);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 12 minutes</span>
+              <span class="suite-total-time">Total running time: 2 minutes</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -333,46 +374,30 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">com.rs.test.clusterConfiguration.clusterRouteRules.ClusterRouteRules</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">com.rs.test.spam.SpamTemplate.SpamTemplate$OADCRules</div> <!-- chronological-class-name -->
               <div class="configuration-test before">
                 <span class="method-name">beforeTest</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-test before -->
               <div class="test-method">
-                <span class="method-name">createSMSXClusterRouteRules</span>
-                <span class="method-start">21695 ms</span>
+                <img src="failed.png">
+                </img>
+                <span class="method-name">createSpamTemp</span>
+                <span class="method-start">21289 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
-                <span class="method-name">editSMSXClusterRouteRules</span>
-                <span class="method-start">87097 ms</span>
+                <span class="method-name">editSpamTemp</span>
+                <span class="method-start">151129 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
-                <span class="method-name">deleteSMSXClusterRouteRules</span>
-                <span class="method-start">176930 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <span class="method-name">createISMSClusterRouteRules</span>
-                <span class="method-start">218364 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <span class="method-name">editISMSClusterRouteRules</span>
-                <span class="method-start">474184 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <span class="method-name">deleteISMSClusterRouteRules</span>
-                <span class="method-start">546206 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <span class="method-name">filtersSMSxClusterRouteRules</span>
-                <span class="method-start">585603 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <span class="method-name">filtersISMSClusterRouteRules</span>
-                <span class="method-start">696144 ms</span>
+                <span class="method-name">deleteSpamTemp</span>
+                <span class="method-start">151133 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-test after">
+                <img src="failed.png">
+                </img>
                 <span class="method-name">afterTest</span>
-                <span class="method-start">794319 ms</span>
+                <span class="method-start">151136 ms</span>
               </div> <!-- configuration-test after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

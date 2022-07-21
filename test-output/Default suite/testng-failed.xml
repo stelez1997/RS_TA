@@ -3,13 +3,15 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.rs.test.messageClassification.ChangeSet.ChangeSet">
+      <class name="com.rs.test.spam.SpamTemplate.SpamTemplate$OADCRules">
         <methods>
-          <include name="beforeTest"/>
-          <include name="createChangeSetMessageClassification"/>
+          <include name="createSpamTemp"/>
+          <include name="editSpamTemp"/>
           <include name="afterTest"/>
+          <include name="beforeTest"/>
+          <include name="deleteSpamTemp"/>
         </methods>
-      </class> <!-- com.rs.test.messageClassification.ChangeSet.ChangeSet -->
+      </class> <!-- com.rs.test.spam.SpamTemplate.SpamTemplate$OADCRules -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
