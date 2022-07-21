@@ -1,54 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
-  <test thread-count="5" name="Carrier Service(failed)">
+<suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.rs.test.configuration.carrierService.CarrierService">
+      <class name="com.rs.test.routingRules.ChangeSet">
         <methods>
-          <include name="editMSGProps"/>
-          <include name="createCarrierService"/>
+          <include name="editRoutingRulesChangeSet"/>
           <include name="beforeTest"/>
           <include name="afterTest"/>
-          <include name="createMSGProps"/>
         </methods>
-      </class> <!-- com.rs.test.configuration.carrierService.CarrierService -->
+      </class> <!-- com.rs.test.routingRules.ChangeSet -->
     </classes>
-  </test> <!-- Carrier Service(failed) -->
-  <test thread-count="5" name="Message Aggregators(failed)">
-    <classes>
-      <class name="com.rs.test.configuration.messageAggregators.MessageAggregators">
-        <methods>
-          <include name="beforeTest"/>
-          <include name="afterTest"/>
-          <include name="createMessageAggregator"/>
-          <include name="editMessageAggregator"/>
-        </methods>
-      </class> <!-- com.rs.test.configuration.messageAggregators.MessageAggregators -->
-    </classes>
-  </test> <!-- Message Aggregators(failed) -->
-  <test thread-count="5" name="Cluster Route Rules(failed)">
-    <classes>
-      <class name="com.rs.test.clusterConfiguration.clusterRouteRules.ClusterRouteRules">
-        <methods>
-          <include name="deleteISMSClusterRouteRules"/>
-          <include name="editISMSClusterRouteRules"/>
-          <include name="afterTest"/>
-          <include name="createISMSClusterRouteRules"/>
-          <include name="beforeTest"/>
-        </methods>
-      </class> <!-- com.rs.test.clusterConfiguration.clusterRouteRules.ClusterRouteRules -->
-    </classes>
-  </test> <!-- Cluster Route Rules(failed) -->
-  <test thread-count="5" name="Bill Class(failed)">
-    <classes>
-      <class name="com.rs.test.messageClassification.BillClass.BillClass">
-        <methods>
-          <include name="beforeTest"/>
-          <include name="createBillClass"/>
-          <include name="afterTest"/>
-          <include name="editBillClass"/>
-        </methods>
-      </class> <!-- com.rs.test.messageClassification.BillClass.BillClass -->
-    </classes>
-  </test> <!-- Bill Class(failed) -->
-</suite> <!-- Failed suite [Suite] -->
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->

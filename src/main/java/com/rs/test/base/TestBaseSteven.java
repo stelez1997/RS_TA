@@ -761,8 +761,8 @@ public class TestBaseSteven {
 			
 			for (int i = 0; i < dataA.size(); i++) {
 				
-				if (!dataA.get(i).equals(dataB.get(i))) {
-					assertTrue(false, createdSuccesfully);
+				if (!dataB.get(i).contains(dataA.get(i))) {
+					assertTrue(false, noChanges);
 				}
 				
 			}
@@ -795,6 +795,7 @@ public class TestBaseSteven {
 	public String filtersNotWorking ="The filters are not working as expected";
 	public String pendingToBeAutomated ="This page is not automated yet, due to a bug";
 	public String errorData ="The data in the arrays is not equal";
+	public String noChanges = "The record was not created or edited";
 	public String testUser ="TESTUSER";
 	
 	

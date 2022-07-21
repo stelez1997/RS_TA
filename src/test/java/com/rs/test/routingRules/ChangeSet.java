@@ -1,4 +1,4 @@
-package com.rs.test.routeRules;
+package com.rs.test.routingRules;
 
 import org.testng.annotations.Test;
 
@@ -12,6 +12,7 @@ public class ChangeSet extends TestBaseSteven {
 
 	LoginVerificationPO loginVerificationPO;
 	ChangeSetPO changeSetPO;
+	
 
 	@BeforeTest
 	public void beforeTest() {
@@ -32,11 +33,46 @@ public class ChangeSet extends TestBaseSteven {
 
 	}
 	
+	@Test(dependsOnMethods = "createChangeSet", priority = 1)
+	public void editChangeSet() {
 
+		changeSetPO.editChangeSet();
+
+	}
+	
+	@Test(dependsOnMethods = "createChangeSet", priority = 2)
+	public void deleteChangeSet() {
+
+		changeSetPO.deleteChangeSet();
+
+	}
+	
+	@Test()
+	public void createRoutingRulesChangeSet() {
+
+		changeSetPO.createRoutingRulesChangeSet();
+
+	}
+	
+	@Test()
+	public void editRoutingRulesChangeSet() {
+
+		changeSetPO.editRoutingRulesChangeSet();
+
+	}
+	
+	@Test()
+	public void deleteRoutingRulesChangeSet() {
+
+		changeSetPO.deleteRoutingRulesChangeSet();
+
+	}
+
+	
 	@AfterTest
 	public void afterTest() {
 
-		driver.close();
+		//driver.close();
 
 	}
 

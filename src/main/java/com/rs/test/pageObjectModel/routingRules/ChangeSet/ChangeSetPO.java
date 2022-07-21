@@ -4,6 +4,7 @@ import static org.testng.Assert.assertFalse;
 import static org.testng.Assert.assertTrue;
 
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.Iterator;
 
 import org.openqa.selenium.By;
@@ -25,7 +26,7 @@ public class ChangeSetPO extends TestBaseSteven {
 	}
 
 	// menu
-	@FindBy(xpath = "//button[text()=\"Routing Rules \" and not(contains(@class,\"mobile\"))]//following-sibling::div//a[contains(text(),\"Change Set\")]")
+	@FindBy(xpath = "//div[@class=\"headerMenu\"]//a[contains(@href,\"routing-rules/change-set\")]")
 	public WebElement menuChangeSet;
 
 	// pagination
@@ -41,13 +42,25 @@ public class ChangeSetPO extends TestBaseSteven {
 
 	@FindBy(xpath = "//div[@class=\"tablePageSection\"]/div/div/button[text()=\">\"]")
 	public WebElement btnGoToNext;
+	
+	@FindBy(xpath = "//h1[contains(text(),\"Change Set M\")]//ancestor::div[@class=\"tablePageSectionTitle\"]//following-sibling::div[@class=\"tablePage\"]//button[text()=\"<<\"]")
+	public WebElement btnGoToFirstCS;
+
+	@FindBy(xpath = "//h1[contains(text(),\"Change Set M\")]//ancestor::div[@class=\"tablePageSectionTitle\"]//following-sibling::div[@class=\"tablePage\"]//button[text()=\"<\"]")
+	public WebElement btnGoToPreviousCS;
+
+	@FindBy(xpath = "//h1[contains(text(),\"Change Set M\")]//ancestor::div[@class=\"tablePageSectionTitle\"]//following-sibling::div[@class=\"tablePage\"]//button[text()=\">>\"]")
+	public WebElement btnGoToLastCS;
+
+	@FindBy(xpath = "//h1[contains(text(),\"Change Set M\")]//ancestor::div[@class=\"tablePageSectionTitle\"]//following-sibling::div[@class=\"tablePage\"]//button[text()=\">\"]")
+	public WebElement btnGoToNextCS;
 
 	// Create
 	
-	@FindBy(xpath = "//tr//select[@id=\"addcaseRefTypeName\"]")
+	@FindBy(xpath = "//td//select[@id=\"addcaseRefTypeName\"]")
 	public WebElement cboCaseType;
 	
-	@FindBy(xpath = "//tr//select[@id=\"addcaseRefTypeName\"]/option[text()][1]")
+	@FindBy(xpath = "//td//select[@id=\"addcaseRefTypeName\"]/option[text()][1]")
 	public WebElement cboCaseTypeO;
 
 	@FindBy(xpath = "//input[@name=\"caseRef\"]")
@@ -56,15 +69,65 @@ public class ChangeSetPO extends TestBaseSteven {
 	@FindBy(xpath = "//input[@name=\"description\"]")
 	public WebElement txtDescription;
 	
-	@FindBy(xpath = "//tr[contains(@id, \"SetInputRow\")]//div[@class=\"react-datepicker__input-container\"]")
+	@FindBy(xpath = "//tr[contains(@id, \"SetInputRow\")]//div[@class=\"react-datepicker__input-container\"]/input")
 	public WebElement dtpScheduled;
 	
 	@FindBy(xpath = "//div[@aria-selected=\"true\"]")
 	public WebElement dtpScheduledO;
 	
-
 	@FindBy(xpath = "//button[@id=\"Change SetAddBtn\"]")
 	public WebElement btnAddChangeSet;
+	
+	//Message classification
+	
+	@FindBy(xpath = "//td//select[@name=\"adddirectionName\"]")
+	public WebElement cboDirection;
+	
+	@FindBy(xpath = "//td//select[@name=\"addmessageTypeName\"]")
+	public WebElement cboHubId;
+	
+	@FindBy(xpath = "//td//select[@name=\"addclassificationName\"]")
+	public WebElement cboMessageClassification;
+	
+	@FindBy(xpath = "//td//select[@name=\"addclassificationName\"]//ancestor::td//following-sibling::td//input[@name=\"origMsisdn\"]")
+	public WebElement txtOrigMSISDN;
+	
+	@FindBy(xpath = "//td//select[@name=\"addclassificationName\"]//ancestor::td//following-sibling::td//select[@name=\"addorigCountry\"]")
+	public WebElement cboOrigCC;
+	
+	@FindBy(xpath = "//td//select[@name=\"addclassificationName\"]//ancestor::td//following-sibling::td//select[@name=\"addorigPrefix\"]")
+	public WebElement cboOrigPrefix;
+	
+	@FindBy(xpath = "//td//select[@name=\"addclassificationName\"]//ancestor::td//following-sibling::td//select[@name=\"addorigPeerName\"]")
+	public WebElement cboOrigPeer;
+	
+	@FindBy(xpath = "//td//select[@name=\"addclassificationName\"]//ancestor::td//following-sibling::td//select[@name=\"addorigServiceName\"]")
+	public WebElement cboOrigCS;
+	
+	@FindBy(xpath = "//td//select[@name=\"addclassificationName\"]//ancestor::td//following-sibling::td//select[@name=\"adddestCountry\"]")
+	public WebElement cboDestCC;
+	
+	@FindBy(xpath = "//td//select[@name=\"addclassificationName\"]//ancestor::td//following-sibling::td//select[@name=\"adddestPrefix\"]")
+	public WebElement cboDestPrefix;
+	
+	@FindBy(xpath = "//td//select[@name=\"addclassificationName\"]//ancestor::td//following-sibling::td//select[@name=\"adddestServiceName\"]")
+	public WebElement cboDestCS;
+	
+	@FindBy(xpath = "//td//select[@name=\"addclassificationName\"]//ancestor::td//following-sibling::td//select[@name=\"addroutePointDisplay\"]")
+	public WebElement cboRoute;
+	
+	@FindBy(xpath = "//td//select[@name=\"addclassificationName\"]//ancestor::td//following-sibling::td//select[@name=\"addlogAgentName\"]")
+	public WebElement cboLogAgent;
+	
+	@FindBy(xpath = "//td//select[@name=\"addclassificationName\"]//ancestor::td//following-sibling::td//select[@name=\"addactionTemplateName\"]")
+	public WebElement cboTemplate;
+
+	
+	
+	@FindBy(xpath = "//button[@id=\"Change Set Routing RulesAddBtn\"]")
+	public WebElement btnAddRoutingRulesChangeSet;
+
+	
 
 	// Search
 
@@ -73,7 +136,7 @@ public class ChangeSetPO extends TestBaseSteven {
 
 	@FindBy(xpath = "//div[@class=\"searchBarElement\"]//child::select")
 	public WebElement cboSearchHubId;
-;
+
 
 	LoginVerificationPO loginVerificationPO;
 
@@ -85,28 +148,56 @@ public class ChangeSetPO extends TestBaseSteven {
 
 	// Pagination
 
-	public void clickOnGoToFirst() {
-		click(btnGoToFirst);
+	public void clickOnGoToFirst(int pagination) {
+		
+		if (pagination ==1) {
+			click(btnGoToFirst);
 
-		waitExpectedElement("//tr[contains(@id,\"SetTable\")][1]");
+			waitExpectedElement("//tr[contains(@id,\"SetTable\")][1]");
+		}else {
+			click(btnGoToFirstCS);
+
+			waitExpectedElement("//tr[contains(@id,\"SetTable\")][1]");
+		}
 	}
 
-	public void clickOnGoToPrevious() {
-		click(btnGoToPrevious);
+	public void clickOnGoToPrevious(int pagination) {
 
-		waitExpectedElement("//tr[contains(@id,\"SetTable\")][1]");
+		if (pagination ==1) {
+			
+			click(btnGoToPrevious);
+			waitExpectedElement("//tr[contains(@id,\"SetTable\")][1]");
+		}else {
+			click(btnGoToPreviousCS);
+
+			waitExpectedElement("//tr[contains(@id,\"SetTable\")][1]");
+		}
 	}
 
-	public void clickOnGoToNext() {
-		click(btnGoToNext);
+	public void clickOnGoToNext(int pagination) {
+		
+		if (pagination == 1) {
+			click(btnGoToNext);
 
-		waitExpectedElement("//tr[contains(@id,\"SetTable\")][1]");
+			waitExpectedElement("//tr[contains(@id,\"SetTable\")][1]");
+		} else {
+			click(btnGoToNextCS);
+
+			waitExpectedElement("//tr[contains(@id,\"SetTable\")][1]");
+		}
 	}
 
-	public void clickOnGoToLast() {
-		click(btnGoToLast);
+	public void clickOnGoToLast(int pagination) {
+		
+		if (pagination == 1) {
+			click(btnGoToLast);
 
-		waitExpectedElement("//tr[contains(@id,\"SetTable\")][1]");
+			waitExpectedElement("//tr[contains(@id,\"SetTable\")]");
+		} else {
+			click(btnGoToLastCS);
+
+			waitExpectedElement("//tr[contains(@id,\"SetTable\")]");
+		}
 	}
 
 	// Create Methods
@@ -133,21 +224,160 @@ public class ChangeSetPO extends TestBaseSteven {
 		click(dtpScheduled);
 		sleep(1000);
 		click(dtpScheduledO);
-		sleep(1000);
-		dtpScheduledText = getText(dtpScheduled);
-		System.out.println("The selected is: "+dtpScheduledText);
-		
-		
+		dtpScheduledText = getAttribute(dtpScheduled, "value");
+
 	}
-
-
 
 	public void clickOnAddChangeSet() {
 		click(btnAddChangeSet);
-		btnAddChangeSet.click();
 		sleep(5000);
 	}
 	
+	
+	//Change Set Message Classification
+	int j = 0;
+	public void selectDirection() {
+		
+		click(cboDirection);
+		sleep(1000);
+		WebElement directionO = findElement("//td//select[@name=\"adddirectionName\"]//option[text()=\""+dataB.get(j)+"\"]");
+		click(directionO);
+		j++;
+		
+	}
+	
+	public void selectHubId() {
+		
+		click(cboHubId);
+		sleep(1000);
+		WebElement hubIdO = findElement("//td//select[@name=\"adddirectionName\"]//ancestor::td//following-sibling::td//select[@name=\"addmessageTypeName\"]/option[text()=\""+dataB.get(j)+"\"]");
+		click(hubIdO);
+		j++;
+		
+	}
+	
+	
+	public void selectMessageClassification() {
+		
+		click(cboMessageClassification);
+		sleep(1000);
+		WebElement cboMessageClassificationO = findElement("//td//select[@name=\"adddirectionName\"]//ancestor::td//following-sibling::td//select[@name=\"addclassificationName\"]/option[text()=\""+dataB.get(j)+"\"]");
+		click(cboMessageClassificationO);
+		j++;
+		
+	}
+	
+	public void fillOutOrigMSISDN() {
+		sendKeys(txtOrigMSISDN, dataB.get(j));
+		j++;
+	}
+
+	public void selectOrigCC() {
+		
+		click(cboOrigCC);
+		sleep(1000);
+		WebElement cboOrigCCO = findElement("//td//select[@name=\"adddirectionName\"]//ancestor::td//following-sibling::td//select[@name=\"addorigCountry\"]/option[text()=\""+dataB.get(j)+"\"]");
+		click(cboOrigCCO);
+		j++;
+		
+	}
+	
+	public void selectOrigPrefix() {
+		
+		click(cboOrigPrefix);
+		sleep(1000);
+		WebElement cboOrigPrefixO = findElement("//td//select[@name=\"adddirectionName\"]//ancestor::td//following-sibling::td//select[@name=\"addorigPrefix\"]/option[text()=\""+dataB.get(j)+"\"]");
+		click(cboOrigPrefixO);
+		j++;
+		
+	}
+	
+	public void selectOrigPeer() {
+		
+		click(cboOrigPeer);
+		sleep(1000);
+		WebElement cboOrigPeerO = findElement("//td//select[@name=\"adddirectionName\"]//ancestor::td//following-sibling::td//select[@name=\"addorigPeerName\"]/option[text()=\""+dataB.get(j)+"\"]");
+		click(cboOrigPeerO);
+		j++;
+		
+	}
+	
+	public void selectOrigCS() {
+		
+		click(cboOrigCS);
+		sleep(1000);
+		WebElement cboOrigCSO = findElement("//td//select[@name=\"adddirectionName\"]//ancestor::td//following-sibling::td//select[@name=\"addorigServiceName\"]/option[text()=\""+dataB.get(j)+"\"]");
+		click(cboOrigCSO);
+		j++;
+		
+	}
+	
+	public void selectDestCC() {
+		
+		click(cboDestCC);
+		sleep(1000);
+		WebElement cboDestCCO = findElement("//td//select[@name=\"adddirectionName\"]//ancestor::td//following-sibling::td//select[@name=\"adddestCountry\"]/option[text()=\""+dataB.get(j)+"\"]");
+		click(cboDestCCO);
+		j++;
+		
+	}
+	
+	public void selectDestPrefix() {
+		
+		click(cboDestPrefix);
+		sleep(1000);
+		WebElement cboDestPrefixO = findElement("//td//select[@name=\"adddirectionName\"]//ancestor::td//following-sibling::td//select[@name=\"adddestPrefix\"]/option[text()=\""+dataB.get(j)+"\"]");
+		click(cboDestPrefixO);
+		j++;
+		
+	}
+	
+	public void selectDestCS() {
+		
+		click(cboDestCS);
+		sleep(1000);
+		WebElement cboDestCSO = findElement("//td//select[@name=\"adddirectionName\"]//ancestor::td//following-sibling::td//select[@name=\"adddestServiceName\"]/option[text()=\""+dataB.get(j)+"\"]");
+		click(cboDestCSO);
+		j++;
+		
+	}
+	
+	public void selectRoute() {
+		
+		click(cboRoute);
+		sleep(1000);
+		WebElement cboRouteO = findElement("//td//select[@name=\"adddirectionName\"]//ancestor::td//following-sibling::td//select[@name=\"addroutePointDisplay\"]/option[text()=\""+dataB.get(j)+"\"]");
+		click(cboRouteO);
+		j++;
+		
+	}
+	
+	public void selectLogAgent() {
+		
+		click(cboLogAgent);
+		sleep(1000);
+		WebElement cboLogAgentO = findElement("//td//select[@name=\"adddirectionName\"]//ancestor::td//following-sibling::td//select[@name=\"addlogAgentName\"]/option[text()=\""+dataB.get(j)+"\"]");
+		click(cboLogAgentO);
+		j++;
+		
+	}
+	
+	public void selectTemplate() {
+		
+		click(cboTemplate);
+		sleep(1000);
+		WebElement cboTemplateO = findElement("//td//select[@name=\"adddirectionName\"]//ancestor::td//following-sibling::td//select[@name=\"addactionTemplateName\"]/option[text()=\""+dataB.get(j)+"\"]");
+		click(cboTemplateO);
+		j++;
+		
+	}
+	
+	
+	public void clickOnAddRoutingRulesChangeSet() {
+		click(btnAddRoutingRulesChangeSet);
+		sleep(8000);
+	}
+
 	
 	//Search Methods
 	
@@ -160,14 +390,22 @@ public class ChangeSetPO extends TestBaseSteven {
 		click(cboSearchHubId);
 	}
 
-	// Modals
+	ArrayList<String> dataB = new ArrayList<String>();
+	ArrayList<String> dataA = new ArrayList<String>();
+	ArrayList<String> dataE = new ArrayList<String>();
+	
 
 	// Create
 	
-	String cboCaseTypeText = "TATest";
+	String cboCaseTypeText = "";
 	String caseName = "TATest";
 	String description = "Test";
 	String dtpScheduledText = "";
+	
+	//Change set Message Classification
+	
+	String cboClassificationRuleTypeText ="";
+	String cboMessageClassificationText ="";
 
 	public void createChangeSet() {
 
@@ -178,10 +416,8 @@ public class ChangeSetPO extends TestBaseSteven {
 		clickOnChangeSetMenu();
 
 		actionsMoveToElementElement(btnAddChangeSet);
-
-		clickOnGoToLast();
-
-		int rowsB = rows("//tr[contains(@id,\"SetTable\")]");
+		
+		waitExpectedElement("//tr[contains(@id,\"SetTable\")][1]");
 		
 		selectCaseType();
 
@@ -190,49 +426,48 @@ public class ChangeSetPO extends TestBaseSteven {
 		fillOutDescription(description);
 		
 		selectScheduled();
+		
+		dataB.add(cboCaseTypeText);
+		dataB.add(caseName);
+		dataB.add(description);
+		dataB.add(dtpScheduledText);
 
 		clickOnAddChangeSet();
 
 		refresh();
 		
 		visibilityOfElement("//tr[contains(@id,\"SetTable\")][1]");
-
-		clickOnGoToLast();
-		
-		int rowsA = rows("//tr[contains(@id,\"SetTable\")]");
 		
 		String caseTypeA = getText("//tr[contains(@id,\"SetTable\")][1]/td[2]");
 		String caseNameA = getText("//tr[contains(@id,\"SetTable\")][1]/td[3]");
 		String descriptionA = getText("//tr[contains(@id,\"SetTable\")][1]/td[4]");
 		String scheduledA = getText("//tr[contains(@id,\"SetTable\")][1]/td[9]");
-		scheduledA = changeDateFormat(scheduledA, "dd/MM/YYYY", "MM/dd/YYYY");
-	
+		scheduledA = split(scheduledA, ",", 0);
+		System.out.println("Split date: "+scheduledA);
+		scheduledA = changeDateFormat(scheduledA, "dd/MM/yyyy", "MM/dd/yyyy");
+		
+		dataA.add(caseTypeA);
+		dataA.add(caseNameA);
+		dataA.add(descriptionA);
+		dataA.add(scheduledA);
+		
+		
 		System.out.println("--------------------------------Creation Verification-------------------------");
 		System.out.println("Options Entered--------");
 		System.out.println("The Case Type is: " + cboCaseTypeText);
 		System.out.println("The Case is: " + caseName);
 		System.out.println("The Description is: " + description);
-		System.out.println("The Date is: " + dtpScheduledText);
+		System.out.println("The Scheduled Date is: " + dtpScheduledText);
+	
 		System.out.println("Information After Creation--------");
 		System.out.println("The Case Type is: " + caseTypeA);
 		System.out.println("The Case is: " + caseNameA);
 		System.out.println("The Description is: " + descriptionA);
-		System.out.println("The Date is: " + scheduledA);
+		System.out.println("The Scheduled Date is: " + scheduledA);
 
-		boolean created = greaterThanInt(rowsA, rowsB);
-		assertTrue(created, createdUnSuccesfully);
 		
-		System.out.println("Record created: " + created);
+		verificateData(dataB, dataA);
 		
-		created = false;
-		
-		if (caseTypeA.equals(cboCaseTypeText) && caseNameA.equals(caseName) && descriptionA.equals(description)) {
-			created = true;
-		}
-
-		System.out.println("Record created succesfully: "+created);
-		assertTrue(created, createdUnSuccesfully);
-	
 
 	}
 	
@@ -240,59 +475,96 @@ public class ChangeSetPO extends TestBaseSteven {
 
 	// Verfication before editing or deleting the record
 
-	public int verification() {
+	public void verification() {
 
 		loginVerificationPO = new LoginVerificationPO();
 
-		actionsMoveToElementElement(loginVerificationPO.btnMessageClassification);
+		actionsMoveToElementElement(loginVerificationPO.btnRoutingRules);
 
 		clickOnChangeSetMenu();
 
 		actionsMoveToElementElement(btnAddChangeSet);
-
-		clickOnGoToLast();
-
-		int rows = rows("//tr[contains(@id,\"SetTable\")]");
-		boolean record = false;
-		int j = 1;
-		for (int i = 0; i < rows; i++) {
-
-			String billClass = getText("//tr[contains(@id,\"SetTable\")][" + j + "]/td[3]/div");
-
-
-			if (billClass.equals(this.caseName)) {
-				System.out.println("Creation Record Displayed at Position: " + j);
-				record = true;
-				assertTrue(record, testRecord);
-				break;
-			}
-
-			j++;
-
+		
+		visibilityOfElement("//tr[contains(@id,\"SetTable\")][1]");
+		
+		String caseNameV = getText("//tr[contains(@id,\"SetTable\")][1]/td[3]");
+		
+		boolean creationRecord = false;
+		
+		if (caseNameV.contains(caseName)) {
+			creationRecord = true;
 		}
 
-		if (record != true) {
-			System.out.println(creationRecord);
-		}
-
-		return j;
-
+		assertTrue(creationRecord, this.creationRecord);
+		
 	}
 	
-	public void editBillClass() {
+	public void editChangeSet() {
 
-			assertTrue(false, pendingToBeAutomated);
-		
+			verification();
+			
+			dataA.clear();
+			dataB.clear();
+			
+			WebElement btnEdit = findElement("//tr[contains(@id,\"SetTable\")][1]//button[contains(@id,\"edit\")]");
+			click(btnEdit);
+			
+			String descriptionEdit = "TATest1";
+			
+			WebElement txtDescriptionE = findElement("//tr[contains(@id,\"SetTable\")][1]//input[contains(@id,\"description\")]");
+			WebElement dtpScheduledE = findElement("//tr[contains(@id,\"SetTable\")][1]//div[@class=\"react-datepicker-wrapper\"]//input");
+			
+			clearByBackSpace(txtDescriptionE);
+			sendKeys(txtDescriptionE, descriptionEdit);
+			
+			click(dtpScheduledE);
+			sleep(1000);
+			WebElement dtpScheduledEO = findElement("//div[@aria-selected=\"true\"]//following-sibling::div[1]");
+			click(dtpScheduledEO);
+			dtpScheduledText = getAttribute(dtpScheduledE, "value");
+			System.out.println("The Date selected is: "+dtpScheduledText);
+			
+			dataB.add(descriptionEdit);
+			dataB.add(dtpScheduledText);
+			
+			click(btnEdit);
+			sleep(5000);
+			
+			refresh();
+			
+			visibilityOfElement("//tr[contains(@id,\"SetTable\")][1]");
+			
+			
+			String descriptionA = getText("//tr[contains(@id,\"SetTable\")][1]/td[4]");
+			String scheduledA = getText("//tr[contains(@id,\"SetTable\")][1]/td[9]");
+			scheduledA = split(scheduledA, ",", 0);
+			System.out.println("Split date: "+scheduledA);
+			scheduledA = changeDateFormat(scheduledA, "dd/MM/yyyy", "MM/dd/yyyy");
+			
+			dataA.add(descriptionA);
+			dataA.add(scheduledA);
+			
+			
+			System.out.println("--------------------------------Edition Verification-------------------------");
+			System.out.println("Options Entered--------");
+			System.out.println("The Description is: " + descriptionEdit);
+			System.out.println("The Scheduled Date is: " + dtpScheduledText);
+			System.out.println("Information After Creation--------");
+			System.out.println("The Description is: " + descriptionA);
+			System.out.println("The Scheduled Date is: " + scheduledA);
+			
+			verificateData(dataB, dataA);
+				
 
 	}
 
-	public void deleteBillClass() {
+	
+	public void deleteChangeSet() {
 
-		int position = verification();
-		int rowsB = rows("//tr[contains(@id,\"SetTable\")]");
-
-		WebElement btnDelete = findElement(
-				"//tr[contains(@id,\"SetTable\")][" + position + "]//child::button[contains(@id,\"delete\")]");
+		verification();
+		
+		String descriptionB = getText("//tr[contains(@id,\"SetTable\")][1]/td[4]");
+		WebElement btnDelete = findElement("//tr[contains(@id,\"SetTable\")][1]//child::button[contains(@id,\"delete\")]");
 
 		click(btnDelete);
 		sleep(5000);
@@ -300,17 +572,386 @@ public class ChangeSetPO extends TestBaseSteven {
 		refresh();
 
 		waitExpectedElement("//tr[contains(@id,\"SetTable\")]");
+		
+		String descriptionA = getText("//tr[contains(@id,\"SetTable\")][1]/td[4]");
+		
+		System.out.println("--------------------------------Creation Verification-------------------------");
+		System.out.println("Options Entered--------");
+		System.out.println("The Description before edition is: " + descriptionB);
+		System.out.println("Information After Creation--------");
+		System.out.println("The Description after edition is: " + descriptionA);
+		
+		boolean deleted = false;
+		
+		if (!descriptionA.equals(descriptionB) ) {
+			deleted = true;
+		}
 
-		clickOnGoToLast();
-
-		int rowsA = rows("//tr[contains(@id,\"SetTable\")]");
-
-		boolean deleted = greaterThanInt(rowsB, rowsA);
-
+		System.out.println("Record deleted succesfully: "+deleted);
 		assertTrue(deleted, deletionRecord);
-		System.out.println("Record deleted: " + deleted);
 
 	}
+	
+	
+	public void createRoutingRulesChangeSet() {
+		
+		dataB.clear();
+		dataB.add("MO");
+		dataB.add("SMSx");
+		dataB.add("P2P");
+		dataB.add("95475259");
+		dataB.add("AC");
+		dataB.add("7");
+		dataB.add("VERISIGN");
+		dataB.add("3RIVW");
+		dataB.add("AC");
+		dataB.add("9");
+		dataB.add("3RIVW");
+		dataB.add("Direct/Open Route");
+		dataB.add("3RIVW");
+		dataB.add("160_split");
+		
+
+		verification();
+		
+		WebElement btnCase = findElement("//tr[contains(@id,\"SetTable\")][1]//a");
+		click(btnCase);
+		
+		waitExpectedElement("//tr[contains(@id,\"RulesTable\") and contains(@id,\"Search\")][1]");
+		
+		
+		int rowsB = rows("//tr[contains(@id,\"RulesTableRow\") and not(contains(@id,\"Search\"))]");
+		
+		selectDirection();
+		
+		selectHubId();
+		
+		selectMessageClassification();
+	
+		fillOutOrigMSISDN();
+		
+		selectOrigCC();
+
+		selectOrigPrefix();
+		
+		selectOrigPeer();
+		
+		selectOrigCS();
+
+		selectDestCC();
+		
+		selectDestPrefix();
+
+		selectDestCS();
+		
+		selectRoute();
+		
+		selectLogAgent();
+		
+		selectTemplate();
+		
+		
+		clickOnAddRoutingRulesChangeSet();
+		
+		refresh();
+		
+		waitExpectedElement("//tr[contains(@id,\"RulesTable\") and contains(@id,\"Search\")][1]");
+
+		
+		int rowsA = rows("//tr[contains(@id,\"RulesTableRow\") and not(contains(@id,\"Search\"))]");
+		
+		boolean created = greaterThanInt(rowsA, rowsB);
+		
+		System.out.println("Record Created: "+ created);
+		assertTrue(created, createdUnSuccesfully);
+		
+		created = false;
+		
+		String cboDirectionA = getText("//tr[contains(@id,\"RulesTableRow\") and not(contains(@id,\"Search\"))]["+rowsA+"]//select[contains(@id,\"editdirectionName\")]//preceding-sibling::div");
+		String cboHubIdA = getText("//tr[contains(@id,\"RulesTableRow\") and not(contains(@id,\"Search\"))]["+rowsA+"]//select[contains(@id,\"editmessageTypeName\")]//preceding-sibling::div");
+		String cboMessageClassificationA =getText("//tr[contains(@id,\"RulesTableRow\") and not(contains(@id,\"Search\"))]["+rowsA+"]//select[@name=\"editclassificationName\"]//preceding-sibling::div");
+		String txtOrigMSISDNA = getText("//tr[contains(@id,\"RulesTableRow\") and not(contains(@id,\"Search\"))]["+rowsA+"]//input[contains(@id,\"origMsisdnEditInput\")]//preceding-sibling::div");
+		String cboOrigCCA =getText("//tr[contains(@id,\"RulesTableRow\") and not(contains(@id,\"Search\"))]["+rowsA+"]//select[@name=\"editorigCountry\"]//preceding-sibling::div");
+		String cboOrigPrefixA =getText("//tr[contains(@id,\"RulesTableRow\") and not(contains(@id,\"Search\"))]["+rowsA+"]//select[@name=\"editorigPrefix\"]//preceding-sibling::div");
+		String cboOrgiPeerA = getText("//tr[contains(@id,\"RulesTableRow\") and not(contains(@id,\"Search\"))]["+rowsA+"]//select[contains(@id,\"editorigPeerName\")]//preceding-sibling::div");
+		String cboOrigCSA =getText("//tr[contains(@id,\"RulesTableRow\") and not(contains(@id,\"Search\"))]["+rowsA+"]//select[@name=\"editorigServiceName\"]//preceding-sibling::div");
+		String cboDestCCA = getText("//tr[contains(@id,\"RulesTableRow\") and not(contains(@id,\"Search\"))]["+rowsA+"]//select[contains(@id,\"editdestCountry\")]//preceding-sibling::div");
+		String cboDestPrefixA =getText("//tr[contains(@id,\"RulesTableRow\") and not(contains(@id,\"Search\"))]["+rowsA+"]//select[@name=\"editdestPrefix\"]//preceding-sibling::div");
+		String cboDestCSA =getText("//tr[contains(@id,\"RulesTableRow\") and not(contains(@id,\"Search\"))]["+rowsA+"]//select[@name=\"editdestServiceName\"]//preceding-sibling::div");
+		String cboRouteA =getText("//tr[contains(@id,\"RulesTableRow\") and not(contains(@id,\"Search\"))]["+rowsA+"]//select[@name=\"editroutePointDisplay\"]//preceding-sibling::div");
+		String cboLogAgentA =getText("//tr[contains(@id,\"RulesTableRow\") and not(contains(@id,\"Search\"))]["+rowsA+"]//select[@name=\"editlogAgentName\"]//preceding-sibling::div");
+		String cboTemplateA =getText("//tr[contains(@id,\"RulesTableRow\") and not(contains(@id,\"Search\"))]["+rowsA+"]//select[@name=\"editactionTemplateName\"]//preceding-sibling::div");
+		
+		dataA.add(cboDirectionA);
+		dataA.add(cboHubIdA);
+		dataA.add(cboMessageClassificationA);
+		dataA.add(txtOrigMSISDNA);
+		dataA.add(cboOrigCCA);
+		dataA.add(cboOrigPrefixA);
+		dataA.add(cboOrgiPeerA);
+		dataA.add(cboOrigCSA);
+		dataA.add(cboDestCCA);
+		dataA.add(cboDestPrefixA);
+		dataA.add(cboDestCSA);
+		dataA.add(cboRouteA);
+		dataA.add(cboLogAgentA);
+		dataA.add(cboTemplateA);
+
+		System.out.println("--------------------------------Creation Verification-------------------------");
+		System.out.println("Options Entered--------");
+		System.out.println("The Direction is: " + dataB.get(0));
+		System.out.println("The Hub Id	 is: " + dataB.get(1));
+		System.out.println("The Message Classification is: " + dataB.get(2));
+		System.out.println("The Orig MSISDN: " + dataB.get(3));
+		System.out.println("The Orig CC is: " + dataB.get(4));
+		System.out.println("The Orig Prefix is: " + dataB.get(5));
+		System.out.println("The Orig Peer is: " + dataB.get(6));
+		System.out.println("The Orig CS is: " + dataB.get(7));
+		System.out.println("The Dest CC is: " + dataB.get(8));
+		System.out.println("The Dest Prefix is: " + dataB.get(9));
+		System.out.println("The Dest CS is: " + dataB.get(10));
+		System.out.println("The Route is: " + dataB.get(11));
+		System.out.println("The Log Agent is: " + dataB.get(12));
+		System.out.println("The Template is: " + dataB.get(13));
+
+		System.out.println("Information After Creation--------");
+		System.out.println("The Direction is: " + dataA.get(0));
+		System.out.println("The Hub Id	 is: " + dataA.get(1));
+		System.out.println("The Message Classification is: " + dataA.get(2));
+		System.out.println("The Orig MSISDN: " + dataA.get(3));
+		System.out.println("The Orig CC is: " + dataA.get(4));
+		System.out.println("The Orig Prefix is: " + dataA.get(5));
+		System.out.println("The Orig Peer is: " + dataA.get(6));
+		System.out.println("The Orig CS is: " + dataA.get(7));
+		System.out.println("The Dest CC is: " + dataA.get(8));
+		System.out.println("The Dest Prefix is: " + dataA.get(9));
+		System.out.println("The Dest CS is: " + dataA.get(10));
+		System.out.println("The Route is: " + dataA.get(11));
+		System.out.println("The Log Agent is: " + dataA.get(12));
+		System.out.println("The Template is: " + dataA.get(13));
+		
+		verificateData(dataB, dataA);
+		
+
+	}
+	
+	
+	public void editRoutingRulesChangeSet() {
+		
+		dataA.clear();
+		dataB.clear();
+		
+		dataB.clear();
+		dataB.add("MT");
+		dataB.add("EM");
+		dataB.add("A2P");
+		dataB.add("95475250");
+		dataB.add("AD");
+		dataB.add("8");
+		dataB.add("ZIPWHIP");
+		dataB.add("365WI");
+		dataB.add("AD");
+		dataB.add("8");
+		dataB.add("365WI");
+		dataB.add("365WI");
+		dataB.add("160_truncate");
+
+		verification();
+		
+		WebElement btnCase = findElement("//tr[contains(@id,\"SetTable\")][1]//a");
+		click(btnCase);
+		
+		waitExpectedElement("//tr[contains(@id,\"RulesTable\") and contains(@id,\"Search\")][1]");
+
+		
+		
+		int rows = rows("//tr[contains(@id,\"RulesTableRow\") and not(contains(@id,\"Search\"))]");
+		
+		WebElement btnEdit = findElement("//tr[contains(@id,\"RulesTableRow\") and not(contains(@id,\"Search\"))]["+rows+"]//button[contains(@id,\"edit\")]");
+		click(btnEdit);
+		sleep(5000);
+		
+		j = 0;
+		WebElement cboDirectionE = findElement("//select[@name=\"editdirectionName\"]");
+		WebElement cboDirectionEO = findElement("//select[@name=\"editdirectionName\"]/option[text()=\""+dataB.get(j)+"\"]");
+		click(cboDirectionE);
+		click(cboDirectionEO);
+		j++;
+		
+		WebElement cbohubIdE = findElement("//select[@name=\"editmessageTypeName\"]");
+		WebElement cbohubIdEO = findElement("//select[@name=\"editmessageTypeName\"]/option[text()=\""+dataB.get(j)+"\"]");
+		click(cbohubIdE);
+		click(cbohubIdEO);
+		j++;
+		
+		WebElement cboMessageClassificationE = findElement("//select[@name=\"editclassificationName\"]");
+		WebElement cboMessageClassificationEO = findElement("//select[@name=\"editclassificationName\"]/option[text()=\""+dataB.get(j)+"\"]");
+		click(cboMessageClassificationE);
+		click(cboMessageClassificationEO);
+		j++;
+		
+		WebElement txtOrigSISDNE = findElement("//td//input[@id=\"origMsisdnEditInput0\" and not(contains(@style,\"none\"))]");
+		clearByBackSpace(txtOrigSISDNE);
+		sendKeys(txtOrigSISDNE, dataB.get(j));
+		j++;
+		
+		WebElement cboOrigCCE = findElement("//select[@name=\"editorigCountry\"]");
+		WebElement cboOrigCCEO = findElement("//select[@name=\"editorigCountry\"]/option[text()=\""+dataB.get(j)+"\"]");
+		click(cboOrigCCE);
+		click(cboOrigCCEO);
+		j++;
+		
+		WebElement cboOrigPrefixE = findElement("//select[@name=\"editorigPrefix\"]");
+		WebElement cboOrigPrefixEO = findElement("//select[@name=\"editorigPrefix\"]/option[text()=\""+dataB.get(j)+"\"]");
+		click(cboOrigPrefixE);
+		click(cboOrigPrefixEO);
+		j++;
+		
+		WebElement cboOrigPeerE = findElement("//select[@name=\"editorigPeerName\"]");
+		WebElement cboOrigPeerEO = findElement("//select[@name=\"editorigPeerName\"]/option[text()=\""+dataB.get(j)+"\"]");
+		click(cboOrigPeerE);
+		click(cboOrigPeerEO);
+		j++;
+		
+		WebElement cboOrigCSE = findElement("//select[@name=\"editorigServiceName\"]");
+		WebElement cboOrigCSEO = findElement("//select[@name=\"editorigServiceName\"]/option[text()=\""+dataB.get(j)+"\"]");
+		click(cboOrigCSE);
+		click(cboOrigCSEO);
+		j++;
+		
+		WebElement cboDestCCE = findElement("//select[@name=\"editdestCountry\"]");
+		WebElement cboDestCCEO = findElement("//select[@name=\"editdestCountry\"]/option[text()=\""+dataB.get(j)+"\"]");
+		click(cboDestCCE);
+		click(cboDestCCEO);
+		j++;
+		
+		WebElement cboDestPrefixE = findElement("//select[@name=\"editdestPrefix\"]");
+		WebElement cboDestPrefixEO = findElement("//select[@name=\"editdestPrefix\"]/option[text()=\""+dataB.get(j)+"\"]");
+		click(cboDestPrefixE);
+		click(cboDestPrefixEO);
+		j++;
+		
+		WebElement cboDestCSE = findElement("//select[@name=\"editdestServiceName\"]");
+		WebElement cboDestCSEO = findElement("//select[@name=\"editdestServiceName\"]/option[text()=\""+dataB.get(j)+"\"]");
+		click(cboDestCSE);
+		click(cboDestCSEO);
+		j++;
+		
+		WebElement cboLogAgentE = findElement("//select[@name=\"editlogAgentName\"]");
+		WebElement cboLogAgentEO = findElement("//select[@name=\"editlogAgentName\"]/option[text()=\""+dataB.get(j)+"\"]");
+		click(cboLogAgentE);
+		click(cboLogAgentEO);
+		j++;
+		
+		WebElement cboTemplateE = findElement("//select[@name=\"editactionTemplateName\"]");
+		WebElement cboTemplateEO = findElement("//select[@name=\"editactionTemplateName\"]/option[text()=\""+dataB.get(j)+"\"]");
+		click(cboTemplateE);
+		click(cboTemplateEO);
+		j++;
+		
+		
+		click(btnEdit);
+		sleep(5000);
+		
+		refresh();
+		
+		waitExpectedElement("//tr[contains(@id,\"RulesTable\") and contains(@id,\"Search\")][1]");
+
+		dataA.clear();
+		
+		String cboDirectionA = getText("//tr[contains(@id,\"RulesTableRow\") and not(contains(@id,\"Search\"))]["+rows+"]//select[contains(@id,\"editdirectionName\")]//preceding-sibling::div");
+		String cboHubIdA = getText("//tr[contains(@id,\"RulesTableRow\") and not(contains(@id,\"Search\"))]["+rows+"]//select[contains(@id,\"editmessageTypeName\")]//preceding-sibling::div");
+		String cboMessageClassificationA =getText("//tr[contains(@id,\"RulesTableRow\") and not(contains(@id,\"Search\"))]["+rows+"]//select[@name=\"editclassificationName\"]//preceding-sibling::div");
+		String txtOrigMSISDNA = getText("//tr[contains(@id,\"RulesTableRow\") and not(contains(@id,\"Search\"))]["+rows+"]//input[contains(@id,\"origMsisdnEditInput0\")]//preceding-sibling::div");
+		String cboOrigCCA =getText("//tr[contains(@id,\"RulesTableRow\") and not(contains(@id,\"Search\"))]["+rows+"]//select[@name=\"editorigCountry\"]//preceding-sibling::div");
+		String cboOrigPrefixA =getText("//tr[contains(@id,\"RulesTableRow\") and not(contains(@id,\"Search\"))]["+rows+"]//select[@name=\"editorigPrefix\"]//preceding-sibling::div");
+		String cboOrigPeerA =getText("//tr[contains(@id,\"RulesTableRow\") and not(contains(@id,\"Search\"))]["+rows+"]//select[@name=\"editorigPeerName\"]//preceding-sibling::div");
+		String cboOrigCSA =getText("//tr[contains(@id,\"RulesTableRow\") and not(contains(@id,\"Search\"))]["+rows+"]//select[@name=\"editorigServiceName\"]//preceding-sibling::div");
+		String cboDestCCA = getText("//tr[contains(@id,\"RulesTableRow\") and not(contains(@id,\"Search\"))]["+rows+"]//select[contains(@id,\"editdestCountry\")]//preceding-sibling::div");
+		String cboDestPrefixA =getText("//tr[contains(@id,\"RulesTableRow\") and not(contains(@id,\"Search\"))]["+rows+"]//select[@name=\"editdestPrefix\"]//preceding-sibling::div");
+		String cboDestCSA =getText("//tr[contains(@id,\"RulesTableRow\") and not(contains(@id,\"Search\"))]["+rows+"]//select[@name=\"editdestServiceName\"]//preceding-sibling::div");
+		String cboLogAgentA = getText("//tr[contains(@id,\"RulesTableRow\") and not(contains(@id,\"Search\"))]["+rows+"]//select[contains(@id,\"editlogAgentName\")]//preceding-sibling::div");
+		String cboTemplateA = getText("//tr[contains(@id,\"RulesTableRow\") and not(contains(@id,\"Search\"))]["+rows+"]//select[contains(@id,\"editactionTemplateName\")]//preceding-sibling::div");
+		
+		dataA.add(cboDirectionA);
+		dataA.add(cboHubIdA);
+		dataA.add(cboMessageClassificationA);
+		dataA.add(txtOrigMSISDNA);
+		dataA.add(cboOrigCCA);
+		dataA.add(cboOrigPrefixA);
+		dataA.add(cboOrigPeerA);
+		dataA.add(cboOrigCSA);
+		dataA.add(cboDestCCA);
+		dataA.add(cboDestPrefixA);
+		dataA.add(cboDestCSA);
+		dataA.add(cboLogAgentA);
+		dataA.add(cboTemplateA);
+
+		System.out.println("--------------------------------Edition Verification-------------------------");
+		System.out.println("Options Entered--------");
+		System.out.println("The Direction is: " + dataB.get(0));
+		System.out.println("The Hub Id	 is: " + dataB.get(1));
+		System.out.println("The Message Classification is: " + dataB.get(2));
+		System.out.println("The Orig MSISDN: " + dataB.get(3));
+		System.out.println("The Orig CC is: " + dataB.get(4));
+		System.out.println("The Orig Prefix is: " + dataB.get(5));
+		System.out.println("The Orig Peer is: " + dataB.get(6));
+		System.out.println("The Orig CS is: " + dataB.get(7));
+		System.out.println("The Dest CC is: " + dataB.get(8));
+		System.out.println("The Dest Prefix is: " + dataB.get(9));
+		System.out.println("The Dest CS is: " + dataB.get(10));
+		System.out.println("The Log Agent is: " + dataB.get(11));
+		System.out.println("The Template is: " + dataB.get(12));
+
+		System.out.println("Information After Edition--------");
+		System.out.println("The Direction is: " + dataA.get(0));
+		System.out.println("The Hub Id	 is: " + dataA.get(1));
+		System.out.println("The Message Classification is: " + dataA.get(2));
+		System.out.println("The Orig MSISDN: " + dataA.get(3));
+		System.out.println("The Orig CC is: " + dataA.get(4));
+		System.out.println("The Orig Prefix is: " + dataA.get(5));
+		System.out.println("The Orig Peer is: " + dataA.get(6));
+		System.out.println("The Orig CS is: " + dataA.get(7));
+		System.out.println("The Dest CC is: " + dataA.get(8));
+		System.out.println("The Dest Prefix is: " + dataA.get(9));
+		System.out.println("The Dest CS is: " + dataA.get(10));
+		System.out.println("The Log Agent is: " + dataA.get(11));
+		System.out.println("The Template is: " + dataA.get(12));
+		
+		
+		verificateData(dataB, dataA);
+		
+	
+	}
+	
+	public void deleteRoutingRulesChangeSet() {
+
+		verification();
+		
+		WebElement btnCase = findElement("//tr[contains(@id,\"SetTable\")][1]//a");
+		click(btnCase);
+		
+		waitExpectedElement("//tr[contains(@id,\"RulesTable\") and contains(@id,\"Search\")][1]");
+
+		int rowsB = rows("//tr[contains(@id,\"RulesTableRow\") and not(contains(@id,\"Search\"))]");
+		
+		WebElement btnDelete = findElement("//tr[contains(@id,\"RulesTableRow\") and not(contains(@id,\"Search\"))]["+rowsB+"]//button[contains(@id,\"delete\")]");
+		click(btnDelete);
+		sleep(5000);
+		
+		refresh();
+		waitExpectedElement("//tr[contains(@id,\"RulesTable\") and contains(@id,\"Search\")][1]");
+
+		int rowsA = rows("//tr[contains(@id,\"RulesTableRow\") and not(contains(@id,\"Search\"))]");
+		
+		boolean deleted = greaterThanInt(rowsB, rowsA);
+		
+		System.out.println("Record deleted succesfully: "+deleted);
+		
+		assertTrue(deleted, deletionRecord);
+
+	}
+	
 
 	
 }

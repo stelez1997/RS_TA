@@ -1,53 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="8" passed="8" failed="0" skipped="0">
+<testng-results ignored="5" total="6" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-07-12T15:51:16 CST" name="Default suite" finished-at="2022-07-12T16:04:32 CST" duration-ms="795073">
+  <suite started-at="2022-07-15T15:08:00 CST" name="Default suite" finished-at="2022-07-15T15:09:24 CST" duration-ms="84700">
     <groups>
     </groups>
-    <test started-at="2022-07-12T15:51:16 CST" name="Default test" finished-at="2022-07-12T16:04:32 CST" duration-ms="795073">
-      <class name="com.rs.test.clusterConfiguration.clusterRouteRules.ClusterRouteRules">
-        <test-method is-config="true" signature="beforeTest()[pri:0, instance:com.rs.test.clusterConfiguration.clusterRouteRules.ClusterRouteRules@82de64a]" started-at="2022-07-12T15:51:16 CST" name="beforeTest" finished-at="2022-07-12T15:51:38 CST" duration-ms="21657" status="PASS">
+    <test started-at="2022-07-15T15:08:00 CST" name="Default test" finished-at="2022-07-15T15:09:24 CST" duration-ms="84700">
+      <class name="com.rs.test.routingRules.ChangeSet">
+        <test-method is-config="true" signature="beforeTest()[pri:0, instance:com.rs.test.routingRules.ChangeSet@659499f1]" started-at="2022-07-15T15:08:00 CST" name="beforeTest" finished-at="2022-07-15T15:08:20 CST" duration-ms="20313" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method signature="createSMSXClusterRouteRules()[pri:0, instance:com.rs.test.clusterConfiguration.clusterRouteRules.ClusterRouteRules@82de64a]" started-at="2022-07-12T15:51:38 CST" name="createSMSXClusterRouteRules" finished-at="2022-07-12T15:52:44 CST" duration-ms="65397" status="PASS">
+        <test-method signature="createRoutingRulesChangeSet()[pri:0, instance:com.rs.test.routingRules.ChangeSet@659499f1]" started-at="2022-07-15T15:08:20 CST" name="createRoutingRulesChangeSet" finished-at="2022-07-15T15:09:24 CST" duration-ms="64328" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- createSMSXClusterRouteRules -->
-        <test-method signature="editSMSXClusterRouteRules()[pri:1, instance:com.rs.test.clusterConfiguration.clusterRouteRules.ClusterRouteRules@82de64a]" started-at="2022-07-12T15:52:44 CST" name="editSMSXClusterRouteRules" finished-at="2022-07-12T15:54:13 CST" depends-on-methods="com.rs.test.clusterConfiguration.clusterRouteRules.ClusterRouteRules.createSMSXClusterRouteRules" duration-ms="89830" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- editSMSXClusterRouteRules -->
-        <test-method signature="deleteSMSXClusterRouteRules()[pri:2, instance:com.rs.test.clusterConfiguration.clusterRouteRules.ClusterRouteRules@82de64a]" started-at="2022-07-12T15:54:13 CST" name="deleteSMSXClusterRouteRules" finished-at="2022-07-12T15:54:55 CST" depends-on-methods="com.rs.test.clusterConfiguration.clusterRouteRules.ClusterRouteRules.createSMSXClusterRouteRules" duration-ms="41432" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- deleteSMSXClusterRouteRules -->
-        <test-method signature="createISMSClusterRouteRules()[pri:3, instance:com.rs.test.clusterConfiguration.clusterRouteRules.ClusterRouteRules@82de64a]" started-at="2022-07-12T15:54:55 CST" name="createISMSClusterRouteRules" finished-at="2022-07-12T15:59:11 CST" duration-ms="255818" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- createISMSClusterRouteRules -->
-        <test-method signature="editISMSClusterRouteRules()[pri:4, instance:com.rs.test.clusterConfiguration.clusterRouteRules.ClusterRouteRules@82de64a]" started-at="2022-07-12T15:59:11 CST" name="editISMSClusterRouteRules" finished-at="2022-07-12T16:00:23 CST" depends-on-methods="com.rs.test.clusterConfiguration.clusterRouteRules.ClusterRouteRules.createISMSClusterRouteRules" duration-ms="72020" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- editISMSClusterRouteRules -->
-        <test-method signature="deleteISMSClusterRouteRules()[pri:5, instance:com.rs.test.clusterConfiguration.clusterRouteRules.ClusterRouteRules@82de64a]" started-at="2022-07-12T16:00:23 CST" name="deleteISMSClusterRouteRules" finished-at="2022-07-12T16:01:02 CST" depends-on-methods="com.rs.test.clusterConfiguration.clusterRouteRules.ClusterRouteRules.createISMSClusterRouteRules" duration-ms="39396" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- deleteISMSClusterRouteRules -->
-        <test-method signature="filtersSMSxClusterRouteRules()[pri:6, instance:com.rs.test.clusterConfiguration.clusterRouteRules.ClusterRouteRules@82de64a]" started-at="2022-07-12T16:01:02 CST" name="filtersSMSxClusterRouteRules" finished-at="2022-07-12T16:02:53 CST" duration-ms="110540" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- filtersSMSxClusterRouteRules -->
-        <test-method signature="filtersISMSClusterRouteRules()[pri:7, instance:com.rs.test.clusterConfiguration.clusterRouteRules.ClusterRouteRules@82de64a]" started-at="2022-07-12T16:02:53 CST" name="filtersISMSClusterRouteRules" finished-at="2022-07-12T16:04:31 CST" duration-ms="98169" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- filtersISMSClusterRouteRules -->
-        <test-method is-config="true" signature="afterTest()[pri:0, instance:com.rs.test.clusterConfiguration.clusterRouteRules.ClusterRouteRules@82de64a]" started-at="2022-07-12T16:04:31 CST" name="afterTest" finished-at="2022-07-12T16:04:32 CST" duration-ms="750" status="PASS">
+        </test-method> <!-- createRoutingRulesChangeSet -->
+        <test-method is-config="true" signature="afterTest()[pri:0, instance:com.rs.test.routingRules.ChangeSet@659499f1]" started-at="2022-07-15T15:09:24 CST" name="afterTest" finished-at="2022-07-15T15:09:24 CST" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterTest -->
-      </class> <!-- com.rs.test.clusterConfiguration.clusterRouteRules.ClusterRouteRules -->
+      </class> <!-- com.rs.test.routingRules.ChangeSet -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
