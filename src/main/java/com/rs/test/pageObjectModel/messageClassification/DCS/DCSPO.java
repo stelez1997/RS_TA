@@ -145,6 +145,8 @@ public class DCSPO extends TestBaseSteven {
 		actionsMoveToElementElement(loginVerificationPO.btnMessageClassification);
 
 		clickOnDCSMenu();
+		
+		visibilityOfElement("//tr[contains(@id, \"DCSTableRow\")]");
 
 		actionsMoveToElementElement(btnAddDCS);
 
@@ -167,6 +169,8 @@ public class DCSPO extends TestBaseSteven {
 		System.out.println("The Hub Id is: " + hubId);
 
 		refresh();
+		
+		visibilityOfElement("//tr[contains(@id, \"DCSTableRow\")]");
 
 		clickOnGoToLast();
 
@@ -192,6 +196,8 @@ public class DCSPO extends TestBaseSteven {
 		actionsMoveToElementElement(loginVerificationPO.btnMessageClassification);
 
 		clickOnDCSMenu();
+		
+		visibilityOfElement("//tr[contains(@id, \"DCSTableRow\")]");
 
 		actionsMoveToElementElement(btnAddDCS);
 
@@ -276,6 +282,8 @@ public class DCSPO extends TestBaseSteven {
 		actionsMoveToElementElement(loginVerificationPO.btnMessageClassification);
 
 		clickOnDCSMenu();
+		
+		visibilityOfElement("//tr[contains(@id, \"DCSTableRow\")]");
 
 		actionsMoveToElementElement(btnAddDCS);
 

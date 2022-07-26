@@ -1,15 +1,103 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
-  <test thread-count="5" name="Default test(failed)">
+<suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="Carrier Service(failed)">
+    <classes>
+      <class name="com.rs.test.configuration.carrierService.CarrierService">
+        <methods>
+          <include name="editMSGProps"/>
+          <include name="createCarrierService"/>
+          <include name="beforeTest"/>
+          <include name="deleteMSGProps"/>
+          <include name="afterTest"/>
+          <include name="createMSGProps"/>
+        </methods>
+      </class> <!-- com.rs.test.configuration.carrierService.CarrierService -->
+    </classes>
+  </test> <!-- Carrier Service(failed) -->
+  <test thread-count="5" name="Message Aggregators(failed)">
+    <classes>
+      <class name="com.rs.test.configuration.messageAggregators.MessageAggregators">
+        <methods>
+          <include name="beforeTest"/>
+          <include name="afterTest"/>
+          <include name="createMessageAggregator"/>
+          <include name="editMessageAggregator"/>
+        </methods>
+      </class> <!-- com.rs.test.configuration.messageAggregators.MessageAggregators -->
+    </classes>
+  </test> <!-- Message Aggregators(failed) -->
+  <test thread-count="5" name="Character Encoding(failed)">
+    <classes>
+      <class name="com.rs.test.configuration.characterEncoding.CharacterEncoding">
+        <methods>
+          <include name="createCharacterEncoding"/>
+          <include name="createCustomEncodeCodePoint"/>
+          <include name="deleteCharacterEncoding"/>
+          <include name="deleteCustomEncodeCodePoint"/>
+          <include name="beforeTest"/>
+          <include name="editCustomEncodeCodePoint"/>
+          <include name="editCharacterEncoding"/>
+          <include name="afterTest"/>
+        </methods>
+      </class> <!-- com.rs.test.configuration.characterEncoding.CharacterEncoding -->
+    </classes>
+  </test> <!-- Character Encoding(failed) -->
+  <test thread-count="5" name="Cluster Route Rules(failed)">
+    <classes>
+      <class name="com.rs.test.clusterConfiguration.clusterRouteRules.ClusterRouteRules">
+        <methods>
+          <include name="deleteISMSClusterRouteRules"/>
+          <include name="filtersSMSxClusterRouteRules"/>
+          <include name="editISMSClusterRouteRules"/>
+          <include name="afterTest"/>
+          <include name="createISMSClusterRouteRules"/>
+          <include name="beforeTest"/>
+        </methods>
+      </class> <!-- com.rs.test.clusterConfiguration.clusterRouteRules.ClusterRouteRules -->
+    </classes>
+  </test> <!-- Cluster Route Rules(failed) -->
+  <test thread-count="5" name="Bill Class(failed)">
+    <classes>
+      <class name="com.rs.test.messageClassification.BillClass.BillClass">
+        <methods>
+          <include name="beforeTest"/>
+          <include name="createBillClass"/>
+          <include name="afterTest"/>
+          <include name="editBillClass"/>
+        </methods>
+      </class> <!-- com.rs.test.messageClassification.BillClass.BillClass -->
+    </classes>
+  </test> <!-- Bill Class(failed) -->
+  <test thread-count="5" name="Message Classification Change Set(failed)">
+    <classes>
+      <class name="com.rs.test.messageClassification.ChangeSet.ChangeSet">
+        <methods>
+          <include name="deleteChangeSetMessageClassification"/>
+          <include name="beforeTest"/>
+          <include name="editChangeSet"/>
+          <include name="createChangeSetMessageClassification"/>
+          <include name="createChangeSet"/>
+          <include name="afterTest"/>
+          <include name="deleteChangeSet"/>
+          <include name="editChangeSetMessageClassification"/>
+        </methods>
+      </class> <!-- com.rs.test.messageClassification.ChangeSet.ChangeSet -->
+    </classes>
+  </test> <!-- Message Classification Change Set(failed) -->
+  <test thread-count="5" name="Change Set(failed)">
     <classes>
       <class name="com.rs.test.routingRules.ChangeSet">
         <methods>
+          <include name="editMSGPropsChangeSet"/>
           <include name="editRoutingRulesChangeSet"/>
           <include name="beforeTest"/>
+          <include name="createMSGPropsChangeSet"/>
+          <include name="createRoutingRulesChangeSet"/>
           <include name="afterTest"/>
+          <include name="createChangeSet"/>
         </methods>
       </class> <!-- com.rs.test.routingRules.ChangeSet -->
     </classes>
-  </test> <!-- Default test(failed) -->
-</suite> <!-- Failed suite [Default suite] -->
+  </test> <!-- Change Set(failed) -->
+</suite> <!-- Failed suite [Suite] -->

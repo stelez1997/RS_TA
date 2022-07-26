@@ -244,6 +244,8 @@ public class ClusterCallToActionPO extends TestBaseSteven {
 
 		clickOnClusterCallToActionMenu();
 
+		visibilityOfElement("//tr[contains(@id,\"Cluster Call To ActionTableRow\")]");
+		
 		actionsMoveToElementElement(btnAddClusterCallToAction);
 
 		clickOnGoToLast();
@@ -323,9 +325,11 @@ public class ClusterCallToActionPO extends TestBaseSteven {
 		actionsMoveToElementElement(loginVerificationPO.btnClusterConfiguration);
 
 		clickOnClusterCallToActionMenu();
-
+		
+		visibilityOfElement("//tr[contains(@id,\"Cluster Call To ActionTableRow\")]");
+		
 		actionsMoveToElementElement(btnAddClusterCallToAction);
-
+		
 		clickOnGoToLast();
 		
 		String record = "TATest";
@@ -456,7 +460,9 @@ public class ClusterCallToActionPO extends TestBaseSteven {
 		actionsMoveToElementElement(loginVerificationPO.btnClusterConfiguration);
 
 		clickOnClusterCallToActionMenu();
-
+		
+		visibilityOfElement("//tr[contains(@id,\"Cluster Call To ActionTableRow\")]");
+		
 		actionsMoveToElementElement(btnAddClusterCallToAction);
 
 		clickOnGoToLast();
@@ -526,6 +532,8 @@ public class ClusterCallToActionPO extends TestBaseSteven {
 		actionsMoveToElementElement(loginVerificationPO.btnClusterConfiguration);
 
 		clickOnClusterCallToActionMenu();
+		
+		visibilityOfElement("//tr[contains(@id,\"Cluster Call To ActionTableRow\")]");
 
 		actionsMoveToElementElement(btnAddClusterCallToAction);
 
@@ -643,6 +651,8 @@ public class ClusterCallToActionPO extends TestBaseSteven {
 		actionsMoveToElementElement(loginVerificationPO.btnClusterConfiguration);
 
 		clickOnClusterCallToActionMenu();
+		
+		visibilityOfElement("//tr[contains(@id,\"Cluster Call To ActionTableRow\")]");
 
 		actionsMoveToElementElement(btnAddClusterCallToAction);
 

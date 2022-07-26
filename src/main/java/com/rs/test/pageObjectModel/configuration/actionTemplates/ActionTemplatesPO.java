@@ -134,6 +134,8 @@ public class ActionTemplatesPO extends TestBaseSteven {
 		actionsMoveToElementElement(loginVerificationPO.btnConfiguration);
 
 		clickOnActionTemplateMenu();
+		
+		visibilityOfElement("//tr[contains(@id,\"TemplateTableRow\")]");
 
 		actionsMoveToElementElement(btnAddTemplate);
 
@@ -208,9 +210,10 @@ public class ActionTemplatesPO extends TestBaseSteven {
 		actionsMoveToElementElement(loginVerificationPO.btnConfiguration);
 
 		clickOnActionTemplateMenu();
+		
+		visibilityOfElement("//tr[contains(@id,\"TemplateTableRow\")]");
 
 		actionsMoveToElementElement(btnAddTemplate);
-
 		
 		clickOnGoToLast();
 		
@@ -243,8 +246,6 @@ public class ActionTemplatesPO extends TestBaseSteven {
 	}
 
 	public void editActionTemplate() {
-
-		loginVerificationPO = new LoginVerificationPO();
 
 		int rows = verification();
 		
@@ -299,8 +300,6 @@ public class ActionTemplatesPO extends TestBaseSteven {
 	}
 	
 	public void deleteActionTemplate() {
-
-		loginVerificationPO = new LoginVerificationPO();
 
 		int rows = verification();
 

@@ -1,26 +1,26 @@
-package com.rs.test.spam.gtRules;
+package com.rs.test.spam.gtSpam;
 
 import org.testng.annotations.Test;
 
 import com.rs.test.base.TestBaseSteven;
 import com.rs.test.pageObjectModel.login.LoginVerificationPO;
 import com.rs.test.pageObjectModel.spam.carrierTemplate.CarrierTemplatesPO;
-import com.rs.test.pageObjectModel.spam.gtRules.GTRulesPO;
+import com.rs.test.pageObjectModel.spam.gtSpam.GTSpamPO;
 
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.AfterTest;
 
-public class GTRules extends TestBaseSteven {
+public class GTSpam extends TestBaseSteven {
 
 	LoginVerificationPO loginVerificationPO;
-	GTRulesPO gTRulesPO;
+	GTSpamPO gTSpamPO;
 
 	@BeforeTest
 	public void beforeTest() {
 
 		driver = initialization();
 		loginVerificationPO = new LoginVerificationPO();
-		gTRulesPO = new GTRulesPO();
+		gTSpamPO = new GTSpamPO();
 		loginVerificationPO.login();
 
 	}
@@ -30,7 +30,7 @@ public class GTRules extends TestBaseSteven {
 	@Test()
 	public void filtersCarrierTemplate() {
 
-		gTRulesPO.filters();
+		gTSpamPO.filters();
 
 	}
 

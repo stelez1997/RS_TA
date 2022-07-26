@@ -141,6 +141,8 @@ public class ClusterProfilePO extends TestBaseSteven {
 		actionsMoveToElementElement(loginVerificationPO.btnClusterConfiguration);
 
 		clickOnClusterProfileMenu();
+		
+		visibilityOfElement("//tr[contains(@id,\"ProfileTableRow\")]");
 
 		actionsMoveToElementElement(btnGoToFirst);
 

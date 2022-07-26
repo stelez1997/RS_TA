@@ -1,4 +1,4 @@
-package com.rs.test.pageObjectModel.spam.gtRules;
+package com.rs.test.pageObjectModel.spam.gtSpam;
 
 import static org.testng.Assert.assertFalse;
 import static org.testng.Assert.assertTrue;
@@ -20,9 +20,9 @@ import com.rs.test.pageObjectModel.login.LoginVerificationPO;
  * @author stelez
  *
  */
-public class GTRulesPO extends TestBaseSteven {
+public class GTSpamPO extends TestBaseSteven {
 
-	public GTRulesPO() {
+	public GTSpamPO() {
 		PageFactory.initElements(driver, this);
 	}
 
@@ -131,7 +131,7 @@ public class GTRulesPO extends TestBaseSteven {
 
 		clickOnGTSpamMenu();
 
-		actionsMoveToElementElement(btnSearch);
+		visibilityOfElement("//tr[contains(@id,\"GT RulesTableRow\")]");
 
 		clickOnGoToLast();
 

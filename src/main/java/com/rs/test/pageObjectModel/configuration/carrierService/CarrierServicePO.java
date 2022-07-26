@@ -520,6 +520,8 @@ public class CarrierServicePO extends TestBaseSteven {
 		actionsMoveToElementElement(loginVerificationPO.btnConfiguration);
 
 		clickOnCarrierServiceMenu();
+		
+		visibilityOfElement("//tr[contains(@id,\"ServiceTableRow\")]");
 
 		actionsMoveToElementElement(btnGoToFirst);
 
@@ -610,6 +612,8 @@ public class CarrierServicePO extends TestBaseSteven {
 		actionsMoveToElementElement(loginVerificationPO.btnConfiguration);
 
 		clickOnCarrierServiceMenu();
+		
+		visibilityOfElement("//tr[contains(@id,\"ServiceTableRow\")]");
 
 		actionsMoveToElementElement(btnGoToLast);
 
@@ -787,6 +791,8 @@ public class CarrierServicePO extends TestBaseSteven {
 		actionsMoveToElementElement(loginVerificationPO.btnConfiguration);
 
 		clickOnCarrierServiceMenu();
+		
+		visibilityOfElement("//tr[contains(@id,\"ServiceTableRow\")]");
 
 		actionsMoveToElementElement(btnGoToFirst);
 

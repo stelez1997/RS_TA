@@ -142,6 +142,17 @@
 	</test>
 	
 	
+			<!----><!----><!-- Routing Rules --><!----><!----><!---->
+
+
+	<test name="Routing Rules Change Set">
+		<classes>
+
+			<class name="com.rs.test.routingRules.ChangeSet"></class>
+		</classes>
+	</test>
+	
+	
 
 
 

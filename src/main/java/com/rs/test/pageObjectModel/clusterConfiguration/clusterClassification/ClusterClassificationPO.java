@@ -145,6 +145,8 @@ public class ClusterClassificationPO extends TestBaseSteven {
 		actionsMoveToElementElement(loginVerificationPO.btnClusterConfiguration);
 
 		clickOnClusterClassificationMenu();
+		
+		visibilityOfElement("//tr[contains(@id,\"ClassificationTableRow\")]");
 
 		actionsMoveToElementElement(btnAddClusterClassification);
 
@@ -213,6 +215,8 @@ public class ClusterClassificationPO extends TestBaseSteven {
 		actionsMoveToElementElement(loginVerificationPO.btnClusterConfiguration);
 
 		clickOnClusterClassificationMenu();
+		
+		visibilityOfElement("//tr[contains(@id,\"ClassificationTableRow\")]");
 
 		actionsMoveToElementElement(btnAddClusterClassification);
 

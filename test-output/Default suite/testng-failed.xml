@@ -5,9 +5,13 @@
     <classes>
       <class name="com.rs.test.routingRules.ChangeSet">
         <methods>
+          <include name="editMSGPropsChangeSet"/>
           <include name="editRoutingRulesChangeSet"/>
           <include name="beforeTest"/>
+          <include name="createMSGPropsChangeSet"/>
+          <include name="createRoutingRulesChangeSet"/>
           <include name="afterTest"/>
+          <include name="createChangeSet"/>
         </methods>
       </class> <!-- com.rs.test.routingRules.ChangeSet -->
     </classes>

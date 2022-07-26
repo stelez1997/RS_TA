@@ -40,28 +40,49 @@ public class ChangeSet extends TestBaseSteven {
 
 	}
 	
-	@Test(dependsOnMethods = "createChangeSet", priority = 2)
+	@Test(dependsOnMethods = "createChangeSet", priority = 9)
 	public void deleteChangeSet() {
 
 		changeSetPO.deleteChangeSet();
 
 	}
 	
-	@Test()
+	@Test(dependsOnMethods = "createChangeSet", priority = 3)
 	public void createRoutingRulesChangeSet() {
 
 		changeSetPO.createRoutingRulesChangeSet();
 
 	}
 	
-	@Test()
+	@Test(dependsOnMethods = "createChangeSet", priority = 4)
 	public void editRoutingRulesChangeSet() {
 
 		changeSetPO.editRoutingRulesChangeSet();
 
 	}
 	
-	@Test()
+	@Test(dependsOnMethods = "createRoutingRulesChangeSet", priority = 5)
+	public void createMSGPropsChangeSet() {
+
+		changeSetPO.createChangeSetMSGProps();
+
+	}
+	
+	@Test(dependsOnMethods = "createMSGPropsChangeSet", priority = 6)
+	public void editMSGPropsChangeSet() {
+
+		changeSetPO.editChangeSetMSGProps();
+
+	}
+	
+	@Test(dependsOnMethods = "createMSGPropsChangeSet", priority = 7)
+	public void deleteMSGPropsChangeSet() {
+
+		changeSetPO.deleteChangeSetMSGProps();
+
+	}
+	
+	@Test(dependsOnMethods = "createChangeSet", priority = 8)
 	public void deleteRoutingRulesChangeSet() {
 
 		changeSetPO.deleteRoutingRulesChangeSet();
@@ -72,7 +93,7 @@ public class ChangeSet extends TestBaseSteven {
 	@AfterTest
 	public void afterTest() {
 
-		//driver.close();
+		driver.close();
 
 	}
 

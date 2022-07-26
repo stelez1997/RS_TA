@@ -131,6 +131,8 @@ public class ClusterSummaryPO extends TestBaseSteven {
 		actionsMoveToElementElement(loginVerificationPO.btnClusterConfiguration);
 
 		clickOnClusterSummaryMenu();
+		
+		waitExpectedElement(menuClusterClassificationSuggestion);
 
 		actionsMoveToElementElement(btnGoToFirst);
 		
@@ -206,6 +208,8 @@ public class ClusterSummaryPO extends TestBaseSteven {
 		actionsMoveToElementElement(loginVerificationPO.btnClusterConfiguration);
 
 		clickOnClusterSummaryMenu();
+		
+		waitExpectedElement(menuClusterClassificationSuggestion);
 
 		actionsMoveToElementElement(btnGoToFirst);
 		

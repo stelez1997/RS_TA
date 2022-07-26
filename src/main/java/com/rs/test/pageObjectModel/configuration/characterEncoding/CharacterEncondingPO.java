@@ -261,6 +261,8 @@ public class CharacterEncondingPO extends TestBaseSteven {
 		actionsMoveToElementElement(loginVerificationPO.btnConfiguration);
 
 		clickOnCharacterEncodingMenu();
+		
+		visibilityOfElement("//tr[contains(@id,\"Character EncodingTableRow\") and not(contains(@id,\"Default\"))]");
 
 		actionsMoveToElementElement(btnAddCharacterEncoding);
 		
@@ -340,6 +342,8 @@ public class CharacterEncondingPO extends TestBaseSteven {
 		visibilityOfElement("//tr[contains(@id,\"Custom Encode Code PointTable\") ][1]");
 		
 		loginVerificationPO = new LoginVerificationPO();
+		
+		visibilityOfElement("//tr[contains(@id,\"Character EncodingTableRow\") and not(contains(@id,\"Default\"))]");
 
 		actionsMoveToElementElement(loginVerificationPO.btnConfiguration);
 
@@ -542,11 +546,11 @@ public class CharacterEncondingPO extends TestBaseSteven {
 	public void createCustomEncodeCodePoint() {
 		loginVerificationPO = new LoginVerificationPO();
 		
-
-
 		actionsMoveToElementElement(loginVerificationPO.btnConfiguration);
 
 		clickOnCharacterEncodingMenu();
+		
+		visibilityOfElement("//tr[contains(@id,\"Character EncodingTableRow\") and not(contains(@id,\"Default\"))]");
 
 		actionsMoveToElementElement(btnAddCharacterEncoding);
 		

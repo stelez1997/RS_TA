@@ -450,6 +450,8 @@ public class ClusterRouteRulesPO extends TestBaseSteven {
 		actionsMoveToElementElement(loginVerificationPO.btnClusterConfiguration);
 
 		clickOnRoutRulesMenu();
+		
+		visibilityOfElement("//tr[contains(@id,\"RulesTable\") and not(contains(@id,\"ISMS\"))]");
 
 		actionsMoveToElementElement(btnGoToFirstSMSx);
 
@@ -535,6 +537,8 @@ public class ClusterRouteRulesPO extends TestBaseSteven {
 		actionsMoveToElementElement(loginVerificationPO.btnClusterConfiguration);
 
 		clickOnRoutRulesMenu();
+		
+		visibilityOfElement("//tr[contains(@id,\"RulesTable\") and not(contains(@id,\"ISMS\"))]");
 
 		actionsMoveToElementElement(btnGoToFirstSMSx);
 
@@ -925,6 +929,8 @@ public class ClusterRouteRulesPO extends TestBaseSteven {
 		actionsMoveToElementElement(loginVerificationPO.btnClusterConfiguration);
 
 		clickOnRoutRulesMenu();
+		
+		visibilityOfElement("//tr[contains(@id,\"RulesTable\") and not(contains(@id,\"ISMS\"))]");
 
 		actionsMoveToElementElement(btnGoToFirstSMSx);
 
@@ -1022,6 +1028,8 @@ public class ClusterRouteRulesPO extends TestBaseSteven {
 		actionsMoveToElementElement(loginVerificationPO.btnClusterConfiguration);
 
 		clickOnRoutRulesMenu();
+		
+		visibilityOfElement("//tr[contains(@id,\"RulesTable\") and not(contains(@id,\"ISMS\"))]");
 
 		actionsMoveToElementElement(btnGoToFirstSMSx);
 
@@ -1117,6 +1125,8 @@ public class ClusterRouteRulesPO extends TestBaseSteven {
 		actionsMoveToElementElement(loginVerificationPO.btnClusterConfiguration);
 
 		clickOnRoutRulesMenu();
+		
+		visibilityOfElement("//tr[contains(@id,\"RulesTable\") and not(contains(@id,\"ISMS\"))]");
 
 		actionsMoveToElementElement(btnGoToFirstSMSx);
 
@@ -1455,6 +1465,8 @@ public class ClusterRouteRulesPO extends TestBaseSteven {
 		actionsMoveToElementElement(loginVerificationPO.btnClusterConfiguration);
 
 		clickOnRoutRulesMenu();
+		
+		visibilityOfElement("//tr[contains(@id,\"RulesTable\") and not(contains(@id,\"ISMS\"))]");
 
 		actionsMoveToElementElement(btnGoToFirstSMSx);
 

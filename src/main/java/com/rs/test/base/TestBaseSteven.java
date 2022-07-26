@@ -35,7 +35,7 @@ public class TestBaseSteven {
 
 	// URL
 	protected String url = "http://localhost:3000/";
-	
+
 	//ArrayList<String> dataE = new ArrayList<String>();
 	//How to include variables on the attributes 
 	//WebElement example = findElement("//div[@class=\"searchBarElement\"][1]//child::select/option[text()=\"" + dataE.get(0) + "\"]");
@@ -757,6 +757,8 @@ public class TestBaseSteven {
 	
 	public void verificateData(ArrayList<String> dataB, ArrayList<String> dataA) {
 		
+		System.out.println("Data A: "+dataA.size());
+		System.out.println("Data B: "+dataB.size());
 		if (dataA.size() == dataB.size()) {
 			
 			for (int i = 0; i < dataA.size(); i++) {

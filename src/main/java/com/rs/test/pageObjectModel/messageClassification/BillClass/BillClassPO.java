@@ -138,6 +138,8 @@ public class BillClassPO extends TestBaseSteven {
 		actionsMoveToElementElement(loginVerificationPO.btnMessageClassification);
 
 		clickOnBillClassMenu();
+		
+		visibilityOfElement("//tr[contains(@id,\"Bill ClassTable\")]");
 
 		actionsMoveToElementElement(btnAddBillClass);
 
@@ -153,6 +155,8 @@ public class BillClassPO extends TestBaseSteven {
 		clickOnAddBillClass();
 
 		refresh();
+		
+		visibilityOfElement("//tr[contains(@id,\"Bill ClassTable\")]");
 
 		clickOnGoToLast();
 		
@@ -197,6 +201,8 @@ public class BillClassPO extends TestBaseSteven {
 		actionsMoveToElementElement(loginVerificationPO.btnMessageClassification);
 
 		clickOnBillClassMenu();
+		
+		visibilityOfElement("//tr[contains(@id,\"Bill ClassTable\")]");
 
 		actionsMoveToElementElement(btnAddBillClass);
 

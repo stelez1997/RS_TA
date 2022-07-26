@@ -127,7 +127,34 @@ public class ChangeSetPO extends TestBaseSteven {
 	@FindBy(xpath = "//button[@id=\"Change Set Routing RulesAddBtn\"]")
 	public WebElement btnAddRoutingRulesChangeSet;
 
+	//MSG Props
 	
+	@FindBy(xpath = "//input[@name=\"dcs\"]")
+	public WebElement txtDCS;
+	
+	@FindBy(xpath = "//input[@name=\"esm\"]")
+	public WebElement txtESM;
+	
+	@FindBy(xpath = "//select[@name=\"addbin\"]")
+	public WebElement cboBIN;
+	
+	@FindBy(xpath = "//select[@name=\"addbin\"]/option[text()][1]")
+	public WebElement cboBINO;
+	
+	@FindBy(xpath = "//select[@name=\"addudh\"]")
+	public WebElement cboUDH;
+	
+	@FindBy(xpath = "//select[@name=\"addudh\"]/option[text()][1]")
+	public WebElement cboUDHO;
+	
+	@FindBy(xpath = "//select[@name=\"addrouteRuleType\"]")
+	public WebElement cboRuleType;
+	
+	@FindBy(xpath = "//select[@name=\"addrouteRuleType\"]/option[text()][1]")
+	public WebElement cboRuleTypeO;
+	
+	@FindBy(xpath = "//div[@class=\"tablePageModalBack\" and not(contains(@style,\"none\"))]//button[@id=\"AddBtn\"]")
+	public WebElement btnAddMSGProps;
 
 	// Search
 
@@ -377,6 +404,52 @@ public class ChangeSetPO extends TestBaseSteven {
 		click(btnAddRoutingRulesChangeSet);
 		sleep(8000);
 	}
+	
+	//MSG Props
+	
+	public void fillOutDCS(String text) {
+		sendKeys(txtDCS, text);
+	}
+	
+	public void fillOutESM(String text) {
+		sendKeys(txtESM, text);
+	}
+	
+	public void selectBIN() {
+		
+		click(cboBIN);
+		sleep(1000);
+		cboBINText = getText(cboBINO);
+		dataB.add(cboBINText);
+		click(cboBINO);
+		
+	}
+	
+	public void selectUDH() {
+		
+		click(cboUDH);
+		sleep(1000);
+		cboUDHText = getText(cboUDHO);
+		dataB.add(cboUDHText);
+		click(cboUDHO);
+		
+	}
+	
+	public void selectRuleType() {
+		
+		click(cboRuleType);
+		sleep(1000);
+		cboRuleTypeText = getText(cboRuleTypeO);
+		dataB.add(cboRuleTypeText);
+		click(cboRuleTypeO);
+		
+	}
+	
+	public void clickOnBtnAddMSGProps() {
+		click(btnAddMSGProps);
+		sleep(5000);
+	}
+	
 
 	
 	//Search Methods
@@ -398,7 +471,7 @@ public class ChangeSetPO extends TestBaseSteven {
 	// Create
 	
 	String cboCaseTypeText = "";
-	String caseName = "TATest";
+	String caseName = "TestTA";
 	String description = "Test";
 	String dtpScheduledText = "";
 	
@@ -414,10 +487,10 @@ public class ChangeSetPO extends TestBaseSteven {
 		actionsMoveToElementElement(loginVerificationPO.btnRoutingRules);
 
 		clickOnChangeSetMenu();
+		
+		visibilityOfElement("//tr[contains(@id,\"SetTable\")]");
 
 		actionsMoveToElementElement(btnAddChangeSet);
-		
-		waitExpectedElement("//tr[contains(@id,\"SetTable\")][1]");
 		
 		selectCaseType();
 
@@ -482,10 +555,10 @@ public class ChangeSetPO extends TestBaseSteven {
 		actionsMoveToElementElement(loginVerificationPO.btnRoutingRules);
 
 		clickOnChangeSetMenu();
-
-		actionsMoveToElementElement(btnAddChangeSet);
 		
 		visibilityOfElement("//tr[contains(@id,\"SetTable\")][1]");
+
+		actionsMoveToElementElement(btnAddChangeSet);
 		
 		String caseNameV = getText("//tr[contains(@id,\"SetTable\")][1]/td[3]");
 		
@@ -595,29 +668,33 @@ public class ChangeSetPO extends TestBaseSteven {
 	
 	public void createRoutingRulesChangeSet() {
 		
-		dataB.clear();
-		dataB.add("MO");
-		dataB.add("SMSx");
-		dataB.add("P2P");
-		dataB.add("95475259");
-		dataB.add("AC");
-		dataB.add("7");
-		dataB.add("VERISIGN");
-		dataB.add("3RIVW");
-		dataB.add("AC");
-		dataB.add("9");
-		dataB.add("3RIVW");
-		dataB.add("Direct/Open Route");
-		dataB.add("3RIVW");
-		dataB.add("160_split");
+
 		
 
 		verification();
+		j=0;
 		
 		WebElement btnCase = findElement("//tr[contains(@id,\"SetTable\")][1]//a");
 		click(btnCase);
 		
 		waitExpectedElement("//tr[contains(@id,\"RulesTable\") and contains(@id,\"Search\")][1]");
+		
+		dataB.clear();
+		dataA.clear();
+		/*Direction*/dataB.add("MO");
+		/*Hub Id*/dataB.add("SMSx");
+		/*Message Classification*/dataB.add("P2P");
+		/*Orig MSISDB*/dataB.add("95475257");
+		/*Orig CC*/dataB.add("AC");
+		/*Orig Prefix*/dataB.add("7");
+		/*Orig Peer*/dataB.add("VERISIGN");
+		/*Orig CS*/dataB.add("3RIVW");
+		/*Dest CC*/dataB.add("AC");
+		/*Dest Prefix*/dataB.add("9");
+		/*Dest CS*/dataB.add("3RIVW");
+		/*Route*/dataB.add("Direct/Open Route");
+		/*Log Agent*/dataB.add("3RIVW");
+		/*Template*/dataB.add("160_split");
 		
 		
 		int rowsB = rows("//tr[contains(@id,\"RulesTableRow\") and not(contains(@id,\"Search\"))]");
@@ -682,53 +759,54 @@ public class ChangeSetPO extends TestBaseSteven {
 		String cboLogAgentA =getText("//tr[contains(@id,\"RulesTableRow\") and not(contains(@id,\"Search\"))]["+rowsA+"]//select[@name=\"editlogAgentName\"]//preceding-sibling::div");
 		String cboTemplateA =getText("//tr[contains(@id,\"RulesTableRow\") and not(contains(@id,\"Search\"))]["+rowsA+"]//select[@name=\"editactionTemplateName\"]//preceding-sibling::div");
 		
-		dataA.add(cboDirectionA);
-		dataA.add(cboHubIdA);
-		dataA.add(cboMessageClassificationA);
-		dataA.add(txtOrigMSISDNA);
-		dataA.add(cboOrigCCA);
-		dataA.add(cboOrigPrefixA);
-		dataA.add(cboOrgiPeerA);
-		dataA.add(cboOrigCSA);
-		dataA.add(cboDestCCA);
-		dataA.add(cboDestPrefixA);
-		dataA.add(cboDestCSA);
-		dataA.add(cboRouteA);
-		dataA.add(cboLogAgentA);
-		dataA.add(cboTemplateA);
-
+		/*Direction*/dataA.add(cboDirectionA);
+		/*Hub Id*/dataA.add(cboHubIdA);
+		/*Message Classification*/dataA.add(cboMessageClassificationA);
+		/*Orig MSISDN*/dataA.add(txtOrigMSISDNA);
+		/*Orig CC*/dataA.add(cboOrigCCA);
+		/*Orig Prefix*/dataA.add(cboOrigPrefixA);
+		/*Orig Peer*/dataA.add(cboOrgiPeerA);
+		/*Orig CS*/dataA.add(cboOrigCSA);
+		/*Dest CC*/dataA.add(cboDestCCA);
+		/*Dest Prefix*/dataA.add(cboDestPrefixA);
+		/*Dest CS*/dataA.add(cboDestCSA);
+		/*Route*/dataA.add(cboRouteA);
+		/*Log Agent*/dataA.add(cboLogAgentA);
+		/*Template*/dataA.add(cboTemplateA);
+		
+		int j =0;
 		System.out.println("--------------------------------Creation Verification-------------------------");
 		System.out.println("Options Entered--------");
-		System.out.println("The Direction is: " + dataB.get(0));
-		System.out.println("The Hub Id	 is: " + dataB.get(1));
-		System.out.println("The Message Classification is: " + dataB.get(2));
-		System.out.println("The Orig MSISDN: " + dataB.get(3));
-		System.out.println("The Orig CC is: " + dataB.get(4));
-		System.out.println("The Orig Prefix is: " + dataB.get(5));
-		System.out.println("The Orig Peer is: " + dataB.get(6));
-		System.out.println("The Orig CS is: " + dataB.get(7));
-		System.out.println("The Dest CC is: " + dataB.get(8));
-		System.out.println("The Dest Prefix is: " + dataB.get(9));
-		System.out.println("The Dest CS is: " + dataB.get(10));
-		System.out.println("The Route is: " + dataB.get(11));
-		System.out.println("The Log Agent is: " + dataB.get(12));
-		System.out.println("The Template is: " + dataB.get(13));
-
+		System.out.println("The Direction is: " + dataB.get(j));j++;
+		System.out.println("The Hub Id	 is: " + dataB.get(j));j++;
+		System.out.println("The Message Classification is: " + dataB.get(j));j++;
+		System.out.println("The Orig MSISDN: " + dataB.get(j));j++;
+		System.out.println("The Orig CC is: " + dataB.get(j));j++;
+		System.out.println("The Orig Prefix is: " + dataB.get(j));j++;
+		System.out.println("The Orig Peer is: " + dataB.get(j));j++;
+		System.out.println("The Orig CS is: " + dataB.get(j));j++;
+		System.out.println("The Dest CC is: " + dataB.get(j));j++;
+		System.out.println("The Dest Prefix is: " + dataB.get(j));j++;
+		System.out.println("The Dest CS is: " + dataB.get(j));j++;
+		System.out.println("The Route is: " + dataB.get(j));j++;
+		System.out.println("The Log Agent is: " + dataB.get(j));j++;
+		System.out.println("The Template is: " + dataB.get(j));
+		j=0;
 		System.out.println("Information After Creation--------");
-		System.out.println("The Direction is: " + dataA.get(0));
-		System.out.println("The Hub Id	 is: " + dataA.get(1));
-		System.out.println("The Message Classification is: " + dataA.get(2));
-		System.out.println("The Orig MSISDN: " + dataA.get(3));
-		System.out.println("The Orig CC is: " + dataA.get(4));
-		System.out.println("The Orig Prefix is: " + dataA.get(5));
-		System.out.println("The Orig Peer is: " + dataA.get(6));
-		System.out.println("The Orig CS is: " + dataA.get(7));
-		System.out.println("The Dest CC is: " + dataA.get(8));
-		System.out.println("The Dest Prefix is: " + dataA.get(9));
-		System.out.println("The Dest CS is: " + dataA.get(10));
-		System.out.println("The Route is: " + dataA.get(11));
-		System.out.println("The Log Agent is: " + dataA.get(12));
-		System.out.println("The Template is: " + dataA.get(13));
+		System.out.println("The Direction is: " + dataA.get(j));j++;
+		System.out.println("The Hub Id	 is: " + dataA.get(j));j++;
+		System.out.println("The Message Classification is: " + dataA.get(j));j++;
+		System.out.println("The Orig MSISDN: " + dataA.get(j));j++;
+		System.out.println("The Orig CC is: " + dataA.get(j));j++;
+		System.out.println("The Orig Prefix is: " + dataA.get(j));j++;
+		System.out.println("The Orig Peer is: " + dataA.get(j));j++;
+		System.out.println("The Orig CS is: " + dataA.get(j));j++;
+		System.out.println("The Dest CC is: " + dataA.get(j));j++;
+		System.out.println("The Dest Prefix is: " + dataA.get(j));j++;
+		System.out.println("The Dest CS is: " + dataA.get(j));j++;
+		System.out.println("The Route is: " + dataA.get(j));j++;
+		System.out.println("The Log Agent is: " + dataA.get(j));j++;
+		System.out.println("The Template is: " + dataA.get(j));
 		
 		verificateData(dataB, dataA);
 		
@@ -745,15 +823,15 @@ public class ChangeSetPO extends TestBaseSteven {
 		dataB.add("MT");
 		dataB.add("EM");
 		dataB.add("A2P");
-		dataB.add("95475250");
+		dataB.add("95475258");
 		dataB.add("AD");
 		dataB.add("8");
-		dataB.add("ZIPWHIP");
-		dataB.add("365WI");
+		dataB.add("A2P_HUB");
+		dataB.add("1PTCM");
 		dataB.add("AD");
 		dataB.add("8");
-		dataB.add("365WI");
-		dataB.add("365WI");
+		dataB.add("1PTCM");
+		dataB.add("1PTCM");
 		dataB.add("160_truncate");
 
 		verification();
@@ -925,6 +1003,10 @@ public class ChangeSetPO extends TestBaseSteven {
 	}
 	
 	public void deleteRoutingRulesChangeSet() {
+		
+		refresh();
+		
+		waitExpectedElement("//tr[contains(@id,\"RulesTable\") and contains(@id,\"Search\")][1]");
 
 		verification();
 		
@@ -953,5 +1035,137 @@ public class ChangeSetPO extends TestBaseSteven {
 	}
 	
 
+	String cboBINText ="";
+	String cboUDHText ="";
+	String cboRuleTypeText ="";
+	public void createChangeSetMSGProps() {
+		
+		String dcsText = "36";
+		String esmText = "1234";
+		
+		dataB.clear();
+		dataA.clear();
+
+		dataB.add(dcsText);
+		dataB.add(esmText);
+
+		verification();
+		
+		WebElement btnCase = findElement("//tr[contains(@id,\"SetTable\")][1]//a");
+		click(btnCase);
+		
+		waitExpectedElement("//tr[contains(@id,\"RulesTable\") and contains(@id,\"Search\")][1]");
+		
+		WebElement btnMSGProps = findElement("//button[@id=\"msgPropsModalBtn0\"]");
+		click(btnMSGProps);
+		
+		waitExpectedElement(btnAddMSGProps);
+		
+		fillOutDCS(dcsText);
+		fillOutESM(esmText);
+		
+		selectBIN();
+		selectUDH();
+		selectRuleType();
+		
+		clickOnBtnAddMSGProps();
+		
+		refresh();
+		
+		waitExpectedElement("//tr[contains(@id,\"RulesTable\") and contains(@id,\"Search\")][1]");
+		
+		btnMSGProps = findElement("//button[@id=\"msgPropsModalBtn0\"]");
+		click(btnMSGProps);
+		
+		String dcsA = getText("//input[starts-with(@id,\"dcsEdit\")]//preceding-sibling::*");
+		String esmA = getText("//input[starts-with(@id,\"esmEdit\")]//preceding-sibling::*");
+		String binA = getText("//select[starts-with(@id,\"editbin\")]//preceding-sibling::div");
+		String udhA = getText("//select[starts-with(@id,\"editudh\")]//preceding-sibling::div");
+		String ruleTypeA = getText("//select[starts-with(@id,\"editrouteRuleType\")]//preceding-sibling::div");
+		
+		dataA.add(dcsA);
+		dataA.add(esmA);
+		dataA.add(binA);
+		dataA.add(udhA);
+		dataA.add(ruleTypeA);
+		
+		System.out.println("--------------Creation Verification----------------------");
+		System.out.println("-----Info Selected");j=0;
+		System.out.println("DCS: "+dataB.get(j));j++;
+		System.out.println("ESM:"+dataB.get(j));j++;
+		System.out.println("BIN:"+dataB.get(j));j++;
+		System.out.println("UDH:"+dataB.get(j));j++;
+		System.out.println("Rule Type: "+dataB.get(j));
+		System.out.println("-----Info After Creation");j=0;
+		System.out.println("DCS: "+dataA.get(j));j++;
+		System.out.println("ESM:"+dataA.get(j));j++;
+		System.out.println("BIN:"+dataA.get(j));j++;
+		System.out.println("UDH:"+dataA.get(j));j++;
+		System.out.println("Rule Type: "+dataA.get(j));
+		
+		
+		verificateData(dataB, dataA);
+		
+
+	}
+	
+	public void editChangeSetMSGProps() {
+
+		pending();
+		
+
+		
+		
+	}
+	
+	
+	public void deleteChangeSetMSGProps() {
+		
+		refresh();
+		
+		waitExpectedElement("//tr[contains(@id,\"RulesTable\") and contains(@id,\"Search\")][1]");
+
+		verification();
+		
+		WebElement btnCase = findElement("//tr[contains(@id,\"SetTable\")][1]//a");
+		click(btnCase);
+		
+		waitExpectedElement("//tr[contains(@id,\"RulesTable\") and contains(@id,\"Search\")][1]");
+		
+		WebElement btnMSGProps = findElement("//button[@id=\"msgPropsModalBtn0\"]");
+		click(btnMSGProps);
+		
+		waitExpectedElement(btnAddMSGProps);
+		
+		int idB = rows("//div[@class=\"tablePageModalBack\" and not(contains(@style,\"none\"))]//tr[starts-with(@id,\"TableRow\")]");
+		
+		WebElement btnDelete = findElement("//div[@class=\"tablePageModalBack\" and not(contains(@style,\"none\"))]//tr[starts-with(@id,\"TableRow\")][1]//button[contains(@id,\"delete\")]");
+
+		click(btnDelete);
+		sleep(5000);
+
+		refresh();
+
+		waitExpectedElement("//tr[contains(@id,\"RulesTable\") and contains(@id,\"Search\")][1]");
+		
+		btnMSGProps = findElement("//button[@id=\"msgPropsModalBtn0\"]");
+		click(btnMSGProps);
+			
+		waitExpectedElement(btnAddMSGProps);
+		
+
+		int idA = rows("//div[@class=\"tablePageModalBack\" and not(contains(@style,\"none\"))]//tr[starts-with(@id,\"TableRow\")]");
+		
+		boolean deleted = greaterThanInt(idB, idA);
+		
+		System.out.println("Record deleted successfully: "+deleted);
+		
+		assertTrue(deleted, deletionRecord);
+		
+		
+	}
+	
+	
+	
 	
 }

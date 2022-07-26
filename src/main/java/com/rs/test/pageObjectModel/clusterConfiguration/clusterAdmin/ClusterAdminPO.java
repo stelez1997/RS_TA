@@ -149,8 +149,6 @@ public class ClusterAdminPO extends TestBaseSteven {
 		actionsMoveToElementElement(loginVerificationPO.btnClusterConfiguration);
 
 		clickOnClusterAdminMenu();
-
-		actionsMoveToElementElement(btnGoToFirst);
 		
 		visibilityOfElement("//tr[contains(@id,\"MonitorTable\")][1]");
 
@@ -228,9 +226,6 @@ public class ClusterAdminPO extends TestBaseSteven {
 		actionsMoveToElementElement(loginVerificationPO.btnClusterConfiguration);
 
 		clickOnClusterAdminMenu();
-
-		actionsMoveToElementElement(btnGoToFirst);
-		
 		
 		visibilityOfElement("//tr[contains(@id,\"MonitorTable\")][1]");
 

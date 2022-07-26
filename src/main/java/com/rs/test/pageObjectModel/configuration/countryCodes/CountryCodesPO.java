@@ -118,6 +118,8 @@ public class CountryCodesPO extends TestBaseSteven {
 		actionsMoveToElementElement(loginVerificationPO.btnConfiguration);
 
 		clickOnCountryCodesMenu();
+		
+		visibilityOfElement("//tr[contains(@id,\"CodesTableRow\")]");
 
 		actionsMoveToElementElement(btnAddCountryCode);
 
@@ -180,6 +182,8 @@ public class CountryCodesPO extends TestBaseSteven {
 		actionsMoveToElementElement(loginVerificationPO.btnConfiguration);
 
 		clickOnCountryCodesMenu();
+		
+		visibilityOfElement("//tr[contains(@id,\"CodesTableRow\")]");
 
 		actionsMoveToElementElement(btnAddCountryCode);
 
@@ -499,6 +503,8 @@ public class CountryCodesPO extends TestBaseSteven {
 		actionsMoveToElementElement(loginVerificationPO.btnConfiguration);
 
 		clickOnCountryCodesMenu();
+		
+		visibilityOfElement("//tr[contains(@id,\"CodesTableRow\")]");
 
 		actionsMoveToElementElement(btnAddCountryCode);
 

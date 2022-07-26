@@ -111,6 +111,8 @@ public class MessageGatewayPO extends TestBaseSteven {
 		actionsMoveToElementElement(loginVerificationPO.btnConfiguration);
 
 		clickOnMessageGatewayMenu();
+		
+		visibilityOfElement("//tr[contains(@id,\"GatewayTableRow\")]");
 
 		actionsMoveToElementElement(btnAddMessageGateway);
 
@@ -170,6 +172,8 @@ public class MessageGatewayPO extends TestBaseSteven {
 		actionsMoveToElementElement(loginVerificationPO.btnConfiguration);
 
 		clickOnMessageGatewayMenu();
+		
+		visibilityOfElement("//tr[contains(@id,\"GatewayTableRow\")]");
 
 		actionsMoveToElementElement(btnAddMessageGateway);
 		

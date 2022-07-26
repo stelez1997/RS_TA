@@ -1,25 +1,1390 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="5" total="6" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="91" passed="69" failed="11" skipped="11">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-07-15T15:08:00 CST" name="Default suite" finished-at="2022-07-15T15:09:24 CST" duration-ms="84700">
+  <suite started-at="2022-07-26T15:55:57 CST" name="Suite" finished-at="2022-07-26T16:35:50 CST" duration-ms="2393695">
     <groups>
     </groups>
-    <test started-at="2022-07-15T15:08:00 CST" name="Default test" finished-at="2022-07-15T15:09:24 CST" duration-ms="84700">
-      <class name="com.rs.test.routingRules.ChangeSet">
-        <test-method is-config="true" signature="beforeTest()[pri:0, instance:com.rs.test.routingRules.ChangeSet@659499f1]" started-at="2022-07-15T15:08:00 CST" name="beforeTest" finished-at="2022-07-15T15:08:20 CST" duration-ms="20313" status="PASS">
+    <test started-at="2022-07-26T15:55:57 CST" name="Login" finished-at="2022-07-26T15:56:24 CST" duration-ms="27427">
+      <class name="com.rs.test.login.Login">
+        <test-method is-config="true" signature="beforeTest()[pri:0, instance:com.rs.test.login.Login@36916eb0]" started-at="2022-07-26T15:55:57 CST" name="beforeTest" finished-at="2022-07-26T15:56:01 CST" duration-ms="4671" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method signature="createRoutingRulesChangeSet()[pri:0, instance:com.rs.test.routingRules.ChangeSet@659499f1]" started-at="2022-07-15T15:08:20 CST" name="createRoutingRulesChangeSet" finished-at="2022-07-15T15:09:24 CST" duration-ms="64328" status="PASS">
+        <test-method signature="loginTest()[pri:0, instance:com.rs.test.login.Login@36916eb0]" started-at="2022-07-26T15:56:01 CST" name="loginTest" finished-at="2022-07-26T15:56:24 CST" duration-ms="22353" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginTest -->
+        <test-method is-config="true" signature="afterTest()[pri:0, instance:com.rs.test.login.Login@36916eb0]" started-at="2022-07-26T15:56:24 CST" name="afterTest" finished-at="2022-07-26T15:56:24 CST" duration-ms="369" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterTest -->
+      </class> <!-- com.rs.test.login.Login -->
+    </test> <!-- Login -->
+    <test started-at="2022-07-26T15:56:24 CST" name="Carrier Service" finished-at="2022-07-26T16:03:16 CST" duration-ms="412159">
+      <class name="com.rs.test.configuration.carrierService.CarrierService">
+        <test-method is-config="true" signature="beforeTest()[pri:0, instance:com.rs.test.configuration.carrierService.CarrierService@60099951]" started-at="2022-07-26T15:56:24 CST" name="beforeTest" finished-at="2022-07-26T15:56:35 CST" duration-ms="10973" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeTest -->
+        <test-method signature="filters()[pri:0, instance:com.rs.test.configuration.carrierService.CarrierService@60099951]" started-at="2022-07-26T15:56:35 CST" name="filters" finished-at="2022-07-26T15:57:05 CST" duration-ms="29533" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- filters -->
+        <test-method signature="createCarrierService()[pri:1, instance:com.rs.test.configuration.carrierService.CarrierService@60099951]" started-at="2022-07-26T15:57:05 CST" name="createCarrierService" finished-at="2022-07-26T15:57:26 CST" duration-ms="21058" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createCarrierService -->
+        <test-method signature="editCarrierService()[pri:2, instance:com.rs.test.configuration.carrierService.CarrierService@60099951]" started-at="2022-07-26T15:57:26 CST" name="editCarrierService" finished-at="2022-07-26T15:57:50 CST" depends-on-methods="com.rs.test.configuration.carrierService.CarrierService.createCarrierService" duration-ms="24361" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- editCarrierService -->
+        <test-method signature="createRoutePoint()[pri:3, instance:com.rs.test.configuration.carrierService.CarrierService@60099951]" started-at="2022-07-26T15:57:50 CST" name="createRoutePoint" finished-at="2022-07-26T15:58:13 CST" depends-on-methods="com.rs.test.configuration.carrierService.CarrierService.createCarrierService" duration-ms="22529" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createRoutePoint -->
+        <test-method signature="editRoutePoint()[pri:4, instance:com.rs.test.configuration.carrierService.CarrierService@60099951]" started-at="2022-07-26T15:58:13 CST" name="editRoutePoint" finished-at="2022-07-26T15:58:42 CST" depends-on-methods="com.rs.test.configuration.carrierService.CarrierService.createRoutePoint" duration-ms="29851" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- editRoutePoint -->
+        <test-method signature="deleteRoutePoint()[pri:5, instance:com.rs.test.configuration.carrierService.CarrierService@60099951]" started-at="2022-07-26T15:58:42 CST" name="deleteRoutePoint" finished-at="2022-07-26T15:59:04 CST" depends-on-methods="com.rs.test.configuration.carrierService.CarrierService.createRoutePoint" duration-ms="22070" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- deleteRoutePoint -->
+        <test-method signature="createLogAgent()[pri:6, instance:com.rs.test.configuration.carrierService.CarrierService@60099951]" started-at="2022-07-26T15:59:04 CST" name="createLogAgent" finished-at="2022-07-26T15:59:29 CST" depends-on-methods="com.rs.test.configuration.carrierService.CarrierService.createCarrierService" duration-ms="24863" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createLogAgent -->
+        <test-method signature="deleteLogAgent()[pri:7, instance:com.rs.test.configuration.carrierService.CarrierService@60099951]" started-at="2022-07-26T15:59:29 CST" name="deleteLogAgent" finished-at="2022-07-26T15:59:52 CST" depends-on-methods="com.rs.test.configuration.carrierService.CarrierService.createLogAgent" duration-ms="22895" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- deleteLogAgent -->
+        <test-method signature="createMOChar()[pri:8, instance:com.rs.test.configuration.carrierService.CarrierService@60099951]" started-at="2022-07-26T15:59:52 CST" name="createMOChar" finished-at="2022-07-26T16:00:21 CST" depends-on-methods="com.rs.test.configuration.carrierService.CarrierService.createCarrierService" duration-ms="28398" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createMOChar -->
+        <test-method signature="editMOChar()[pri:9, instance:com.rs.test.configuration.carrierService.CarrierService@60099951]" started-at="2022-07-26T16:00:21 CST" name="editMOChar" finished-at="2022-07-26T16:00:45 CST" depends-on-methods="com.rs.test.configuration.carrierService.CarrierService.createMOChar" duration-ms="24838" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- editMOChar -->
+        <test-method signature="deleteMOChar()[pri:10, instance:com.rs.test.configuration.carrierService.CarrierService@60099951]" started-at="2022-07-26T16:00:45 CST" name="deleteMOChar" finished-at="2022-07-26T16:01:10 CST" depends-on-methods="com.rs.test.configuration.carrierService.CarrierService.createMOChar" duration-ms="24048" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- deleteMOChar -->
+        <test-method signature="createMTChar()[pri:11, instance:com.rs.test.configuration.carrierService.CarrierService@60099951]" started-at="2022-07-26T16:01:10 CST" name="createMTChar" finished-at="2022-07-26T16:01:37 CST" depends-on-methods="com.rs.test.configuration.carrierService.CarrierService.createCarrierService" duration-ms="27303" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createMTChar -->
+        <test-method signature="editMTChar()[pri:12, instance:com.rs.test.configuration.carrierService.CarrierService@60099951]" started-at="2022-07-26T16:01:37 CST" name="editMTChar" finished-at="2022-07-26T16:02:04 CST" depends-on-methods="com.rs.test.configuration.carrierService.CarrierService.createMTChar" duration-ms="27470" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- editMTChar -->
+        <test-method signature="deleteMTChar()[pri:13, instance:com.rs.test.configuration.carrierService.CarrierService@60099951]" started-at="2022-07-26T16:02:04 CST" name="deleteMTChar" finished-at="2022-07-26T16:02:26 CST" depends-on-methods="com.rs.test.configuration.carrierService.CarrierService.createMTChar" duration-ms="21669" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- deleteMTChar -->
+        <test-method signature="createMSGProps()[pri:14, instance:com.rs.test.configuration.carrierService.CarrierService@60099951]" started-at="2022-07-26T16:02:26 CST" name="createMSGProps" finished-at="2022-07-26T16:02:58 CST" depends-on-methods="com.rs.test.configuration.carrierService.CarrierService.createCarrierService" duration-ms="32230" status="FAIL">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[The record was not created successfully expected [true] but found [false]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: The record was not created successfully expected [true] but found [false]
+at org.testng.Assert.fail(Assert.java:99)
+at org.testng.Assert.failNotEquals(Assert.java:1037)
+at org.testng.Assert.assertTrue(Assert.java:45)
+at com.rs.test.pageObjectModel.configuration.carrierService.CarrierServicePO.createMSGProps(CarrierServicePO.java:1675)
+at com.rs.test.configuration.carrierService.CarrierService.createMSGProps(CarrierService.java:144)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createMSGProps -->
+        <test-method signature="editMSGProps()[pri:15, instance:com.rs.test.configuration.carrierService.CarrierService@60099951]" started-at="2022-07-26T16:02:58 CST" name="editMSGProps" finished-at="2022-07-26T16:02:58 CST" depends-on-methods="com.rs.test.configuration.carrierService.CarrierService.createMSGProps" duration-ms="0" status="SKIP">
+          <exception class="java.lang.Throwable">
+            <message>
+              <![CDATA[Method CarrierService.editMSGProps()[pri:15, instance:com.rs.test.configuration.carrierService.CarrierService@60099951] depends on not successfully finished methods]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Throwable: Method CarrierService.editMSGProps()[pri:15, instance:com.rs.test.configuration.carrierService.CarrierService@60099951] depends on not successfully finished methods
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:102)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Throwable -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- editMSGProps -->
+        <test-method signature="deleteMSGProps()[pri:16, instance:com.rs.test.configuration.carrierService.CarrierService@60099951]" started-at="2022-07-26T16:02:58 CST" name="deleteMSGProps" finished-at="2022-07-26T16:02:58 CST" depends-on-methods="com.rs.test.configuration.carrierService.CarrierService.createMSGProps" duration-ms="0" status="SKIP">
+          <exception class="java.lang.Throwable">
+            <message>
+              <![CDATA[Method CarrierService.deleteMSGProps()[pri:16, instance:com.rs.test.configuration.carrierService.CarrierService@60099951] depends on not successfully finished methods]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Throwable: Method CarrierService.deleteMSGProps()[pri:16, instance:com.rs.test.configuration.carrierService.CarrierService@60099951] depends on not successfully finished methods
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:102)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Throwable -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- deleteMSGProps -->
+        <test-method signature="deleteCarrierService()[pri:17, instance:com.rs.test.configuration.carrierService.CarrierService@60099951]" started-at="2022-07-26T16:02:58 CST" name="deleteCarrierService" finished-at="2022-07-26T16:03:16 CST" depends-on-methods="com.rs.test.configuration.carrierService.CarrierService.createCarrierService" duration-ms="17379" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- deleteCarrierService -->
+        <test-method is-config="true" signature="afterTest()[pri:0, instance:com.rs.test.configuration.carrierService.CarrierService@60099951]" started-at="2022-07-26T16:03:16 CST" name="afterTest" finished-at="2022-07-26T16:03:16 CST" duration-ms="654" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterTest -->
+      </class> <!-- com.rs.test.configuration.carrierService.CarrierService -->
+    </test> <!-- Carrier Service -->
+    <test started-at="2022-07-26T16:03:16 CST" name="Message Gateway" finished-at="2022-07-26T16:04:02 CST" duration-ms="46161">
+      <class name="com.rs.test.configuration.messageGateway.MessageGateway">
+        <test-method is-config="true" signature="beforeTest()[pri:0, instance:com.rs.test.configuration.messageGateway.MessageGateway@26d9b808]" started-at="2022-07-26T16:03:16 CST" name="beforeTest" finished-at="2022-07-26T16:03:27 CST" duration-ms="11148" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeTest -->
+        <test-method signature="createMessageGateway()[pri:0, instance:com.rs.test.configuration.messageGateway.MessageGateway@26d9b808]" started-at="2022-07-26T16:03:27 CST" name="createMessageGateway" finished-at="2022-07-26T16:03:42 CST" duration-ms="14136" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createMessageGateway -->
+        <test-method signature="edit()[pri:0, instance:com.rs.test.configuration.messageGateway.MessageGateway@26d9b808]" started-at="2022-07-26T16:03:42 CST" name="edit" finished-at="2022-07-26T16:03:54 CST" depends-on-methods="com.rs.test.configuration.messageGateway.MessageGateway.createMessageGateway" duration-ms="12292" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- edit -->
+        <test-method signature="delete()[pri:1, instance:com.rs.test.configuration.messageGateway.MessageGateway@26d9b808]" started-at="2022-07-26T16:03:54 CST" name="delete" finished-at="2022-07-26T16:04:02 CST" depends-on-methods="com.rs.test.configuration.messageGateway.MessageGateway.createMessageGateway" duration-ms="8154" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- delete -->
+        <test-method is-config="true" signature="afterTest()[pri:0, instance:com.rs.test.configuration.messageGateway.MessageGateway@26d9b808]" started-at="2022-07-26T16:04:02 CST" name="afterTest" finished-at="2022-07-26T16:04:02 CST" duration-ms="429" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterTest -->
+      </class> <!-- com.rs.test.configuration.messageGateway.MessageGateway -->
+    </test> <!-- Message Gateway -->
+    <test started-at="2022-07-26T16:04:02 CST" name="Message Aggregators" finished-at="2022-07-26T16:06:56 CST" duration-ms="173332">
+      <class name="com.rs.test.configuration.messageAggregators.MessageAggregators">
+        <test-method is-config="true" signature="beforeTest()[pri:0, instance:com.rs.test.configuration.messageAggregators.MessageAggregators@1530c739]" started-at="2022-07-26T16:04:02 CST" name="beforeTest" finished-at="2022-07-26T16:04:15 CST" duration-ms="12430" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeTest -->
+        <test-method signature="filters()[pri:0, instance:com.rs.test.configuration.messageAggregators.MessageAggregators@1530c739]" started-at="2022-07-26T16:04:15 CST" name="filters" finished-at="2022-07-26T16:04:29 CST" duration-ms="14227" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- filters -->
+        <test-method signature="createMessageAggregator()[pri:1, instance:com.rs.test.configuration.messageAggregators.MessageAggregators@1530c739]" started-at="2022-07-26T16:04:29 CST" name="createMessageAggregator" finished-at="2022-07-26T16:04:48 CST" duration-ms="18511" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createMessageAggregator -->
+        <test-method signature="editMessageAggregator()[pri:1, instance:com.rs.test.configuration.messageAggregators.MessageAggregators@1530c739]" started-at="2022-07-26T16:04:48 CST" name="editMessageAggregator" finished-at="2022-07-26T16:05:10 CST" depends-on-methods="com.rs.test.configuration.messageAggregators.MessageAggregators.createMessageAggregator" duration-ms="22689" status="FAIL">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[The record wasn't edited successfully expected [true] but found [false]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: The record wasn't edited successfully expected [true] but found [false]
+at org.testng.Assert.fail(Assert.java:99)
+at org.testng.Assert.failNotEquals(Assert.java:1037)
+at org.testng.Assert.assertTrue(Assert.java:45)
+at com.rs.test.pageObjectModel.configuration.messageAggregators.MessageAggregatorsPO.editMessageAggregator(MessageAggregatorsPO.java:403)
+at com.rs.test.configuration.messageAggregators.MessageAggregators.editMessageAggregator(MessageAggregators.java:47)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- editMessageAggregator -->
+        <test-method signature="createRoutePoints()[pri:2, instance:com.rs.test.configuration.messageAggregators.MessageAggregators@1530c739]" started-at="2022-07-26T16:05:10 CST" name="createRoutePoints" finished-at="2022-07-26T16:05:33 CST" depends-on-methods="com.rs.test.configuration.messageAggregators.MessageAggregators.createMessageAggregator" duration-ms="22706" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createRoutePoints -->
+        <test-method signature="editRoutePoints()[pri:1, instance:com.rs.test.configuration.messageAggregators.MessageAggregators@1530c739]" started-at="2022-07-26T16:05:33 CST" name="editRoutePoints" finished-at="2022-07-26T16:05:53 CST" depends-on-methods="com.rs.test.configuration.messageAggregators.MessageAggregators.createRoutePoints" duration-ms="20388" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- editRoutePoints -->
+        <test-method signature="deleteRoutePoints()[pri:2, instance:com.rs.test.configuration.messageAggregators.MessageAggregators@1530c739]" started-at="2022-07-26T16:05:53 CST" name="deleteRoutePoints" finished-at="2022-07-26T16:06:04 CST" depends-on-methods="com.rs.test.configuration.messageAggregators.MessageAggregators.createRoutePoints" duration-ms="10915" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- deleteRoutePoints -->
+        <test-method signature="createPeerBlock()[pri:3, instance:com.rs.test.configuration.messageAggregators.MessageAggregators@1530c739]" started-at="2022-07-26T16:06:04 CST" name="createPeerBlock" finished-at="2022-07-26T16:06:25 CST" depends-on-methods="com.rs.test.configuration.messageAggregators.MessageAggregators.createMessageAggregator" duration-ms="20827" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createPeerBlock -->
+        <test-method signature="editPeerBlock()[pri:1, instance:com.rs.test.configuration.messageAggregators.MessageAggregators@1530c739]" started-at="2022-07-26T16:06:25 CST" name="editPeerBlock" finished-at="2022-07-26T16:06:37 CST" depends-on-methods="com.rs.test.configuration.messageAggregators.MessageAggregators.createPeerBlock" duration-ms="11647" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- editPeerBlock -->
+        <test-method signature="deleteMessageAggregator()[pri:4, instance:com.rs.test.configuration.messageAggregators.MessageAggregators@1530c739]" started-at="2022-07-26T16:06:37 CST" name="deleteMessageAggregator" finished-at="2022-07-26T16:06:55 CST" depends-on-methods="com.rs.test.configuration.messageAggregators.MessageAggregators.createMessageAggregator" duration-ms="18643" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- deleteMessageAggregator -->
+        <test-method is-config="true" signature="afterTest()[pri:0, instance:com.rs.test.configuration.messageAggregators.MessageAggregators@1530c739]" started-at="2022-07-26T16:06:55 CST" name="afterTest" finished-at="2022-07-26T16:06:56 CST" duration-ms="336" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterTest -->
+      </class> <!-- com.rs.test.configuration.messageAggregators.MessageAggregators -->
+    </test> <!-- Message Aggregators -->
+    <test started-at="2022-07-26T16:06:56 CST" name="Country Codes" finished-at="2022-07-26T16:09:12 CST" duration-ms="135785">
+      <class name="com.rs.test.configuration.countryCodes.CountryCodes">
+        <test-method is-config="true" signature="beforeTest()[pri:0, instance:com.rs.test.configuration.countryCodes.CountryCodes@173ed316]" started-at="2022-07-26T16:06:56 CST" name="beforeTest" finished-at="2022-07-26T16:07:06 CST" duration-ms="10214" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeTest -->
+        <test-method signature="filters()[pri:0, instance:com.rs.test.configuration.countryCodes.CountryCodes@173ed316]" started-at="2022-07-26T16:07:06 CST" name="filters" finished-at="2022-07-26T16:07:18 CST" duration-ms="11797" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- filters -->
+        <test-method signature="createCountryCode()[pri:1, instance:com.rs.test.configuration.countryCodes.CountryCodes@173ed316]" started-at="2022-07-26T16:07:18 CST" name="createCountryCode" finished-at="2022-07-26T16:07:32 CST" duration-ms="14528" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createCountryCode -->
+        <test-method signature="editContryCode()[pri:2, instance:com.rs.test.configuration.countryCodes.CountryCodes@173ed316]" started-at="2022-07-26T16:07:32 CST" name="editContryCode" finished-at="2022-07-26T16:07:48 CST" depends-on-methods="com.rs.test.configuration.countryCodes.CountryCodes.createCountryCode" duration-ms="15955" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- editContryCode -->
+        <test-method signature="createModalPrefix()[pri:3, instance:com.rs.test.configuration.countryCodes.CountryCodes@173ed316]" started-at="2022-07-26T16:07:48 CST" name="createModalPrefix" finished-at="2022-07-26T16:08:07 CST" depends-on-methods="com.rs.test.configuration.countryCodes.CountryCodes.createCountryCode" duration-ms="18663" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createModalPrefix -->
+        <test-method signature="editModalPrefix()[pri:4, instance:com.rs.test.configuration.countryCodes.CountryCodes@173ed316]" started-at="2022-07-26T16:08:07 CST" name="editModalPrefix" finished-at="2022-07-26T16:08:31 CST" depends-on-methods="com.rs.test.configuration.countryCodes.CountryCodes.createModalPrefix" duration-ms="24303" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- editModalPrefix -->
+        <test-method signature="deleteModalPrefix()[pri:5, instance:com.rs.test.configuration.countryCodes.CountryCodes@173ed316]" started-at="2022-07-26T16:08:31 CST" name="deleteModalPrefix" finished-at="2022-07-26T16:08:54 CST" depends-on-methods="com.rs.test.configuration.countryCodes.CountryCodes.createModalPrefix" duration-ms="22499" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- deleteModalPrefix -->
+        <test-method signature="deleteCountryCode()[pri:6, instance:com.rs.test.configuration.countryCodes.CountryCodes@173ed316]" started-at="2022-07-26T16:08:54 CST" name="deleteCountryCode" finished-at="2022-07-26T16:09:11 CST" depends-on-methods="com.rs.test.configuration.countryCodes.CountryCodes.createCountryCode" duration-ms="17493" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- deleteCountryCode -->
+        <test-method is-config="true" signature="afterTest()[pri:0, instance:com.rs.test.configuration.countryCodes.CountryCodes@173ed316]" started-at="2022-07-26T16:09:11 CST" name="afterTest" finished-at="2022-07-26T16:09:12 CST" duration-ms="326" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterTest -->
+      </class> <!-- com.rs.test.configuration.countryCodes.CountryCodes -->
+    </test> <!-- Country Codes -->
+    <test started-at="2022-07-26T16:09:12 CST" name="Action Templates" finished-at="2022-07-26T16:10:04 CST" duration-ms="52742">
+      <class name="com.rs.test.configuration.actionTemplates.ActionTemplates">
+        <test-method is-config="true" signature="beforeTest()[pri:0, instance:com.rs.test.configuration.actionTemplates.ActionTemplates@563f38c4]" started-at="2022-07-26T16:09:12 CST" name="beforeTest" finished-at="2022-07-26T16:09:22 CST" duration-ms="10512" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeTest -->
+        <test-method signature="createActionTemplate()[pri:0, instance:com.rs.test.configuration.actionTemplates.ActionTemplates@563f38c4]" started-at="2022-07-26T16:09:22 CST" name="createActionTemplate" finished-at="2022-07-26T16:09:32 CST" duration-ms="10285" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createActionTemplate -->
+        <test-method signature="editActionTemplate()[pri:0, instance:com.rs.test.configuration.actionTemplates.ActionTemplates@563f38c4]" started-at="2022-07-26T16:09:32 CST" name="editActionTemplate" finished-at="2022-07-26T16:09:51 CST" depends-on-methods="com.rs.test.configuration.actionTemplates.ActionTemplates.createActionTemplate" duration-ms="18234" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- editActionTemplate -->
+        <test-method signature="deleteActionTemplate()[pri:4, instance:com.rs.test.configuration.actionTemplates.ActionTemplates@563f38c4]" started-at="2022-07-26T16:09:51 CST" name="deleteActionTemplate" finished-at="2022-07-26T16:10:04 CST" depends-on-methods="com.rs.test.configuration.actionTemplates.ActionTemplates.createActionTemplate" duration-ms="13364" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- deleteActionTemplate -->
+        <test-method is-config="true" signature="afterTest()[pri:0, instance:com.rs.test.configuration.actionTemplates.ActionTemplates@563f38c4]" started-at="2022-07-26T16:10:04 CST" name="afterTest" finished-at="2022-07-26T16:10:04 CST" duration-ms="346" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterTest -->
+      </class> <!-- com.rs.test.configuration.actionTemplates.ActionTemplates -->
+    </test> <!-- Action Templates -->
+    <test started-at="2022-07-26T16:10:04 CST" name="Character Encoding" finished-at="2022-07-26T16:11:04 CST" duration-ms="59312">
+      <class name="com.rs.test.configuration.characterEncoding.CharacterEncoding">
+        <test-method is-config="true" signature="beforeTest()[pri:0, instance:com.rs.test.configuration.characterEncoding.CharacterEncoding@74d1dc36]" started-at="2022-07-26T16:10:04 CST" name="beforeTest" finished-at="2022-07-26T16:10:15 CST" duration-ms="10275" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeTest -->
+        <test-method signature="createCharacterEncoding()[pri:1, instance:com.rs.test.configuration.characterEncoding.CharacterEncoding@74d1dc36]" started-at="2022-07-26T16:10:15 CST" name="createCharacterEncoding" finished-at="2022-07-26T16:10:28 CST" duration-ms="13547" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createCharacterEncoding -->
+        <test-method signature="editCharacterEncoding()[pri:2, instance:com.rs.test.configuration.characterEncoding.CharacterEncoding@74d1dc36]" started-at="2022-07-26T16:10:28 CST" name="editCharacterEncoding" finished-at="2022-07-26T16:10:32 CST" depends-on-methods="com.rs.test.configuration.characterEncoding.CharacterEncoding.createCharacterEncoding" duration-ms="3348" status="FAIL">
+          <exception class="org.openqa.selenium.ElementNotInteractableException">
+            <message>
+              <![CDATA[element not interactable: http://localhost:3000/configuration/character-encoding/ has no size and location
+  (Session info: chrome=103.0.5060.134)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'WIN-39319556043', ip: '192.168.0.20', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '15.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 103.0.5060.134, chrome: {chromedriverVersion: 103.0.5060.53 (a1711811edd7..., userDataDir: C:\Users\stelez\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:51615}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 92d4482bf7184f97a7143d1256c5d8f1]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.ElementNotInteractableException: element not interactable: http://localhost:3000/configuration/character-encoding/ has no size and location
+  (Session info: chrome=103.0.5060.134)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'WIN-39319556043', ip: '192.168.0.20', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '15.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 103.0.5060.134, chrome: {chromedriverVersion: 103.0.5060.53 (a1711811edd7..., userDataDir: C:\Users\stelez\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:51615}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 92d4482bf7184f97a7143d1256c5d8f1
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:64)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+at org.openqa.selenium.remote.RemoteWebDriver.perform(RemoteWebDriver.java:618)
+at org.openqa.selenium.interactions.Actions$BuiltAction.perform(Actions.java:639)
+at org.openqa.selenium.interactions.Actions.perform(Actions.java:595)
+at com.rs.test.base.TestBaseSteven.actionsMoveToElementElementSimple(TestBaseSteven.java:306)
+at com.rs.test.base.TestBaseSteven.click(TestBaseSteven.java:85)
+at com.rs.test.pageObjectModel.configuration.characterEncoding.CharacterEncondingPO.clickOnCharacterEncodingMenu(CharacterEncondingPO.java:116)
+at com.rs.test.pageObjectModel.configuration.characterEncoding.CharacterEncondingPO.verification(CharacterEncondingPO.java:350)
+at com.rs.test.pageObjectModel.configuration.characterEncoding.CharacterEncondingPO.editCharacterEncoding(CharacterEncondingPO.java:388)
+at com.rs.test.configuration.characterEncoding.CharacterEncoding.editCharacterEncoding(CharacterEncoding.java:40)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.ElementNotInteractableException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- editCharacterEncoding -->
+        <test-method signature="deleteCharacterEncoding()[pri:3, instance:com.rs.test.configuration.characterEncoding.CharacterEncoding@74d1dc36]" started-at="2022-07-26T16:10:32 CST" name="deleteCharacterEncoding" finished-at="2022-07-26T16:10:45 CST" depends-on-methods="com.rs.test.configuration.characterEncoding.CharacterEncoding.createCharacterEncoding" duration-ms="13436" status="FAIL">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[The record wasn't deleted successfully expected [true] but found [false]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: The record wasn't deleted successfully expected [true] but found [false]
+at org.testng.Assert.fail(Assert.java:99)
+at org.testng.Assert.failNotEquals(Assert.java:1037)
+at org.testng.Assert.assertTrue(Assert.java:45)
+at com.rs.test.pageObjectModel.configuration.characterEncoding.CharacterEncondingPO.deleteCharacterEncoding(CharacterEncondingPO.java:506)
+at com.rs.test.configuration.characterEncoding.CharacterEncoding.deleteCharacterEncoding(CharacterEncoding.java:47)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- deleteCharacterEncoding -->
+        <test-method signature="createCustomEncodeCodePoint()[pri:4, instance:com.rs.test.configuration.characterEncoding.CharacterEncoding@74d1dc36]" started-at="2022-07-26T16:10:45 CST" name="createCustomEncodeCodePoint" finished-at="2022-07-26T16:11:03 CST" duration-ms="18357" status="FAIL">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[The record was not created successfully expected [true] but found [false]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: The record was not created successfully expected [true] but found [false]
+at org.testng.Assert.fail(Assert.java:99)
+at org.testng.Assert.failNotEquals(Assert.java:1037)
+at org.testng.Assert.assertTrue(Assert.java:45)
+at com.rs.test.pageObjectModel.configuration.characterEncoding.CharacterEncondingPO.createCustomEncodeCodePoint(CharacterEncondingPO.java:588)
+at com.rs.test.configuration.characterEncoding.CharacterEncoding.createCustomEncodeCodePoint(CharacterEncoding.java:54)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createCustomEncodeCodePoint -->
+        <test-method signature="editCustomEncodeCodePoint()[pri:5, instance:com.rs.test.configuration.characterEncoding.CharacterEncoding@74d1dc36]" started-at="2022-07-26T16:11:03 CST" name="editCustomEncodeCodePoint" finished-at="2022-07-26T16:11:03 CST" depends-on-methods="com.rs.test.configuration.characterEncoding.CharacterEncoding.createCustomEncodeCodePoint" duration-ms="0" status="SKIP">
+          <exception class="java.lang.Throwable">
+            <message>
+              <![CDATA[Method CharacterEncoding.editCustomEncodeCodePoint()[pri:5, instance:com.rs.test.configuration.characterEncoding.CharacterEncoding@74d1dc36] depends on not successfully finished methods]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Throwable: Method CharacterEncoding.editCustomEncodeCodePoint()[pri:5, instance:com.rs.test.configuration.characterEncoding.CharacterEncoding@74d1dc36] depends on not successfully finished methods
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:102)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Throwable -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- editCustomEncodeCodePoint -->
+        <test-method signature="deleteCustomEncodeCodePoint()[pri:6, instance:com.rs.test.configuration.characterEncoding.CharacterEncoding@74d1dc36]" started-at="2022-07-26T16:11:03 CST" name="deleteCustomEncodeCodePoint" finished-at="2022-07-26T16:11:03 CST" depends-on-methods="com.rs.test.configuration.characterEncoding.CharacterEncoding.createCustomEncodeCodePoint" duration-ms="0" status="SKIP">
+          <exception class="java.lang.Throwable">
+            <message>
+              <![CDATA[Method CharacterEncoding.deleteCustomEncodeCodePoint()[pri:6, instance:com.rs.test.configuration.characterEncoding.CharacterEncoding@74d1dc36] depends on not successfully finished methods]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Throwable: Method CharacterEncoding.deleteCustomEncodeCodePoint()[pri:6, instance:com.rs.test.configuration.characterEncoding.CharacterEncoding@74d1dc36] depends on not successfully finished methods
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:102)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Throwable -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- deleteCustomEncodeCodePoint -->
+        <test-method is-config="true" signature="afterTest()[pri:0, instance:com.rs.test.configuration.characterEncoding.CharacterEncoding@74d1dc36]" started-at="2022-07-26T16:11:03 CST" name="afterTest" finished-at="2022-07-26T16:11:04 CST" duration-ms="339" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterTest -->
+      </class> <!-- com.rs.test.configuration.characterEncoding.CharacterEncoding -->
+    </test> <!-- Character Encoding -->
+    <test started-at="2022-07-26T16:11:04 CST" name="Cluster Classification" finished-at="2022-07-26T16:11:58 CST" duration-ms="54715">
+      <class name="com.rs.test.clusterConfiguration.clusterClassification.ClusterClassification">
+        <test-method is-config="true" signature="beforeTest()[pri:0, instance:com.rs.test.clusterConfiguration.clusterClassification.ClusterClassification@53fb3dab]" started-at="2022-07-26T16:11:04 CST" name="beforeTest" finished-at="2022-07-26T16:11:15 CST" duration-ms="11108" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeTest -->
+        <test-method signature="createClusterClassification()[pri:0, instance:com.rs.test.clusterConfiguration.clusterClassification.ClusterClassification@53fb3dab]" started-at="2022-07-26T16:11:15 CST" name="createClusterClassification" finished-at="2022-07-26T16:11:30 CST" duration-ms="14818" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createClusterClassification -->
+        <test-method signature="editClusterClassification()[pri:0, instance:com.rs.test.clusterConfiguration.clusterClassification.ClusterClassification@53fb3dab]" started-at="2022-07-26T16:11:30 CST" name="editClusterClassification" finished-at="2022-07-26T16:11:44 CST" depends-on-methods="com.rs.test.clusterConfiguration.clusterClassification.ClusterClassification.createClusterClassification" duration-ms="14031" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- editClusterClassification -->
+        <test-method signature="deleteClusterClassification()[pri:1, instance:com.rs.test.clusterConfiguration.clusterClassification.ClusterClassification@53fb3dab]" started-at="2022-07-26T16:11:44 CST" name="deleteClusterClassification" finished-at="2022-07-26T16:11:58 CST" depends-on-methods="com.rs.test.clusterConfiguration.clusterClassification.ClusterClassification.createClusterClassification" duration-ms="14329" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- deleteClusterClassification -->
+        <test-method is-config="true" signature="afterTest()[pri:0, instance:com.rs.test.clusterConfiguration.clusterClassification.ClusterClassification@53fb3dab]" started-at="2022-07-26T16:11:58 CST" name="afterTest" finished-at="2022-07-26T16:11:58 CST" duration-ms="423" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterTest -->
+      </class> <!-- com.rs.test.clusterConfiguration.clusterClassification.ClusterClassification -->
+    </test> <!-- Cluster Classification -->
+    <test started-at="2022-07-26T16:11:58 CST" name="Cluster Profile" finished-at="2022-07-26T16:12:54 CST" duration-ms="55242">
+      <class name="com.rs.test.clusterConfiguration.clusterProfile.ClusterProfile">
+        <test-method is-config="true" signature="beforeTest()[pri:0, instance:com.rs.test.clusterConfiguration.clusterProfile.ClusterProfile@1c5920df]" started-at="2022-07-26T16:11:58 CST" name="beforeTest" finished-at="2022-07-26T16:12:09 CST" duration-ms="10596" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeTest -->
+        <test-method signature="editClusterProfile()[pri:0, instance:com.rs.test.clusterConfiguration.clusterProfile.ClusterProfile@1c5920df]" started-at="2022-07-26T16:12:09 CST" name="editClusterProfile" finished-at="2022-07-26T16:12:53 CST" duration-ms="44259" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- editClusterProfile -->
+        <test-method is-config="true" signature="afterTest()[pri:0, instance:com.rs.test.clusterConfiguration.clusterProfile.ClusterProfile@1c5920df]" started-at="2022-07-26T16:12:53 CST" name="afterTest" finished-at="2022-07-26T16:12:54 CST" duration-ms="383" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterTest -->
+      </class> <!-- com.rs.test.clusterConfiguration.clusterProfile.ClusterProfile -->
+    </test> <!-- Cluster Profile -->
+    <test started-at="2022-07-26T16:12:54 CST" name="Cluster Call to Action" finished-at="2022-07-26T16:15:29 CST" duration-ms="155467">
+      <class name="com.rs.test.clusterConfiguration.clusterCallToAction.ClusterCallToAction">
+        <test-method is-config="true" signature="beforeTest()[pri:0, instance:com.rs.test.clusterConfiguration.clusterCallToAction.ClusterCallToAction@7f485fda]" started-at="2022-07-26T16:12:54 CST" name="beforeTest" finished-at="2022-07-26T16:13:04 CST" duration-ms="10730" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeTest -->
+        <test-method signature="createClusterCallToAction()[pri:1, instance:com.rs.test.clusterConfiguration.clusterCallToAction.ClusterCallToAction@7f485fda]" started-at="2022-07-26T16:13:04 CST" name="createClusterCallToAction" finished-at="2022-07-26T16:13:35 CST" duration-ms="30471" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createClusterCallToAction -->
+        <test-method signature="editClusterCallToAction()[pri:0, instance:com.rs.test.clusterConfiguration.clusterCallToAction.ClusterCallToAction@7f485fda]" started-at="2022-07-26T16:13:35 CST" name="editClusterCallToAction" finished-at="2022-07-26T16:14:23 CST" depends-on-methods="com.rs.test.clusterConfiguration.clusterCallToAction.ClusterCallToAction.createClusterCallToAction" duration-ms="48339" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- editClusterCallToAction -->
+        <test-method signature="deleteClusterCallToAction()[pri:1, instance:com.rs.test.clusterConfiguration.clusterCallToAction.ClusterCallToAction@7f485fda]" started-at="2022-07-26T16:14:23 CST" name="deleteClusterCallToAction" finished-at="2022-07-26T16:14:50 CST" depends-on-methods="com.rs.test.clusterConfiguration.clusterCallToAction.ClusterCallToAction.createClusterCallToAction" duration-ms="26916" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- deleteClusterCallToAction -->
+        <test-method signature="filters()[pri:2, instance:com.rs.test.clusterConfiguration.clusterCallToAction.ClusterCallToAction@7f485fda]" started-at="2022-07-26T16:14:50 CST" name="filters" finished-at="2022-07-26T16:15:29 CST" duration-ms="38629" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- filters -->
+        <test-method is-config="true" signature="afterTest()[pri:0, instance:com.rs.test.clusterConfiguration.clusterCallToAction.ClusterCallToAction@7f485fda]" started-at="2022-07-26T16:15:29 CST" name="afterTest" finished-at="2022-07-26T16:15:29 CST" duration-ms="373" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterTest -->
+      </class> <!-- com.rs.test.clusterConfiguration.clusterCallToAction.ClusterCallToAction -->
+    </test> <!-- Cluster Call to Action -->
+    <test started-at="2022-07-26T16:15:29 CST" name="Cluster Route Rules" finished-at="2022-07-26T16:23:01 CST" duration-ms="451939">
+      <class name="com.rs.test.clusterConfiguration.clusterRouteRules.ClusterRouteRules">
+        <test-method is-config="true" signature="beforeTest()[pri:0, instance:com.rs.test.clusterConfiguration.clusterRouteRules.ClusterRouteRules@606e4010]" started-at="2022-07-26T16:15:29 CST" name="beforeTest" finished-at="2022-07-26T16:15:40 CST" duration-ms="10361" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeTest -->
+        <test-method signature="createSMSXClusterRouteRules()[pri:0, instance:com.rs.test.clusterConfiguration.clusterRouteRules.ClusterRouteRules@606e4010]" started-at="2022-07-26T16:15:40 CST" name="createSMSXClusterRouteRules" finished-at="2022-07-26T16:16:51 CST" duration-ms="71360" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createSMSXClusterRouteRules -->
+        <test-method signature="editSMSXClusterRouteRules()[pri:1, instance:com.rs.test.clusterConfiguration.clusterRouteRules.ClusterRouteRules@606e4010]" started-at="2022-07-26T16:16:51 CST" name="editSMSXClusterRouteRules" finished-at="2022-07-26T16:18:16 CST" depends-on-methods="com.rs.test.clusterConfiguration.clusterRouteRules.ClusterRouteRules.createSMSXClusterRouteRules" duration-ms="85018" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- editSMSXClusterRouteRules -->
+        <test-method signature="deleteSMSXClusterRouteRules()[pri:2, instance:com.rs.test.clusterConfiguration.clusterRouteRules.ClusterRouteRules@606e4010]" started-at="2022-07-26T16:18:16 CST" name="deleteSMSXClusterRouteRules" finished-at="2022-07-26T16:18:53 CST" depends-on-methods="com.rs.test.clusterConfiguration.clusterRouteRules.ClusterRouteRules.createSMSXClusterRouteRules" duration-ms="36740" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- deleteSMSXClusterRouteRules -->
+        <test-method signature="createISMSClusterRouteRules()[pri:3, instance:com.rs.test.clusterConfiguration.clusterRouteRules.ClusterRouteRules@606e4010]" started-at="2022-07-26T16:18:53 CST" name="createISMSClusterRouteRules" finished-at="2022-07-26T16:19:37 CST" duration-ms="43878" status="FAIL">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[The record was not created successfully expected [true] but found [false]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: The record was not created successfully expected [true] but found [false]
+at org.testng.Assert.fail(Assert.java:99)
+at org.testng.Assert.failNotEquals(Assert.java:1037)
+at org.testng.Assert.assertTrue(Assert.java:45)
+at com.rs.test.pageObjectModel.clusterConfiguration.clusteRouteRules.ClusterRouteRulesPO.createISMSClusterRouteRules(ClusterRouteRulesPO.java:1083)
+at com.rs.test.clusterConfiguration.clusterRouteRules.ClusterRouteRules.createISMSClusterRouteRules(ClusterRouteRules.java:54)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createISMSClusterRouteRules -->
+        <test-method signature="editISMSClusterRouteRules()[pri:4, instance:com.rs.test.clusterConfiguration.clusterRouteRules.ClusterRouteRules@606e4010]" started-at="2022-07-26T16:19:37 CST" name="editISMSClusterRouteRules" finished-at="2022-07-26T16:19:37 CST" depends-on-methods="com.rs.test.clusterConfiguration.clusterRouteRules.ClusterRouteRules.createISMSClusterRouteRules" duration-ms="0" status="SKIP">
+          <exception class="java.lang.Throwable">
+            <message>
+              <![CDATA[Method ClusterRouteRules.editISMSClusterRouteRules()[pri:4, instance:com.rs.test.clusterConfiguration.clusterRouteRules.ClusterRouteRules@606e4010] depends on not successfully finished methods]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Throwable: Method ClusterRouteRules.editISMSClusterRouteRules()[pri:4, instance:com.rs.test.clusterConfiguration.clusterRouteRules.ClusterRouteRules@606e4010] depends on not successfully finished methods
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:102)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Throwable -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- editISMSClusterRouteRules -->
+        <test-method signature="deleteISMSClusterRouteRules()[pri:5, instance:com.rs.test.clusterConfiguration.clusterRouteRules.ClusterRouteRules@606e4010]" started-at="2022-07-26T16:19:37 CST" name="deleteISMSClusterRouteRules" finished-at="2022-07-26T16:19:37 CST" depends-on-methods="com.rs.test.clusterConfiguration.clusterRouteRules.ClusterRouteRules.createISMSClusterRouteRules" duration-ms="0" status="SKIP">
+          <exception class="java.lang.Throwable">
+            <message>
+              <![CDATA[Method ClusterRouteRules.deleteISMSClusterRouteRules()[pri:5, instance:com.rs.test.clusterConfiguration.clusterRouteRules.ClusterRouteRules@606e4010] depends on not successfully finished methods]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Throwable: Method ClusterRouteRules.deleteISMSClusterRouteRules()[pri:5, instance:com.rs.test.clusterConfiguration.clusterRouteRules.ClusterRouteRules@606e4010] depends on not successfully finished methods
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:102)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Throwable -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- deleteISMSClusterRouteRules -->
+        <test-method signature="filtersSMSxClusterRouteRules()[pri:6, instance:com.rs.test.clusterConfiguration.clusterRouteRules.ClusterRouteRules@606e4010]" started-at="2022-07-26T16:19:37 CST" name="filtersSMSxClusterRouteRules" finished-at="2022-07-26T16:20:04 CST" duration-ms="27363" status="FAIL">
+          <exception class="java.lang.IndexOutOfBoundsException">
+            <message>
+              <![CDATA[Index 0 out of bounds for length 0]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.IndexOutOfBoundsException: Index 0 out of bounds for length 0
+at java.base/jdk.internal.util.Preconditions.outOfBounds(Preconditions.java:64)
+at java.base/jdk.internal.util.Preconditions.outOfBoundsCheckIndex(Preconditions.java:70)
+at java.base/jdk.internal.util.Preconditions.checkIndex(Preconditions.java:248)
+at java.base/java.util.Objects.checkIndex(Objects.java:359)
+at java.base/java.util.ArrayList.get(ArrayList.java:427)
+at com.rs.test.pageObjectModel.clusterConfiguration.clusteRouteRules.ClusterRouteRulesPO.SMSxFilters(ClusterRouteRulesPO.java:779)
+at com.rs.test.clusterConfiguration.clusterRouteRules.ClusterRouteRules.filtersSMSxClusterRouteRules(ClusterRouteRules.java:76)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.IndexOutOfBoundsException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- filtersSMSxClusterRouteRules -->
+        <test-method signature="filtersISMSClusterRouteRules()[pri:7, instance:com.rs.test.clusterConfiguration.clusterRouteRules.ClusterRouteRules@606e4010]" started-at="2022-07-26T16:20:04 CST" name="filtersISMSClusterRouteRules" finished-at="2022-07-26T16:23:00 CST" duration-ms="176517" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- filtersISMSClusterRouteRules -->
+        <test-method is-config="true" signature="afterTest()[pri:0, instance:com.rs.test.clusterConfiguration.clusterRouteRules.ClusterRouteRules@606e4010]" started-at="2022-07-26T16:23:01 CST" name="afterTest" finished-at="2022-07-26T16:23:01 CST" duration-ms="692" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterTest -->
+      </class> <!-- com.rs.test.clusterConfiguration.clusterRouteRules.ClusterRouteRules -->
+    </test> <!-- Cluster Route Rules -->
+    <test started-at="2022-07-26T16:23:01 CST" name="Cluster summary" finished-at="2022-07-26T16:24:21 CST" duration-ms="80125">
+      <class name="com.rs.test.clusterConfiguration.clusterSummary.ClusterSummary">
+        <test-method is-config="true" signature="beforeTest()[pri:0, instance:com.rs.test.clusterConfiguration.clusterSummary.ClusterSummary@413d1baf]" started-at="2022-07-26T16:23:01 CST" name="beforeTest" finished-at="2022-07-26T16:23:12 CST" duration-ms="10299" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeTest -->
+        <test-method signature="createSuggestClassification()[pri:0, instance:com.rs.test.clusterConfiguration.clusterSummary.ClusterSummary@413d1baf]" started-at="2022-07-26T16:23:12 CST" name="createSuggestClassification" finished-at="2022-07-26T16:23:31 CST" duration-ms="19948" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createSuggestClassification -->
+        <test-method signature="editSuggestClassification()[pri:1, instance:com.rs.test.clusterConfiguration.clusterSummary.ClusterSummary@413d1baf]" started-at="2022-07-26T16:23:31 CST" name="editSuggestClassification" finished-at="2022-07-26T16:24:00 CST" depends-on-methods="com.rs.test.clusterConfiguration.clusterSummary.ClusterSummary.createSuggestClassification" duration-ms="28366" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- editSuggestClassification -->
+        <test-method signature="deleteSuggestClassification()[pri:2, instance:com.rs.test.clusterConfiguration.clusterSummary.ClusterSummary@413d1baf]" started-at="2022-07-26T16:24:00 CST" name="deleteSuggestClassification" finished-at="2022-07-26T16:24:21 CST" depends-on-methods="com.rs.test.clusterConfiguration.clusterSummary.ClusterSummary.createSuggestClassification" duration-ms="21161" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- deleteSuggestClassification -->
+        <test-method is-config="true" signature="afterTest()[pri:0, instance:com.rs.test.clusterConfiguration.clusterSummary.ClusterSummary@413d1baf]" started-at="2022-07-26T16:24:21 CST" name="afterTest" finished-at="2022-07-26T16:24:21 CST" duration-ms="347" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterTest -->
+      </class> <!-- com.rs.test.clusterConfiguration.clusterSummary.ClusterSummary -->
+    </test> <!-- Cluster summary -->
+    <test started-at="2022-07-26T16:24:21 CST" name="Cluster Admin" finished-at="2022-07-26T16:25:47 CST" duration-ms="86104">
+      <class name="com.rs.test.clusterConfiguration.clusterAdmin.ClusterAdmin">
+        <test-method is-config="true" signature="beforeTest()[pri:0, instance:com.rs.test.clusterConfiguration.clusterAdmin.ClusterAdmin@57a78e3]" started-at="2022-07-26T16:24:21 CST" name="beforeTest" finished-at="2022-07-26T16:24:32 CST" duration-ms="10358" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeTest -->
+        <test-method signature="createQueueMonitor()[pri:0, instance:com.rs.test.clusterConfiguration.clusterAdmin.ClusterAdmin@57a78e3]" started-at="2022-07-26T16:24:32 CST" name="createQueueMonitor" finished-at="2022-07-26T16:24:56 CST" duration-ms="23830" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createQueueMonitor -->
+        <test-method signature="editQueueMonitor()[pri:1, instance:com.rs.test.clusterConfiguration.clusterAdmin.ClusterAdmin@57a78e3]" started-at="2022-07-26T16:24:56 CST" name="editQueueMonitor" finished-at="2022-07-26T16:25:24 CST" depends-on-methods="com.rs.test.clusterConfiguration.clusterAdmin.ClusterAdmin.createQueueMonitor" duration-ms="28528" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- editQueueMonitor -->
+        <test-method signature="deleteQueueMonitor()[pri:2, instance:com.rs.test.clusterConfiguration.clusterAdmin.ClusterAdmin@57a78e3]" started-at="2022-07-26T16:25:24 CST" name="deleteQueueMonitor" finished-at="2022-07-26T16:25:47 CST" depends-on-methods="com.rs.test.clusterConfiguration.clusterAdmin.ClusterAdmin.createQueueMonitor" duration-ms="22955" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- deleteQueueMonitor -->
+        <test-method is-config="true" signature="afterTest()[pri:0, instance:com.rs.test.clusterConfiguration.clusterAdmin.ClusterAdmin@57a78e3]" started-at="2022-07-26T16:25:47 CST" name="afterTest" finished-at="2022-07-26T16:25:47 CST" duration-ms="429" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterTest -->
+      </class> <!-- com.rs.test.clusterConfiguration.clusterAdmin.ClusterAdmin -->
+    </test> <!-- Cluster Admin -->
+    <test started-at="2022-07-26T16:25:47 CST" name="DCS" finished-at="2022-07-26T16:26:39 CST" duration-ms="51409">
+      <class name="com.rs.test.messageClassification.DCS.DCS">
+        <test-method is-config="true" signature="beforeTest()[pri:0, instance:com.rs.test.messageClassification.DCS.DCS@1caa0244]" started-at="2022-07-26T16:25:47 CST" name="beforeTest" finished-at="2022-07-26T16:25:58 CST" duration-ms="10486" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeTest -->
+        <test-method signature="createDCS()[pri:0, instance:com.rs.test.messageClassification.DCS.DCS@1caa0244]" started-at="2022-07-26T16:25:58 CST" name="createDCS" finished-at="2022-07-26T16:26:12 CST" duration-ms="14066" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createDCS -->
+        <test-method signature="deleteDCS()[pri:1, instance:com.rs.test.messageClassification.DCS.DCS@1caa0244]" started-at="2022-07-26T16:26:12 CST" name="deleteDCS" finished-at="2022-07-26T16:26:28 CST" depends-on-methods="com.rs.test.messageClassification.DCS.DCS.createDCS" duration-ms="16038" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- deleteDCS -->
+        <test-method signature="filters()[pri:2, instance:com.rs.test.messageClassification.DCS.DCS@1caa0244]" started-at="2022-07-26T16:26:28 CST" name="filters" finished-at="2022-07-26T16:26:39 CST" duration-ms="10500" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- filters -->
+        <test-method is-config="true" signature="afterTest()[pri:0, instance:com.rs.test.messageClassification.DCS.DCS@1caa0244]" started-at="2022-07-26T16:26:39 CST" name="afterTest" finished-at="2022-07-26T16:26:39 CST" duration-ms="317" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterTest -->
+      </class> <!-- com.rs.test.messageClassification.DCS.DCS -->
+    </test> <!-- DCS -->
+    <test started-at="2022-07-26T16:26:39 CST" name="Bill Class" finished-at="2022-07-26T16:27:18 CST" duration-ms="39383">
+      <class name="com.rs.test.messageClassification.BillClass.BillClass">
+        <test-method is-config="true" signature="beforeTest()[pri:0, instance:com.rs.test.messageClassification.BillClass.BillClass@6440112d]" started-at="2022-07-26T16:26:39 CST" name="beforeTest" finished-at="2022-07-26T16:26:50 CST" duration-ms="11126" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeTest -->
+        <test-method signature="createBillClass()[pri:0, instance:com.rs.test.messageClassification.BillClass.BillClass@6440112d]" started-at="2022-07-26T16:26:50 CST" name="createBillClass" finished-at="2022-07-26T16:27:04 CST" duration-ms="14376" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createBillClass -->
+        <test-method signature="deleteBillClass()[pri:1, instance:com.rs.test.messageClassification.BillClass.BillClass@6440112d]" started-at="2022-07-26T16:27:04 CST" name="deleteBillClass" finished-at="2022-07-26T16:27:18 CST" depends-on-methods="com.rs.test.messageClassification.BillClass.BillClass.createBillClass" duration-ms="13474" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- deleteBillClass -->
+        <test-method signature="editBillClass()[pri:1, instance:com.rs.test.messageClassification.BillClass.BillClass@6440112d]" started-at="2022-07-26T16:27:18 CST" name="editBillClass" finished-at="2022-07-26T16:27:18 CST" depends-on-methods="com.rs.test.messageClassification.BillClass.BillClass.createBillClass" duration-ms="1" status="FAIL">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[This page is not automated yet, due to a bug expected [true] but found [false]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: This page is not automated yet, due to a bug expected [true] but found [false]
+at org.testng.Assert.fail(Assert.java:99)
+at org.testng.Assert.failNotEquals(Assert.java:1037)
+at org.testng.Assert.assertTrue(Assert.java:45)
+at com.rs.test.pageObjectModel.messageClassification.BillClass.BillClassPO.editBillClass(BillClassPO.java:240)
+at com.rs.test.messageClassification.BillClass.BillClass.editBillClass(BillClass.java:39)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- editBillClass -->
+        <test-method is-config="true" signature="afterTest()[pri:0, instance:com.rs.test.messageClassification.BillClass.BillClass@6440112d]" started-at="2022-07-26T16:27:18 CST" name="afterTest" finished-at="2022-07-26T16:27:18 CST" duration-ms="401" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterTest -->
+      </class> <!-- com.rs.test.messageClassification.BillClass.BillClass -->
+    </test> <!-- Bill Class -->
+    <test started-at="2022-07-26T16:27:18 CST" name="Message Classification Change Set" finished-at="2022-07-26T16:27:48 CST" duration-ms="29411">
+      <class name="com.rs.test.messageClassification.ChangeSet.ChangeSet">
+        <test-method is-config="true" signature="beforeTest()[pri:0, instance:com.rs.test.messageClassification.ChangeSet.ChangeSet@5ddeb7cb]" started-at="2022-07-26T16:27:18 CST" name="beforeTest" finished-at="2022-07-26T16:27:28 CST" duration-ms="10143" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeTest -->
+        <test-method signature="createChangeSet()[pri:0, instance:com.rs.test.messageClassification.ChangeSet.ChangeSet@5ddeb7cb]" started-at="2022-07-26T16:27:28 CST" name="createChangeSet" finished-at="2022-07-26T16:27:47 CST" duration-ms="18917" status="FAIL">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[The record was not created successfully expected [true] but found [false]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: The record was not created successfully expected [true] but found [false]
+at org.testng.Assert.fail(Assert.java:99)
+at org.testng.Assert.failNotEquals(Assert.java:1037)
+at org.testng.Assert.assertTrue(Assert.java:45)
+at com.rs.test.pageObjectModel.messageClassification.ChangeSet.ChangeSetPO.createChangeSet(ChangeSetPO.java:476)
+at com.rs.test.messageClassification.ChangeSet.ChangeSet.createChangeSet(ChangeSet.java:33)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createChangeSet -->
+        <test-method signature="editChangeSet()[pri:1, instance:com.rs.test.messageClassification.ChangeSet.ChangeSet@5ddeb7cb]" started-at="2022-07-26T16:27:47 CST" name="editChangeSet" finished-at="2022-07-26T16:27:47 CST" depends-on-methods="com.rs.test.messageClassification.ChangeSet.ChangeSet.createChangeSet" duration-ms="0" status="SKIP">
+          <exception class="java.lang.Throwable">
+            <message>
+              <![CDATA[Method ChangeSet.editChangeSet()[pri:1, instance:com.rs.test.messageClassification.ChangeSet.ChangeSet@5ddeb7cb] depends on not successfully finished methods]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Throwable: Method ChangeSet.editChangeSet()[pri:1, instance:com.rs.test.messageClassification.ChangeSet.ChangeSet@5ddeb7cb] depends on not successfully finished methods
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:102)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Throwable -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- editChangeSet -->
+        <test-method signature="createChangeSetMessageClassification()[pri:2, instance:com.rs.test.messageClassification.ChangeSet.ChangeSet@5ddeb7cb]" started-at="2022-07-26T16:27:47 CST" name="createChangeSetMessageClassification" finished-at="2022-07-26T16:27:47 CST" depends-on-methods="com.rs.test.messageClassification.ChangeSet.ChangeSet.createChangeSet" duration-ms="0" status="SKIP">
+          <exception class="java.lang.Throwable">
+            <message>
+              <![CDATA[Method ChangeSet.createChangeSetMessageClassification()[pri:2, instance:com.rs.test.messageClassification.ChangeSet.ChangeSet@5ddeb7cb] depends on not successfully finished methods]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Throwable: Method ChangeSet.createChangeSetMessageClassification()[pri:2, instance:com.rs.test.messageClassification.ChangeSet.ChangeSet@5ddeb7cb] depends on not successfully finished methods
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:102)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Throwable -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createChangeSetMessageClassification -->
+        <test-method signature="editChangeSetMessageClassification()[pri:3, instance:com.rs.test.messageClassification.ChangeSet.ChangeSet@5ddeb7cb]" started-at="2022-07-26T16:27:47 CST" name="editChangeSetMessageClassification" finished-at="2022-07-26T16:27:47 CST" depends-on-methods="com.rs.test.messageClassification.ChangeSet.ChangeSet.createChangeSetMessageClassification" duration-ms="0" status="SKIP">
+          <exception class="java.lang.Throwable">
+            <message>
+              <![CDATA[Method ChangeSet.editChangeSetMessageClassification()[pri:3, instance:com.rs.test.messageClassification.ChangeSet.ChangeSet@5ddeb7cb] depends on not successfully finished methods]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Throwable: Method ChangeSet.editChangeSetMessageClassification()[pri:3, instance:com.rs.test.messageClassification.ChangeSet.ChangeSet@5ddeb7cb] depends on not successfully finished methods
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:102)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Throwable -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- editChangeSetMessageClassification -->
+        <test-method signature="deleteChangeSetMessageClassification()[pri:4, instance:com.rs.test.messageClassification.ChangeSet.ChangeSet@5ddeb7cb]" started-at="2022-07-26T16:27:47 CST" name="deleteChangeSetMessageClassification" finished-at="2022-07-26T16:27:47 CST" depends-on-methods="com.rs.test.messageClassification.ChangeSet.ChangeSet.createChangeSetMessageClassification" duration-ms="0" status="SKIP">
+          <exception class="java.lang.Throwable">
+            <message>
+              <![CDATA[Method ChangeSet.deleteChangeSetMessageClassification()[pri:4, instance:com.rs.test.messageClassification.ChangeSet.ChangeSet@5ddeb7cb] depends on not successfully finished methods]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Throwable: Method ChangeSet.deleteChangeSetMessageClassification()[pri:4, instance:com.rs.test.messageClassification.ChangeSet.ChangeSet@5ddeb7cb] depends on not successfully finished methods
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:102)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Throwable -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- deleteChangeSetMessageClassification -->
+        <test-method signature="deleteChangeSet()[pri:5, instance:com.rs.test.messageClassification.ChangeSet.ChangeSet@5ddeb7cb]" started-at="2022-07-26T16:27:47 CST" name="deleteChangeSet" finished-at="2022-07-26T16:27:47 CST" depends-on-methods="com.rs.test.messageClassification.ChangeSet.ChangeSet.createChangeSet" duration-ms="0" status="SKIP">
+          <exception class="java.lang.Throwable">
+            <message>
+              <![CDATA[Method ChangeSet.deleteChangeSet()[pri:5, instance:com.rs.test.messageClassification.ChangeSet.ChangeSet@5ddeb7cb] depends on not successfully finished methods]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Throwable: Method ChangeSet.deleteChangeSet()[pri:5, instance:com.rs.test.messageClassification.ChangeSet.ChangeSet@5ddeb7cb] depends on not successfully finished methods
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:102)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Throwable -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- deleteChangeSet -->
+        <test-method is-config="true" signature="afterTest()[pri:0, instance:com.rs.test.messageClassification.ChangeSet.ChangeSet@5ddeb7cb]" started-at="2022-07-26T16:27:47 CST" name="afterTest" finished-at="2022-07-26T16:27:48 CST" duration-ms="345" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterTest -->
+      </class> <!-- com.rs.test.messageClassification.ChangeSet.ChangeSet -->
+    </test> <!-- Message Classification Change Set -->
+    <test started-at="2022-07-26T16:27:48 CST" name="Carrier Template" finished-at="2022-07-26T16:28:45 CST" duration-ms="57130">
+      <class name="com.rs.test.spam.carrierTemplate.CarrierTemplate">
+        <test-method is-config="true" signature="beforeTest()[pri:0, instance:com.rs.test.spam.carrierTemplate.CarrierTemplate@303cf2ba]" started-at="2022-07-26T16:27:48 CST" name="beforeTest" finished-at="2022-07-26T16:27:58 CST" duration-ms="10397" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeTest -->
+        <test-method signature="filtersCarrierTemplate()[pri:0, instance:com.rs.test.spam.carrierTemplate.CarrierTemplate@303cf2ba]" started-at="2022-07-26T16:27:58 CST" name="filtersCarrierTemplate" finished-at="2022-07-26T16:28:45 CST" duration-ms="46405" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- filtersCarrierTemplate -->
+        <test-method is-config="true" signature="afterTest()[pri:0, instance:com.rs.test.spam.carrierTemplate.CarrierTemplate@303cf2ba]" started-at="2022-07-26T16:28:45 CST" name="afterTest" finished-at="2022-07-26T16:28:45 CST" duration-ms="328" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterTest -->
+      </class> <!-- com.rs.test.spam.carrierTemplate.CarrierTemplate -->
+    </test> <!-- Carrier Template -->
+    <test started-at="2022-07-26T16:28:45 CST" name="Change Set" finished-at="2022-07-26T16:35:50 CST" duration-ms="425306">
+      <class name="com.rs.test.routingRules.ChangeSet">
+        <test-method is-config="true" signature="beforeTest()[pri:0, instance:com.rs.test.routingRules.ChangeSet@19932c16]" started-at="2022-07-26T16:28:45 CST" name="beforeTest" finished-at="2022-07-26T16:28:55 CST" duration-ms="10472" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeTest -->
+        <test-method signature="createChangeSet()[pri:0, instance:com.rs.test.routingRules.ChangeSet@19932c16]" started-at="2022-07-26T16:28:55 CST" name="createChangeSet" finished-at="2022-07-26T16:29:39 CST" duration-ms="44039" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createChangeSet -->
+        <test-method signature="editChangeSet()[pri:1, instance:com.rs.test.routingRules.ChangeSet@19932c16]" started-at="2022-07-26T16:29:39 CST" name="editChangeSet" finished-at="2022-07-26T16:30:06 CST" depends-on-methods="com.rs.test.routingRules.ChangeSet.createChangeSet" duration-ms="26098" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- editChangeSet -->
+        <test-method signature="createRoutingRulesChangeSet()[pri:3, instance:com.rs.test.routingRules.ChangeSet@19932c16]" started-at="2022-07-26T16:30:06 CST" name="createRoutingRulesChangeSet" finished-at="2022-07-26T16:31:15 CST" depends-on-methods="com.rs.test.routingRules.ChangeSet.createChangeSet" duration-ms="69237" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- createRoutingRulesChangeSet -->
-        <test-method is-config="true" signature="afterTest()[pri:0, instance:com.rs.test.routingRules.ChangeSet@659499f1]" started-at="2022-07-15T15:09:24 CST" name="afterTest" finished-at="2022-07-15T15:09:24 CST" duration-ms="1" status="PASS">
+        <test-method signature="editRoutingRulesChangeSet()[pri:4, instance:com.rs.test.routingRules.ChangeSet@19932c16]" started-at="2022-07-26T16:31:15 CST" name="editRoutingRulesChangeSet" finished-at="2022-07-26T16:32:26 CST" depends-on-methods="com.rs.test.routingRules.ChangeSet.createChangeSet" duration-ms="70861" status="FAIL">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[The record was not created or edited expected [true] but found [false]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: The record was not created or edited expected [true] but found [false]
+at org.testng.Assert.fail(Assert.java:99)
+at org.testng.Assert.failNotEquals(Assert.java:1037)
+at org.testng.Assert.assertTrue(Assert.java:45)
+at com.rs.test.base.TestBaseSteven.verificateData(TestBaseSteven.java:767)
+at com.rs.test.pageObjectModel.routingRules.ChangeSet.ChangeSetPO.editRoutingRulesChangeSet(ChangeSetPO.java:1000)
+at com.rs.test.routingRules.ChangeSet.editRoutingRulesChangeSet(ChangeSet.java:60)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- editRoutingRulesChangeSet -->
+        <test-method signature="createMSGPropsChangeSet()[pri:5, instance:com.rs.test.routingRules.ChangeSet@19932c16]" started-at="2022-07-26T16:32:26 CST" name="createMSGPropsChangeSet" finished-at="2022-07-26T16:33:25 CST" depends-on-methods="com.rs.test.routingRules.ChangeSet.createRoutingRulesChangeSet" duration-ms="59382" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createMSGPropsChangeSet -->
+        <test-method signature="deleteMSGPropsChangeSet()[pri:7, instance:com.rs.test.routingRules.ChangeSet@19932c16]" started-at="2022-07-26T16:33:25 CST" name="deleteMSGPropsChangeSet" finished-at="2022-07-26T16:34:28 CST" depends-on-methods="com.rs.test.routingRules.ChangeSet.createMSGPropsChangeSet" duration-ms="62875" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- deleteMSGPropsChangeSet -->
+        <test-method signature="editMSGPropsChangeSet()[pri:6, instance:com.rs.test.routingRules.ChangeSet@19932c16]" started-at="2022-07-26T16:33:25 CST" name="editMSGPropsChangeSet" finished-at="2022-07-26T16:33:25 CST" depends-on-methods="com.rs.test.routingRules.ChangeSet.createMSGPropsChangeSet" duration-ms="0" status="FAIL">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[This page is not automated yet, due to a bug expected [true] but found [false]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: This page is not automated yet, due to a bug expected [true] but found [false]
+at org.testng.Assert.fail(Assert.java:99)
+at org.testng.Assert.failNotEquals(Assert.java:1037)
+at org.testng.Assert.assertTrue(Assert.java:45)
+at com.rs.test.base.TestBaseSteven.pending(TestBaseSteven.java:755)
+at com.rs.test.pageObjectModel.routingRules.ChangeSet.ChangeSetPO.editChangeSetMSGProps(ChangeSetPO.java:1114)
+at com.rs.test.routingRules.ChangeSet.editMSGPropsChangeSet(ChangeSet.java:74)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- editMSGPropsChangeSet -->
+        <test-method signature="deleteRoutingRulesChangeSet()[pri:8, instance:com.rs.test.routingRules.ChangeSet@19932c16]" started-at="2022-07-26T16:34:28 CST" name="deleteRoutingRulesChangeSet" finished-at="2022-07-26T16:35:31 CST" depends-on-methods="com.rs.test.routingRules.ChangeSet.createChangeSet" duration-ms="62877" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- deleteRoutingRulesChangeSet -->
+        <test-method signature="deleteChangeSet()[pri:9, instance:com.rs.test.routingRules.ChangeSet@19932c16]" started-at="2022-07-26T16:35:31 CST" name="deleteChangeSet" finished-at="2022-07-26T16:35:50 CST" depends-on-methods="com.rs.test.routingRules.ChangeSet.createChangeSet" duration-ms="18788" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- deleteChangeSet -->
+        <test-method is-config="true" signature="afterTest()[pri:0, instance:com.rs.test.routingRules.ChangeSet@19932c16]" started-at="2022-07-26T16:35:50 CST" name="afterTest" finished-at="2022-07-26T16:35:50 CST" duration-ms="668" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterTest -->
       </class> <!-- com.rs.test.routingRules.ChangeSet -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+    </test> <!-- Change Set -->
+  </suite> <!-- Suite -->
 </testng-results>

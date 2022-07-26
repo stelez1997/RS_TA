@@ -421,10 +421,10 @@ public class ChangeSetPO extends TestBaseSteven {
 		actionsMoveToElementElement(loginVerificationPO.btnMessageClassification);
 
 		clickOnChangeSetMenu();
+		
+		waitExpectedElement("//tr[contains(@id,\"SetTable\")]");
 
 		actionsMoveToElementElement(btnAddChangeSet);
-		
-		waitExpectedElement("//tr[contains(@id,\"SetTable\")][1]");
 		
 		int rowsB = rows("//tr[contains(@id,\"SetTable\")]");
 		
@@ -489,6 +489,8 @@ public class ChangeSetPO extends TestBaseSteven {
 		actionsMoveToElementElement(loginVerificationPO.btnMessageClassification);
 
 		clickOnChangeSetMenu();
+		
+		waitExpectedElement("//tr[contains(@id,\"SetTable\")]");
 
 		actionsMoveToElementElement(btnAddChangeSet);
 		

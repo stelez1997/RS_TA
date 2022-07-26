@@ -55,7 +55,7 @@ public class CarrierTemplatesPO extends TestBaseSteven {
 	@FindBy(xpath = "//div[@class=\"searchBarElement\"][3]//child::select")
 	public WebElement cboSearchSapSpam;
 
-	@FindBy(xpath = "//button[contains(@id,\"searchBtn\")]")
+	@FindBy(xpath = "//div[@class=\"searchBar\"]//button[contains(@id,\"searchBtn\")]")
 	public WebElement btnSearch;
 
 	LoginVerificationPO loginVerificationPO;
@@ -126,8 +126,8 @@ public class CarrierTemplatesPO extends TestBaseSteven {
 		actionsMoveToElementElement(loginVerificationPO.btnSpam);
 
 		clickOnCarrierTemplatesMenu();
-
-		actionsMoveToElementElement(btnSearch);
+		
+		visibilityOfElement("//tr[contains(@id,\"Carrier TemplatesTableRow\")]");
 
 		clickOnGoToLast();
 

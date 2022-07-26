@@ -242,6 +242,8 @@ public class MessageAggregatorsPO extends TestBaseSteven {
 		actionsMoveToElementElement(loginVerificationPO.btnConfiguration);
 
 		clickOnMessageAggregatorsMenu();
+		
+		visibilityOfElement("//tr[contains(@id,\"AggregatorsTableRow\")]");
 
 		actionsMoveToElementElement(btnAddMessageAggregators);
 
@@ -318,6 +320,8 @@ public class MessageAggregatorsPO extends TestBaseSteven {
 		actionsMoveToElementElement(loginVerificationPO.btnConfiguration);
 
 		clickOnMessageAggregatorsMenu();
+		
+		visibilityOfElement("//tr[contains(@id,\"AggregatorsTableRow\")]");
 
 		actionsMoveToElementElement(btnAddMessageAggregators);
 
@@ -754,6 +758,8 @@ public class MessageAggregatorsPO extends TestBaseSteven {
 		actionsMoveToElementElement(loginVerificationPO.btnConfiguration);
 
 		clickOnMessageAggregatorsMenu();
+		
+		visibilityOfElement("//tr[contains(@id,\"AggregatorsTableRow\")]");
 
 		actionsMoveToElementElement(btnGoToFirst);
 
