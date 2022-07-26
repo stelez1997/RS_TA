@@ -3,17 +3,35 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
+<<<<<<< HEAD
       <class name="com.rs.test.routingRules.ChangeSet">
+=======
+      <class name="com.rs.test.spam.SpamTemplate.SpamTemplate$OADCRules">
+>>>>>>> branch 'main' of https://github.com/stelez1997/RS_TA.git
         <methods>
+<<<<<<< HEAD
           <include name="editMSGPropsChangeSet"/>
           <include name="editRoutingRulesChangeSet"/>
           <include name="beforeTest"/>
           <include name="createMSGPropsChangeSet"/>
           <include name="createRoutingRulesChangeSet"/>
+=======
+          <include name="createSpamTemp"/>
+          <include name="editSpamTemp"/>
+>>>>>>> branch 'main' of https://github.com/stelez1997/RS_TA.git
           <include name="afterTest"/>
+<<<<<<< HEAD
           <include name="createChangeSet"/>
+=======
+          <include name="beforeTest"/>
+          <include name="deleteSpamTemp"/>
+>>>>>>> branch 'main' of https://github.com/stelez1997/RS_TA.git
         </methods>
+<<<<<<< HEAD
       </class> <!-- com.rs.test.routingRules.ChangeSet -->
+=======
+      </class> <!-- com.rs.test.spam.SpamTemplate.SpamTemplate$OADCRules -->
+>>>>>>> branch 'main' of https://github.com/stelez1997/RS_TA.git
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
