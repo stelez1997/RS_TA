@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Carrier Service</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>17/1/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>15/1/2</td>
 </tr><tr>
-<td>Started on:</td><td>Tue Jul 12 15:12:02 CST 2022</td>
+<td>Started on:</td><td>Tue Jul 26 15:56:24 CST 2022</td>
 </tr>
-<tr><td>Total time:</td><td>427 seconds (427389 ms)</td>
+<tr><td>Total time:</td><td>412 seconds (412159 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -75,20 +75,18 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='com.rs.test.configuration.carrierService.CarrierService.editMSGProps()'><b>editMSGProps</b><br>Test class: com.rs.test.configuration.carrierService.CarrierService</td>
-<td><div><pre>java.lang.AssertionError: This page is not automated yet, due to a bug expected [true] but found [false]
-	at com.rs.test.base.TestBaseSteven.pending(TestBaseSteven.java:755)
-	at com.rs.test.pageObjectModel.configuration.carrierService.CarrierServicePO.editMSGProps(CarrierServicePO.java:1723)
-	at com.rs.test.configuration.carrierService.CarrierService.editMSGProps(CarrierService.java:158)
+<td title='com.rs.test.configuration.carrierService.CarrierService.createMSGProps()'><b>createMSGProps</b><br>Test class: com.rs.test.configuration.carrierService.CarrierService</td>
+<td><div><pre>java.lang.AssertionError: The record was not created successfully expected [true] but found [false]
+	at com.rs.test.pageObjectModel.configuration.carrierService.CarrierServicePO.createMSGProps(CarrierServicePO.java:1675)
+	at com.rs.test.configuration.carrierService.CarrierService.createMSGProps(CarrierService.java:144)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 30 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1535886619", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1535886619'><pre>java.lang.AssertionError: This page is not automated yet, due to a bug expected [true] but found [false]
+... Removed 30 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace952856356", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace952856356'><pre>java.lang.AssertionError: The record was not created successfully expected [true] but found [false]
 	at org.testng.Assert.fail(Assert.java:99)
 	at org.testng.Assert.failNotEquals(Assert.java:1037)
 	at org.testng.Assert.assertTrue(Assert.java:45)
-	at com.rs.test.base.TestBaseSteven.pending(TestBaseSteven.java:755)
-	at com.rs.test.pageObjectModel.configuration.carrierService.CarrierServicePO.editMSGProps(CarrierServicePO.java:1723)
-	at com.rs.test.configuration.carrierService.CarrierService.editMSGProps(CarrierService.java:158)
+	at com.rs.test.pageObjectModel.configuration.carrierService.CarrierServicePO.createMSGProps(CarrierServicePO.java:1675)
+	at com.rs.test.configuration.carrierService.CarrierService.createMSGProps(CarrierService.java:144)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -118,7 +116,7 @@ function toggleAllBoxes() {
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 </pre></div></td>
-<td>0</td>
+<td>32</td>
 <td>com.rs.test.configuration.carrierService.CarrierService@60099951</td></tr>
 </table><p>
 <table width='100%' border='1' class='invocation-passed'>
@@ -129,89 +127,143 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='com.rs.test.configuration.carrierService.CarrierService.deleteLogAgent()'><b>deleteLogAgent</b><br>Test class: com.rs.test.configuration.carrierService.CarrierService</td>
-<td></td>
-<td>21</td>
-<td>com.rs.test.configuration.carrierService.CarrierService@60099951</td></tr>
-<tr>
 <td title='com.rs.test.configuration.carrierService.CarrierService.editMOChar()'><b>editMOChar</b><br>Test class: com.rs.test.configuration.carrierService.CarrierService</td>
 <td></td>
 <td>24</td>
 <td>com.rs.test.configuration.carrierService.CarrierService@60099951</td></tr>
 <tr>
-<td title='com.rs.test.configuration.carrierService.CarrierService.deleteMSGProps()'><b>deleteMSGProps</b><br>Test class: com.rs.test.configuration.carrierService.CarrierService</td>
+<td title='com.rs.test.configuration.carrierService.CarrierService.editRoutePoint()'><b>editRoutePoint</b><br>Test class: com.rs.test.configuration.carrierService.CarrierService</td>
 <td></td>
-<td>21</td>
-<td>com.rs.test.configuration.carrierService.CarrierService@60099951</td></tr>
-<tr>
-<td title='com.rs.test.configuration.carrierService.CarrierService.editCarrierService()'><b>editCarrierService</b><br>Test class: com.rs.test.configuration.carrierService.CarrierService</td>
-<td></td>
-<td>23</td>
-<td>com.rs.test.configuration.carrierService.CarrierService@60099951</td></tr>
-<tr>
-<td title='com.rs.test.configuration.carrierService.CarrierService.createMOChar()'><b>createMOChar</b><br>Test class: com.rs.test.configuration.carrierService.CarrierService</td>
-<td></td>
-<td>25</td>
-<td>com.rs.test.configuration.carrierService.CarrierService@60099951</td></tr>
-<tr>
-<td title='com.rs.test.configuration.carrierService.CarrierService.deleteCarrierService()'><b>deleteCarrierService</b><br>Test class: com.rs.test.configuration.carrierService.CarrierService</td>
-<td></td>
-<td>16</td>
-<td>com.rs.test.configuration.carrierService.CarrierService@60099951</td></tr>
-<tr>
-<td title='com.rs.test.configuration.carrierService.CarrierService.deleteRoutePoint()'><b>deleteRoutePoint</b><br>Test class: com.rs.test.configuration.carrierService.CarrierService</td>
-<td></td>
-<td>20</td>
-<td>com.rs.test.configuration.carrierService.CarrierService@60099951</td></tr>
-<tr>
-<td title='com.rs.test.configuration.carrierService.CarrierService.createMSGProps()'><b>createMSGProps</b><br>Test class: com.rs.test.configuration.carrierService.CarrierService</td>
-<td></td>
-<td>31</td>
-<td>com.rs.test.configuration.carrierService.CarrierService@60099951</td></tr>
-<tr>
-<td title='com.rs.test.configuration.carrierService.CarrierService.createCarrierService()'><b>createCarrierService</b><br>Test class: com.rs.test.configuration.carrierService.CarrierService</td>
-<td></td>
-<td>18</td>
-<td>com.rs.test.configuration.carrierService.CarrierService@60099951</td></tr>
-<tr>
-<td title='com.rs.test.configuration.carrierService.CarrierService.deleteMTChar()'><b>deleteMTChar</b><br>Test class: com.rs.test.configuration.carrierService.CarrierService</td>
-<td></td>
-<td>20</td>
-<td>com.rs.test.configuration.carrierService.CarrierService@60099951</td></tr>
-<tr>
-<td title='com.rs.test.configuration.carrierService.CarrierService.createMTChar()'><b>createMTChar</b><br>Test class: com.rs.test.configuration.carrierService.CarrierService</td>
-<td></td>
-<td>26</td>
-<td>com.rs.test.configuration.carrierService.CarrierService@60099951</td></tr>
-<tr>
-<td title='com.rs.test.configuration.carrierService.CarrierService.editMTChar()'><b>editMTChar</b><br>Test class: com.rs.test.configuration.carrierService.CarrierService</td>
-<td></td>
-<td>26</td>
-<td>com.rs.test.configuration.carrierService.CarrierService@60099951</td></tr>
-<tr>
-<td title='com.rs.test.configuration.carrierService.CarrierService.filters()'><b>filters</b><br>Test class: com.rs.test.configuration.carrierService.CarrierService</td>
-<td></td>
-<td>34</td>
+<td>29</td>
 <td>com.rs.test.configuration.carrierService.CarrierService@60099951</td></tr>
 <tr>
 <td title='com.rs.test.configuration.carrierService.CarrierService.createLogAgent()'><b>createLogAgent</b><br>Test class: com.rs.test.configuration.carrierService.CarrierService</td>
 <td></td>
-<td>23</td>
+<td>24</td>
 <td>com.rs.test.configuration.carrierService.CarrierService@60099951</td></tr>
 <tr>
-<td title='com.rs.test.configuration.carrierService.CarrierService.deleteMOChar()'><b>deleteMOChar</b><br>Test class: com.rs.test.configuration.carrierService.CarrierService</td>
+<td title='com.rs.test.configuration.carrierService.CarrierService.createMTChar()'><b>createMTChar</b><br>Test class: com.rs.test.configuration.carrierService.CarrierService</td>
 <td></td>
-<td>20</td>
+<td>27</td>
 <td>com.rs.test.configuration.carrierService.CarrierService@60099951</td></tr>
 <tr>
-<td title='com.rs.test.configuration.carrierService.CarrierService.createRoutePoint()'><b>createRoutePoint</b><br>Test class: com.rs.test.configuration.carrierService.CarrierService</td>
+<td title='com.rs.test.configuration.carrierService.CarrierService.createCarrierService()'><b>createCarrierService</b><br>Test class: com.rs.test.configuration.carrierService.CarrierService</td>
 <td></td>
 <td>21</td>
 <td>com.rs.test.configuration.carrierService.CarrierService@60099951</td></tr>
 <tr>
-<td title='com.rs.test.configuration.carrierService.CarrierService.editRoutePoint()'><b>editRoutePoint</b><br>Test class: com.rs.test.configuration.carrierService.CarrierService</td>
+<td title='com.rs.test.configuration.carrierService.CarrierService.filters()'><b>filters</b><br>Test class: com.rs.test.configuration.carrierService.CarrierService</td>
+<td></td>
+<td>29</td>
+<td>com.rs.test.configuration.carrierService.CarrierService@60099951</td></tr>
+<tr>
+<td title='com.rs.test.configuration.carrierService.CarrierService.deleteCarrierService()'><b>deleteCarrierService</b><br>Test class: com.rs.test.configuration.carrierService.CarrierService</td>
+<td></td>
+<td>17</td>
+<td>com.rs.test.configuration.carrierService.CarrierService@60099951</td></tr>
+<tr>
+<td title='com.rs.test.configuration.carrierService.CarrierService.deleteMTChar()'><b>deleteMTChar</b><br>Test class: com.rs.test.configuration.carrierService.CarrierService</td>
+<td></td>
+<td>21</td>
+<td>com.rs.test.configuration.carrierService.CarrierService@60099951</td></tr>
+<tr>
+<td title='com.rs.test.configuration.carrierService.CarrierService.createMOChar()'><b>createMOChar</b><br>Test class: com.rs.test.configuration.carrierService.CarrierService</td>
 <td></td>
 <td>28</td>
+<td>com.rs.test.configuration.carrierService.CarrierService@60099951</td></tr>
+<tr>
+<td title='com.rs.test.configuration.carrierService.CarrierService.editMTChar()'><b>editMTChar</b><br>Test class: com.rs.test.configuration.carrierService.CarrierService</td>
+<td></td>
+<td>27</td>
+<td>com.rs.test.configuration.carrierService.CarrierService@60099951</td></tr>
+<tr>
+<td title='com.rs.test.configuration.carrierService.CarrierService.createRoutePoint()'><b>createRoutePoint</b><br>Test class: com.rs.test.configuration.carrierService.CarrierService</td>
+<td></td>
+<td>22</td>
+<td>com.rs.test.configuration.carrierService.CarrierService@60099951</td></tr>
+<tr>
+<td title='com.rs.test.configuration.carrierService.CarrierService.deleteMOChar()'><b>deleteMOChar</b><br>Test class: com.rs.test.configuration.carrierService.CarrierService</td>
+<td></td>
+<td>24</td>
+<td>com.rs.test.configuration.carrierService.CarrierService@60099951</td></tr>
+<tr>
+<td title='com.rs.test.configuration.carrierService.CarrierService.deleteLogAgent()'><b>deleteLogAgent</b><br>Test class: com.rs.test.configuration.carrierService.CarrierService</td>
+<td></td>
+<td>22</td>
+<td>com.rs.test.configuration.carrierService.CarrierService@60099951</td></tr>
+<tr>
+<td title='com.rs.test.configuration.carrierService.CarrierService.deleteRoutePoint()'><b>deleteRoutePoint</b><br>Test class: com.rs.test.configuration.carrierService.CarrierService</td>
+<td></td>
+<td>22</td>
+<td>com.rs.test.configuration.carrierService.CarrierService@60099951</td></tr>
+<tr>
+<td title='com.rs.test.configuration.carrierService.CarrierService.editCarrierService()'><b>editCarrierService</b><br>Test class: com.rs.test.configuration.carrierService.CarrierService</td>
+<td></td>
+<td>24</td>
+<td>com.rs.test.configuration.carrierService.CarrierService@60099951</td></tr>
+</table><p>
+<table width='100%' border='1' class='invocation-skipped'>
+<tr><td colspan='4' align='center'><b>SKIPPED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='com.rs.test.configuration.carrierService.CarrierService.deleteMSGProps()'><b>deleteMSGProps</b><br>Test class: com.rs.test.configuration.carrierService.CarrierService</td>
+<td><div><pre>java.lang.Throwable: Method CarrierService.deleteMSGProps()[pri:16, instance:com.rs.test.configuration.carrierService.CarrierService@60099951] depends on not successfully finished methods
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 18 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1220223609", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1220223609'><pre>java.lang.Throwable: Method CarrierService.deleteMSGProps()[pri:16, instance:com.rs.test.configuration.carrierService.CarrierService@60099951] depends on not successfully finished methods
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:102)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:794)
+	at org.testng.TestRunner.run(TestRunner.java:596)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+	at org.testng.TestNG.runSuites(TestNG.java:1063)
+	at org.testng.TestNG.run(TestNG.java:1031)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</pre></div></td>
+<td>0</td>
+<td>com.rs.test.configuration.carrierService.CarrierService@60099951</td></tr>
+<tr>
+<td title='com.rs.test.configuration.carrierService.CarrierService.editMSGProps()'><b>editMSGProps</b><br>Test class: com.rs.test.configuration.carrierService.CarrierService</td>
+<td><div><pre>java.lang.Throwable: Method CarrierService.editMSGProps()[pri:15, instance:com.rs.test.configuration.carrierService.CarrierService@60099951] depends on not successfully finished methods
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 18 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1305110820", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1305110820'><pre>java.lang.Throwable: Method CarrierService.editMSGProps()[pri:15, instance:com.rs.test.configuration.carrierService.CarrierService@60099951] depends on not successfully finished methods
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:102)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:794)
+	at org.testng.TestRunner.run(TestRunner.java:596)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+	at org.testng.TestNG.runSuites(TestNG.java:1063)
+	at org.testng.TestNG.run(TestNG.java:1031)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</pre></div></td>
+<td>0</td>
 <td>com.rs.test.configuration.carrierService.CarrierService@60099951</td></tr>
 </table><p>
 </body>
